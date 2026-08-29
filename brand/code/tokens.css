@@ -1,0 +1,13 @@
+:root {
+  --kc-ink: #201e1d;
+  --kc-ground: #f3f2f2;
+  --kc-white: #ffffff;
+  --kc-accent: #ec3013;      /* accent only — never inside the mark */
+  --kc-accent-press: #c62710;
+  --kc-muted: #6b6664;
+  --kc-rule: 2px;            /* every divider is a strong 2px rule */
+  --kc-radius: 0;            /* never round a corner */
+  --kc-font: "Archivo", system-ui, sans-serif;
+  --kc-track-display: -0.035em;
+}
+*:focus-visible { outline: 2px solid var(--kc-accent); outline-offset: 2px; }
