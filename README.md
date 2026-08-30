@@ -9,7 +9,6 @@ security reviews.
     site.webmanifest
     brand/                logo marks, lockups, favicons, social, tokens
     docs/design-notes.md  design direction, tokens, and the rules the site follows
-    docs/KeyCompass_Business_Plan.docx
 
 ## Preview
 
