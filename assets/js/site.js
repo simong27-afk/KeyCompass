@@ -43,6 +43,18 @@
     Array.prototype.forEach.call(sections, function (s) { io.observe(s); });
   }
 
+  /* --- booking buttons ---------------------------------------------------- */
+  /* Each booking button is a real link to the Cal.com page, so a blocked embed
+     still gets the visitor to the calendar. Cal opens its own modal on click
+     but does not stop the link, so stop it here — only once Cal is loaded, and
+     only for a plain left click, so cmd-click still opens a new tab. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cal-link]'), function (el) {
+    el.addEventListener('click', function (e) {
+      if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (window.Cal && window.Cal.ns && window.Cal.ns.intake) e.preventDefault();
+    });
+  });
+
   /* --- the custody plan -------------------------------------------------- */
   var plan = document.getElementById('plan');
   if (!plan) return;

@@ -23,6 +23,9 @@ Nothing to compile.
 
 ## Before publishing
 
-- Replace the `mailto:` links in `index.html` (search for `TODO`) with the real booking link.
+- Booking runs through Cal.com (`simongeils/15min`, opened as a pop-up from every
+  "Book" button). Confirm the calendar's look in Cal.com → Settings → Appearance.
+- `hello@keycompass.co.uk` is still a placeholder — replace it once the domain and
+  mailbox exist. It appears in the closing panel and the footer.
 - Have a solicitor review the boundary section, the financial-advice answer, and the footer
   risk warning against the FCA financial promotion rules.

@@ -46,7 +46,8 @@
       <a href="#who">Who it's for</a>
       <a href="#faq">Questions</a>
     </nav>
-    <a class="btn btn--accent btn--sm" href="#book">Book a session</a>
+    <a class="btn btn--accent btn--sm" href="https://cal.com/simongeils/15min"
+       data-cal-namespace="intake" data-cal-link="simongeils/15min">Book a session</a>
   </div>
 </header>
 
@@ -65,7 +66,8 @@
         </h1>
         <p class="hero__lead">One-to-one onboarding sessions for beginners or independent security reviews for intermediate or crypto natives. Don't lie awake at night worrying whether your funds on the exchange will be accessible come the morning. No product to sell you, no opinion on what you should buy — just the technical work, working alongside you.</p>
         <div class="hero__acts">
-          <a class="btn btn--accent" href="#book">Book a session</a>
+          <a class="btn btn--accent" href="https://cal.com/simongeils/15min"
+             data-cal-namespace="intake" data-cal-link="simongeils/15min">Book a session</a>
           <a class="btn btn--ghost" href="#services">See what's covered</a>
         </div>
         <ul class="hero__facts micro micro--dim">
@@ -356,8 +358,9 @@
       <h2 class="h2 book__head">Start with the free fifteen minutes.</h2>
       <p class="book__lead">No obligation and no pitch. If KeyCompass is not what you need, I will tell you on the call.</p>
       <div class="book__acts">
-        <!-- TODO: replace with your real booking link (Cal.com / SavvyCal / Calendly) and address -->
-        <a class="btn btn--ink" href="mailto:hello@keycompass.co.uk?subject=Intake%20call">Book the intake call</a>
+        <a class="btn btn--ink" href="https://cal.com/simongeils/15min"
+           data-cal-namespace="intake" data-cal-link="simongeils/15min">Book the intake call</a>
+        <!-- Fallback: reachable if the booking script is blocked or cal.com is down. -->
         <a class="btn btn--outline-ink" href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
       </div>
     </div>
@@ -411,5 +414,21 @@
 </footer>
 
 <script src="assets/js/site.js"></script>
+
+<!-- Cal.com booking. Attaches to any element carrying data-cal-link, so the
+     buttons keep their own styling and the calendar opens over the page.
+     Every booking button is also a plain link to the same page, so if this
+     script fails to load the click still reaches the calendar. -->
+<script>
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+Cal("init", "intake", { origin: "https://cal.com" });
+Cal.ns.intake("ui", {
+  theme: "dark",
+  cssVarsPerTheme: { dark: { "cal-brand": "#ec3013" }, light: { "cal-brand": "#b3210e" } },
+  hideEventTypeDetails: false,
+  layout: "month_view"
+});
+</script>
 </body>
 </html>
