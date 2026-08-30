@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KeyCompass — Self-custody onboarding and security reviews</title>
+<meta name="description" content="One-to-one self-custody onboarding sessions and independent security reviews. UK-based, remote. KeyCompass never holds your keys, your seed, or your funds.">
+
+<link rel="icon" href="brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
+<link rel="icon" href="brand/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="brand/favicon/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="brand/app-icons/apple-touch-icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#141312">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="KeyCompass — Self-custody advisory">
+<meta property="og:description" content="Guidance for individuals and businesses moving to self custody. Onboarding sessions and independent security reviews.">
+<meta property="og:image" content="brand/social/og-image-1200x630.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className+=" js";</script>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="hdr__in wrap">
+    <a class="lockup" href="#top" aria-label="KeyCompass, home">
+      <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+        <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+        <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+        <rect x="44" y="12" width="12" height="22"/>
+        <rect x="44" y="66" width="12" height="22"/>
+        <rect x="66" y="44" width="22" height="12"/>
+        <rect x="12" y="44" width="22" height="12"/>
+      </svg><span class="lockup__word">KeyCompass</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#method">How it works</a>
+      <a href="#who">Who it's for</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn btn--accent btn--sm" href="#book">Book a session</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="sec sec--pitch hero" id="top">
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">Self-custody advisory</span>
+      <span class="micro micro--dim">United Kingdom · Remote · Est. 2026</span>
+    </div>
+    <hr class="rule rule--dark">
+
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <h1 class="hero__title">
+          <span class="ln"><i>Get self-custody right</i></span>
+          <span class="ln"><i>the first time.</i></span>
+          <span class="ln ln--alt"><i>Or find out where</i></span>
+          <span class="ln ln--alt"><i>yours is wrong.</i></span>
+        </h1>
+        <p class="hero__lead">One-to-one onboarding sessions and independent security reviews, for people holding real value in crypto. No product to sell you, no opinion on what you should buy — just the technical work, done alongside you.</p>
+        <div class="hero__acts">
+          <a class="btn btn--accent" href="#book">Book a session</a>
+          <a class="btn btn--ghost" href="#services">See what's covered</a>
+        </div>
+        <ul class="hero__facts micro micro--dim">
+          <li>Booking opens 10 September 2026</li>
+          <li>Your keys never leave your hands</li>
+        </ul>
+      </div>
+
+      <!-- ---- SIGNATURE: custody surface schematic ---- -->
+      <figure class="plan" id="plan">
+        <svg class="plan__svg" viewBox="0 0 440 440" role="img"
+             aria-labelledby="plan-t plan-d">
+          <title id="plan-t">Custody surfaces schematic</title>
+          <desc id="plan-d">A plan view of a custody setup: an outer access perimeter and an inner backup perimeter around a core of keys, with four channels cut through them — phishing, device, backup loss and succession.</desc>
+
+          <mask id="chmask">
+            <rect x="0" y="0" width="440" height="440" fill="#fff"/>
+            <rect x="200" y="0"   width="40"  height="188" fill="#000"/>
+            <rect x="200" y="252" width="40"  height="188" fill="#000"/>
+            <rect x="0"   y="200" width="188" height="40"  fill="#000"/>
+            <rect x="252" y="200" width="188" height="40"  fill="#000"/>
+          </mask>
+
+          <g class="plan__rings" mask="url(#chmask)">
+            <rect class="ring ring--1" x="44"  y="44"  width="352" height="352"/>
+            <rect class="ring ring--2" x="108" y="108" width="224" height="224"/>
+          </g>
+          <rect class="ring ring--core" x="188" y="188" width="64" height="64"/>
+
+          <g class="plan__names">
+            <text x="60"  y="82">ACCESS</text>
+            <text x="124" y="152">BACKUP</text>
+            <text x="220" y="221" text-anchor="middle" dominant-baseline="middle">KEYS</text>
+          </g>
+
+          <g class="chs">
+            <g class="ch" data-ch="0" tabindex="0" role="button" aria-pressed="false" aria-describedby="plan-read" aria-label="Channel 1, phishing and blind signing">
+              <rect class="ch__hit" x="176" y="0" width="88" height="188"/>
+              <rect class="ch__fill" x="200" y="0" width="40" height="188"/>
+              <line class="ch__edge" x1="200" y1="0" x2="200" y2="188"/>
+              <line class="ch__edge" x1="240" y1="0" x2="240" y2="188"/>
+              <text class="ch__lbl" x="220" y="172" transform="rotate(-90 220 172)" dominant-baseline="middle">PHISHING</text>
+            </g>
+            <g class="ch" data-ch="1" tabindex="0" role="button" aria-pressed="false" aria-describedby="plan-read" aria-label="Channel 2, device and signing environment">
+              <rect class="ch__hit" x="252" y="176" width="188" height="88"/>
+              <rect class="ch__fill" x="252" y="200" width="188" height="40"/>
+              <line class="ch__edge" x1="252" y1="200" x2="440" y2="200"/>
+              <line class="ch__edge" x1="252" y1="240" x2="440" y2="240"/>
+              <text class="ch__lbl" x="428" y="221" text-anchor="end" dominant-baseline="middle">DEVICE</text>
+            </g>
+            <g class="ch" data-ch="2" tabindex="0" role="button" aria-pressed="false" aria-describedby="plan-read" aria-label="Channel 3, backup loss">
+              <rect class="ch__hit" x="176" y="252" width="88" height="188"/>
+              <rect class="ch__fill" x="200" y="252" width="40" height="188"/>
+              <line class="ch__edge" x1="200" y1="252" x2="200" y2="440"/>
+              <line class="ch__edge" x1="240" y1="252" x2="240" y2="440"/>
+              <text class="ch__lbl" x="220" y="428" transform="rotate(-90 220 428)" dominant-baseline="middle">BACKUP LOSS</text>
+            </g>
+            <g class="ch" data-ch="3" tabindex="0" role="button" aria-pressed="false" aria-describedby="plan-read" aria-label="Channel 4, succession">
+              <rect class="ch__hit" x="0" y="176" width="188" height="88"/>
+              <rect class="ch__fill" x="0" y="200" width="188" height="40"/>
+              <line class="ch__edge" x1="0" y1="200" x2="188" y2="200"/>
+              <line class="ch__edge" x1="0" y1="240" x2="188" y2="240"/>
+              <text class="ch__lbl" x="12" y="221" dominant-baseline="middle">SUCCESSION</text>
+            </g>
+          </g>
+        </svg>
+
+        <figcaption class="tblock">
+          <div class="tblock__row">
+            <span class="micro">Sheet 01 — Custody surfaces</span>
+            <span class="micro micro--dim" id="plan-ref">Rev A · N.T.S.</span>
+          </div>
+          <hr class="rule rule--dark rule--hair">
+          <p class="tblock__read" id="plan-read">Four ways a setup fails. A review checks all four. <span class="tblock__hint">Hover a channel.</span></p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOUNDARY ============ -->
+<section class="sec sec--ground boundary" id="boundary" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">The boundary</span>
+      <span class="micro micro--dim">Structural, not a promise</span>
+    </div>
+    <hr class="rule rule--light">
+    <div class="boundary__grid">
+      <h2 class="h2 boundary__head">Not a custodian.<br>Not a broker.<br>Not an adviser.</h2>
+      <div class="boundary__body">
+        <p class="lead">KeyCompass never holds your keys, your recovery phrase, or your funds — not for a minute, not to help, not to check something. You keep sole control of everything, throughout every engagement.</p>
+        <p>Nothing said in a session is investment, legal, or tax advice. No one will tell you what to buy, when to buy, or how much. The work is technical and operational: how to hold safely what you already own.</p>
+        <p class="boundary__pin">That boundary is the whole point. It is what makes this work safe to do with someone you have just met.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec sec--ink" id="services" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">Services</span>
+      <span class="micro micro--dim">Two live · Booking from 10 Sept 2026</span>
+    </div>
+    <hr class="rule rule--dark">
+    <h2 class="h2 sec__head">Two ways in.<br>Pick the one that matches where you are.</h2>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card__spec">
+          <span class="micro">Live · 60–90 min · One-to-one</span>
+          <span class="card__price">£150–250</span>
+        </div>
+        <h3 class="h3">Private onboarding session</h3>
+        <p class="card__for">For: your crypto is sitting on an exchange and you want it in your own custody.</p>
+        <p>We do it together, live, on your devices. Choosing and checking a hardware wallet, setting it up from scratch, generating and backing up your recovery phrase, sending a test amount, confirming it landed, then moving the rest. You drive. I talk you through each step and tell you exactly what to look for.</p>
+        <p class="card__sub micro">You leave with</p>
+        <ul class="ticks">
+          <li>A working wallet you set up yourself, start to finish</li>
+          <li>A backup you have verified, stored the way you decided</li>
+          <li>A written record of your setup, so you can repeat it</li>
+          <li>The habits that prevent the common losses: verify on the device, test small, never type the phrase</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card__spec">
+          <span class="micro">Audit · Written report</span>
+          <span class="card__price">£250–600</span>
+        </div>
+        <h3 class="h3">Threat and security review</h3>
+        <p class="card__for">For: you already self-custody, and nobody has ever checked it.</p>
+        <p>A structured walk through the setup you already have — the four channels on the drawing above. How you access it, where the backups live and how many there are, what state your devices are in, who else could get in, and who could not but should be able to. Nothing is changed during a review. I look, I ask, and I write it up.</p>
+        <p class="card__sub micro">You leave with</p>
+        <ul class="ticks">
+          <li>A prioritised list of what to fix, worst first</li>
+          <li>Plain-English reasoning for every item, not a score out of ten</li>
+          <li>An explicit list of what is already fine, so you can stop worrying about it</li>
+          <li>A re-check once you have made the changes</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="note">Prices are per engagement and confirmed in writing before anything is booked. Reviews are scoped on the free intake call — a single wallet and a single backup sits at the bottom of the range; multiple devices, multisig, or a business setup sits at the top.</p>
+  </div>
+</section>
+
+<!-- ============ METHOD ============ -->
+<section class="sec sec--ground" id="method" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">How a session runs</span>
+      <span class="micro micro--dim">Four steps, in order</span>
+    </div>
+    <hr class="rule rule--light">
+    <h2 class="h2 sec__head">You will always know what happens next.</h2>
+
+    <ol class="steps">
+      <li class="step">
+        <span class="step__n">01</span>
+        <h3 class="h4">Before — the free 15 minutes</h3>
+        <p>A short intake form, then a fifteen-minute call at no charge. We work out which service you actually need and what it will cost. If the answer is that you do not need this yet, I will say so.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">02</span>
+        <h3 class="h4">Prep — a list, sent in advance</h3>
+        <p>What to have ready: which devices, a quiet hour, a pen. Nothing sensitive gets written down or photographed ahead of time, and nothing gets sent to me.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">03</span>
+        <h3 class="h4">The session — video call</h3>
+        <p>Screen sharing runs on my side only. You never show me a recovery phrase, a private key, or an unlocked wallet, and I will stop you if you start to. Everything sensitive stays on your side of the call.</p>
+      </li>
+      <li class="step">
+        <span class="step__n">04</span>
+        <h3 class="h4">After — you get it in writing</h3>
+        <p>A written summary within 48 hours covering what you set up and what is left to do, plus one follow-up thread for anything that comes up in the first month.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHO ============ -->
+<section class="sec sec--ink" id="who" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">Who this is for</span>
+      <span class="micro micro--dim">Individuals · Couples · Small businesses</span>
+    </div>
+    <hr class="rule rule--dark">
+    <h2 class="h2 sec__head">Meaningful holdings, and no one plain-spoken to ask.</h2>
+
+    <div class="profiles">
+      <div class="profile">
+        <p class="profile__q">“It is all on an exchange and that has started to bother me.”</p>
+        <p class="profile__a"><span class="profile__tag">Onboarding session</span> You know why custodial risk matters. You have read enough to be nervous and not enough to feel safe pressing the buttons alone.</p>
+      </div>
+      <div class="profile">
+        <p class="profile__q">“I set this up two years ago and nobody has looked at it since.”</p>
+        <p class="profile__a"><span class="profile__tag">Security review</span> It works, so you have left it alone. That is exactly the setup worth checking — the failures here are quiet until they are total.</p>
+      </div>
+      <div class="profile">
+        <p class="profile__q">“Things have changed since I set it up.”</p>
+        <p class="profile__a"><span class="profile__tag">Security review</span> New phone, new laptop, new house, more assets, more chains. Every one of those moves the ground under a backup plan written for a different life.</p>
+      </div>
+      <div class="profile">
+        <p class="profile__q">“One person in the company understands how it all works.”</p>
+        <p class="profile__a"><span class="profile__tag">Security review</span> A small business holding reserves where access, approval, and recovery all run through a single head. A review maps what is there and what happens if that person is unavailable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER ============ -->
+<section class="sec sec--pitch founder" id="founder" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">Who you are talking to</span>
+      <span class="micro micro--dim">Solo practice · No sales team</span>
+    </div>
+    <hr class="rule rule--dark">
+    <div class="founder__grid">
+      <div class="founder__copy">
+        <h2 class="h2">I am Simon. I have already watched this go wrong in every way it goes wrong.</h2>
+        <p class="lead">Over a decade in front-line technical support, including eighteen months of specialist crypto support — helping people set up hardware wallets, recover them, and secure what was on them. Thousands of conversations. The same handful of mistakes, over and over.</p>
+        <p>KeyCompass is that pattern turned into a service. I am not a wealth manager who also does crypto. I am the person who has sat with someone on the worst day of their financial life and worked out, step by step, what happened — and I would rather spend an hour with you now than that hour with you later.</p>
+      </div>
+      <dl class="specs">
+        <div class="specs__row"><dt>Front-line technical support</dt><dd>10+ years</dd></div>
+        <div class="specs__row"><dt>Specialist crypto support</dt><dd>18 months</dd></div>
+        <div class="specs__row"><dt>Sustained quality score</dt><dd>92%+</dd></div>
+        <div class="specs__row"><dt>Customer satisfaction</dt><dd>88%+</dd></div>
+        <div class="specs__row"><dt>Certified</dt><dd>Crypto / Web3 / DeFi</dd></div>
+        <div class="specs__row"><dt>Certified</dt><dd>Blockchain security</dd></div>
+        <div class="specs__row"><dt>Certified</dt><dd>Self-custody</dd></div>
+        <div class="specs__row"><dt>Based</dt><dd>United Kingdom</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec--ground" id="faq" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro">Questions</span>
+      <span class="micro micro--dim">The ones worth asking first</span>
+    </div>
+    <hr class="rule rule--light">
+    <h2 class="h2 sec__head">Before you book.</h2>
+
+    <div class="faq">
+      <details class="qa">
+        <summary><span>Will you ever ask for my recovery phrase?</span></summary>
+        <div class="qa__body"><p>No. Not the words, not a photo, not "just the first four". I will never see your phrase, your keys, or your funds, and there is no situation in which I would need to. If anyone ever asks you for it — including someone claiming to be me — that is the scam, and that is the whole lesson.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>Is any of this financial advice?</span></summary>
+        <div class="qa__body"><p>No. KeyCompass is not authorised or regulated by the Financial Conduct Authority and does not give investment, legal, or tax advice. I will not tell you what to hold, when to buy, or how much. Every session is about the technical and operational side of holding what you already own. For investment, legal, and tax decisions, use your own licensed professionals.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>Is this Bitcoin only?</span></summary>
+        <div class="qa__body"><p>No. The work covers the major assets and the wallets that hold them, rather than one chain. Multi-asset setups are usually where the interesting failure modes live, so they are squarely in scope for a review.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>I am not technical. Is that a problem?</span></summary>
+        <div class="qa__body"><p>Most clients are not. That is the job. Nothing in a session assumes prior knowledge, nothing is skipped because it seems obvious, and there is no question too basic to ask. If a session ends with you nodding along and not understanding, it has failed.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>Where are you, and can we work together?</span></summary>
+        <div class="qa__body"><p>UK-based, working remotely with clients anywhere. Sessions run over video call, scheduled in your timezone wherever the hours allow.</p></div>
+      </details>
+      <details class="qa">
+        <summary><span>Can you help with inheritance planning or a business treasury?</span></summary>
+        <div class="qa__body"><p>Not yet, and I would rather say that plainly than take the booking. Both touch outcomes that cannot be undone, so neither opens until professional indemnity insurance and solicitor-drafted engagement terms are confirmed in place. A security review can tell you today where your succession plan stands. If you need the full setup now, say so on the intake call and I will point you elsewhere.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section class="sec sec--accent book" id="book" data-reveal>
+  <div class="wrap book__grid">
+    <div class="book__copy">
+      <span class="micro micro--chip">Booking opens 10 September 2026</span>
+      <h2 class="h2 book__head">Start with the free fifteen minutes.</h2>
+      <p class="book__lead">No obligation and no pitch. If KeyCompass is not what you need, I will tell you on the call.</p>
+      <div class="book__acts">
+        <!-- TODO: replace with your real booking link (Cal.com / SavvyCal / Calendly) and address -->
+        <a class="btn btn--ink" href="mailto:hello@keycompass.co.uk?subject=Intake%20call">Book the intake call</a>
+        <a class="btn btn--outline-ink" href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
+      </div>
+    </div>
+    <svg class="book__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+      <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+      <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+      <rect x="44" y="12" width="12" height="22"/>
+      <rect x="44" y="66" width="12" height="22"/>
+      <rect x="66" y="44" width="22" height="12"/>
+      <rect x="12" y="44" width="22" height="12"/>
+    </svg>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr sec--pitch">
+  <div class="wrap">
+    <hr class="rule rule--accent">
+    <div class="ftr__grid">
+      <div>
+        <a class="lockup lockup--lg" href="#top" aria-label="KeyCompass, home">
+          <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+            <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+            <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+            <rect x="44" y="12" width="12" height="22"/>
+            <rect x="44" y="66" width="12" height="22"/>
+            <rect x="66" y="44" width="22" height="12"/>
+            <rect x="12" y="44" width="22" height="12"/>
+          </svg><span class="lockup__word">KeyCompass</span>
+        </a>
+        <p class="ftr__tag">Self-custody onboarding and security reviews. United Kingdom, remote.</p>
+      </div>
+      <nav class="ftr__nav" aria-label="Footer">
+        <span class="micro micro--dim">Site</span>
+        <a href="#services">Services</a>
+        <a href="#method">How it works</a>
+        <a href="#who">Who it's for</a>
+        <a href="#faq">Questions</a>
+        <a href="#book">Book a session</a>
+      </nav>
+      <nav class="ftr__nav" aria-label="Contact">
+        <span class="micro micro--dim">Contact</span>
+        <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
+      </nav>
+    </div>
+    <hr class="rule rule--dark rule--hair">
+    <p class="ftr__legal">KeyCompass provides educational and operational support only. It is not a financial adviser, is not authorised or regulated by the Financial Conduct Authority, does not provide investment, legal, or tax advice, and never takes custody of client assets, keys, or recovery phrases. Cryptoassets are unregulated and high risk. You could lose all the money you invest. Take independent professional advice before making investment, legal, or tax decisions.</p>
+    <p class="ftr__meta micro micro--dim"><span>&copy; <span id="yr">2026</span> KeyCompass</span><span>Sheet 01 · Rev A</span></p>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
