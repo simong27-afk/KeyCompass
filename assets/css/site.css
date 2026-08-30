@@ -265,7 +265,10 @@ body{
 .tblock__row{display:flex;justify-content:space-between;gap:1rem;padding-bottom:.7rem}
 .tblock__read{
   font-family:var(--mono);font-size:.6875rem;line-height:1.7;
-  letter-spacing:.02em;padding-top:.7rem;color:var(--ground);min-height:3.4em;
+  letter-spacing:.02em;padding-top:.7rem;color:var(--ground);
+  /* Fixed height for the tallest readout. If this box grows on hover, the
+     drawing shifts under the cursor and the hover state oscillates. */
+  min-height:5.4em;
 }
 .tblock__hint{display:block;color:var(--dim)}
 
@@ -428,7 +431,7 @@ body{
   .ftr__grid{grid-template-columns:1.6fr 1fr 1fr}
 }
 @media (min-width:900px){
-  .hero__grid{grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr);align-items:center}
+  .hero__grid{grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr);align-items:start}
   /* Sized to the column, not the viewport, so the four lines never overrun it.
      No nowrap: an edited headline that is longer just wraps instead of clipping. */
   .hero__title{font-size:min(5.2vw,4.6rem)}
@@ -437,7 +440,6 @@ body{
   .steps{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,4vw,4rem)}
   .step{padding-inline:0}
   .book{text-align:left}
-  .ln{overflow:hidden}
 }
 @media (min-width:900px){
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -467,7 +469,7 @@ body{
    Motion — orchestrated load, then quiet scroll reveals
    ========================================================================== */
 /* Initial states are scoped to .js so the page is fully visible without it. */
-.js .ln i{transform:translateY(110%);opacity:0}
+.js .ln i{transform:translateY(45%);opacity:0}
 .js .hero__lead,.js .hero__acts,.js .hero__facts,.js .plan{opacity:0;transform:translateY(14px)}
 .js .plan__rings .ring,.js .ring--core{stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
 .js .ch__edge,.js .ch__lbl,.js .plan__names text{opacity:0}

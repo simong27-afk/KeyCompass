@@ -50,19 +50,19 @@
   var CHANNELS = [
     {
       ref: 'Ch. 01 — Phishing',
-      read: 'Signing something you did not mean to sign. Checked: on-device verification, address handling, approval hygiene.'
+      read: 'Signing what you did not mean to sign. Checks approvals, addresses, and on-device verification.'
     },
     {
       ref: 'Ch. 02 — Device',
-      read: 'Where the wallet is sourced, updated, and used. Checked: firmware and authenticity, a clean signing environment, what else runs on that machine.'
+      read: 'Where the wallet is sourced, updated and used. Checks firmware, authenticity, clean signing.'
     },
     {
       ref: 'Ch. 03 — Backup loss',
-      read: 'One copy, one location, one point of failure. Checked: how many backups exist, what they are made of, where they live, and how the passphrase is held.'
+      read: 'One copy, one location, one point of failure. Checks redundancy, medium, geography, passphrase.'
     },
     {
       ref: 'Ch. 04 — Succession',
-      read: 'Nobody else can get in, including the people who should be able to. Checked: whether a recovery route exists, is written down, and has ever been tested by someone other than you.'
+      read: 'Nobody else can get in, including those who should. Checks whether recovery is written and tested.'
     }
   ];
 
