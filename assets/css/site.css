@@ -429,7 +429,9 @@ body{
 }
 @media (min-width:900px){
   .hero__grid{grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr);align-items:center}
-  .ln{white-space:nowrap}
+  /* Sized to the column, not the viewport, so the four lines never overrun it.
+     No nowrap: an edited headline that is longer just wraps instead of clipping. */
+  .hero__title{font-size:min(5.2vw,4.6rem)}
   .boundary__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}
   .founder__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:start}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,4vw,4rem)}
