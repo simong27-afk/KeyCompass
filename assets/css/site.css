@@ -353,6 +353,18 @@ body{
 .founder__copy .h2{margin-bottom:.5rem;max-width:18ch}
 .founder__copy p{color:#bdb7b5}
 .founder__copy .lead{color:var(--ground)}
+/* Profile links. Quiet by default; the icons are the label. */
+.social{
+  display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;
+  margin-top:.6rem;padding-top:1.5rem;border-top:1px solid var(--line-d);
+}
+.social__link{
+  display:block;color:var(--dim);
+  transition:color .24s var(--ease);
+}
+.social__link svg{width:20px;height:20px;display:block}
+.social__link:hover,.social__link:focus-visible{color:var(--ground)}
+
 /* The only photograph on the site. No frame, no filter, no radius — it is
    already monochrome and sits in the palette unaided. */
 .portrait{width:100%;overflow:hidden}
