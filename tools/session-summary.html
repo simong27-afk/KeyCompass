@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Session record — KeyCompass</title>
+<link rel="icon" href="../brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Tokens mirror assets/css/site.css. Kept local so the tool stays portable. */
+:root{
+  --pitch:#141312; --ink:#201e1d; --ground:#f3f2f2; --white:#fff;
+  --accent:#ec3013; --accent-deep:#b3210e; --dim:#9a9391;
+  --line-d:rgba(243,242,242,.15); --well:rgba(243,242,242,.04);
+  --font:"Archivo","Helvetica Neue",system-ui,sans-serif;
+  --mono:"Martian Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.53,0,0,1);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body,h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+body{
+  background:var(--pitch);color:var(--ground);font-family:var(--font);
+  font-size:.9375rem;line-height:1.55;letter-spacing:-.011em;
+  -webkit-font-smoothing:antialiased;
+}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.wrap{max-width:1040px;margin-inline:auto;padding:clamp(1.25rem,4vw,3rem)}
+
+/* --- masthead ----------------------------------------------------------- */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.lockup{display:inline-flex;align-items:center;gap:.22em;font-size:19px;font-weight:800;
+  letter-spacing:-.035em;line-height:1;color:var(--ground);text-decoration:none}
+.lockup svg{width:.78em;height:.78em;flex:none}
+.rule{border:0;height:2px;background:rgba(243,242,242,.9);margin:.7rem 0 0}
+.rule--hair{height:1px;background:var(--line-d)}
+.micro{font-family:var(--mono);font-size:.6875rem;font-weight:500;line-height:1.3;
+  text-transform:uppercase;letter-spacing:.08em}
+.micro--dim{color:var(--dim)}
+.notice{margin-top:.9rem;font-family:var(--mono);font-size:.625rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--dim)}
+.notice b{color:var(--accent);font-weight:500}
+
+/* --- blocks ------------------------------------------------------------- */
+.block{margin-top:clamp(2rem,4vw,3rem)}
+.block__head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  flex-wrap:wrap;padding-bottom:.6rem}
+.grid{display:grid;gap:1.1rem;margin-top:1.4rem}
+.grid--3{grid-template-columns:1fr}
+@media(min-width:720px){.grid--3{grid-template-columns:repeat(3,1fr)}.grid--2{grid-template-columns:repeat(2,1fr)}}
+
+.field{display:flex;flex-direction:column;gap:.45rem;min-width:0}
+.field > .micro{color:var(--dim)}
+input[type=text],input[type=date],select,textarea{
+  width:100%;background:var(--well);color:var(--ground);
+  border:1px solid var(--line-d);border-radius:0;
+  padding:.7rem .8rem;font-family:var(--font);font-size:.9375rem;
+  transition:border-color .2s var(--ease),background .2s var(--ease);
+}
+textarea{resize:vertical;min-height:6.5rem;line-height:1.6}
+input:hover,select:hover,textarea:hover{border-color:rgba(243,242,242,.3)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);background:rgba(243,242,242,.06)}
+select{appearance:none;padding-right:2rem;
+  background-image:linear-gradient(45deg,transparent 50%,var(--dim) 50%),linear-gradient(135deg,var(--dim) 50%,transparent 50%);
+  background-position:calc(100% - 15px) 55%,calc(100% - 10px) 55%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+::placeholder{color:#6b6664}
+
+/* --- custody surfaces --------------------------------------------------- */
+.surface{padding:1.1rem 0;border-top:1px solid var(--line-d)}
+.surface:last-child{border-bottom:1px solid var(--line-d)}
+.surface__top{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.7rem}
+.surface__name{font-family:var(--mono);font-size:.6875rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.11em;min-width:9.5rem}
+.states{display:flex;gap:2px}
+.states input{position:absolute;opacity:0;pointer-events:none}
+.states label{
+  font-family:var(--mono);font-size:.5625rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:.45rem .7rem;cursor:pointer;
+  border:1px solid var(--line-d);color:var(--dim);
+  transition:color .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease);
+}
+.states label:hover{color:var(--ground)}
+.states input:checked + label{color:var(--pitch);background:var(--dim);border-color:var(--dim)}
+.states input[value="Needs attention"]:checked + label{background:var(--ground);border-color:var(--ground)}
+.states input[value="Critical"]:checked + label{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.states input:focus-visible + label{outline:2px solid var(--accent);outline-offset:2px}
+
+/* --- actions ------------------------------------------------------------ */
+.action{display:grid;grid-template-columns:auto 1fr auto;gap:.6rem;align-items:start;margin-bottom:.6rem}
+.action select{width:auto;min-width:7.5rem;font-family:var(--mono);font-size:.6875rem;
+  text-transform:uppercase;letter-spacing:.08em}
+.btn{
+  font-family:var(--mono);font-size:.6875rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;padding:.7rem 1.1rem;border:2px solid transparent;
+  background:transparent;color:var(--ground);cursor:pointer;border-radius:0;
+  transition:color .2s var(--ease),background .2s var(--ease),border-color .2s var(--ease);
+}
+.btn--ghost{border-color:rgba(243,242,242,.35);color:var(--dim)}
+.btn--ghost:hover{color:var(--pitch);background:var(--ground);border-color:var(--ground)}
+.btn--accent{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.btn--accent:hover{background:var(--white);border-color:var(--white);color:var(--accent-deep)}
+.btn--x{padding:.7rem .8rem;color:var(--dim);border-color:transparent;font-size:.75rem}
+.btn--x:hover{color:var(--accent)}
+
+/* --- output ------------------------------------------------------------- */
+.out{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.out__bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-bottom:.7rem}
+.out__acts{display:flex;gap:.5rem;flex-wrap:wrap}
+.out__pre{
+  background:var(--ink);border:1px solid var(--line-d);padding:1.4rem;
+  font-family:var(--mono);font-size:.6875rem;line-height:1.85;letter-spacing:.01em;
+  white-space:pre-wrap;word-break:break-word;max-height:32rem;overflow:auto;color:var(--ground);
+}
+.hidden{display:none}
+.foot{margin-top:3rem;padding-top:1.2rem;border-top:1px solid var(--line-d)}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="lockup" href="../index.html">
+      <svg viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+        <path d="M4 4h92v92H4z M14 14v72h72V14z"/><path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+        <rect x="44" y="12" width="12" height="22"/><rect x="44" y="66" width="12" height="22"/>
+        <rect x="66" y="44" width="22" height="12"/><rect x="12" y="44" width="22" height="12"/>
+      </svg>KeyCompass
+    </a>
+    <span class="micro micro--dim">Sheet 02 — Session record</span>
+  </header>
+  <hr class="rule">
+  <p class="notice">Internal tool · <b>Nothing here is sent anywhere.</b> Everything stays in this browser until you clear it.</p>
+
+  <!-- ===== raw minutes ===== -->
+  <section class="block">
+    <div class="block__head">
+      <span class="micro">Raw minutes</span>
+      <span class="micro micro--dim">Working notes — never sent to the client</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid">
+      <div class="field">
+        <textarea id="raw" rows="6" placeholder="Paste the Google Meet notes or transcript here to work from. This block is excluded from the summary."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== engagement ===== -->
+  <section class="block">
+    <div class="block__head">
+      <span class="micro">Engagement</span>
+      <span class="micro micro--dim">Who, when, which service</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid grid--3">
+      <div class="field"><label class="micro" for="client">Client name</label>
+        <input type="text" id="client" placeholder="First name"></div>
+      <div class="field"><label class="micro" for="date">Session date</label>
+        <input type="date" id="date"></div>
+      <div class="field"><label class="micro" for="service">Service</label>
+        <select id="service">
+          <option value="Private onboarding session">Private onboarding session</option>
+          <option value="Threat and security review">Threat and security review</option>
+        </select></div>
+    </div>
+  </section>
+
+  <!-- ===== what we covered ===== -->
+  <section class="block">
+    <div class="block__head">
+      <span class="micro">What we covered</span>
+      <span class="micro micro--dim">One line per thing, plain English</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid">
+      <div class="field">
+        <textarea id="covered" rows="5" placeholder="Set up the hardware wallet from scratch&#10;Generated and verified the recovery phrase&#10;Sent a test amount and confirmed it landed&#10;Moved the balance across"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== setup record (onboarding) ===== -->
+  <section class="block" id="blk-setup">
+    <div class="block__head">
+      <span class="micro">Setup record</span>
+      <span class="micro micro--dim">No seed words, no serial numbers, ever</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid grid--2">
+      <div class="field"><label class="micro" for="device">Device</label>
+        <input type="text" id="device" placeholder="Make and model"></div>
+      <div class="field"><label class="micro" for="firmware">Firmware checked</label>
+        <input type="text" id="firmware" placeholder="Version, and how it was verified"></div>
+      <div class="field"><label class="micro" for="backups">Backup copies</label>
+        <input type="text" id="backups" placeholder="How many, what medium"></div>
+      <div class="field"><label class="micro" for="locations">Backup locations</label>
+        <input type="text" id="locations" placeholder="Described in general terms only"></div>
+      <div class="field"><label class="micro" for="passphrase">Passphrase in use</label>
+        <select id="passphrase"><option>Not discussed</option><option>No</option><option>Yes</option></select></div>
+      <div class="field"><label class="micro" for="testtx">Test transaction</label>
+        <input type="text" id="testtx" placeholder="Sent, received, confirmed on device"></div>
+    </div>
+  </section>
+
+  <!-- ===== custody surfaces (review) ===== -->
+  <section class="block hidden" id="blk-surfaces">
+    <div class="block__head">
+      <span class="micro">Custody surfaces</span>
+      <span class="micro micro--dim">The four channels on Sheet 01</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div id="surfaces"></div>
+  </section>
+
+  <!-- ===== actions ===== -->
+  <section class="block">
+    <div class="block__head">
+      <span class="micro">What to fix, worst first</span>
+      <span class="micro micro--dim">Ordered on output by priority</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid"><div id="actions"></div>
+      <div><button type="button" class="btn btn--ghost" id="addAction">+ Add action</button></div>
+    </div>
+  </section>
+
+  <!-- ===== already fine ===== -->
+  <section class="block">
+    <div class="block__head">
+      <span class="micro">Already fine</span>
+      <span class="micro micro--dim">So they know what to stop worrying about</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid"><div class="field">
+      <textarea id="fine" rows="4" placeholder="Backup medium is sound and stored apart from the device&#10;Device was bought direct and firmware verifies clean"></textarea>
+    </div></div>
+  </section>
+
+  <!-- ===== follow-up ===== -->
+  <section class="block">
+    <div class="block__head">
+      <span class="micro">Follow-up</span>
+      <span class="micro micro--dim">Thread closes one month after the session</span>
+    </div>
+    <hr class="rule rule--hair">
+    <div class="grid grid--2">
+      <div class="field"><label class="micro" for="recheck">Re-check offered</label>
+        <select id="recheck"><option>Yes — once the actions are done</option><option>Not applicable</option></select></div>
+      <div class="field"><label class="micro" for="closes">Thread closes</label>
+        <input type="text" id="closes" readonly placeholder="Set the session date"></div>
+      <div class="field" style="grid-column:1/-1"><label class="micro" for="note">Anything else</label>
+        <textarea id="note" rows="3" placeholder="Optional closing line in your own words."></textarea></div>
+    </div>
+  </section>
+
+  <!-- ===== output ===== -->
+  <section class="out">
+    <hr class="rule">
+    <div class="out__bar" style="padding-top:.7rem">
+      <span class="micro">Summary — ready to send</span>
+      <div class="out__acts">
+        <button type="button" class="btn btn--ghost" id="clear">Clear session</button>
+        <button type="button" class="btn btn--accent" id="copy">Copy summary</button>
+      </div>
+    </div>
+    <pre class="out__pre" id="preview"></pre>
+    <p class="foot micro micro--dim">Paste into your email client. Read it once before you send — it is a draft, not a document.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var SURFACES = [
+    ['phishing','Phishing','Approvals, addresses, on-device verification'],
+    ['device','Device','Sourcing, firmware, the signing environment'],
+    ['backup','Backup loss','Redundancy, medium, geography, passphrase'],
+    ['succession','Succession','Whether recovery is written down and tested']
+  ];
+  var STATES = ['Fine','Needs attention','Critical'];
+  var KEY = 'kc-session-draft';
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* build the four custody surfaces */
+  $('surfaces').innerHTML = SURFACES.map(function(s){
+    return '<div class="surface"><div class="surface__top">' +
+      '<span class="surface__name">' + s[1] + '</span><div class="states">' +
+      STATES.map(function(st,i){
+        var id = s[0] + '-' + i;
+        return '<input type="radio" name="' + s[0] + '" id="' + id + '" value="' + st + '"' +
+               (i===0?' checked':'') + '><label for="' + id + '">' + st + '</label>';
+      }).join('') +
+      '</div></div><textarea id="' + s[0] + '-note" rows="2" placeholder="' + s[2] + '"></textarea></div>';
+  }).join('');
+
+  /* actions */
+  function addAction(p, t){
+    var row = document.createElement('div');
+    row.className = 'action';
+    row.innerHTML = '<select class="a-pri">' +
+        ['1 — Do first','2 — Soon','3 — When you can'].map(function(o){
+          return '<option' + (o===p?' selected':'') + '>' + o + '</option>'; }).join('') +
+      '</select><input type="text" class="a-txt" placeholder="What to change, and why it matters">' +
+      '<button type="button" class="btn btn--x" aria-label="Remove this action">Remove</button>';
+    row.querySelector('button').addEventListener('click', function(){ row.remove(); render(); });
+    row.addEventListener('input', render);
+    if (t) row.querySelector('.a-txt').value = t;
+    $('actions').appendChild(row);
+  }
+
+  function lines(v){ return (v||'').split('\n').map(function(l){return l.trim();}).filter(Boolean); }
+  function fmt(d){
+    if(!d) return '';
+    var p = d.split('-');
+    return new Date(p[0], p[1]-1, p[2]).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  }
+  function plusMonth(d){
+    if(!d) return '';
+    var p = d.split('-'), dt = new Date(p[0], p[1]-1, p[2]);
+    dt.setMonth(dt.getMonth()+1);
+    return dt.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  }
+
+  function build(){
+    var isReview = $('service').value.indexOf('review') > -1;
+    var name = $('client').value.trim();
+    var L = [];
+    L.push('KEYCOMPASS — SESSION SUMMARY');
+    L.push('');
+    if(name) L.push('For:      ' + name);
+    if($('date').value) L.push('Date:     ' + fmt($('date').value));
+    L.push('Service:  ' + $('service').value);
+    L.push('');
+    L.push('----------------------------------------------------------');
+    L.push('');
+
+    var cov = lines($('covered').value);
+    if(cov.length){ L.push('WHAT WE COVERED',''); cov.forEach(function(c){ L.push('  - ' + c); }); L.push(''); }
+
+    if(isReview){
+      var any = SURFACES.some(function(s){
+        return document.querySelector('input[name="'+s[0]+'"]:checked').value !== 'Fine' || $(s[0]+'-note').value.trim();
+      });
+      if(any){
+        L.push('WHAT I CHECKED','');
+        SURFACES.forEach(function(s){
+          var st = document.querySelector('input[name="'+s[0]+'"]:checked').value;
+          var nt = $(s[0]+'-note').value.trim();
+          L.push('  ' + s[1] + ' — ' + st.toLowerCase());
+          if(nt) L.push('    ' + nt);
+        });
+        L.push('');
+      }
+    } else {
+      var setup = [['Device',$('device').value],['Firmware',$('firmware').value],
+                   ['Backups',$('backups').value],['Locations',$('locations').value],
+                   ['Passphrase',$('passphrase').value === 'Not discussed' ? '' : $('passphrase').value],
+                   ['Test transaction',$('testtx').value]]
+                 .filter(function(r){ return r[1] && r[1].trim(); });
+      if(setup.length){
+        L.push('YOUR SETUP, AS IT NOW STANDS','');
+        setup.forEach(function(r){ L.push('  ' + r[0] + ': ' + r[1].trim()); });
+        L.push('');
+      }
+    }
+
+    var acts = [].slice.call(document.querySelectorAll('.action'))
+      .map(function(r){ return { p:r.querySelector('.a-pri').value, t:r.querySelector('.a-txt').value.trim() }; })
+      .filter(function(a){ return a.t; })
+      .sort(function(a,b){ return a.p.localeCompare(b.p); });
+    if(acts.length){
+      L.push('WHAT TO FIX, WORST FIRST','');
+      acts.forEach(function(a,i){ L.push('  ' + (i+1) + '. ' + a.t + '   [' + a.p.split(' — ')[1] + ']'); });
+      L.push('');
+    }
+
+    var fine = lines($('fine').value);
+    if(fine.length){
+      L.push("WHAT IS ALREADY FINE",'');
+      fine.forEach(function(f){ L.push('  - ' + f); });
+      L.push('');
+    }
+
+    L.push('FOLLOW-UP','');
+    if($('closes').value) L.push('  Your follow-up thread is open until ' + $('closes').value + '.');
+    L.push('  Reply to this email with anything that comes up before then.');
+    if($('recheck').value.indexOf('Yes') === 0) L.push('  When the actions above are done, send me a note and I will re-check.');
+    if($('note').value.trim()){ L.push(''); L.push('  ' + $('note').value.trim()); }
+    L.push('');
+    L.push('----------------------------------------------------------');
+    L.push('');
+    L.push('KeyCompass never holds your keys, your recovery phrase, or your');
+    L.push('funds, and will never ask you for them. Nothing here is investment,');
+    L.push('legal or tax advice.');
+    return L.join('\n');
+  }
+
+  function render(){
+    $('closes').value = plusMonth($('date').value);
+    var isReview = $('service').value.indexOf('review') > -1;
+    $('blk-surfaces').classList.toggle('hidden', !isReview);
+    $('blk-setup').classList.toggle('hidden', isReview);
+    $('preview').textContent = build();
+    save();
+  }
+
+  /* draft autosave — local to this browser, cleared by the Clear button */
+  function save(){
+    try{
+      var d = {};
+      document.querySelectorAll('input[type=text],input[type=date],select,textarea').forEach(function(el){
+        if(el.id) d[el.id] = el.value;
+      });
+      d._st = SURFACES.map(function(s){ return document.querySelector('input[name="'+s[0]+'"]:checked').value; });
+      d._ac = [].slice.call(document.querySelectorAll('.action')).map(function(r){
+        return [r.querySelector('.a-pri').value, r.querySelector('.a-txt').value]; });
+      localStorage.setItem(KEY, JSON.stringify(d));
+    }catch(e){}
+  }
+  function load(){
+    try{
+      var d = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if(!d) return false;
+      Object.keys(d).forEach(function(k){ if(k[0] !== '_' && $(k)) $(k).value = d[k]; });
+      (d._st||[]).forEach(function(v,i){
+        var r = document.querySelector('input[name="'+SURFACES[i][0]+'"][value="'+v+'"]'); if(r) r.checked = true; });
+      (d._ac||[]).forEach(function(a){ addAction(a[0], a[1]); });
+      return true;
+    }catch(e){ return false; }
+  }
+
+  document.addEventListener('input', render);
+  document.addEventListener('change', render);
+  $('addAction').addEventListener('click', function(){ addAction(); render(); });
+  $('copy').addEventListener('click', function(){
+    var btn = this;
+    navigator.clipboard.writeText(build()).then(function(){
+      var t = btn.textContent; btn.textContent = 'Copied';
+      setTimeout(function(){ btn.textContent = t; }, 1600);
+    });
+  });
+  $('clear').addEventListener('click', function(){
+    if(!confirm('Clear this session? The notes are not saved anywhere else.')) return;
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    location.reload();
+  });
+
+  if(!load()) { $('date').valueAsDate = new Date(); addAction(); }
+  render();
+}());
+</script>
+</body>
+</html>
