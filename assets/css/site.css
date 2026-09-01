@@ -353,20 +353,10 @@ body{
 .founder__copy .h2{margin-bottom:.5rem;max-width:18ch}
 .founder__copy p{color:#bdb7b5}
 .founder__copy .lead{color:var(--ground)}
-.specs{align-self:start;width:100%}
-.specs__row{
-  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
-  padding:.85rem 0;border-bottom:1px solid var(--line-d);
-}
-.specs__row:first-child{border-top:1px solid var(--line-d)}
-.specs dt{
-  font-family:var(--mono);font-size:.625rem;font-weight:500;
-  text-transform:uppercase;letter-spacing:.09em;color:var(--dim);
-}
-.specs dd{
-  margin:0;font-weight:600;font-size:1.0625rem;letter-spacing:-.02em;
-  text-align:right;color:var(--ground);
-}
+/* The only photograph on the site. No frame, no filter, no radius — it is
+   already monochrome and sits in the palette unaided. */
+.portrait{width:100%;overflow:hidden}
+.portrait img{display:block;width:100%;height:auto}
 
 /* --- faq ----------------------------------------------------------------- */
 .faq{border-top:var(--rule) solid var(--ink)}
@@ -436,7 +426,7 @@ body{
      No nowrap: an edited headline that is longer just wraps instead of clipping. */
   .hero__title{font-size:min(5.2vw,4.6rem)}
   .boundary__grid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);align-items:start}
-  .founder__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:start}
+  .founder__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center}
   .steps{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(2rem,4vw,4rem)}
   .step{padding-inline:0}
   .book{text-align:left}
@@ -514,6 +504,9 @@ body{
   opacity:1;transform:none;
   transition:opacity .75s var(--ease),transform .75s var(--ease);
 }
+.js [data-reveal] .portrait img{transform:scale(1.06)}
+[data-reveal].is-in .portrait img{transform:none;transition:transform 1.5s var(--ease)}
+
 [data-reveal].is-in .wrap>*:nth-child(3){transition-delay:.14s}
 [data-reveal].is-in .wrap>*:nth-child(4){transition-delay:.2s}
 [data-reveal].is-in .wrap>*:nth-child(5){transition-delay:.26s}
@@ -530,6 +523,7 @@ body{
   }
   /* the drawing's rotated labels keep their transform — only the fade is dropped */
   .ch__edge,.ch__lbl,.plan__names text{opacity:1!important}
+  .portrait img{transform:none!important}
   .plan__rings .ring,.ring--core{stroke-dashoffset:0!important}
 }
 
