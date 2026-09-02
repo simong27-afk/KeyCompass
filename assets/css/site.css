@@ -205,6 +205,11 @@ body{
 .hdr .btn{margin-left:auto}
 .hdr__nav+.btn{margin-left:0}
 
+/* Netlify injects a "Powered by Netlify" badge into every published page as an
+   iframe. Hidden here; the redirect in netlify.toml also tries to stop the
+   script loading at all. */
+#nl-badge-frame,#nl-hud-frame,netlify-hud{display:none!important}
+
 /* --- mobile menu --------------------------------------------------------- */
 .narrow-only{display:none}
 .menubtn{
@@ -515,6 +520,9 @@ body{
 }
 @media (max-width:820px){
   .hdr__nav{display:none}
+  /* The nav is hidden but still in the DOM, so .hdr__nav+.btn kept matching and
+     cancelled the auto-margin — leaving the CTA stranded beside the logo. */
+  .hdr__nav+.btn{margin-left:auto}
   .menubtn{display:inline-flex}
   .wide-only{display:none}          /* the header CTA shortens to "Book" */
   .narrow-only{display:inline}

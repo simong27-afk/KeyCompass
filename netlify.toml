@@ -36,6 +36,14 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
 
+# Netlify's injected badge script. Reserved /.netlify/ paths may ignore this,
+# so the CSS rule is the guaranteed half of the fix.
+[[redirects]]
+  from = "/.netlify/scripts/hud"
+  to = "/404.html"
+  status = 404
+  force = true
+
 # The session tool holds client notes. It stays in the repo and works locally,
 # but is not reachable on the live site. Delete this block to publish it.
 [[redirects]]
