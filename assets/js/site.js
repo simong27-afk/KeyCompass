@@ -49,6 +49,17 @@
      has finished animating before you arrive, while the one below it is caught
      half-drawn. Handle these jumps explicitly instead: show everything passed
      over without animating it, hold the target back, and reveal it on landing. */
+  /* A section's box starts about 130px of padding above its first line of
+     content, so scrolling to the box leaves the page looking like it stopped
+     short. Aim at the content instead, clearing the sticky header. */
+  function navScrollTop(el) {
+    var hdr = document.getElementById('hdr');
+    var h = hdr ? hdr.getBoundingClientRect().height : 0;
+    var wrap = el.querySelector(':scope > .wrap');
+    var anchor = (wrap && wrap.firstElementChild) ? wrap.firstElementChild : el;
+    return Math.max(0, anchor.getBoundingClientRect().top + window.scrollY - h - 20);
+  }
+
   /* Reveal the target as it comes into view rather than once the scroll has
      fully stopped. The animation then overlaps the tail of the travel instead
      of starting after a dead pause. */
@@ -98,7 +109,7 @@
     }
 
     if (history.pushState) history.pushState(null, '', '#' + id);
-    el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    window.scrollTo({ top: navScrollTop(el), behavior: reduced ? 'auto' : 'smooth' });
   });
 
   /* Arriving on a link straight to a section: same problem, same treatment. */
@@ -111,6 +122,11 @@
           if (io) io.unobserve(s);
         }
       });
+      var settle = function () {
+        window.scrollTo({ top: navScrollTop(landed), behavior: 'auto' });
+      };
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
+      setTimeout(settle, 350);
     }
   }
 

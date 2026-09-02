@@ -86,7 +86,9 @@ body{
 .sec--ink{background:var(--ink);color:var(--ground)}
 .sec--ground{background:var(--ground);color:var(--ink)}
 .sec--accent{background:var(--accent);color:var(--ink)}
-.sec[id]{scroll-margin-top:5rem}
+/* Fallback for a hash landing before JS runs: pull the scroll past the
+   section's own top padding so its first line clears the header. */
+.sec[id]{scroll-margin-top:calc(5.625rem - var(--sec-y))}
 
 /* --- typography ---------------------------------------------------------- */
 .h2{
