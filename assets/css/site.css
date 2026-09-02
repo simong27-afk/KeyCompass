@@ -534,12 +534,12 @@ body{
 
 /* Reached from the nav: the reveal already overlaps the tail of the scroll, so
    it runs shorter and with a tighter stagger than one met by scrolling. */
-[data-reveal].is-nav.is-in .rowhead{transition-duration:.3s}
-[data-reveal].is-nav.is-in .rule{transition-duration:.42s;transition-delay:.04s}
-[data-reveal].is-nav.is-in .wrap>*:not(.rowhead):not(.rule){transition-duration:.4s}
-[data-reveal].is-nav.is-in .wrap>*:nth-child(3){transition-delay:.06s}
-[data-reveal].is-nav.is-in .wrap>*:nth-child(4){transition-delay:.1s}
-[data-reveal].is-nav.is-in .wrap>*:nth-child(5){transition-delay:.14s}
+[data-reveal].is-nav.is-in .rowhead{transition-duration:.42s}
+[data-reveal].is-nav.is-in .rule{transition-duration:.58s;transition-delay:.06s}
+[data-reveal].is-nav.is-in .wrap>*:not(.rowhead):not(.rule){transition-duration:.55s}
+[data-reveal].is-nav.is-in .wrap>*:nth-child(3){transition-delay:.09s}
+[data-reveal].is-nav.is-in .wrap>*:nth-child(4){transition-delay:.14s}
+[data-reveal].is-nav.is-in .wrap>*:nth-child(5){transition-delay:.19s}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
