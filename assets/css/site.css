@@ -222,6 +222,9 @@ body{
 .hdr.is-open .menubtn__rules i:nth-child(2){opacity:0}
 .hdr.is-open .menubtn__rules i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+/* [hidden] hides via the UA stylesheet, whose specificity loses to the class
+   rule below — so this has to be stated explicitly or the panel renders open. */
+.menu[hidden]{display:none}
 .menu{
   position:fixed;inset:0;z-index:40;background:var(--pitch);
   padding:6rem var(--gut) var(--gut);
