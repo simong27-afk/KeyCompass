@@ -397,6 +397,8 @@ body{
 .qa summary:hover{color:var(--accent-deep)}
 .qa__body{padding-bottom:1.5rem;max-width:68ch}
 .qa__body p{color:#4a4543}
+.qa__body p + p{margin-top:1rem}
+.qa__body strong{color:var(--ink);font-weight:600}
 
 /* --- book ---------------------------------------------------------------- */
 .book__grid{display:grid;gap:clamp(2.5rem,5vw,4rem);grid-template-columns:minmax(0,1fr);align-items:end}
