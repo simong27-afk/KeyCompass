@@ -43,6 +43,73 @@
     Array.prototype.forEach.call(sections, function (s) { io.observe(s); });
   }
 
+  /* --- in-page navigation -------------------------------------------------- */
+  /* Smooth scrolling travels through every section between here and the target,
+     and the observer reveals each one in flight — so the section you asked for
+     has finished animating before you arrive, while the one below it is caught
+     half-drawn. Handle these jumps explicitly instead: show everything passed
+     over without animating it, hold the target back, and reveal it on landing. */
+  function onSettled(fn) {
+    var done = false;
+    function once() { if (!done) { done = true; fn(); } }
+    if ('onscrollend' in window) {
+      window.addEventListener('scrollend', once, { once: true });
+      setTimeout(once, 1400);                 // safety net
+    } else {
+      var last = -1;
+      (function poll() {
+        if (Math.abs(window.scrollY - last) < 1) return once();
+        last = window.scrollY;
+        setTimeout(poll, 100);
+      }());
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a || a.hasAttribute('data-cal-link')) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+
+    e.preventDefault();
+    var target = el.matches('[data-reveal]') ? el : el.closest('[data-reveal]');
+
+    Array.prototype.forEach.call(sections, function (s) {
+      if (s !== target && s.offsetTop < el.offsetTop) {
+        s.classList.add('no-anim', 'is-in');
+        if (io) io.unobserve(s);
+      }
+    });
+
+    if (target && !reduced) {
+      var r = el.getBoundingClientRect();
+      var alreadyThere = r.top < window.innerHeight * 0.6 && r.bottom > 0;
+      if (!alreadyThere) {
+        target.classList.remove('is-in', 'no-anim');
+        if (io) io.unobserve(target);
+        onSettled(function () { target.classList.add('is-in'); });
+      }
+    }
+
+    if (history.pushState) history.pushState(null, '', '#' + id);
+    el.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  /* Arriving on a link straight to a section: same problem, same treatment. */
+  if (location.hash.length > 1) {
+    var landed = document.getElementById(location.hash.slice(1));
+    if (landed) {
+      Array.prototype.forEach.call(sections, function (s) {
+        if (s.offsetTop < landed.offsetTop) {
+          s.classList.add('no-anim', 'is-in');
+          if (io) io.unobserve(s);
+        }
+      });
+    }
+  }
+
   /* --- booking buttons ---------------------------------------------------- */
   /* Each booking button is a real link to the Cal.com page, so a blocked embed
      still gets the visitor to the calendar. Cal opens its own modal on click

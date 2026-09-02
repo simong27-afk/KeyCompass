@@ -515,6 +515,10 @@ body{
 .js [data-reveal] .rule{opacity:0;transform:scaleX(0)}
 .js [data-reveal] .wrap>*:not(.rowhead):not(.rule){opacity:0;transform:translateY(18px)}
 
+/* Sections jumped over by an in-page link: shown, but never animated, so they
+   are not caught mid-transition as the page flies past them. */
+.no-anim .rowhead,.no-anim .rule,.no-anim .wrap>*{transition:none!important}
+
 [data-reveal].is-in .rowhead{opacity:1;transition:opacity .6s var(--ease)}
 [data-reveal].is-in .rule{opacity:1;transform:scaleX(1);transition:transform .9s var(--ease) .08s,opacity .1s}
 [data-reveal].is-in .wrap>*:not(.rowhead):not(.rule){
