@@ -50,6 +50,24 @@
       <a href="#faq">Questions</a>
     </nav>
     <a class="btn btn--accent btn--sm" href="https://cal.com/simongeils/15min"
+       data-cal-namespace="intake" data-cal-link="simongeils/15min"><span class="wide-only">Book a session</span><span class="narrow-only">Book</span></a>
+    <button class="menubtn" id="menubtn" type="button"
+            aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span class="menubtn__rules" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu. The page is ~11 screens on a phone, so the sections need a
+       way in that is not scrolling. Built from the same 2px rules as the rest
+       of the page rather than a borrowed hamburger. -->
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__nav" aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#method">How it works</a>
+      <a href="#who">Who it's for</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn btn--accent menu__cta" href="https://cal.com/simongeils/15min"
        data-cal-namespace="intake" data-cal-link="simongeils/15min">Book a session</a>
   </div>
 </header>

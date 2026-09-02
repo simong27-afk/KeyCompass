@@ -205,6 +205,39 @@ body{
 .hdr .btn{margin-left:auto}
 .hdr__nav+.btn{margin-left:0}
 
+/* --- mobile menu --------------------------------------------------------- */
+.narrow-only{display:none}
+.menubtn{
+  display:none;align-items:center;justify-content:center;
+  width:44px;height:44px;margin-left:.35rem;padding:0;
+  background:none;border:0;border-radius:0;cursor:pointer;color:var(--ground);
+}
+.menubtn__rules{display:block;width:22px}
+.menubtn__rules i{
+  display:block;height:2px;background:currentColor;
+  transition:transform .3s var(--ease),opacity .2s var(--ease);
+}
+.menubtn__rules i+i{margin-top:5px}
+.hdr.is-open .menubtn__rules i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hdr.is-open .menubtn__rules i:nth-child(2){opacity:0}
+.hdr.is-open .menubtn__rules i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.menu{
+  position:fixed;inset:0;z-index:40;background:var(--pitch);
+  padding:6rem var(--gut) var(--gut);
+  display:flex;flex-direction:column;justify-content:center;gap:2.5rem;
+  overflow-y:auto;
+}
+.menu__nav{display:flex;flex-direction:column;border-top:var(--rule) solid rgba(243,242,242,.9)}
+.menu__nav a{
+  padding:1.15rem 0;border-bottom:1px solid var(--line-d);
+  font-size:clamp(1.5rem,7vw,2.125rem);font-weight:600;letter-spacing:-.028em;
+  line-height:1.1;text-decoration:none;color:var(--ground);
+  transition:color .2s var(--ease),padding-left .3s var(--ease);
+}
+.menu__nav a:hover,.menu__nav a:focus-visible{color:var(--accent);padding-left:.5rem}
+.menu__cta{align-self:flex-start}
+
 /* --- hero ---------------------------------------------------------------- */
 .hero{padding-top:clamp(2.5rem,5vw,4rem);padding-bottom:clamp(3.5rem,7vw,6rem)}
 .hero__grid{
@@ -478,9 +511,15 @@ body{
 }
 @media (max-width:820px){
   .hdr__nav{display:none}
+  .menubtn{display:inline-flex}
+  .wide-only{display:none}          /* the header CTA shortens to "Book" */
+  .narrow-only{display:inline}
   /* Thumb-sized hit areas: both of these fell short of the 44px minimum. */
   .hdr .btn{min-height:44px}
   .social__link{min-height:44px}
+}
+@media (min-width:821px){
+  .menu{display:none!important}
 }
 
 /* ==========================================================================

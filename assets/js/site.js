@@ -49,6 +49,40 @@
     Array.prototype.forEach.call(sections, function (s) { io.observe(s); });
   }
 
+  /* --- mobile menu --------------------------------------------------------- */
+  var menuBtn = document.getElementById('menubtn');
+  var menu = document.getElementById('menu');
+  if (menuBtn && menu && hdr) {
+    var lockedY = 0;
+    function setMenu(open) {
+      menu.hidden = !open;
+      hdr.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      if (open) {
+        lockedY = window.scrollY;
+        document.body.style.overflow = 'hidden';
+        var first = menu.querySelector('a');
+        if (first) first.focus();
+      } else {
+        document.body.style.overflow = '';
+      }
+    }
+    menuBtn.addEventListener('click', function () {
+      setMenu(menu.hidden);
+    });
+    /* Close before the section scroll runs, so the scroll lock is already off. */
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); }
+    });
+    /* Rotating the phone to landscape can cross the breakpoint mid-menu. */
+    window.addEventListener('resize', function () {
+      if (!menu.hidden && window.innerWidth > 820) setMenu(false);
+    });
+  }
+
   /* --- in-page navigation -------------------------------------------------- */
   /* Smooth scrolling travels through every section between here and the target,
      and the observer reveals each one in flight — so the section you asked for
