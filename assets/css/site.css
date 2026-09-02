@@ -478,6 +478,9 @@ body{
 }
 @media (max-width:820px){
   .hdr__nav{display:none}
+  /* Thumb-sized hit areas: both of these fell short of the 44px minimum. */
+  .hdr .btn{min-height:44px}
+  .social__link{min-height:44px}
 }
 
 /* ==========================================================================
