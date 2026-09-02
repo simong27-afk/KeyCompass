@@ -54,10 +54,12 @@ opens with the drawing and closes with the thing it was drawn from.
 
 ## Copy constraints
 
-Per business plan §4, the site must not name the former employer or invoke past association.
-Credibility is framed as years, QA/CSAT figures, and certifications only. The FCA-facing lines
-(the boundary section, the "is this financial advice" answer, and the footer risk warning) should
-be reviewed by a solicitor before publishing.
+The employer-naming restriction recorded in business plan §4 no longer applies: all restrictive
+covenants were released under a settlement agreement (confirmed 1 September 2026). The founder
+section may name former employers. Keep the settlement agreement filed — it is the record.
+
+The FCA-facing lines (the boundary section, the "is this financial advice" answer, and the footer
+risk warning) still want a solicitor's eye before publishing.
 
 ## Local preview
 
