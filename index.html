@@ -19,10 +19,11 @@
 <meta property="og:image" content="brand/social/og-image-1200x630.png">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="dns-prefetch" href="//app.cal.com">
 <script>document.documentElement.className+=" js";</script>
+<link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -332,9 +333,9 @@
       <details class="qa">
         <summary><span>How do I know it&rsquo;s really you?</span></summary>
         <div class="qa__body">
-          <p>I never make contact first. No cold call, no unexpected email, no message on Telegram or WhatsApp. Every conversation starts with you booking it &mdash; so anyone approaching you out of the blue claiming to be me is not me.</p>
-          <p>I write from one address: <strong>hello@keycompass.co.uk</strong>. Read it character by character before you reply. Lookalike domains cost a few pounds, a single swapped letter is the oldest trick in this business, and a convincing message from a near-miss address is still a scam.</p>
-          <p>And whoever appears to be asking, the answer to &ldquo;send me your recovery phrase&rdquo; is no. Not to me, not to support, not to anyone, ever. Someone asking is someone stealing from you, and stopping mid-sentence is always the right call.</p>
+          <p>I never make contact first. No cold call or phone call, ever. No unexpected email, no message on Telegram or WhatsApp. Every conversation starts with you booking it &mdash; so anyone approaching you out of the blue claiming to be me is not me.</p>
+          <p>I write from two addresses: <strong>hello@keycompass.co.uk & simon@keycompass.co.uk</strong>. Read it character by character before you reply. Lookalike domains cost a few pounds, a single swapped letter is the oldest trick in this business, and a convincing message from a near-miss address is still a scam.</p>
+          <p>And whoever appears to be asking, the answer to &ldquo;send me your recovery phrase&rdquo; is no. Not to me, not to support or suggested app, not to anyone, ever. Someone asking is someone stealing from you, and stopping mid-sentence is always the right call.</p>
         </div>
       </details>
       <details class="qa">
@@ -343,11 +344,11 @@
       </details>
       <details class="qa">
         <summary><span>Is this Bitcoin only?</span></summary>
-        <div class="qa__body"><p>No. The work covers the major assets and the wallets that hold them, rather than one chain. Multi-asset setups are usually where the interesting failure modes live, so they are squarely in scope for a review.</p></div>
+        <div class="qa__body"><p>No. The work covers most networks and the wallets that suppoort them, rather than one chain. Multi-asset setups are usually where the interesting failure modes live, so they are squarely in scope for a review. We will also strive to seek out setups that work with the more nuanced and new projects, ensuring we get the right setup that works for you.</p></div>
       </details>
       <details class="qa">
         <summary><span>I am not technical. Is that a problem?</span></summary>
-        <div class="qa__body"><p>Most clients are not. That is the job. Nothing in a session assumes prior knowledge, nothing is skipped because it seems obvious, and there is no question too basic to ask. If a session ends with you nodding along and not understanding, it has failed.</p></div>
+        <div class="qa__body"><p>Most clients are not. This is the value proposition. Nothing in a session assumes prior knowledge, nothing is skipped because it seems obvious, and there is no question too basic to ask. I am highly skilled in breaking down complex concepts into easily understandable guidance. If a session ends with you nodding along and not understanding, it has failed.</p></div>
       </details>
       <details class="qa">
         <summary><span>Where are you, and can we work together?</span></summary>
@@ -355,7 +356,7 @@
       </details>
       <details class="qa">
         <summary><span>Can you help with inheritance planning or a business treasury?</span></summary>
-        <div class="qa__body"><p>Not yet, and I would rather say that plainly than take the booking. Both touch outcomes that cannot be undone, so neither opens until professional indemnity insurance and solicitor-drafted engagement terms are confirmed in place. A security review can tell you today where your succession plan stands. If you need the full setup now, say so on the intake call and I will point you elsewhere.</p></div>
+        <div class="qa__body"><p>Not yet, and I would rather say that plainly than take the booking. This is something I am currently working on and plan to open up shortly. A security review can tell you today where your succession plan stands. If you need the full setup now, say so and I will gauge what we can and can't plan together, today.</p></div>
       </details>
     </div>
   </div>
@@ -426,20 +427,31 @@
 
 <script src="assets/js/site.js"></script>
 
-<!-- Cal.com booking. Attaches to any element carrying data-cal-link, so the
-     buttons keep their own styling and the calendar opens over the page.
-     Every booking button is also a plain link to the same page, so if this
-     script fails to load the click still reaches the calendar. -->
+<!-- Cal.com booking. The embed is not fetched on page load: it boots the first
+     time someone hovers, focuses or touches a Book button, so the ~90% of
+     visitors who never book pay nothing for it. Until it is ready the buttons
+     stay plain links to the same booking page. -->
 <script>
-(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-
-Cal("init", "intake", { origin: "https://cal.com" });
-Cal.ns.intake("ui", {
-  theme: "dark",
-  cssVarsPerTheme: { dark: { "cal-brand": "#ec3013" }, light: { "cal-brand": "#b3210e" } },
-  hideEventTypeDetails: false,
-  layout: "month_view"
-});
+(function(){
+  var booted = false;
+  function boot(){
+    if (booted) return; booted = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "intake", { origin: "https://cal.com" });
+    Cal.ns.intake("ui", {
+      theme: "dark",
+      cssVarsPerTheme: { dark: { "cal-brand": "#ec3013" }, light: { "cal-brand": "#b3210e" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  }
+  var btns = document.querySelectorAll('[data-cal-link]');
+  ['pointerenter','focus','touchstart'].forEach(function(ev){
+    Array.prototype.forEach.call(btns, function(el){
+      el.addEventListener(ev, boot, { once: true, passive: true });
+    });
+  });
+}());
 </script>
 </body>
 </html>

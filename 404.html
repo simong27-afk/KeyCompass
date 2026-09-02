@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — KeyCompass</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<style>
+:root{--pitch:#141312;--ground:#f3f2f2;--accent:#ec3013;--dim:#9a9391;
+  --font:"Archivo","Helvetica Neue",system-ui,sans-serif;--mono:"Martian Mono",ui-monospace,monospace;
+  color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  background:var(--pitch);color:var(--ground);font-family:var(--font);
+  padding:clamp(1.25rem,4vw,3.5rem);-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:1380px;margin-inline:auto}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  flex-wrap:wrap;padding-bottom:.7rem}
+.micro{font-family:var(--mono);font-size:.6875rem;font-weight:500;text-transform:uppercase;
+  letter-spacing:.08em}
+.dim{color:var(--dim)}
+hr{border:0;height:2px;background:rgba(243,242,242,.9);margin:0}
+h1{font-size:clamp(2.25rem,6vw,4.5rem);font-weight:700;line-height:.92;letter-spacing:-.035em;
+  margin:clamp(2.5rem,6vw,4rem) 0 1.25rem;max-width:16ch}
+p{max-width:46ch;line-height:1.55;letter-spacing:-.012em;color:#cfc9c7;margin:0}
+a.btn{display:inline-flex;align-items:center;margin-top:clamp(2rem,4vw,2.75rem);
+  padding:1rem 1.6rem;background:var(--accent);color:#fff;text-decoration:none;
+  border:2px solid var(--accent);font-family:var(--mono);font-size:.75rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.07em;transition:background .3s,color .3s}
+a.btn:hover,a.btn:focus-visible{background:#fff;color:#b3210e}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row"><span class="micro">Error 404</span><span class="micro dim">Page not found</span></div>
+    <hr>
+    <h1>That page is not here.</h1>
+    <p>The link is wrong, or the page has moved. Nothing has broken and nothing is lost — head back to the start.</p>
+    <a class="btn" href="/">Back to KeyCompass</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+# Netlify configuration. The repo root is the site — nothing is built.
+
+[build]
+  publish = "."
+  command = ""
+
+# Fonts are content-stable: the filename only changes if the font itself does.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# CSS and JS change while the site is being edited, so revalidate rather than
+# cache hard. Netlify's ETags make this cheap.
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# The session tool holds client notes. It stays in the repo and works locally,
+# but is not reachable on the live site. Delete this block to publish it.
+[[redirects]]
+  from = "/tools/*"
+  to = "/404.html"
+  status = 404
