@@ -81,10 +81,11 @@
 
       <!-- ---- SIGNATURE: custody surface schematic ---- -->
       <figure class="plan" id="plan">
+        <!-- Named with aria-label rather than a <title> child: browsers render
+             an SVG <title> as a native tooltip, which popped up over whichever
+             channel you were pointing at. -->
         <svg class="plan__svg" viewBox="0 0 440 440" role="img"
-             aria-labelledby="plan-t plan-d">
-          <title id="plan-t">Custody surfaces schematic</title>
-          <desc id="plan-d">A plan view of a custody setup: an outer access perimeter and an inner backup perimeter around a core of keys, with four channels cut through them — phishing, device, backup loss and succession.</desc>
+             aria-label="Custody surfaces schematic" aria-describedby="plan-desc">
 
           <mask id="chmask">
             <rect x="0" y="0" width="440" height="440" fill="#fff"/>
@@ -137,6 +138,8 @@
             </g>
           </g>
         </svg>
+
+        <p class="vh" id="plan-desc">A plan view of a custody setup: an outer access perimeter and an inner backup perimeter around a core of keys, with four channels cut through them &mdash; phishing, device, backup loss and succession.</p>
 
         <figcaption class="tblock">
           <div class="tblock__row">
