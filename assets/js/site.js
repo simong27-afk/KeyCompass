@@ -114,7 +114,11 @@
       }
     }
 
-    if (history.pushState) history.pushState(null, '', '#' + id);
+    /* Deliberately not writing the hash to the URL. Doing so left whichever
+       section you last clicked stuck in the address bar, so returning to the
+       site from history reopened it partway down; it also cost a history entry
+       per click, making Back walk backwards through sections instead of leaving.
+       An inbound link that already carries a hash is still honoured below. */
     window.scrollTo({ top: navScrollTop(el), behavior: reduced ? 'auto' : 'smooth' });
   });
 
