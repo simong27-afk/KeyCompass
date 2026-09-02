@@ -42,3 +42,6 @@
   from = "/tools/*"
   to = "/404.html"
   status = 404
+  # Without force, a redirect only fires when no real file matches — and the
+  # tool is a real file, so it was served instead.
+  force = true
