@@ -18,6 +18,12 @@
     start();
   }
 
+  /* Safari restores the previous scroll position on reload, and when a
+     backgrounded tab is reopened — which lands you mid-page on what feels like
+     a fresh visit. Take that over: a bare URL starts at the top, and a URL
+     carrying a hash goes to its section because that is what it asked for. */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
   /* --- sticky header ----------------------------------------------------- */
   var hdr = document.getElementById('hdr');
   if (hdr) {
