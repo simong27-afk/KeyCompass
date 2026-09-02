@@ -1,11 +1,5 @@
-# STAGING — blocks all indexing while the site is tested on *.netlify.app.
-# Say "go public" and this reverts to the launch version below.
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /tools/
 
-# --- launch version -------------------------------------------------------
-# User-agent: *
-# Allow: /
-# Disallow: /tools/
-#
-# Sitemap: https://keycompass.co.uk/sitemap.xml
+Sitemap: https://keycompass.co.uk/sitemap.xml
