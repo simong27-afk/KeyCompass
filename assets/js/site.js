@@ -61,8 +61,8 @@
       if (open) {
         lockedY = window.scrollY;
         document.body.style.overflow = 'hidden';
-        var first = menu.querySelector('a');
-        if (first) first.focus();
+        menu.focus();          /* the panel, not the first link — focusing a
+                                  link made it look already selected */
       } else {
         document.body.style.overflow = '';
       }

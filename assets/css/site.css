@@ -236,7 +236,8 @@ body{
   transition:color .2s var(--ease),padding-left .3s var(--ease);
 }
 .menu__nav a:hover,.menu__nav a:focus-visible{color:var(--accent);padding-left:.5rem}
-.menu__cta{align-self:flex-start}
+.menu__cta{align-self:flex-start;flex:0 0 auto}
+.menu:focus{outline:none}
 
 /* --- hero ---------------------------------------------------------------- */
 .hero{padding-top:clamp(2.5rem,5vw,4rem);padding-bottom:clamp(3.5rem,7vw,6rem)}
