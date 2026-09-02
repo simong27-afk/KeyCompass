@@ -49,20 +49,24 @@
      has finished animating before you arrive, while the one below it is caught
      half-drawn. Handle these jumps explicitly instead: show everything passed
      over without animating it, hold the target back, and reveal it on landing. */
-  function onSettled(fn) {
-    var done = false;
-    function once() { if (!done) { done = true; fn(); } }
-    if ('onscrollend' in window) {
-      window.addEventListener('scrollend', once, { once: true });
-      setTimeout(once, 1400);                 // safety net
-    } else {
-      var last = -1;
-      (function poll() {
-        if (Math.abs(window.scrollY - last) < 1) return once();
-        last = window.scrollY;
-        setTimeout(poll, 100);
-      }());
+  /* Reveal the target as it comes into view rather than once the scroll has
+     fully stopped. The animation then overlaps the tail of the travel instead
+     of starting after a dead pause. */
+  function revealWhenNear(target, el) {
+    var fired = false;
+    function show() {
+      if (fired) return;
+      fired = true;
+      target.classList.add('is-nav', 'is-in');
     }
+    (function tick() {
+      if (fired) return;
+      var atEnd = window.innerHeight + window.scrollY >=
+                  document.documentElement.scrollHeight - 2;
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.7 || atEnd) return show();
+      requestAnimationFrame(tick);
+    }());
+    setTimeout(show, 800);                    // safety net
   }
 
   document.addEventListener('click', function (e) {
@@ -89,7 +93,7 @@
       if (!alreadyThere) {
         target.classList.remove('is-in', 'no-anim');
         if (io) io.unobserve(target);
-        onSettled(function () { target.classList.add('is-in'); });
+        revealWhenNear(target, el);
       }
     }
 
