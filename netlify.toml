@@ -27,14 +27,64 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# The site loads nothing from anywhere else: CSS, JS, fonts and images are all
+# self-hosted, and cal.com/LinkedIn are plain links rather than embeds. That
+# makes a strict policy essentially free.
+#
+# The two sha256 values are the inline <script> blocks in index.html — the "js"
+# class one in <head>, and the boot script at the end of <body>. Editing either
+# one changes its hash and the browser will refuse to run it, so run
+# tools/verify-csp.py after touching them.
 [[headers]]
   for = "/*"
   [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-tHd4qJ0R/vQfI0CbRTiL3XGSi+Tun7VhOcDbx08aLKA=' 'sha256-aNxa2emwiM9awtp9xWk6r2SIb7IqFnvxqdYvKsn2qsQ=' https://app.cal.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://cal.com https://app.cal.com; font-src 'self'; connect-src 'self' https://api.cal.com https://app.cal.com https://cal.com; frame-src https://cal.com https://app.cal.com; manifest-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# --- agent-facing files ---------------------------------------------------
+# The .md sources are the same content the HTML pages are built from, served
+# directly so an agent can read the site without parsing markup. Vary: Accept is
+# set here as well as in the edge function, so the correct cache behaviour
+# survives even if the function fails to deploy.
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=utf-8"
+    Vary = "Accept, Accept-Encoding"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# The four pages that negotiate on Accept (see
+# netlify/edge-functions/content-negotiation.ts). Without Accept in Vary a CDN
+# can serve a cached HTML variant to a client that asked for markdown.
+[[headers]]
+  for = "/"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
+[[headers]]
+  for = "/about"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
+[[headers]]
+  for = "/contact"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
+[[headers]]
+  for = "/privacy"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
 
 # Netlify's injected badge script. Reserved /.netlify/ paths may ignore this,
 # so the CSS rule is the guaranteed half of the fix.
