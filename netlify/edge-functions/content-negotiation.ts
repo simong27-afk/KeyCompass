@@ -23,6 +23,7 @@ const VARIANTS: Record<string, string> = {
   "/about": "/about.md",
   "/contact": "/contact.md",
   "/privacy": "/privacy.md",
+  "/developers": "/developers.md",
 };
 
 const MARKDOWN = "text/markdown";
@@ -189,6 +190,8 @@ export const config: Config = {
     "/export/*",
     "/tools/*",
     "/.netlify/*",
+    "/.well-known/*",
+    "/mcp",
     "/*.md",
     "/*.txt",
     "/*.xml",

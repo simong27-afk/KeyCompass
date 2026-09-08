@@ -2,8 +2,12 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 
-# Machine-readable summary and curated link list for AI agents:
-#   https://keycompass.co.uk/llms.txt
-#   https://keycompass.co.uk/agent-instructions.md
+# Machine-readable entry points for AI agents:
+#   https://keycompass.co.uk/llms.txt          summary and curated link list
+#   https://keycompass.co.uk/llms-full.txt     every page as one markdown document
+#   https://keycompass.co.uk/AGENTS.md         when to use KeyCompass, and the safety rules
+#   https://keycompass.co.uk/.well-known/mcp   MCP server discovery
+#   https://keycompass.co.uk/mcp               MCP endpoint (Streamable HTTP)
+#   https://keycompass.co.uk/developers        developer documentation
 
 Sitemap: https://keycompass.co.uk/sitemap.xml

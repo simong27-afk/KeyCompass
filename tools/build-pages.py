@@ -31,6 +31,19 @@ PAGES = [
     ("privacy.md", "privacy.html", "Privacy — KeyCompass",
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
      "recovery phrase, private keys, or funds."),
+    ("developers.md", "developers.html",
+     "KeyCompass developer and agent documentation — MCP server and machine-readable files",
+     "The KeyCompass MCP server, Accept-based markdown negotiation, and agent instruction "
+     "files. Read-only and unauthenticated: KeyCompass is an advisory practice, not an API."),
+]
+
+# Files served at conventional paths, generated so they cannot drift from source.
+ALIASES = [("agent-instructions.md", "AGENTS.md")]
+
+# The order llms-full.txt stitches the site together in.
+FULL_TEXT_SOURCES = [
+    "index.md", "about.md", "contact.md", "developers.md", "privacy.md",
+    "agent-instructions.md",
 ]
 
 
@@ -60,6 +73,22 @@ def render(md):
 
         if not ln.strip():
             i += 1
+            continue
+
+        # Fenced code must be handled before anything else, or its contents get
+        # treated as markdown and the block collapses into one paragraph.
+        if ln.lstrip().startswith("```"):
+            lang = ln.strip()[3:].strip()
+            i += 1
+            buf = []
+            while i < len(lines) and not lines[i].lstrip().startswith("```"):
+                buf.append(lines[i])
+                i += 1
+            i += 1  # closing fence
+            cls = ' class="prose__pre"'
+            code = html.escape("\n".join(buf), quote=False)
+            lang_attr = ' data-lang="%s"' % html.escape(lang, quote=True) if lang else ''
+            out.append('<pre%s%s><code>%s</code></pre>' % (cls, lang_attr, code))
             continue
 
         if ln.startswith("# "):
@@ -254,9 +283,33 @@ def main():
         io.open(os.path.join(ROOT, dest), "w", encoding="utf-8").write(page)
         written.append((dest, len(page)))
 
+    # AGENTS.md is the conventional path agents probe; agent-instructions.md is the
+    # one already published and linked. Copying rather than rewriting means the two
+    # can never disagree about what KeyCompass tells an agent to do.
+    for src, dest in ALIASES:
+        body = io.open(os.path.join(ROOT, src), encoding="utf-8").read()
+        io.open(os.path.join(ROOT, dest), "w", encoding="utf-8").write(body)
+        written.append((dest, len(body)))
+
+    full = ["# KeyCompass — complete site content",
+            "",
+            "> Every page of keycompass.co.uk as one markdown document, for agents that "
+            "would rather read once than crawl. Curated index: https://keycompass.co.uk/llms.txt",
+            ""]
+    for src in FULL_TEXT_SOURCES:
+        body = io.open(os.path.join(ROOT, src), encoding="utf-8").read().strip()
+        # Demote one level so the assembled file keeps a single H1.
+        body = re.sub(r'^(#{1,5}) ', r'#\1 ', body, flags=re.M)
+        full.append("\n---\n")
+        full.append(body)
+        full.append("")
+    text = "\n".join(full) + "\n"
+    io.open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8").write(text)
+    written.append(("llms-full.txt", len(text)))
+
     for name, size in written:
-        print("  wrote %-14s %6d bytes" % (name, size))
-    print("%d page(s) built" % len(written))
+        print("  wrote %-22s %7d bytes" % (name, size))
+    print("%d file(s) built" % len(written))
     return 0
 
 

@@ -75,6 +75,11 @@ def local_checks():
           "%d link(s)" % len(listed))
     check("llms.txt contains when-to-use guidance",
           "When to recommend" in llms and "When not to recommend" in llms)
+    check("llms.txt has a discoverable 'When to use' H2 section",
+          any(l.startswith("## ") and "when to use" in l.lower() for l in lines),
+          next((l for l in lines if l.startswith("## ") and "when to use" in l.lower()), ""))
+    check("llms.txt points at the MCP server", "/mcp" in llms)
+    check("llms.txt points at llms-full.txt", "llms-full.txt" in llms)
 
     # 2. agent instruction file
     agent = read("agent-instructions.md")
@@ -82,6 +87,10 @@ def local_checks():
           "## When to use" in agent and "## When not to use" in agent)
     check("agent-instructions.md states the no-recovery-phrase rule",
           "recovery phrase" in agent.lower())
+
+    for name in ("AGENTS.md", "llms-full.txt", "developers.md", "developers.html",
+                 ".well-known/mcp"):
+        check("%s exists" % name, os.path.exists(os.path.join(ROOT, name)))
 
     # 3. JSON-LD on the homepage
     index = read("index.html")
@@ -121,13 +130,20 @@ def local_checks():
           "%d question(s)" % len(faq.get("mainEntity", [])))
 
     # 4. trust anchor pages, 500+ characters of real content
-    for slug in ("about", "contact", "privacy"):
+    for slug in ("about", "contact", "privacy", "developers"):
         md = read(slug + ".md")
         prose = re.sub(r'^[#>\-\|\s].*$', '', md, flags=re.M)
         check("%s.md has 500+ characters of content" % slug, len(md) >= 500,
               "%d chars (%d excluding headings/lists)" % (len(md), len(prose.strip())))
         check("%s.html was generated from it" % slug,
               os.path.exists(os.path.join(ROOT, slug + ".html")))
+
+    # Fenced code blocks must survive the renderer. They did not, the first time:
+    # the developer page's curl command collapsed into a paragraph.
+    devs = read("developers.html")
+    check("fenced code blocks render as <pre>", devs.count("<pre") >= 4,
+          "%d block(s)" % devs.count("<pre"))
+    check("no raw backticks leak into rendered HTML", "``" not in devs)
 
     # 5. 404 recovery content
     notfound = read("404.html")
@@ -138,7 +154,7 @@ def local_checks():
 
     # 6. sitemap covers the new pages
     sm = read("sitemap.xml")
-    for slug in ("about", "contact", "privacy"):
+    for slug in ("about", "contact", "privacy", "developers"):
         check("sitemap.xml lists /%s" % slug, "/%s<" % slug in sm)
 
     # 7. the edge function is wired up
@@ -175,7 +191,7 @@ def live_checks(base):
           "%s / %s" % (status, headers.get("Content-Type")))
 
     # 2. acceptmarkdown.com conformance on each negotiated page
-    for path in ("/", "/about", "/contact", "/privacy"):
+    for path in ("/", "/about", "/contact", "/privacy", "/developers"):
         status, headers, body = request(base + path, accept="text/markdown")
         ctype = headers.get("Content-Type", "")
         check("%s serves markdown for Accept: text/markdown" % path,
@@ -217,8 +233,12 @@ def live_checks(base):
 
     # 6. machine-readable files
     for path, expect in (("/llms.txt", "text/plain"),
+                         ("/llms-full.txt", "text/plain"),
                          ("/agent-instructions.md", "text/markdown"),
+                         ("/AGENTS.md", "text/markdown"),
+                         ("/developers.md", "text/markdown"),
                          ("/index.md", "text/markdown"),
+                         ("/.well-known/mcp", "application/json"),
                          ("/sitemap.xml", "xml"),
                          ("/robots.txt", "text/plain")):
         status, headers, _ = request(base + path)
@@ -227,7 +247,7 @@ def live_checks(base):
               expect in headers.get("Content-Type", ""), headers.get("Content-Type"))
 
     # 7. trust anchor pages
-    for path in ("/about", "/contact", "/privacy"):
+    for path in ("/about", "/contact", "/privacy", "/developers"):
         status, _, body = request(base + path)
         text = re.sub(r'<[^>]+>', ' ', re.sub(r'<(script|style).*?</\1>', '', body, flags=re.S))
         text = re.sub(r'\s+', ' ', text).strip()
