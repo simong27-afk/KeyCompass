@@ -224,9 +224,17 @@ def live_checks(base):
           "accept" in [t.strip().lower() for t in headers.get("Vary", "").split(",")],
           headers.get("Vary"))
 
-    status, headers, body = request(base + "/", accept="application/json, text/html;q=0.1")
-    check("406 answers in JSON when JSON was asked for",
+    # A client offering only JSON accepts neither variant this URL has, so 406 is
+    # correct — and the 406 itself should be JSON. Note the Accept must exclude
+    # text/html entirely: "application/json, text/html;q=0.1" still accepts HTML,
+    # so serving HTML there is right and a 406 would be the bug.
+    status, headers, body = request(base + "/about", accept="application/json")
+    check("406 answers in JSON when only JSON is acceptable",
           status == 406 and "application/json" in headers.get("Content-Type", ""),
+          "%s / %s" % (status, headers.get("Content-Type")))
+    status, headers, _ = request(base + "/about", accept="application/json, text/html;q=0.1")
+    check("HTML is still served when the client accepts it at any q",
+          status == 200 and headers.get("Content-Type", "").startswith("text/html"),
           "%s / %s" % (status, headers.get("Content-Type")))
 
     # A browser must still get the HTML 404 page, not an error object.
