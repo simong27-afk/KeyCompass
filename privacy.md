@@ -5,8 +5,8 @@
 
 **Last updated:** 8 September 2026
 
-KeyCompass (Simon Geils) is the data controller for the personal data described here,
-and is registered with the Information Commissioner's Office.
+Simon Geils, trading as KeyCompass, is a sole trader and the data controller for the
+personal data described here, and is registered with the Information Commissioner's Office.
 Contact: [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk).
 
 ## The one thing worth saying first
@@ -34,8 +34,13 @@ privacy policy in addition to this one.
 ## Sessions
 
 Onboarding sessions and reviews run over **Google Meet**, on KeyCompass's Google Workspace
-account. Screen sharing runs on the practitioner's side only: you are never asked to share
-your screen, and everything sensitive stays on your side of the call.
+account. **Calls are not recorded** — there is no recording, no transcript, and no copy of
+the call kept afterwards. Screen sharing runs on the practitioner's side only: you are never
+asked to share your screen, and everything sensitive stays on your side of the call.
+
+The only record of a session is the written notes described below, and those never contain
+a recovery phrase, a private key, a password, a device serial number, a wallet address, or
+a balance.
 
 ## What is collected, and why
 
