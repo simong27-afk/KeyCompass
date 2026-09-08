@@ -88,6 +88,16 @@
 
 # Netlify's injected badge script. Reserved /.netlify/ paths may ignore this,
 # so the CSS rule is the guaranteed half of the fix.
+#
+# The CSP now blocks this script outright, which is the outcome this redirect and
+# that CSS rule were both reaching for. It leaves one console error on every
+# production page load — "Executing inline script violates ... script-src" — and
+# that error is EXPECTED. Nothing is broken by it: the badge is meant to be gone.
+# It does not appear locally, because the badge is only injected on deploys.
+#
+# Do not "fix" it by adding the hash Chrome suggests. The hash changes whenever
+# Netlify updates the badge, so it would need chasing forever, and allowing it
+# would un-hide the thing being hidden.
 [[redirects]]
   from = "/.netlify/scripts/hud"
   to = "/404.html"
