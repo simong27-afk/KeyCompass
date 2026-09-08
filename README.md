@@ -49,7 +49,9 @@ Nothing to compile.
 
 - Booking runs through Cal.com (`simongeils/15min`, opened as a pop-up from every
   "Book" button). Confirm the calendar's look in Cal.com → Settings → Appearance.
-- `hello@keycompass.co.uk` is still a placeholder — replace it once the domain and
-  mailbox exist. It appears in the closing panel and the footer.
+- `hello@keycompass.co.uk` is live and receives mail. It is no longer only in the
+  closing panel and the footer — changing it now means changing the contact page,
+  the Organization contactPoint in index.html's JSON-LD, llms.txt, and
+  agent-instructions.md as well. Grep for it before renaming anything.
 - Have a solicitor review the boundary section, the financial-advice answer, and the footer
   risk warning against the FCA financial promotion rules.
