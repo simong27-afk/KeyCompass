@@ -2,4 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /tools/
 
+# Machine-readable summary and curated link list for AI agents:
+#   https://keycompass.co.uk/llms.txt
+#   https://keycompass.co.uk/agent-instructions.md
+
 Sitemap: https://keycompass.co.uk/sitemap.xml

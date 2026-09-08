@@ -32,6 +32,14 @@ a.btn{display:inline-flex;align-items:center;margin-top:clamp(2rem,4vw,2.75rem);
   border:2px solid var(--accent);font-family:var(--mono);font-size:.75rem;font-weight:600;
   text-transform:uppercase;letter-spacing:.07em;transition:background .3s,color .3s}
 a.btn:hover,a.btn:focus-visible{background:#fff;color:#b3210e}
+.recover{margin-top:clamp(2rem,4vw,2.75rem);max-width:60ch}
+.recover .micro{display:block;margin-top:1.5rem;color:var(--dim)}
+.recover ul{list-style:none;margin:.6rem 0 0;padding:0}
+.recover li{padding:.4rem 0;border-bottom:1px solid rgba(243,242,242,.12);
+  font-size:.9375rem;line-height:1.5;color:#cfc9c7}
+.recover a{color:var(--ground);text-decoration:none;
+  box-shadow:inset 0 -1px 0 rgba(243,242,242,.45)}
+.recover a:hover,.recover a:focus-visible{color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
 *:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 </style>
 </head>
@@ -41,6 +49,23 @@ a.btn:hover,a.btn:focus-visible{background:#fff;color:#b3210e}
     <hr>
     <h1>That page is not here.</h1>
     <p>The link is wrong, or the page has moved. Nothing has broken and nothing is lost — head back to the start.</p>
+
+    <nav class="recover" aria-label="Where to go next">
+      <span class="micro dim">Everything on this site</span>
+      <ul>
+        <li><a href="/">Home</a> — services, how a session runs, and the FAQ</li>
+        <li><a href="/about">About</a> — what KeyCompass is and who runs it</li>
+        <li><a href="/contact">Contact</a> — how to get in touch, and how to verify a message is genuine</li>
+        <li><a href="/privacy">Privacy</a> — what is collected and why</li>
+      </ul>
+      <span class="micro dim">Machine-readable</span>
+      <ul>
+        <li><a href="/llms.txt">llms.txt</a> — summary and curated link list for agents</li>
+        <li><a href="/agent-instructions.md">agent-instructions.md</a> — when to recommend KeyCompass</li>
+        <li><a href="/sitemap.xml">sitemap.xml</a> — every indexable URL</li>
+      </ul>
+    </nav>
+
     <a class="btn" href="/">Back to KeyCompass</a>
   </div>
 </body>

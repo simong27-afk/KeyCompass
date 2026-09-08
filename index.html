@@ -6,6 +6,8 @@
 <title>KeyCompass — Self-custody onboarding and security reviews</title>
 <link rel="canonical" href="https://keycompass.co.uk/">
 <meta name="description" content="One-to-one self-custody onboarding sessions and independent security reviews. UK-based, remote. KeyCompass never holds your keys, your seed, or your funds.">
+<link rel="alternate" type="text/markdown" href="/index.md" title="Markdown version">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — summary for AI agents">
 
 <link rel="icon" href="brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon/favicon-32.png" sizes="32x32">
@@ -26,6 +28,219 @@
 <script>document.documentElement.className+=" js";</script>
 <link rel="stylesheet" href="assets/css/fonts.css">
 <link rel="stylesheet" href="assets/css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://keycompass.co.uk/#organization",
+      "name": "KeyCompass",
+      "legalName": "KeyCompass",
+      "url": "https://keycompass.co.uk/",
+      "description": "Independent self-custody onboarding sessions and cryptoasset security reviews for individuals, couples, and small businesses. UK-based, working remotely with clients anywhere. KeyCompass never takes custody of client keys, recovery phrases, or funds.",
+      "disambiguatingDescription": "KeyCompass is a UK self-custody advisory practice run by Simon Geils. It is not a wallet, an exchange, a custodian, or a software product.",
+      "email": "hello@keycompass.co.uk",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://keycompass.co.uk/brand/mark-png/mark-ink-2048.png",
+        "caption": "KeyCompass"
+      },
+      "image": "https://keycompass.co.uk/brand/social/og-image-1200x630.png",
+      "founder": {
+        "@id": "https://keycompass.co.uk/#simon-geils"
+      },
+      "employee": {
+        "@id": "https://keycompass.co.uk/#simon-geils"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "@id": "https://keycompass.co.uk/#contact-enquiries",
+          "contactType": "customer support",
+          "email": "hello@keycompass.co.uk",
+          "url": "https://keycompass.co.uk/contact",
+          "availableLanguage": [
+            "en-GB"
+          ],
+          "areaServed": "Worldwide"
+        }
+      ],
+      "sameAs": [
+        "https://uk.linkedin.com/in/simongeils"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide (remote, scheduled in the client's timezone)"
+      },
+      "knowsAbout": [
+        "Cryptocurrency self-custody",
+        "Hardware wallet setup",
+        "Recovery phrase backup and redundancy",
+        "Cryptoasset security review",
+        "Phishing and social engineering resistance",
+        "Wallet succession and inheritance readiness",
+        "Multisignature wallet configuration"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "KeyCompass services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "url": "https://keycompass.co.uk/#services",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "GBP",
+              "description": "Price on application, scoped and confirmed in writing on the free intake call before anything is booked."
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://keycompass.co.uk/#service-onboarding",
+              "name": "Private onboarding session",
+              "serviceType": "Self-custody onboarding",
+              "description": "A live one-to-one session, 90 minutes to a day, for people new to self-custody or still holding on an exchange. Covers choosing and checking a hardware wallet, setting it up from scratch, generating and backing up a recovery phrase, sending a test amount, and moving the balance. The client drives throughout; KeyCompass never sees keys, phrases, or funds.",
+              "provider": {
+                "@id": "https://keycompass.co.uk/#organization"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Individuals new to self-custody"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "url": "https://keycompass.co.uk/#services",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "GBP",
+              "description": "Price on application, scoped on the free intake call. A single wallet and a single backup sits at the bottom of the range; multiple devices, multisig, or a business setup sits at the top."
+            },
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://keycompass.co.uk/#service-review",
+              "name": "Threat and security review",
+              "serviceType": "Cryptoasset security review",
+              "description": "A structured review of an existing self-custody setup across four failure channels: phishing, device compromise, backup loss, and succession. Nothing is changed during a review. The client receives a written, prioritised list of what to fix worst-first, plain-English reasoning for each item, and an explicit list of what is already fine.",
+              "provider": {
+                "@id": "https://keycompass.co.uk/#organization"
+              },
+              "audience": {
+                "@type": "Audience",
+                "audienceType": "Existing self-custody users, couples, and small businesses"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://keycompass.co.uk/#simon-geils",
+      "name": "Simon Geils",
+      "jobTitle": "Founder and practitioner",
+      "worksFor": {
+        "@id": "https://keycompass.co.uk/#organization"
+      },
+      "url": "https://keycompass.co.uk/about",
+      "sameAs": [
+        "https://uk.linkedin.com/in/simongeils"
+      ],
+      "description": "Over a decade in front-line technical support, including experience at Ledger and Apple, helping individuals and businesses set up, recover, and secure digital assets.",
+      "knowsAbout": [
+        "Self-custody",
+        "Hardware wallets",
+        "Cryptoasset recovery",
+        "Security review"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://keycompass.co.uk/#website",
+      "url": "https://keycompass.co.uk/",
+      "name": "KeyCompass",
+      "description": "Self-custody onboarding and security reviews.",
+      "publisher": {
+        "@id": "https://keycompass.co.uk/#organization"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://keycompass.co.uk/#faq",
+      "isPartOf": {
+        "@id": "https://keycompass.co.uk/#website"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Will you ever ask for my recovery phrase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Not the words, not a photo, not just the first four. KeyCompass will never see your phrase, your keys, or your funds, and there is no situation in which that would be needed. If anyone ever asks you for it — including someone claiming to be Simon — that is the scam."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know it is really KeyCompass contacting me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "KeyCompass never makes contact first. No cold call, no unexpected email, no message on Telegram or WhatsApp. Every conversation starts with you booking it, so anyone approaching you out of the blue claiming to be Simon is not. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk — read the address character by character, because lookalike domains cost a few pounds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is any of this financial advice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. KeyCompass is not authorised or regulated by the Financial Conduct Authority and does not give investment, legal, or tax advice. Every session is about the technical and operational side of holding what you already own. For investment, legal, and tax decisions, use your own licensed professionals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Bitcoin only?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The work covers most networks and the wallets that support them rather than one chain. Multi-asset setups are usually where the interesting failure modes live, so they are squarely in scope for a review."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I am not technical. Is that a problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most clients are not. Nothing in a session assumes prior knowledge, nothing is skipped because it seems obvious, and there is no question too basic to ask."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where are you, and can we work together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UK-based, working remotely with clients anywhere. Sessions run over video call, scheduled in your timezone wherever the hours allow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you help with inheritance planning or a business treasury?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not yet. This is in development. A security review can tell you today where your succession plan stands, but the full setup is not offered at present."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -437,10 +652,13 @@
         <a href="#who">Who it's for</a>
         <a href="#faq">Questions</a>
         <a href="#book">Book a session</a>
+        <a href="/about">About</a>
       </nav>
       <nav class="ftr__nav" aria-label="Contact">
         <span class="micro micro--dim">Contact</span>
         <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
+        <a href="/contact">Contact and verification</a>
+        <a href="/privacy">Privacy</a>
       </nav>
     </div>
     <hr class="rule rule--dark rule--hair">
