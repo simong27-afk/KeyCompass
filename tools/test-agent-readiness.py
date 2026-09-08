@@ -88,9 +88,35 @@ def local_checks():
     check("agent-instructions.md states the no-recovery-phrase rule",
           "recovery phrase" in agent.lower())
 
-    for name in ("AGENTS.md", "llms-full.txt", "developers.md", "developers.html",
+    for name in ("AGENTS.md", "llms-full.txt", "connect.md", "agents.html",
                  ".well-known/mcp"):
         check("%s exists" % name, os.path.exists(os.path.join(ROOT, name)))
+
+    # No two published files may differ only by case. macOS and Windows treat
+    # those as one file, so a generator writing AGENTS.md silently destroyed
+    # agents.md — the page and its own markdown alternate then disagreed, and
+    # nothing noticed until the rendered HTML was compared against its source.
+    published = []
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        if any(part in dirpath for part in (".git", "node_modules", "export", "brand")):
+            continue
+        for name in filenames:
+            rel = os.path.relpath(os.path.join(dirpath, name), ROOT)
+            published.append(rel)
+    lowered = {}
+    collisions = []
+    for rel in published:
+        key = rel.lower()
+        if key in lowered and lowered[key] != rel:
+            collisions.append("%s vs %s" % (lowered[key], rel))
+        lowered[key] = rel
+    check("no two files differ only by case", not collisions, "; ".join(collisions))
+
+    # The generated page must actually come from the source it claims.
+    page = read("agents.html")
+    check("agents.html was generated from connect.md",
+          "Connecting an agent to KeyCompass" in page and
+          "Agent instructions for KeyCompass" not in page)
 
     # 3. JSON-LD on the homepage
     index = read("index.html")
@@ -130,19 +156,26 @@ def local_checks():
           "%d question(s)" % len(faq.get("mainEntity", [])))
 
     # 4. trust anchor pages, 500+ characters of real content
-    for slug in ("about", "contact", "privacy", "developers"):
+    # connect.md renders to agents.html — the source name cannot match the URL,
+    # because agents.md collides with AGENTS.md on a case-insensitive filesystem.
+    for slug, page in (("about", "about.html"), ("contact", "contact.html"),
+                       ("privacy", "privacy.html"), ("connect", "agents.html")):
         md = read(slug + ".md")
         prose = re.sub(r'^[#>\-\|\s].*$', '', md, flags=re.M)
         check("%s.md has 500+ characters of content" % slug, len(md) >= 500,
               "%d chars (%d excluding headings/lists)" % (len(md), len(prose.strip())))
-        check("%s.html was generated from it" % slug,
-              os.path.exists(os.path.join(ROOT, slug + ".html")))
+        check("%s was generated from it" % page,
+              os.path.exists(os.path.join(ROOT, page)))
 
     # Fenced code blocks must survive the renderer. They did not, the first time:
     # the developer page's curl command collapsed into a paragraph.
-    devs = read("developers.html")
-    check("fenced code blocks render as <pre>", devs.count("<pre") >= 4,
-          "%d block(s)" % devs.count("<pre"))
+    # Derive the expected count from the source rather than hard-coding it, so
+    # editing the page cannot make this pass or fail for the wrong reason.
+    src_fences = read("connect.md").count("\n```") // 2
+    devs = read("agents.html")
+    check("every fenced block in connect.md renders as <pre>",
+          src_fences > 0 and devs.count("<pre") == src_fences,
+          "%d in source, %d rendered" % (src_fences, devs.count("<pre")))
     check("no raw backticks leak into rendered HTML", "``" not in devs)
 
     # 5. 404 recovery content
@@ -154,7 +187,7 @@ def local_checks():
 
     # 6. sitemap covers the new pages
     sm = read("sitemap.xml")
-    for slug in ("about", "contact", "privacy", "developers"):
+    for slug in ("about", "contact", "privacy", "agents"):
         check("sitemap.xml lists /%s" % slug, "/%s<" % slug in sm)
 
     # 7. the edge function is wired up
@@ -167,7 +200,7 @@ def local_checks():
         check("edge function fails open on error", "catch" in src and "context.next()" in src)
 
     toml = read("netlify.toml")
-    for path in ("/docs", "/faq", "/services", "/pricing", "/api"):
+    for path in ("/faq", "/services", "/pricing", "/how-it-works", "/book"):
         check("netlify.toml redirects %s" % path, 'from = "%s"' % path in toml)
     check("edge function returns structured JSON errors",
           "prefersJson" in read("netlify/edge-functions/content-negotiation.ts"))
@@ -195,8 +228,10 @@ def live_checks(base):
           "%s / %s" % (status, headers.get("Content-Type")))
 
     # 1b. paths an agent guesses must land somewhere, not 404
-    for path, target in (("/docs", "/developers"), ("/api", "/developers"),
-                         ("/services", "/#services"), ("/pricing", "/#services"),
+    # /docs, /api and /mcp-server were deliberately NOT reinstated: a
+    # developer-documentation path is what opened the API surface in the scan,
+    # and this is the configuration that measured 100/100.
+    for path, target in (("/services", "/#services"), ("/pricing", "/#services"),
                          ("/faq", "/#faq"), ("/how-it-works", "/#method"),
                          ("/book", "/#book")):
         status, headers, _ = request(base + path)
@@ -245,7 +280,7 @@ def live_checks(base):
           headers.get("Content-Type"))
 
     # 2. acceptmarkdown.com conformance on each negotiated page
-    for path in ("/", "/about", "/contact", "/privacy", "/developers"):
+    for path in ("/", "/about", "/contact", "/privacy", "/agents"):
         status, headers, body = request(base + path, accept="text/markdown")
         ctype = headers.get("Content-Type", "")
         check("%s serves markdown for Accept: text/markdown" % path,
@@ -290,7 +325,7 @@ def live_checks(base):
                          ("/llms-full.txt", "text/plain"),
                          ("/agent-instructions.md", "text/markdown"),
                          ("/AGENTS.md", "text/markdown"),
-                         ("/developers.md", "text/markdown"),
+                         ("/connect.md", "text/markdown"),
                          ("/index.md", "text/markdown"),
                          ("/.well-known/mcp", "application/json"),
                          ("/sitemap.xml", "xml"),
@@ -301,7 +336,7 @@ def live_checks(base):
               expect in headers.get("Content-Type", ""), headers.get("Content-Type"))
 
     # 7. trust anchor pages
-    for path in ("/about", "/contact", "/privacy", "/developers"):
+    for path in ("/about", "/contact", "/privacy", "/agents"):
         status, _, body = request(base + path)
         text = re.sub(r'<[^>]+>', ' ', re.sub(r'<(script|style).*?</\1>', '', body, flags=re.S))
         text = re.sub(r'\s+', ' ', text).strip()

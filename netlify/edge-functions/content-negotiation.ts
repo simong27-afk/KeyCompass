@@ -23,7 +23,7 @@ const VARIANTS: Record<string, string> = {
   "/about": "/about.md",
   "/contact": "/contact.md",
   "/privacy": "/privacy.md",
-  "/developers": "/developers.md",
+  "/agents": "/connect.md",
 };
 
 const MARKDOWN = "text/markdown";
@@ -131,8 +131,8 @@ function jsonError(status: number, code: string, message: string, hint: string):
             about: "https://keycompass.co.uk/about",
             contact: "https://keycompass.co.uk/contact",
             privacy: "https://keycompass.co.uk/privacy",
-            developers: "https://keycompass.co.uk/developers",
             agentInstructions: "https://keycompass.co.uk/AGENTS.md",
+            connectingAnAgent: "https://keycompass.co.uk/agents",
             mcpEndpoint: "https://keycompass.co.uk/mcp",
             sitemap: "https://keycompass.co.uk/sitemap.xml",
           },

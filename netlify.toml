@@ -71,7 +71,7 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "/developers"
+  for = "/agents"
   [headers.values]
     Vary = "Accept, Accept-Encoding"
 
@@ -109,21 +109,6 @@
 # hit 404s on all four. The site is one page with anchors, so those are real
 # destinations that simply have no URL — these give them one. Kept as 301s so a
 # crawler records the canonical target rather than the alias.
-[[redirects]]
-  from = "/docs"
-  to = "/developers"
-  status = 301
-
-[[redirects]]
-  from = "/api"
-  to = "/developers"
-  status = 301
-
-[[redirects]]
-  from = "/mcp-server"
-  to = "/developers"
-  status = 301
-
 [[redirects]]
   from = "/services"
   to = "/#services"

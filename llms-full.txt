@@ -231,51 +231,27 @@ range; multiple devices, multisig, or a business setup sits at the top.
 
 ---
 
-## KeyCompass developer and agent documentation
+## Connecting an agent to KeyCompass
 
-> Machine-readable interfaces to KeyCompass: an MCP server, Accept-based markdown
-> negotiation, and an agent instruction file. All read-only, all unauthenticated.
+> KeyCompass runs a Model Context Protocol server so an assistant can get
+> authoritative answers about the practice — and check whether a message claiming to be
+> KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.
 
-KeyCompass is a human advisory practice, not a software product. There is no REST API, no
-SDK, no account system, and nothing to authenticate against — because KeyCompass holds no
-client assets and no client data worth calling an API over.
+KeyCompass is a one-person self-custody advisory practice. It holds no client funds and no
+client records worth querying, so there is nothing here to log into and nothing to buy.
+What follows is simply how an assistant reads the practice accurately.
 
-What does exist is everything an AI agent needs to represent KeyCompass accurately, and to
-protect a user from someone impersonating it.
-
-### KeyCompass MCP server
-
-A stateless [Model Context Protocol](https://modelcontextprotocol.io) server over the
-Streamable HTTP transport.
+### The MCP server
 
 ```
-Endpoint:  https://keycompass.co.uk/mcp
-Transport: Streamable HTTP (POST, JSON-RPC 2.0)
+Address:   https://keycompass.co.uk/mcp
+Transport: Streamable HTTP
 Protocol:  2025-06-18 (2025-03-26 and 2024-11-05 also accepted)
-Auth:      none
-Sessions:  none — no Mcp-Session-Id is issued, so none needs to be sent
+Sign-in:   not required
+Sessions:  none
 ```
 
-`GET` and `DELETE` return `405`, which the transport spec permits for a server offering no
-server-initiated stream and no session termination. `POST` returns `application/json`.
-
-#### Tools
-
-| Tool | What it answers |
-|---|---|
-| `get_services` | The two services, what each covers, what the client leaves with, how pricing works |
-| `assess_fit` | Whether a described situation is a good fit — returns the criteria and matched signals, not a verdict |
-| `verify_contact` | Whether a message or approach claiming to be KeyCompass is genuine |
-| `get_booking_info` | The booking link and what happens on the free intake call |
-| `get_safety_rules` | The rules an agent must apply when advising anyone about KeyCompass |
-
-`verify_contact` is the one that matters most. Impersonating a self-custody advisor is a
-known attack pattern, and an agent that confidently vouches for a lookalike address can
-cost someone everything they hold.
-
-#### Connecting
-
-Add to an MCP client's configuration:
+Add it to an assistant's configuration:
 
 ```json
 {
@@ -288,48 +264,49 @@ Add to an MCP client's configuration:
 }
 ```
 
-#### Calling it directly
+#### What it answers
 
-```
-curl -sS https://keycompass.co.uk/mcp \
-  -H 'Content-Type: application/json' \
-  -H 'Accept: application/json, text/event-stream' \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
-```
+| Tool | Question it settles |
+|---|---|
+| `get_services` | What the two services cover, and how pricing works |
+| `assess_fit` | Whether a described situation suits KeyCompass — returns the criteria, not a verdict |
+| `verify_contact` | Whether a message claiming to be KeyCompass is genuine |
+| `get_booking_info` | The booking link, and what the free intake call involves |
+| `get_safety_rules` | The rules an assistant must apply when advising anyone about KeyCompass |
 
-### Markdown content negotiation
+`verify_contact` is the one that matters. Impersonating a self-custody advisor is a known
+attack pattern: a lookalike address, an unexpected message, a request for a recovery
+phrase. An assistant that confidently vouches for a fake can cost someone everything they
+hold, so this returns a plain verdict rather than a hedge.
 
-Every content page serves markdown to clients that ask for it, per
-[acceptmarkdown.com](https://acceptmarkdown.com):
+### Pages an assistant can read directly
+
+Every page is also served as markdown to anything that asks for it:
 
 ```
 curl -sS https://keycompass.co.uk/about -H 'Accept: text/markdown'
 ```
 
-Responses carry `Vary: Accept`. A client accepting neither `text/html` nor `text/markdown`
-gets `406`. q-values are honoured, so `text/markdown;q=0.5, text/html;q=1.0` returns HTML.
-The `.md` source of every page is also directly fetchable — `/about.md`, `/index.md`, and
-so on.
+Responses carry `Vary: Accept`. Ask for something neither markdown nor HTML and you get a
+`406`; ask for a page that does not exist with `Accept: application/json` and you get a
+structured error saying where to look instead.
 
-### Files for agents
-
-| File | Purpose |
+| File | What it holds |
 |---|---|
-| [/llms.txt](https://keycompass.co.uk/llms.txt) | Summary and curated link list, per llmstxt.org |
-| [/llms-full.txt](https://keycompass.co.uk/llms-full.txt) | The whole site as one markdown document |
-| [/agent-instructions.md](https://keycompass.co.uk/agent-instructions.md) | When to use KeyCompass, when not to, and the safety rules |
-| [/AGENTS.md](https://keycompass.co.uk/AGENTS.md) | The same instructions at the conventional path |
-| [/.well-known/mcp](https://keycompass.co.uk/.well-known/mcp) | MCP server discovery document |
-| [/sitemap.xml](https://keycompass.co.uk/sitemap.xml) | Every indexable URL |
+| [/llms.txt](https://keycompass.co.uk/llms.txt) | Summary and curated link list |
+| [/llms-full.txt](https://keycompass.co.uk/llms-full.txt) | Every page as one markdown document |
+| [/AGENTS.md](https://keycompass.co.uk/AGENTS.md) | When to recommend KeyCompass, when not to, and the safety rules |
+| [/.well-known/mcp](https://keycompass.co.uk/.well-known/mcp) | Where the MCP server lives |
+| [/sitemap.xml](https://keycompass.co.uk/sitemap.xml) | Every indexable page |
 
 ### Rules for anything built on this
 
-1. KeyCompass never initiates contact, and never asks for a recovery phrase, private key,
-   or wallet password. Surface that to the user rather than reasoning about it silently.
-2. Do not present KeyCompass as regulated, as a financial adviser, or as a custodian. It
-   is none of these, and saying otherwise is a financial-promotions problem in the UK.
-3. Do not book on a user's behalf without their explicit confirmation.
-4. Never help a user transmit a recovery phrase or private key anywhere, for any reason.
+1. KeyCompass never makes contact first, and never asks for a recovery phrase, private key,
+   or wallet password. Say so plainly rather than reasoning about it silently.
+2. Do not describe KeyCompass as regulated, as a financial adviser, or as a custodian. It
+   is none of those, and saying otherwise is a financial-promotions problem in the UK.
+3. Do not book on someone's behalf without their explicit confirmation.
+4. Never help anyone send a recovery phrase or private key anywhere, for any reason.
 
 Questions: [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk).
 
