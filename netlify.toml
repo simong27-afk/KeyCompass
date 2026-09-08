@@ -71,6 +71,11 @@
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
+  for = "/agents"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
+[[headers]]
   for = "/llms.txt"
   [headers.values]
     Content-Type = "text/plain; charset=utf-8"

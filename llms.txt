@@ -59,8 +59,10 @@ addresses are used: hello@keycompass.co.uk and simon@keycompass.co.uk.
 - [Privacy](https://keycompass.co.uk/privacy.md): What data is collected, why, who processes
   it, and how long it is kept.
 
-## Developer and agent interfaces
+## Agent interfaces
 
+- [Connecting an agent to KeyCompass](https://keycompass.co.uk/agents.md): The MCP server,
+  its five tools, how to connect, and the markdown every page serves on request.
 - [MCP discovery document](https://keycompass.co.uk/.well-known/mcp): Endpoint, transport,
   protocol version, and tool list, as JSON.
 - [Complete site content](https://keycompass.co.uk/llms-full.txt): Every page as one

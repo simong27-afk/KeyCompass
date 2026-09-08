@@ -19,7 +19,7 @@
     "get_booking_info",
     "get_safety_rules"
   ],
-  "documentation": "https://keycompass.co.uk/developers",
+  "documentation": "https://keycompass.co.uk/agents",
   "agentInstructions": "https://keycompass.co.uk/agent-instructions.md",
   "llmsTxt": "https://keycompass.co.uk/llms.txt",
   "contact": "hello@keycompass.co.uk"

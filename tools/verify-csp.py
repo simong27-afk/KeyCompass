@@ -19,7 +19,8 @@ import re
 import sys
 
 TOML = "netlify.toml"
-HTML_PAGES = ("index.html", "about.html", "contact.html", "privacy.html", "404.html")
+HTML_PAGES = ("index.html", "about.html", "contact.html", "privacy.html",
+              "agents.html", "404.html")
 INLINE = re.compile(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", re.DOTALL | re.I)
 TYPE_ATTR = re.compile(r'\btype\s*=\s*["\']([^"\']+)["\']', re.I)
 
