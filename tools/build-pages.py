@@ -75,6 +75,22 @@ def render(md):
             i += 1
             continue
 
+        # Fenced code must be handled before anything else, or its contents get
+        # treated as markdown and the block collapses into one paragraph.
+        if ln.lstrip().startswith("```"):
+            lang = ln.strip()[3:].strip()
+            i += 1
+            buf = []
+            while i < len(lines) and not lines[i].lstrip().startswith("```"):
+                buf.append(lines[i])
+                i += 1
+            i += 1  # closing fence
+            cls = ' class="prose__pre"'
+            code = html.escape("\n".join(buf), quote=False)
+            lang_attr = ' data-lang="%s"' % html.escape(lang, quote=True) if lang else ''
+            out.append('<pre%s%s><code>%s</code></pre>' % (cls, lang_attr, code))
+            continue
+
         if ln.startswith("# "):
             out.append('<h1 class="h2">%s</h1>' % inline(ln[2:].strip()))
         elif ln.startswith("## "):

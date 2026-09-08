@@ -138,6 +138,13 @@ def local_checks():
         check("%s.html was generated from it" % slug,
               os.path.exists(os.path.join(ROOT, slug + ".html")))
 
+    # Fenced code blocks must survive the renderer. They did not, the first time:
+    # the developer page's curl command collapsed into a paragraph.
+    devs = read("developers.html")
+    check("fenced code blocks render as <pre>", devs.count("<pre") >= 4,
+          "%d block(s)" % devs.count("<pre"))
+    check("no raw backticks leak into rendered HTML", "``" not in devs)
+
     # 5. 404 recovery content
     notfound = read("404.html")
     check("404.html links to the sitemap and llms.txt",

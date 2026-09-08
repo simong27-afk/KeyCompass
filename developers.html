@@ -109,19 +109,33 @@
 <p>What does exist is everything an AI agent needs to represent KeyCompass accurately, and to protect a user from someone impersonating it.</p>
 <h2 class="h3 prose__h">KeyCompass MCP server</h2>
 <p>A stateless <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">Model Context Protocol</a> server over the Streamable HTTP transport.</p>
-<p>``<code> Endpoint:  https://keycompass.co.uk/mcp Transport: Streamable HTTP (POST, JSON-RPC 2.0) Protocol:  2025-06-18 (2025-03-26 and 2024-11-05 also accepted) Auth:      none Sessions:  none — no Mcp-Session-Id is issued, so none needs to be sent </code>``</p>
+<pre class="prose__pre"><code>Endpoint:  https://keycompass.co.uk/mcp
+Transport: Streamable HTTP (POST, JSON-RPC 2.0)
+Protocol:  2025-06-18 (2025-03-26 and 2024-11-05 also accepted)
+Auth:      none
+Sessions:  none — no Mcp-Session-Id is issued, so none needs to be sent</code></pre>
 <p><code>GET</code> and <code>DELETE</code> return <code>405</code>, which the transport spec permits for a server offering no server-initiated stream and no session termination. <code>POST</code> returns <code>application/json</code>.</p>
 <h3 class="h4 prose__h">Tools</h3>
 <div class="prose__scroll"><table class="prose__table"><thead><tr><th>Tool</th><th>What it answers</th></tr></thead><tbody><tr><td><code>get_services</code></td><td>The two services, what each covers, what the client leaves with, how pricing works</td></tr><tr><td><code>assess_fit</code></td><td>Whether a described situation is a good fit — returns the criteria and matched signals, not a verdict</td></tr><tr><td><code>verify_contact</code></td><td>Whether a message or approach claiming to be KeyCompass is genuine</td></tr><tr><td><code>get_booking_info</code></td><td>The booking link and what happens on the free intake call</td></tr><tr><td><code>get_safety_rules</code></td><td>The rules an agent must apply when advising anyone about KeyCompass</td></tr></tbody></table></div>
 <p><code>verify_contact</code> is the one that matters most. Impersonating a self-custody advisor is a known attack pattern, and an agent that confidently vouches for a lookalike address can cost someone everything they hold.</p>
 <h3 class="h4 prose__h">Connecting</h3>
 <p>Add to an MCP client's configuration:</p>
-<p>``<code>json { "mcpServers": { "keycompass": { "type": "http", "url": "https://keycompass.co.uk/mcp" } } } </code>``</p>
+<pre class="prose__pre" data-lang="json"><code>{
+  "mcpServers": {
+    "keycompass": {
+      "type": "http",
+      "url": "https://keycompass.co.uk/mcp"
+    }
+  }
+}</code></pre>
 <h3 class="h4 prose__h">Calling it directly</h3>
-<p>``<code> curl -sS https://keycompass.co.uk/mcp \ -H 'Content-Type: application/json' \ -H 'Accept: application/json, text/event-stream' \ -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' </code>``</p>
+<pre class="prose__pre"><code>curl -sS https://keycompass.co.uk/mcp \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'</code></pre>
 <h2 class="h3 prose__h">Markdown content negotiation</h2>
 <p>Every content page serves markdown to clients that ask for it, per <a href="https://acceptmarkdown.com" target="_blank" rel="noopener noreferrer">acceptmarkdown.com</a>:</p>
-<p>``<code> curl -sS https://keycompass.co.uk/about -H 'Accept: text/markdown' </code>``</p>
+<pre class="prose__pre"><code>curl -sS https://keycompass.co.uk/about -H 'Accept: text/markdown'</code></pre>
 <p>Responses carry <code>Vary: Accept</code>. A client accepting neither <code>text/html</code> nor <code>text/markdown</code> gets <code>406</code>. q-values are honoured, so <code>text/markdown;q=0.5, text/html;q=1.0</code> returns HTML. The <code>.md</code> source of every page is also directly fetchable — <code>/about.md</code>, <code>/index.md</code>, and so on.</p>
 <h2 class="h3 prose__h">Files for agents</h2>
 <div class="prose__scroll"><table class="prose__table"><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody><tr><td><a href="/llms.txt">/llms.txt</a></td><td>Summary and curated link list, per llmstxt.org</td></tr><tr><td><a href="/llms-full.txt">/llms-full.txt</a></td><td>The whole site as one markdown document</td></tr><tr><td><a href="/agent-instructions">/agent-instructions.md</a></td><td>When to use KeyCompass, when not to, and the safety rules</td></tr><tr><td><a href="/AGENTS">/AGENTS.md</a></td><td>The same instructions at the conventional path</td></tr><tr><td><a href="/.well-known/mcp">/.well-known/mcp</a></td><td>MCP server discovery document</td></tr><tr><td><a href="/sitemap.xml">/sitemap.xml</a></td><td>Every indexable URL</td></tr></tbody></table></div>
