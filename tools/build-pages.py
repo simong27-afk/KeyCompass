@@ -31,10 +31,6 @@ PAGES = [
     ("privacy.md", "privacy.html", "Privacy — KeyCompass",
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
      "recovery phrase, private keys, or funds."),
-    ("developers.md", "developers.html",
-     "KeyCompass developer and agent documentation — MCP server and machine-readable files",
-     "The KeyCompass MCP server, Accept-based markdown negotiation, and agent instruction "
-     "files. Read-only and unauthenticated: KeyCompass is an advisory practice, not an API."),
 ]
 
 # Files served at conventional paths, generated so they cannot drift from source.
@@ -42,7 +38,7 @@ ALIASES = [("agent-instructions.md", "AGENTS.md")]
 
 # The order llms-full.txt stitches the site together in.
 FULL_TEXT_SOURCES = [
-    "index.md", "about.md", "contact.md", "developers.md", "privacy.md",
+    "index.md", "about.md", "contact.md", "privacy.md",
     "agent-instructions.md",
 ]
 
