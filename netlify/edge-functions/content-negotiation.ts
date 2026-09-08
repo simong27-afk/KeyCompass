@@ -95,6 +95,64 @@ export function chooseVariant(acceptHeader: string | null): Choice {
   return "none";
 }
 
+const JSON_TYPE = "application/json";
+
+/**
+ * True when the client explicitly asked for JSON and did not prefer HTML more.
+ * Same rule as chooseVariant: a bare wildcard is not a request for JSON, or
+ * every browser would start receiving error objects instead of pages.
+ */
+export function prefersJson(acceptHeader: string | null): boolean {
+  if (!acceptHeader || !acceptHeader.trim()) return false;
+  const entries = parseAccept(acceptHeader);
+  const named = entries.some((e) => e.media === JSON_TYPE && e.q > 0);
+  if (!named) return false;
+  return qualityFor(entries, JSON_TYPE) >= qualityFor(entries, HTML);
+}
+
+/**
+ * A structured error an agent can act on: what went wrong, and where to look
+ * next. An agent that guessed a URL cannot parse an HTML error page, and the
+ * MCP endpoint already answers in structured JSON — this makes the rest of the
+ * site consistent with it.
+ */
+function jsonError(status: number, code: string, message: string, hint: string): Response {
+  return new Response(
+    JSON.stringify(
+      {
+        error: {
+          status,
+          code,
+          message,
+          hint,
+          documentation: "https://keycompass.co.uk/llms.txt",
+          links: {
+            home: "https://keycompass.co.uk/",
+            about: "https://keycompass.co.uk/about",
+            contact: "https://keycompass.co.uk/contact",
+            privacy: "https://keycompass.co.uk/privacy",
+            developers: "https://keycompass.co.uk/developers",
+            agentInstructions: "https://keycompass.co.uk/AGENTS.md",
+            mcpEndpoint: "https://keycompass.co.uk/mcp",
+            sitemap: "https://keycompass.co.uk/sitemap.xml",
+          },
+        },
+      },
+      null,
+      2,
+    ),
+    {
+      status,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "Vary": "Accept",
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff",
+      },
+    },
+  );
+}
+
 function withVary(response: Response): Response {
   const headers = new Headers(response.headers);
   const existing = headers.get("Vary");
@@ -150,6 +208,14 @@ export default async function handler(request: Request, context: Context): Promi
       }
 
       if (choice === "none") {
+        if (prefersJson(accept)) {
+          return jsonError(
+            406,
+            "not_acceptable",
+            "This URL can be served as text/html or text/markdown.",
+            "Retry with Accept: text/markdown, or Accept: text/html.",
+          );
+        }
         return new Response(
           "406 Not Acceptable\n\n" +
             "This URL can be served as text/html or text/markdown.\n" +
@@ -172,9 +238,19 @@ export default async function handler(request: Request, context: Context): Promi
     // an agent that guessed a URL gets a recoverable answer instead of a page
     // of HTML chrome.
     const response = await context.next();
-    if (response.status === 404 && chooseVariant(accept) === "markdown") {
-      const md = await markdownResponse(request, "/404.md", 404);
-      if (md) return md;
+    if (response.status === 404) {
+      if (prefersJson(accept)) {
+        return jsonError(
+          404,
+          "not_found",
+          `No resource exists at ${url.pathname}.`,
+          "KeyCompass is a small site — every published URL is listed in the links below and in sitemap.xml.",
+        );
+      }
+      if (chooseVariant(accept) === "markdown") {
+        const md = await markdownResponse(request, "/404.md", 404);
+        if (md) return md;
+      }
     }
     return response;
   } catch (_error) {

@@ -104,6 +104,51 @@
   [headers.values]
     Vary = "Accept, Accept-Encoding"
 
+# --- paths agents guess ----------------------------------------------------
+# The Is Agentic scan's own agent probed /docs, /faq, /services and /pricing and
+# hit 404s on all four. The site is one page with anchors, so those are real
+# destinations that simply have no URL — these give them one. Kept as 301s so a
+# crawler records the canonical target rather than the alias.
+[[redirects]]
+  from = "/docs"
+  to = "/developers"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/developers"
+  status = 301
+
+[[redirects]]
+  from = "/mcp-server"
+  to = "/developers"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/pricing"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/faq"
+  to = "/#faq"
+  status = 301
+
+[[redirects]]
+  from = "/how-it-works"
+  to = "/#method"
+  status = 301
+
+[[redirects]]
+  from = "/book"
+  to = "/#book"
+  status = 301
+
 # Netlify's injected badge script. Reserved /.netlify/ paths may ignore this,
 # so the CSS rule is the guaranteed half of the fix.
 #

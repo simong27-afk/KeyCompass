@@ -167,6 +167,10 @@ def local_checks():
         check("edge function fails open on error", "catch" in src and "context.next()" in src)
 
     toml = read("netlify.toml")
+    for path in ("/docs", "/faq", "/services", "/pricing", "/api"):
+        check("netlify.toml redirects %s" % path, 'from = "%s"' % path in toml)
+    check("edge function returns structured JSON errors",
+          "prefersJson" in read("netlify/edge-functions/content-negotiation.ts"))
     check("netlify.toml sets Vary: Accept on negotiated paths",
           toml.count('Vary = "Accept, Accept-Encoding"') >= 4)
     check("netlify.toml serves .md as text/markdown",
@@ -189,6 +193,56 @@ def live_checks(base):
     check("404 with Accept: text/markdown returns markdown",
           status == 404 and "markdown" in headers.get("Content-Type", ""),
           "%s / %s" % (status, headers.get("Content-Type")))
+
+    # 1b. paths an agent guesses must land somewhere, not 404
+    for path, target in (("/docs", "/developers"), ("/api", "/developers"),
+                         ("/services", "/#services"), ("/pricing", "/#services"),
+                         ("/faq", "/#faq"), ("/how-it-works", "/#method"),
+                         ("/book", "/#book")):
+        status, headers, _ = request(base + path)
+        location = headers.get("Location", "")
+        # urllib follows redirects, so a 200 here means it resolved; check the
+        # redirect itself with a non-following request where the header survives.
+        check("%s does not 404" % path, status != 404, "got %s" % status)
+
+    # 1c. structured JSON errors for agents that ask for JSON
+    status, headers, body = request(base + "/a-path-that-does-not-exist-9f2b",
+                                    accept="application/json")
+    check("404 with Accept: application/json returns JSON",
+          status == 404 and "application/json" in headers.get("Content-Type", ""),
+          "%s / %s" % (status, headers.get("Content-Type")))
+    try:
+        err = json.loads(body).get("error", {})
+    except ValueError:
+        err = {}
+    check("JSON 404 carries a code, message and hint",
+          all(err.get(k) for k in ("code", "message", "hint")), err.get("code", ""))
+    check("JSON 404 links onward to the sitemap and MCP endpoint",
+          "sitemap" in json.dumps(err.get("links", {})) and
+          "mcp" in json.dumps(err.get("links", {})).lower())
+    check("JSON 404 sets Vary: Accept",
+          "accept" in [t.strip().lower() for t in headers.get("Vary", "").split(",")],
+          headers.get("Vary"))
+
+    # A client offering only JSON accepts neither variant this URL has, so 406 is
+    # correct — and the 406 itself should be JSON. Note the Accept must exclude
+    # text/html entirely: "application/json, text/html;q=0.1" still accepts HTML,
+    # so serving HTML there is right and a 406 would be the bug.
+    status, headers, body = request(base + "/about", accept="application/json")
+    check("406 answers in JSON when only JSON is acceptable",
+          status == 406 and "application/json" in headers.get("Content-Type", ""),
+          "%s / %s" % (status, headers.get("Content-Type")))
+    status, headers, _ = request(base + "/about", accept="application/json, text/html;q=0.1")
+    check("HTML is still served when the client accepts it at any q",
+          status == 200 and headers.get("Content-Type", "").startswith("text/html"),
+          "%s / %s" % (status, headers.get("Content-Type")))
+
+    # A browser must still get the HTML 404 page, not an error object.
+    status, headers, _ = request(base + "/a-path-that-does-not-exist-9f2b",
+                                 accept="text/html,application/xhtml+xml,*/*;q=0.8")
+    check("browser Accept still gets the HTML 404 page",
+          status == 404 and headers.get("Content-Type", "").startswith("text/html"),
+          headers.get("Content-Type"))
 
     # 2. acceptmarkdown.com conformance on each negotiated page
     for path in ("/", "/about", "/contact", "/privacy", "/developers"):

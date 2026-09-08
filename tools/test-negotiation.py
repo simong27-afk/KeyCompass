@@ -73,6 +73,19 @@ def choose_variant(accept_header):
     return "none"
 
 
+JSON_TYPE = "application/json"
+
+
+def prefers_json(accept_header):
+    """Port of prefersJson in content-negotiation.ts. Keep the two in step."""
+    if not accept_header or not accept_header.strip():
+        return False
+    entries = parse_accept(accept_header)
+    if not any(m == JSON_TYPE and q > 0 for m, q in entries):
+        return False
+    return quality_for(entries, JSON_TYPE) >= quality_for(entries, HTML)
+
+
 BROWSER = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
 
 CASES = [
@@ -110,18 +123,36 @@ CASES = [
 ]
 
 
+JSON_CASES = [
+    (None, False, "no Accept header is not a JSON request"),
+    ("*/*", False, "a wildcard must not turn every 404 into an error object"),
+    (BROWSER, False, "a browser must keep getting the HTML 404 page"),
+    ("application/json", True, "the plain JSON request"),
+    ("application/json, text/html;q=0.9", True, "JSON named and preferred"),
+    ("application/json;q=0.5, text/html;q=1.0", False, "HTML outranks JSON"),
+    ("application/json;q=0", False, "q=0 is a refusal"),
+    ("text/markdown", False, "a markdown request is not a JSON request"),
+    ("application/json;q=0.8, text/html;q=0.8", True, "tie goes to the explicit ask"),
+]
+
+
 def main():
     failures = []
     for header, expected, why in CASES:
         actual = choose_variant(header)
         if actual != expected:
             failures.append((header, expected, actual, why))
+    for header, expected, why in JSON_CASES:
+        actual = prefers_json(header)
+        if actual != expected:
+            failures.append((header, "json=%s" % expected, "json=%s" % actual, why))
 
     for header, expected, actual, why in failures:
         print("FAIL  Accept: %r" % header)
         print("      expected %-9s got %-9s (%s)" % (expected, actual, why))
 
-    print("%d/%d negotiation cases passed" % (len(CASES) - len(failures), len(CASES)))
+    total = len(CASES) + len(JSON_CASES)
+    print("%d/%d negotiation cases passed" % (total - len(failures), total))
     return 1 if failures else 0
 
 
