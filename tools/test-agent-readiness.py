@@ -92,6 +92,19 @@ def local_checks():
                  ".well-known/mcp"):
         check("%s exists" % name, os.path.exists(os.path.join(ROOT, name)))
 
+    # site.css resets ul,ol{list-style:none} globally, so prose lists must draw
+    # their own markers. They did not, and the pages shipped with silently
+    # invisible bullets — a ::marker colour cannot colour a marker that is off.
+    page_css = read("assets/css/page.css")
+    site_css = read("assets/css/site.css")
+    check("site.css still strips list markers globally (the reason page.css must draw its own)",
+          "list-style:none" in site_css.replace(" ", ""))
+    check("page.css draws its own list markers",
+          ".prose__list li::before" in page_css and "border:var(--rule) solid var(--accent)" in page_css)
+    check("numbered prose lists keep their numbers",
+          "counter-increment:prose-step" in page_css.replace(" ", "") and
+          "counter(prose-step" in page_css)
+
     # No two published files may differ only by case. macOS and Windows treat
     # those as one file, so a generator writing AGENTS.md silently destroyed
     # agents.md — the page and its own markdown alternate then disagreed, and
