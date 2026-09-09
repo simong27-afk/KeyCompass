@@ -177,12 +177,20 @@ def render(md):
                        % (tag, "".join('<li>%s</li>' % inline(x) for x in items), tag))
             continue
         else:
+            # A line ending in two spaces is a hard break, the markdown
+            # convention. Needed for postal addresses, which must keep their
+            # line structure rather than collapsing into one run of text.
             buf = []
             while i < len(lines) and lines[i].strip() and not re.match(
                     r'^(#|>|-\s|\d+\.\s|\||---$)', lines[i]):
-                buf.append(lines[i].strip())
+                buf.append((lines[i].rstrip(), lines[i].endswith("  ")))
                 i += 1
-            out.append('<p>%s</p>' % inline(" ".join(buf)))
+            para = ""
+            for n, (text, hard) in enumerate(buf):
+                if n:
+                    para += "<br>" if buf[n - 1][1] else " "
+                para += inline(text.strip())
+            out.append('<p>%s</p>' % para)
             continue
 
         i += 1
