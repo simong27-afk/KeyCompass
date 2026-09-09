@@ -133,6 +133,14 @@ behalf:
 
 Information may also be disclosed where the law requires it.
 
+## Transfers outside the UK
+
+Cal.com, Google, and Netlify are US-headquartered, so personal information handled by them
+may be transferred outside the United Kingdom. Those transfers rely on the safeguards in
+each provider's data processing terms — the UK Addendum to the EU Standard Contractual
+Clauses, or the UK Extension to the EU–US Data Privacy Framework where the provider is
+certified under it. No personal information is transferred anywhere else.
+
 ## Our ICO registration
 
 KeyCompass is registered with the Information Commissioner's Office under reference
