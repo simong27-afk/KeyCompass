@@ -3,10 +3,12 @@
 > What KeyCompass collects, why, and how long it is kept. The short version: as little as
 > possible, and never your recovery phrase, private keys, or funds.
 
-**Last updated:** 8 September 2026
+**Last updated:** 9 September 2026
 
 Simon Geils, trading as KeyCompass, is a sole trader and the data controller for the
-personal data described here, and is registered with the Information Commissioner's Office.
+personal data described here, and is registered with the Information Commissioner's Office
+under reference **ZC241780**. You can check that entry yourself on the ICO's
+[public register of fee payers](https://ico.org.uk/ESDWebPages/Search).
 Contact: [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk).
 
 ## The one thing worth saying first
