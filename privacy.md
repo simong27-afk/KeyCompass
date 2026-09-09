@@ -20,7 +20,6 @@ We collect or use the following information to provide and improve products and 
 
 - Names and contact details
 - Transaction data (including details about payments to and from you and details of products and services you have purchased)
-- Usage data (including information about how you interact with and use our website, products and services)
 - Information relating to compliments or complaints
 - Records of meetings and decisions
 
@@ -121,6 +120,18 @@ SK9 5AF
 Helpline number: 0303 123 1113
 
 Website: [https://www.ico.org.uk/make-a-complaint](https://www.ico.org.uk/make-a-complaint)
+
+## Who processes your information
+
+KeyCompass does not sell personal data and does not share it with third parties for their
+own marketing. A small number of service providers process information on KeyCompass's
+behalf:
+
+- **Cal.com** — booking and scheduling
+- **Google Workspace** — email, and video calls via Google Meet
+- **Netlify** — website hosting
+
+Information may also be disclosed where the law requires it.
 
 ## Our ICO registration
 
