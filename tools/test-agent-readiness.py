@@ -92,6 +92,37 @@ def local_checks():
                  ".well-known/mcp"):
         check("%s exists" % name, os.path.exists(os.path.join(ROOT, name)))
 
+    # The homepage animates section by section: [data-reveal] on the <section>,
+    # with .wrap's children staggered as it scrolls in. The generated pages
+    # originally shipped as one undecorated .prose div, so they arrived flat and
+    # read as a different site. Each H2 is now its own revealed section, and the
+    # reveal is keyed to that structure — .wrap holding a rule and a heading.
+    for page in ("about.html", "contact.html", "privacy.html", "agents.html"):
+        markup = read(page)
+        sections = markup.count('data-reveal')
+        check("%s reveals section by section" % page, sections >= 3,
+              "%d section(s)" % sections)
+        check("%s opens with a page head section" % page,
+              'class="sec sec--ground page__head" data-reveal' in markup)
+        check("%s gives every H2 its own revealed section" % page,
+              markup.count('class="sec sec--ground page__block" data-reveal')
+              == markup.count('class="h3 page__h"'),
+              "%d block(s), %d heading(s)"
+              % (markup.count('page__block" data-reveal'),
+                 markup.count('class="h3 page__h"')))
+
+    # The reveal only works if the rule and heading are direct children of .wrap,
+    # because site.css stages them with .wrap>* selectors.
+    about = read("about.html")
+    check("revealed sections nest rule and heading directly under .wrap",
+          '<div class="wrap">\n    <hr class="rule rule--hair">\n    <h2 class="h3 page__h">' in about)
+
+    # Spacing is taken from the homepage, not invented: a prose section opens on
+    # the same beat as #services or #method.
+    page_css_rhythm = read("assets/css/page.css")
+    check("prose headings use the homepage's rule-to-heading gap",
+          ".page__h{margin-top:clamp(2rem,4vw,3.25rem)" in page_css_rhythm.replace(" ", ""))
+
     # site.css resets ul,ol{list-style:none} globally, so prose lists must draw
     # their own markers. They did not, and the pages shipped with silently
     # invisible bullets — a ::marker colour cannot colour a marker that is off.

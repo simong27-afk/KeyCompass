@@ -1,9 +1,32 @@
-/* Prose pages (about, contact, privacy).
+/* Prose pages (about, contact, privacy, agents).
    Built from the same tokens as site.css — nothing new is introduced here, so
-   these pages read as part of the same drawing rather than a bolted-on section. */
+   these pages read as part of the same drawing rather than a bolted-on section.
+
+   Each H2 is its own <section data-reveal>, so the reveal rules already in
+   site.css apply unchanged: the hairline rule wipes in, then the heading and
+   body follow on the same stagger the homepage sections use. That is why the
+   markup nests .wrap > rule / heading / prose — the stagger is keyed to
+   .wrap's children by nth-child, not to anything defined here. */
+
+/* A prose page is one continuous read, not a stack of full-height panels, so
+   the blocks run tighter than --sec-y while keeping the section rhythm. */
+/* Spacing is taken from the homepage rather than invented: the gap from a rule
+   to the heading under it is .sec__head's own clamp(2rem,4vw,3.25rem), so a
+   prose section opens on exactly the same beat as #services or #method. Only
+   the distance between sections is tighter — a privacy notice is twelve short
+   sections, and --sec-y's 115px top and bottom would strand each one on its own
+   screen. */
+.page__head{padding-bottom:0}
+.page__head .sec__head{margin-block:clamp(2rem,4vw,3.25rem) 0;max-width:20ch}
+.page__lead{margin-top:clamp(1rem,2.2vw,1.5rem);max-width:56ch;color:var(--dim-2)}
+.page__intro{margin-top:clamp(1.5rem,3vw,2.25rem)}
+
+.page__block{padding-block:clamp(3rem,6vw,4.75rem) 0}
+.page__block:last-of-type{padding-bottom:clamp(4rem,8vw,7rem)}
+.page__h{margin-top:clamp(2rem,4vw,3.25rem);max-width:26ch}
+.page__block .prose{margin-top:clamp(1.5rem,3vw,2.25rem)}
 
 .prose{
-  margin-top:clamp(2rem,4vw,3.25rem);
   max-width:68ch;
   font-size:clamp(1rem,.97rem + .18vw,1.0625rem);
   line-height:1.62;
@@ -11,10 +34,9 @@
 }
 .prose > * + *{margin-top:1.15rem}
 
-.prose h1.h2{margin:0 0 .35rem;max-width:18ch}
-.prose__lead{color:var(--dim-2);max-width:56ch}
-.prose__h{margin-top:clamp(2.5rem,4.5vw,3.5rem)}
-.prose h2.h3{max-width:24ch}
+/* H3s stay inside .prose and need their own air above, since they are the only
+   heading level that does not get a section of its own. */
+.prose__h{margin-top:clamp(1.9rem,3.5vw,2.6rem);max-width:30ch}
 
 .prose p{margin-block:0}
 .prose strong{font-weight:600}

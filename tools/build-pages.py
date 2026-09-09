@@ -67,6 +67,47 @@ def inline(t):
     return re.sub(r'\[([^\]]+)\]\(([^)]+)\)', link, t)
 
 
+def split_sections(md):
+    """(title, lead, intro, [(h2, body), ...]) — H2 headings become sections.
+
+    The homepage animates per section: [data-reveal] on the <section>, with the
+    rowhead, rule and .wrap children staggered as they scroll in. One giant
+    .prose div has nothing to stagger and nothing to observe, which is why these
+    pages arrived flat. Splitting at H2 gives each part its own reveal.
+    """
+    lines = md.split("\n")
+    title, lead, i = "", [], 0
+
+    while i < len(lines) and not lines[i].startswith("# "):
+        i += 1
+    if i < len(lines):
+        title = lines[i][2:].strip()
+        i += 1
+
+    while i < len(lines) and not lines[i].strip():
+        i += 1
+    while i < len(lines) and lines[i].startswith("> "):
+        lead.append(lines[i][2:].strip())
+        i += 1
+
+    intro, blocks, current, heading = [], [], [], None
+    for ln in lines[i:]:
+        if ln.startswith("## "):
+            (blocks.append((heading, current)) if heading is not None
+             else intro.extend(current))
+            heading, current = ln[3:].strip(), []
+        else:
+            current.append(ln)
+    if heading is not None:
+        blocks.append((heading, current))
+    else:
+        intro.extend(current)
+
+    return (title, " ".join(lead),
+            render("\n".join(intro)).strip(),
+            [(h, render("\n".join(b)).strip()) for h, b in blocks])
+
+
 def render(md):
     out, i = [], 0
     lines = md.split("\n")
@@ -93,11 +134,7 @@ def render(md):
             out.append('<pre%s%s><code>%s</code></pre>' % (cls, lang_attr, code))
             continue
 
-        if ln.startswith("# "):
-            out.append('<h1 class="h2">%s</h1>' % inline(ln[2:].strip()))
-        elif ln.startswith("## "):
-            out.append('<h2 class="h3 prose__h">%s</h2>' % inline(ln[3:].strip()))
-        elif ln.startswith("### "):
+        if ln.startswith("### "):
             out.append('<h3 class="h4 prose__h">%s</h3>' % inline(ln[4:].strip()))
         elif ln.strip() == "---":
             out.append('<hr class="rule rule--hair prose__rule">')
@@ -219,25 +256,34 @@ TEMPLATE = '''<!doctype html>
 {menu}
 
 <main id="main">
-<section class="sec sec--ground">
+<section class="sec sec--ground page__head" data-reveal>
   <div class="wrap">
     <div class="rowhead">
       <span class="micro">{eyebrow}</span>
       <span class="micro micro--dim">KeyCompass</span>
     </div>
     <hr class="rule rule--light">
-    <div class="prose">
-{body}
-    </div>
-  </div>
+    <h1 class="h2 sec__head">{h1}</h1>
+{head_extra}  </div>
 </section>
-</main>
+{blocks}</main>
 
 {ftr}
 <script src="/assets/js/site.js" defer></script>
 <script>{s2}</script>
 </body>
 </html>
+'''
+
+BLOCK = '''<section class="sec sec--ground page__block" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">{heading}</h2>
+    <div class="prose">
+{body}
+    </div>
+  </div>
+</section>
 '''
 
 JSONLD = '''{{
@@ -268,15 +314,28 @@ def main():
         md = io.open(os.path.join(ROOT, src), encoding="utf-8").read()
         slug = dest[:-5]
         canonical = "%s/%s" % (SITE, slug)
-        eyebrow = re.search(r'^#\s+(.+)$', md, re.M).group(1).split("—")[0].strip()
+        h1, lead, intro, blocks = split_sections(md)
+        eyebrow = h1.split("—")[0].strip()
+
+        head_extra = ""
+        if lead:
+            head_extra += '    <p class="lead page__lead">%s</p>\n' % inline(lead)
+        if intro:
+            head_extra += '    <div class="prose page__intro">\n%s\n    </div>\n' % intro
+
+        rendered_blocks = "".join(
+            BLOCK.format(heading=inline(h), body=b) for h, b in blocks)
+
         page = TEMPLATE.format(
+            h1=html.escape(h1, quote=False),
+            head_extra=head_extra,
+            blocks=rendered_blocks,
             title=html.escape(title, quote=True),
             desc=html.escape(desc, quote=True),
             canonical=canonical,
             md="%s/%s" % (SITE, src),
             site=SITE,
             eyebrow=html.escape(eyebrow, quote=True),
-            body=render(md),
             hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
             jsonld=JSONLD.format(canonical=canonical, title=html.escape(title, quote=True),
                                  desc=html.escape(desc, quote=True), site=SITE,

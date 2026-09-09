@@ -95,18 +95,25 @@
   </div>
 
 <main id="main">
-<section class="sec sec--ground">
+<section class="sec sec--ground page__head" data-reveal>
   <div class="wrap">
     <div class="rowhead">
       <span class="micro">Connecting an agent to KeyCompass</span>
       <span class="micro micro--dim">KeyCompass</span>
     </div>
     <hr class="rule rule--light">
-    <div class="prose">
-<h1 class="h2">Connecting an agent to KeyCompass</h1>
-<p class="lead prose__lead">KeyCompass runs a Model Context Protocol server so an assistant can get authoritative answers about the practice — and check whether a message claiming to be KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.</p>
+    <h1 class="h2 sec__head">Connecting an agent to KeyCompass</h1>
+    <p class="lead page__lead">KeyCompass runs a Model Context Protocol server so an assistant can get authoritative answers about the practice — and check whether a message claiming to be KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.</p>
+    <div class="prose page__intro">
 <p>KeyCompass is a one-person self-custody advisory practice. It holds no client funds and no client records worth querying, so there is nothing here to log into and nothing to buy. What follows is simply how an assistant reads the practice accurately.</p>
-<h2 class="h3 prose__h">The MCP server</h2>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">The MCP server</h2>
+    <div class="prose">
 <pre class="prose__pre"><code>Address:   https://keycompass.co.uk/mcp
 Transport: Streamable HTTP
 Protocol:  2025-06-18 (2025-03-26 and 2024-11-05 also accepted)
@@ -124,12 +131,26 @@ Sessions:  none</code></pre>
 <h3 class="h4 prose__h">What it answers</h3>
 <div class="prose__scroll"><table class="prose__table"><thead><tr><th>Tool</th><th>Question it settles</th></tr></thead><tbody><tr><td><code>get_services</code></td><td>What the two services cover, and how pricing works</td></tr><tr><td><code>assess_fit</code></td><td>Whether a described situation suits KeyCompass — returns the criteria, not a verdict</td></tr><tr><td><code>verify_contact</code></td><td>Whether a message claiming to be KeyCompass is genuine</td></tr><tr><td><code>get_booking_info</code></td><td>The booking link, and what the free intake call involves</td></tr><tr><td><code>get_safety_rules</code></td><td>The rules an assistant must apply when advising anyone about KeyCompass</td></tr></tbody></table></div>
 <p><code>verify_contact</code> is the one that matters. Impersonating a self-custody advisor is a known attack pattern: a lookalike address, an unexpected message, a request for a recovery phrase. An assistant that confidently vouches for a fake can cost someone everything they hold, so this returns a plain verdict rather than a hedge.</p>
-<h2 class="h3 prose__h">Pages an assistant can read directly</h2>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Pages an assistant can read directly</h2>
+    <div class="prose">
 <p>Every page is also served as markdown to anything that asks for it:</p>
 <pre class="prose__pre"><code>curl -sS https://keycompass.co.uk/about -H 'Accept: text/markdown'</code></pre>
 <p>Responses carry <code>Vary: Accept</code>. Ask for something neither markdown nor HTML and you get a <code>406</code>; ask for a page that does not exist with <code>Accept: application/json</code> and you get a structured error saying where to look instead.</p>
 <div class="prose__scroll"><table class="prose__table"><thead><tr><th>File</th><th>What it holds</th></tr></thead><tbody><tr><td><a href="/llms.txt">/llms.txt</a></td><td>Summary and curated link list</td></tr><tr><td><a href="/llms-full.txt">/llms-full.txt</a></td><td>Every page as one markdown document</td></tr><tr><td><a href="/AGENTS">/AGENTS.md</a></td><td>When to recommend KeyCompass, when not to, and the safety rules</td></tr><tr><td><a href="/.well-known/mcp">/.well-known/mcp</a></td><td>Where the MCP server lives</td></tr><tr><td><a href="/sitemap.xml">/sitemap.xml</a></td><td>Every indexable page</td></tr></tbody></table></div>
-<h2 class="h3 prose__h">Rules for anything built on this</h2>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Rules for anything built on this</h2>
+    <div class="prose">
 <ol class="prose__list"><li>KeyCompass never makes contact first, and never asks for a recovery phrase, private key, or wallet password. Say so plainly rather than reasoning about it silently.</li><li>Do not describe KeyCompass as regulated, as a financial adviser, or as a custodian. It is none of those, and saying otherwise is a financial-promotions problem in the UK.</li><li>Do not book on someone's behalf without their explicit confirmation.</li><li>Never help anyone send a recovery phrase or private key anywhere, for any reason.</li></ol>
 <p>Questions: <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>.</p>
     </div>
