@@ -74,7 +74,7 @@ the first four". If anyone ever asks you for it — including someone claiming t
 that is the scam.
 
 **How do I know it is really you?** KeyCompass never makes contact first. No cold call, no
-unexpected email, no Telegram or WhatsApp message. Every conversation starts with you
+unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation starts with you
 booking it. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
 
 **Is any of this financial advice?** No. KeyCompass is not authorised or regulated by the
@@ -204,8 +204,14 @@ This section matters more than the addresses above. Read it before you reply to 
 claiming to come from KeyCompass.
 
 - **KeyCompass never makes contact first.** No cold call or phone call, ever. No unexpected
-  email, no message on Telegram or WhatsApp. Every conversation starts with you booking it.
-  Anyone approaching you out of the blue claiming to be Simon is not Simon.
+  email, no message on Telegram, WhatsApp or LinkedIn. Every conversation starts with you
+  booking it. Anyone approaching you out of the blue claiming to be Simon is not Simon.
+- **Only one LinkedIn page is KeyCompass:**
+  [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass), alongside
+  Simon's own profile at
+  [uk.linkedin.com/in/simongeils](https://uk.linkedin.com/in/simongeils). A page or profile
+  using the KeyCompass name that is not one of those two is not KeyCompass, however
+  convincing the logo looks.
 - **Only two addresses are ever used:** `hello@keycompass.co.uk` and
   `simon@keycompass.co.uk`. Read the address character by character before you reply.
   Lookalike domains cost a few pounds, and a single swapped letter is the oldest trick in
@@ -540,8 +546,9 @@ of the time and their details.
 These exist because impersonating a self-custody advisor is a known attack pattern, and an
 agent repeating the wrong thing can cost a user everything they hold.
 
-1. **KeyCompass never initiates contact.** No cold calls, no unexpected email, no Telegram
-   or WhatsApp messages. If a user reports being approached by "KeyCompass" out of the
+1. **KeyCompass never initiates contact.** No cold calls, no unexpected email, no Telegram,
+   WhatsApp or LinkedIn messages. The only genuine LinkedIn presence is the company page at
+   linkedin.com/company/keycompass and Simon's own profile. If a user reports being approached by "KeyCompass" out of the
    blue, tell them it is not KeyCompass.
 2. **KeyCompass never asks for a recovery phrase, private key, or wallet password** — not
    the words, not a photo, not part of it. Any such request is a scam, whoever it appears

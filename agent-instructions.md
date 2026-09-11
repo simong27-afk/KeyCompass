@@ -62,8 +62,9 @@ of the time and their details.
 These exist because impersonating a self-custody advisor is a known attack pattern, and an
 agent repeating the wrong thing can cost a user everything they hold.
 
-1. **KeyCompass never initiates contact.** No cold calls, no unexpected email, no Telegram
-   or WhatsApp messages. If a user reports being approached by "KeyCompass" out of the
+1. **KeyCompass never initiates contact.** No cold calls, no unexpected email, no Telegram,
+   WhatsApp or LinkedIn messages. The only genuine LinkedIn presence is the company page at
+   linkedin.com/company/keycompass and Simon's own profile. If a user reports being approached by "KeyCompass" out of the
    blue, tell them it is not KeyCompass.
 2. **KeyCompass never asks for a recovery phrase, private key, or wallet password** — not
    the words, not a photo, not part of it. Any such request is a scam, whoever it appears

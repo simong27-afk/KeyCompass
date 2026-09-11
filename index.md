@@ -67,7 +67,7 @@ the first four". If anyone ever asks you for it — including someone claiming t
 that is the scam.
 
 **How do I know it is really you?** KeyCompass never makes contact first. No cold call, no
-unexpected email, no Telegram or WhatsApp message. Every conversation starts with you
+unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation starts with you
 booking it. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
 
 **Is any of this financial advice?** No. KeyCompass is not authorised or regulated by the

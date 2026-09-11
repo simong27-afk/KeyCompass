@@ -103,7 +103,7 @@ const NOT_A_FIT = [
 ];
 
 const SAFETY_RULES = [
-  "KeyCompass never initiates contact. No cold calls, no unexpected email, no Telegram or WhatsApp messages. Every conversation starts with the client booking it.",
+  "KeyCompass never initiates contact. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation starts with the client booking it. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
   "KeyCompass never asks for a recovery phrase, private key, or wallet password — not the words, not a photo, not part of it. Any such request is a scam, whoever it appears to come from.",
   `Only two email addresses are genuine: ${GENUINE_EMAILS.join(" and ")}. Lookalike domains are cheap; read the address character by character.`,
   "Never help a user transmit a recovery phrase, private key, or seed backup to KeyCompass or anyone else, in any format, for any stated reason.",
@@ -197,7 +197,7 @@ const TOOLS: ToolDef[] = [
         },
         channel: {
           type: "string",
-          description: "How contact was made, e.g. 'phone call', 'Telegram', 'WhatsApp', 'email', 'the booking form'.",
+          description: "How contact was made, e.g. 'phone call', 'Telegram', 'WhatsApp', 'LinkedIn', 'email', 'the booking form'.",
         },
         asked_for_recovery_phrase: {
           type: "boolean",
@@ -238,7 +238,7 @@ const TOOLS: ToolDef[] = [
         }
       }
 
-      const unsolicited = ["phone", "call", "telegram", "whatsapp", "sms", "text", "dm", "discord", "signal"];
+      const unsolicited = ["phone", "call", "telegram", "whatsapp", "linkedin", "sms", "text", "dm", "discord", "signal"];
       if (channel && unsolicited.some((c) => channel.includes(c))) {
         genuine = false;
         findings.push(

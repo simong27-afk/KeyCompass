@@ -20,8 +20,14 @@ This section matters more than the addresses above. Read it before you reply to 
 claiming to come from KeyCompass.
 
 - **KeyCompass never makes contact first.** No cold call or phone call, ever. No unexpected
-  email, no message on Telegram or WhatsApp. Every conversation starts with you booking it.
-  Anyone approaching you out of the blue claiming to be Simon is not Simon.
+  email, no message on Telegram, WhatsApp or LinkedIn. Every conversation starts with you
+  booking it. Anyone approaching you out of the blue claiming to be Simon is not Simon.
+- **Only one LinkedIn page is KeyCompass:**
+  [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass), alongside
+  Simon's own profile at
+  [uk.linkedin.com/in/simongeils](https://uk.linkedin.com/in/simongeils). A page or profile
+  using the KeyCompass name that is not one of those two is not KeyCompass, however
+  convincing the logo looks.
 - **Only two addresses are ever used:** `hello@keycompass.co.uk` and
   `simon@keycompass.co.uk`. Read the address character by character before you reply.
   Lookalike domains cost a few pounds, and a single swapped letter is the oldest trick in
