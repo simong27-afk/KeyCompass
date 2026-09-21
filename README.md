@@ -3,6 +3,24 @@
 Marketing site and brand assets for KeyCompass — self-custody onboarding sessions and
 security reviews.
 
+## About this project
+
+KeyCompass is a UK-based business that helps people set up and secure crypto
+self-custody. I built this site from scratch, working with Claude, as the
+front door for the business, and I made the product and design decisions myself.
+
+It's deliberately simple: hand-written HTML, CSS and vanilla JavaScript with no
+framework and no build step, deployed on Netlify. The about, contact and privacy
+pages are written in Markdown and generated into HTML, so people and AI agents
+are always shown the same content. A pair of Netlify Edge Functions (TypeScript)
+serve that Markdown to agents that ask for it and expose a small read-only MCP
+server. Security was a priority throughout: a strict Content Security Policy,
+self-hosted fonts and assets, and a handful of Python scripts in `tools/` that
+check the CSP hashes, the agent-facing files and TLS certificate logs.
+
+The commit history shows how it grew, including the bugs I hit and fixed on the
+way.
+
     index.html            the site (single page, no build step)
     about|contact|privacy .md is the source; the matching .html is generated
     llms.txt              summary and curated link list for AI agents

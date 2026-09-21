@@ -5,3 +5,6 @@
 *.docx
 *.pages
 *.numbers
+
+# Private — CV and other files Claude generates for me
+Claude outputs/
