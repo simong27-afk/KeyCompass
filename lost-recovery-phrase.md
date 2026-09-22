@@ -24,15 +24,25 @@ hardware wallet that has ever held this wallet. Do not uninstall the app. Do not
 fresh" to try again.
 
 People in a panic very often destroy the one remaining copy of their keys while trying to fix
-the problem. If the wallet software is still installed somewhere and still opens, the keys are
-still there, and that is a recoverable position. A factory reset ends it permanently.
+the problem, and what counts as "the copy" depends on the kind of wallet.
+
+With a software wallet, the phrase is held encrypted inside the app itself and decrypted each
+time you unlock it. An app that still opens is therefore a recoverable position, and
+uninstalling it or resetting the device ends that permanently.
+
+With a hardware wallet it is the opposite. The keys are generated on the device and never
+leave it, so what matters is whether you still have the device and still know its PIN. The
+companion software holds public keys only — enough to read your balance from the blockchain,
+never enough to sign a transaction or show you a phrase. Seeing a balance in Ledger Live or
+Trezor Suite is not access, and anything presenting itself as that software while asking for
+your recovery phrase is stealing from you.
 
 If the device is old and switched off in a drawer, leave it exactly as it is until you have
 read the rest of this page.
 
 ## First: is it actually lost?
 
-There is a real difference between a phrase that is *missing* and one that is *gone*, and most
+There is a real difference between a phrase that is **missing** and one that is **gone**, and most
 people arrive here having decided too quickly that it is gone. Before accepting that, search
 properly and methodically rather than from memory.
 
@@ -41,7 +51,7 @@ to hand. Look for a single sheet of paper, a card that came in the box with a ha
 a page torn from a notebook, or a metal plate. Check anywhere you keep documents you rarely
 touch: a passport folder, a filing box, a safe, a book on a shelf, the back of a picture
 frame, a drawer in a house you have since moved out of. Ask whether you gave a copy to a
-partner or family member for safekeeping, or posted it to yourself.
+partner or family member for safekeeping.
 
 If you set the wallet up at a particular desk or in a particular room, the phrase was probably
 written within a few feet of where you were sitting.
@@ -52,10 +62,11 @@ Most people who think they have lost access are in one of the following position
 the truly unrecoverable one. Each of these has a genuine route back, and none of them requires
 paying anybody for a miracle.
 
-### The wallet is still installed on a device you can unlock
+### A software wallet still installed on a device you can unlock
 
-This is the single most common case, and the most commonly missed. Your recovery phrase is a
-backup of the keys — but the keys themselves are still sitting in the wallet app. If the app
+This is the single most common case, and the most commonly missed. In a software wallet —
+MetaMask, Trust Wallet, Phantom, Exodus and the like — your recovery phrase is stored
+encrypted inside the app, and your password is what decrypts it. If the app
 is still on your phone or computer and you can still unlock it with its PIN, password or
 biometrics, you have not lost access to anything.
 
