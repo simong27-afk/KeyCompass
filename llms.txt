@@ -58,6 +58,9 @@ addresses are used: hello@keycompass.co.uk and simon@keycompass.co.uk.
   that a message claiming to be from KeyCompass is genuine.
 - [Privacy](https://keycompass.co.uk/privacy.md): What data is collected, why, who processes
   it, and how long it is kept.
+- [I've lost my recovery phrase](https://keycompass.co.uk/lost-recovery-phrase.md): What can
+  still be recovered when a recovery phrase is lost, what cannot, and why recovery services
+  asking for a phrase or a fee are always a scam.
 
 ## Agent interfaces
 

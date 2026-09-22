@@ -5,6 +5,7 @@
 
 ## How to reach us
 
+- **Post:** 49 Station Road, Polegate, East Sussex, BN26 6EA
 - **Email:** [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 - **Email (direct):** [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
 - **Book the free intake call:** [cal.com/simongeils/15min](https://cal.com/simongeils/15min)

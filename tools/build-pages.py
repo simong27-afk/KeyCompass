@@ -31,6 +31,13 @@ PAGES = [
     ("privacy.md", "privacy.html", "Privacy — KeyCompass",
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
      "recovery phrase, private keys, or funds."),
+    ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
+     "The terms on which KeyCompass provides onboarding sessions and security reviews: the "
+     "custody boundary, cancellation rights, fees, and liability."),
+    ("lost-recovery-phrase.md", "lost-recovery-phrase.html",
+     "I've lost my recovery phrase. What now? — KeyCompass",
+     "What can still be recovered when a crypto recovery phrase is lost, what genuinely "
+     "cannot, how to tell which situation you are in, and why recovery services are a scam."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",
@@ -44,7 +51,8 @@ ALIASES = [("agent-instructions.md", "AGENTS.md")]
 
 # The order llms-full.txt stitches the site together in.
 FULL_TEXT_SOURCES = [
-    "index.md", "about.md", "contact.md", "connect.md", "privacy.md",
+    "index.md", "about.md", "contact.md", "connect.md", "privacy.md", "terms.md",
+    "lost-recovery-phrase.md",
     "agent-instructions.md",
 ]
 

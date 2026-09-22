@@ -189,6 +189,7 @@ still in development, and saying so plainly is better than taking the booking.
 
 ### How to reach us
 
+- **Post:** 49 Station Road, Polegate, East Sussex, BN26 6EA
 - **Email:** [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 - **Email (direct):** [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
 - **Book the free intake call:** [cal.com/simongeils/15min](https://cal.com/simongeils/15min)
@@ -478,6 +479,506 @@ including someone claiming to be KeyCompass — is not acting for KeyCompass.
 
 Sessions run over video call and are **not recorded**. Screen sharing runs on the
 practitioner's side only, so everything sensitive stays on your side of the call.
+
+
+---
+
+## KeyCompass terms and conditions
+
+> The terms on which KeyCompass provides onboarding sessions and security reviews. Read
+> these before you book.
+
+- Who we are
+- These terms
+- What we do
+- The boundary — what KeyCompass is not
+- How an engagement is agreed
+- What we need from you
+- Fees and payment
+- Cancelling, rescheduling and refunds
+- Your report and who owns it
+- Confidentiality
+- Your personal information
+- Our responsibility to you
+- Impersonation and verification
+- Ending an engagement
+- Complaints
+- General
+- Law and jurisdiction
+
+### Who we are
+
+**This document is a working draft and is not in force.** It is published here for review
+only and does not govern any engagement until it has been reviewed and this notice removed.
+
+KeyCompass is a one-person advisory practice operated by Simon Geils, providing self-custody
+onboarding sessions and security reviews from the United Kingdom, remotely.
+
+KeyCompass is a trading name of Simon Geils, a sole trader established in the United Kingdom.
+
+Post  
+49 Station Road, Polegate, East Sussex, BN26 6EA
+
+Email  
+[hello@keycompass.co.uk](mailto:hello@keycompass.co.uk) or
+[simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
+
+KeyCompass is registered with the Information Commissioner's Office under reference
+**ZC241780**.
+
+In these terms, "we", "us" and "our" mean KeyCompass. "You" means the person or organisation
+booking a session or a review.
+
+### These terms
+
+These terms apply to every engagement between you and KeyCompass. By accepting a written
+scope and quotation from us and booking a time, you agree to them.
+
+Where you are a consumer — an individual booking for purposes outside your trade, business,
+craft or profession — you have statutory rights that these terms do not affect. Nothing here
+reduces them. Where a term applies only to consumers, or only to business clients, it says so.
+
+We may change these terms. The version that applies to your engagement is the version
+published when you booked. The current version and its date are at the foot of this page.
+
+### What we do
+
+We offer two services.
+
+**Private onboarding session.** Ninety minutes to a day, live and one-to-one. Choosing and
+checking a hardware wallet, setting it up from scratch, generating and backing up a recovery
+phrase, sending a test amount, confirming it arrived, then moving the balance. You perform
+every step yourself, on your own devices, with each step explained as you go.
+
+**Threat and security review.** A structured review of a setup you already have, across four
+failure channels: phishing, device, backup loss, and succession. Nothing is changed during a
+review. You receive a written, prioritised list of what to fix worst-first, plain-English
+reasoning for each item, and an explicit list of what is already sound.
+
+Both begin with a free fifteen-minute intake call, at no charge and no obligation. If you do
+not need the service yet, we will tell you so.
+
+After a session or review you receive a written summary within 48 hours covering what was
+done and what remains outstanding, and one follow-up thread by email for the first month.
+
+Sessions run over video call and are not recorded. Screen sharing runs on our side only.
+
+### The boundary — what KeyCompass is not
+
+This section is the most important part of these terms.
+
+**We are not a custodian.** We never take custody, control or possession of your cryptoassets,
+your private keys, your recovery phrase or your wallet passwords — not at any point, not
+temporarily, and not to check or assist with something. Your assets stay in your sole control
+throughout.
+
+**We never ask for your recovery phrase, private keys or wallet passwords.** Not the words,
+not a photograph, not part of them. There is no circumstance in which we would need them.
+Anyone asking you for them — including someone presenting themselves as KeyCompass — is not
+acting for us.
+
+**We are not a financial adviser and we are not regulated.** KeyCompass is not authorised or
+regulated by the Financial Conduct Authority. Nothing we provide is investment, legal or tax
+advice, a personal recommendation, or an opinion on what you should buy, sell or hold, or
+when. Cryptoassets are unregulated and high risk. You could lose all the money you invest. You
+should take independent professional advice before making investment, legal or tax decisions.
+
+**You make every decision and perform every action.** Our work is technical and operational:
+how to hold safely what you already own. We explain, demonstrate and review. You choose, you
+act, and you remain solely responsible at all times for your keys, your backups, your devices
+and your funds.
+
+### How an engagement is agreed
+
+1. You complete a short intake form and book the free fifteen-minute call.
+2. On that call we establish which service fits and what it will involve.
+3. We send you a written scope and quotation.
+4. You accept it in writing and book a time. At that point these terms apply and the
+   engagement is agreed.
+
+We do not publish prices, because both services are scoped to the setup in front of us. A
+single wallet with a single backup sits at the bottom of the range; multiple devices,
+multisig, or a business setup sits at the top. You will always have the price in writing
+before you commit to anything.
+
+We may decline an engagement, or stop one, where we judge we cannot carry it out safely,
+competently or lawfully. If we do that before the work starts, you pay nothing.
+
+### What we need from you
+
+You agree to:
+
+- give us accurate and complete information about your setup, so that what we tell you is
+  based on what you actually have;
+- have the devices, accounts and materials listed in the prep note ready before the session;
+- attend at the time booked, or tell us in advance if you cannot;
+- never disclose your recovery phrase, private keys or wallet passwords to us or to anyone
+  else, in any format, for any reason;
+- never display a recovery phrase, private key or unlocked wallet on camera or on a shared
+  screen; and
+- carry out any steps we recommend yourself, and keep your own records and backups of what
+  you set up.
+
+If the information you give us is inaccurate or incomplete, or you do not have what the prep
+note asks for, a session may run short or a review may reach the wrong conclusion. We are not
+responsible for that outcome.
+
+### Fees and payment
+
+Fees are quoted per engagement, in writing, before you book. The quotation states what is
+included.
+
+KeyCompass is not currently registered for VAT, so no VAT is charged on our fees. The price
+you are quoted is the price you pay.
+
+Payment is due in full before the session. When you accept the scope and quotation we send an
+invoice with bank transfer details, and your time is confirmed once payment has been received.
+
+Where you are a business client and payment is late, we may charge interest and recovery costs
+under the Late Payment of Commercial Debts (Interest) Act 1998. This does not apply to
+consumers.
+
+### Cancelling, rescheduling and refunds
+
+**If you are a consumer, you have a statutory right to cancel.** Because you book at a
+distance, you may cancel within 14 days of the engagement being agreed, without giving a
+reason, and receive a refund.
+
+Sessions are often booked and delivered inside that 14-day window. If you want the work to
+start before the 14 days are up, you must ask us to begin — booking a time inside the window
+is that request. Two things follow, and by booking you acknowledge both:
+
+- once the service has been fully performed, your right to cancel is gone; and
+- if you cancel part-way through, you pay a proportionate amount for what has already been
+  provided.
+
+To cancel, email [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk). You may use the
+model cancellation form in the Consumer Contracts Regulations, but you do not have to. Refunds
+are made within 14 days of us being told, by the method you paid with.
+
+Separately from the statutory right above, and without reducing it, our own rescheduling policy
+is this. You may reschedule once at no charge, provided you give us at least 48 hours' notice.
+With less than 48 hours' notice, or where an appointment is missed without notice, the session
+is treated as delivered and the fee remains payable. If we have to reschedule, you choose
+between a new time and a full refund.
+
+### Your report and who owns it
+
+You may use the written summary or review report we produce for you, for your own purposes,
+indefinitely. That includes showing it to your own advisers, your family or your colleagues.
+
+We keep ownership of what sits underneath it: our methods, templates, checklists and the way
+we structure a review. You may not republish, resell or distribute our materials publicly, or
+use them to provide a similar service to others.
+
+A review is a point-in-time assessment. It describes your setup as it stood on the day, on the
+information you gave us. Setups drift and threats change; a report does not stay accurate by
+itself.
+
+### Confidentiality
+
+We treat what we learn about your setup and your circumstances as confidential, and do not
+disclose it to anyone except where you ask us to, or where the law requires it. We ask the
+same of you in respect of our materials and methods.
+
+Sessions are not recorded. Screen sharing runs on our side only, so nothing sensitive on your
+side of the call is transmitted.
+
+### Your personal information
+
+We handle your personal information as a data controller, as described in our
+[privacy notice](https://keycompass.co.uk/privacy.md). We never ask for, receive or store your
+recovery phrase, your private keys or your wallet passwords.
+
+### Our responsibility to you
+
+We will provide our services with reasonable care and skill. If you are a consumer, that
+obligation is also implied by the Consumer Rights Act 2015, and nothing in these terms
+excludes it.
+
+Nothing in these terms limits or excludes our liability for death or personal injury caused by
+our negligence, for fraud or fraudulent misrepresentation, or for anything else that cannot
+lawfully be limited or excluded.
+
+Subject to that, and because you keep sole control of your keys and funds at all times, we are
+not responsible for:
+
+- losses arising from actions you take, or do not take, after our work is complete;
+- the loss, theft or inaccessibility of cryptoassets, including through a lost or destroyed
+  backup, a forgotten passphrase, or an error made outside a session;
+- the value of any cryptoasset, or any market movement;
+- failure, defect, discontinuation or compromise of any hardware wallet, software wallet,
+  exchange, network or other third-party product or service, whether or not it was discussed
+  in a session;
+- your disclosure of a recovery phrase, private key or password to anyone, however it was
+  obtained; or
+- the acts of any person impersonating KeyCompass.
+
+**If you are a business client**, we are not liable for loss of profit, loss of business, loss
+of opportunity or loss of goodwill, or for any indirect or consequential loss, and our total
+liability in connection with an engagement is limited to the fees you paid for it.
+
+**If you are a consumer**, we are responsible for loss that is a foreseeable result of our
+breaking these terms or failing to use reasonable care and skill. We are not responsible for
+loss that is not foreseeable.
+
+### Impersonation and verification
+
+KeyCompass never makes contact first. No cold call, no unexpected email, no message on
+Telegram, WhatsApp or LinkedIn. Every conversation starts with you booking it.
+
+Only two email addresses are ours: hello@keycompass.co.uk and simon@keycompass.co.uk. Read the
+address character by character; lookalike domains are cheap.
+
+We will never ask you for a recovery phrase, private key or wallet password, and we will never
+ask you to move funds to an address we give you. Any message doing either is not from us,
+whatever it appears to say.
+
+### Ending an engagement
+
+Either of us may end an engagement by telling the other in writing. If you are a consumer,
+your statutory cancellation right above applies as well, and this section does not reduce it.
+
+We may end an engagement immediately if you ask us to do something unsafe, unlawful or outside
+what we offer, or if you send us a recovery phrase, private key or password despite these
+terms.
+
+Ending an engagement does not affect anything already due, or any section of these terms
+intended to survive it.
+
+### Complaints
+
+If something has gone wrong, email [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
+with what happened. We will acknowledge it within two business days and give you a considered
+response within fourteen days.
+
+If you are a consumer and we cannot resolve it between us, you may be able to use an
+alternative dispute resolution scheme, or the courts. This does not affect your statutory
+rights.
+
+### General
+
+These terms, together with the written scope and quotation for your engagement, are the whole
+agreement between us. Where they conflict, the scope and quotation takes precedence for that
+engagement.
+
+If we do not insist on something, or delay enforcing it, that does not waive it.
+
+If any part of these terms is found to be unenforceable, the rest continues to apply.
+
+You may not transfer your engagement to someone else without our agreement. Someone who is not
+a party to these terms has no right to enforce them.
+
+We are an independent practice. Nothing in these terms creates a partnership, joint venture,
+agency or employment relationship between us.
+
+### Law and jurisdiction
+
+These terms are governed by the law of England and Wales, and the courts of England and Wales
+have jurisdiction over any dispute.
+
+If you are a consumer resident in Scotland or Northern Ireland, you may also bring proceedings
+in your own courts, and you keep the benefit of any mandatory consumer protections of the
+place where you live.
+
+---
+
+Version 1.0, published 14 September 2026.
+
+
+---
+
+## I've lost my recovery phrase. What now?
+
+> What can still be recovered, what genuinely cannot, and how to tell which situation
+> you are in — without handing your money to someone promising a miracle.
+
+**The short answer.** If your recovery phrase is gone and you can no longer open the wallet
+on any device, the funds are almost certainly unrecoverable. That is not a policy anyone can
+appeal; it is how the cryptography works. Nobody — not the wallet maker, not an exchange, not
+a recovery service — holds a copy. But a great many people who believe their phrase is lost
+are actually in a different situation, and several of those situations are fixable. Work
+through the checks below before you conclude anything.
+
+- Stop and do not wipe anything
+- First: is it actually lost?
+- The situations that are usually recoverable
+- The situation that is not
+- Why "recovery services" are how people lose the rest
+- What to do once you know where you stand
+
+### Stop and do not wipe anything
+
+Before anything else: do not factory reset, wipe, update or sell any phone, laptop or
+hardware wallet that has ever held this wallet. Do not uninstall the app. Do not "start
+fresh" to try again.
+
+People in a panic very often destroy the one remaining copy of their keys while trying to fix
+the problem. If the wallet software is still installed somewhere and still opens, the keys are
+still there, and that is a recoverable position. A factory reset ends it permanently.
+
+If the device is old and switched off in a drawer, leave it exactly as it is until you have
+read the rest of this page.
+
+### First: is it actually lost?
+
+There is a real difference between a phrase that is *missing* and one that is *gone*, and most
+people arrive here having decided too quickly that it is gone. Before accepting that, search
+properly and methodically rather than from memory.
+
+Recovery phrases are usually written at the moment a wallet is set up, often on whatever was
+to hand. Look for a single sheet of paper, a card that came in the box with a hardware wallet,
+a page torn from a notebook, or a metal plate. Check anywhere you keep documents you rarely
+touch: a passport folder, a filing box, a safe, a book on a shelf, the back of a picture
+frame, a drawer in a house you have since moved out of. Ask whether you gave a copy to a
+partner or family member for safekeeping, or posted it to yourself.
+
+If you set the wallet up at a particular desk or in a particular room, the phrase was probably
+written within a few feet of where you were sitting.
+
+### The situations that are usually recoverable
+
+Most people who think they have lost access are in one of the following positions rather than
+the truly unrecoverable one. Each of these has a genuine route back, and none of them requires
+paying anybody for a miracle.
+
+#### The wallet is still installed on a device you can unlock
+
+This is the single most common case, and the most commonly missed. Your recovery phrase is a
+backup of the keys — but the keys themselves are still sitting in the wallet app. If the app
+is still on your phone or computer and you can still unlock it with its PIN, password or
+biometrics, you have not lost access to anything.
+
+Most software wallets will show you the recovery phrase again from inside the app, usually
+under settings, security or backup, after you re-enter the password. Write it down properly
+this time, verify it, and store it offline.
+
+If the wallet will not display the phrase again, you can still move the funds: send everything
+to a new wallet whose recovery phrase you have written down and checked first.
+
+#### A hardware wallet you can still unlock
+
+If you still have the device and you still know the PIN, you still have your funds. The keys
+live on the device, not on the paper. The paper is only the spare.
+
+Modern hardware wallets will generally not re-display a recovery phrase once it has been set
+up, for good security reasons — so do not expect to read it back off the device. What you can
+do is set up a second wallet, back that one up properly and verify it, then transfer
+everything across. Do that before the device is lost, broken or wiped by failed PIN attempts.
+
+#### You have some of the words but not all of them
+
+A recovery phrase is not a random list. It is drawn from a fixed list of 2,048 words, and the
+phrase as a whole carries a checksum — a mathematical consistency check built into the
+standard. That means a phrase with one or two words missing can often be reconstructed,
+because only a small number of candidate words produce a valid phrase at all.
+
+This is a genuine, legitimate technical recovery path and it does work. It has one absolute
+rule: this must be done offline, on a device that is not connected to the internet. Any
+website, app or service offering to "complete" or "check" a partial recovery phrase for you is
+collecting phrases. There is no exception to this.
+
+#### A word you cannot read, or that is not on the list
+
+Because the word list is fixed and every word on it is uniquely identified by its first four
+letters, ambiguous handwriting is often resolvable. A word written as "abandn" is only ever
+"abandon". A character you cannot tell is a 1 or an l, an 0 or an O, usually has only one
+reading that produces a real word from the list.
+
+If a word you have written is not on the list at all, it was mis-transcribed at the time, and
+the nearest valid word is usually obvious once you compare it against the list.
+
+#### The phrase works, but the wallet shows nothing
+
+This is the case that frightens people most and is very often not a loss at all. If you
+restore a phrase and the balance comes back as zero, the most likely explanations are:
+
+A passphrase was set and has been forgotten. Some wallets allow an extra word of your own
+choosing on top of the standard phrase, sometimes called a 25th word. The same phrase with and
+without it produces two entirely different wallets, both valid, and the one without shows
+empty. The phrase is not lost — the passphrase is, which is a different problem.
+
+The wallet was restored into different software that looks in a different place. Wallets can
+derive addresses in more than one way, and restoring a correct phrase into an app expecting a
+different scheme can show an empty account while the funds sit untouched on the chain. Trying
+the same phrase in the wallet software it was created with usually resolves it.
+
+The funds are on a different account or network within the same wallet. Many wallets hold
+several accounts behind one phrase, and only show the first by default.
+
+In all three cases the money has not moved. You are looking in the wrong place with the right
+key.
+
+### The situation that is not recoverable
+
+If the recovery phrase is genuinely gone, no copy exists anywhere, and the wallet cannot be
+opened on any device you still have, then the funds cannot be recovered by anyone.
+
+This is worth being plain about rather than soft, because the softness is what scammers sell
+into. Self-custody means no organisation holds a copy of your keys. That is the entire point
+of it, and it is what protects you from a company freezing your funds, going under, or being
+compelled to hand them over. The same property means there is no reset, no support ticket, no
+identity check that restores access. The coins remain visible on the blockchain forever, and
+unreachable forever.
+
+### Why "recovery services" are how people lose the rest
+
+Every search like the one that brought you here is being watched by people who make their
+living from it. If you post about losing access on a forum, in a Telegram group or on social
+media, you should expect to be contacted within hours.
+
+The pattern is consistent. Someone presents themselves as a recovery specialist, a wallet
+support agent, or a blockchain forensics firm. They are confident. They may show you
+testimonials, a professional website, even a case number. What they want is one of two things:
+your recovery phrase or partial phrase "so we can run the recovery", or an upfront fee, often
+framed as a deposit against funds they will return.
+
+Three rules cover almost all of it. No legitimate party ever needs your recovery phrase, in
+whole or in part, for any reason. Anyone who contacts you first, having seen that you are in
+trouble, is not helping you. And a phrase that is genuinely lost cannot be brute-forced by
+anyone at any price — the search space is larger than the problem is solvable.
+
+The one narrow exception is the partial-phrase case described above, which is a technical
+process done offline on your own equipment, not a service you hand your phrase to.
+
+### What to do once you know where you stand
+
+If you have recovered access, treat it as a warning rather than a near miss. Write the phrase
+down again, on paper or steel, and then actually test it: restore it onto a second device, or
+wipe and restore the hardware wallet, and confirm the same wallet comes back. A backup you
+have never tested is an assumption, not a backup — and untested backups are the single most
+common way people end up reading pages like this one.
+
+Then store it somewhere that is not with the device, not photographed, not in a notes app, and
+not in a cloud backup.
+
+If the funds are genuinely gone, the useful thing left to do is make sure it cannot happen
+again with whatever else you hold. In practice, someone who has lost one backup usually has
+the same weakness across the rest of their setup: a phrase in one place, never verified, with
+no plan for what happens if they are not the one logging in.
+
+### Getting help
+
+KeyCompass is run by Simon Geils, who spent a decade in front-line technical support — first
+at Apple, then at a hardware wallet manufacturer, where a great deal of the work was talking
+to people on the worst day of their crypto lives. Most of what is on this page comes from
+watching the same handful of mistakes repeat.
+
+What KeyCompass does not do is recover lost phrases, and it will never ask you for one. What
+it does is check the setup you still have, across the four ways these things fail: phishing,
+device compromise, backup loss, and what happens if you are not the one logging in. If you
+have just had a fright, that is the useful next step.
+
+There is a free fifteen-minute call to work out whether you need it at all.
+
+- [Book the intake call](https://cal.com/simongeils/15min)
+- [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
+
+---
+
+KeyCompass provides educational and operational support only. It is not a financial adviser,
+is not authorised or regulated by the Financial Conduct Authority, does not provide investment,
+legal, or tax advice, and never takes custody of client assets, keys, or recovery phrases.
 
 
 ---

@@ -23,6 +23,8 @@ const VARIANTS: Record<string, string> = {
   "/about": "/about.md",
   "/contact": "/contact.md",
   "/privacy": "/privacy.md",
+  "/terms": "/terms.md",
+  "/lost-recovery-phrase": "/lost-recovery-phrase.md",
   "/agents": "/connect.md",
 };
 

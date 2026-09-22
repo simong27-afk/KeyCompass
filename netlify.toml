@@ -104,6 +104,16 @@
   [headers.values]
     Vary = "Accept, Accept-Encoding"
 
+[[headers]]
+  for = "/terms"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
+[[headers]]
+  for = "/lost-recovery-phrase"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
 # --- paths agents guess ----------------------------------------------------
 # The Is Agentic scan's own agent probed /docs, /faq, /services and /pricing and
 # hit 404s on all four. The site is one page with anchors, so those are real
