@@ -73,6 +73,13 @@ through a single person.
 the first four". If anyone ever asks you for it — including someone claiming to be Simon —
 that is the scam.
 
+**I think I've lost my recovery phrase. Can you help?** No — and nor can anyone else. If the
+phrase is genuinely gone and the wallet will not open on any device, the funds are unreachable.
+But a lot of what looks lost is not: the wallet may still be open on a device you have, a phrase
+missing a word or two can often be rebuilt, and a correct phrase showing an empty wallet is
+usually looking in the wrong place. See
+[what can and cannot be recovered](https://keycompass.co.uk/lost-recovery-phrase.md).
+
 **How do I know it is really you?** KeyCompass never makes contact first. No cold call, no
 unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation starts with you
 booking it. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
