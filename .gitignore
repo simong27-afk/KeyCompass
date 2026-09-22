@@ -8,3 +8,8 @@
 
 # Private — CV and other files Claude generates for me
 Claude outputs/
+
+# Personal and large files — never publish these to the live site
+Business address invoice.pdf
+*.zip
+export/
