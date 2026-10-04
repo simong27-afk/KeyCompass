@@ -111,10 +111,10 @@ and your funds.
 4. You accept it in writing and book a time. At that point these terms apply and the
    engagement is agreed.
 
-We do not publish prices, because both services are scoped to the setup in front of us. A
-single wallet with a single backup sits at the bottom of the range; multiple devices,
-multisig, or a business setup sits at the top. You will always have the price in writing
-before you commit to anything.
+Starting prices are published at https://keycompass.co.uk/pricing. Both services are
+scoped to the setup in front of us: a single wallet with a single backup is the starting
+price; multiple devices, multisig, or a business setup costs more. You will always have the
+exact price in writing before you commit to anything.
 
 We may decline an engagement, or stop one, where we judge we cannot carry it out safely,
 competently or lawfully. If we do that before the work starts, you pay nothing.

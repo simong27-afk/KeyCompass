@@ -110,6 +110,11 @@
     Vary = "Accept, Accept-Encoding"
 
 [[headers]]
+  for = "/pricing"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
+[[headers]]
   for = "/lost-recovery-phrase"
   [headers.values]
     Vary = "Accept, Accept-Encoding"
@@ -124,15 +129,11 @@
 # --- paths agents guess ----------------------------------------------------
 # The Is Agentic scan's own agent probed /docs, /faq, /services and /pricing and
 # hit 404s on all four. The site is one page with anchors, so those are real
-# destinations that simply have no URL — these give them one. Kept as 301s so a
+# destinations that simply have no URL — these give them one. (/pricing is now a
+# real page, so it no longer redirects.) Kept as 301s so a
 # crawler records the canonical target rather than the alias.
 [[redirects]]
   from = "/services"
-  to = "/#services"
-  status = 301
-
-[[redirects]]
-  from = "/pricing"
   to = "/#services"
   status = 301
 

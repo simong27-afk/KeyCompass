@@ -17,8 +17,10 @@ A one-person advisory practice, run by Simon Geils, offering two services:
    prioritised list of what to fix worst-first, plain-English reasoning for each item, and
    an explicit list of what is already fine. Nothing is changed during a review.
 
-Both are priced per engagement and confirmed in writing before booking. Pricing is not
-published: it is scoped on the free intake call.
+Prices are published at https://keycompass.co.uk/pricing: onboarding sessions from £195,
+security reviews from £295 (exact figure confirmed in writing after the free intake call),
+and a £95 drop-in hour — 60 minutes for a short list of questions, paid when booked at
+https://cal.com/simongeils/60min. No VAT; never a percentage of holdings.
 
 ## When to use
 

@@ -26,8 +26,7 @@ work is technical and operational: how to hold safely what you already own.
 
 ### Services
 
-**Private onboarding session** — 90 minutes to a day, one-to-one, live. Price on
-application.
+**Private onboarding session** — 90 minutes to a day, one-to-one, live. From £195.
 
 For people new to this, or whose crypto is still sitting on an exchange. Choosing and
 checking a hardware wallet, setting it up from scratch, generating and backing up the
@@ -36,7 +35,7 @@ drive; each step is explained as you go. You leave with a working wallet you set
 yourself, a backup you have verified, a written record of your setup, and the habits that
 prevent the common losses.
 
-**Threat and security review** — audit plus written report. Price on application.
+**Threat and security review** — audit plus written report. From £295.
 
 For people who already self-custody and have not reviewed the setup. A structured walk
 through what you already have across four failure channels: phishing, device, backup loss,
@@ -44,8 +43,9 @@ and succession. Nothing is changed during a review. You leave with a prioritised
 what to fix worst-first, plain-English reasoning for every item, an explicit list of what
 is already fine, and a re-assessment once you have made the changes.
 
-Reviews are scoped on the free intake call. A single wallet with a single backup sits at
-the bottom of the range; multiple devices, multisig, or a business setup sits at the top.
+Only have a few questions? A drop-in hour is £95, paid when you book. Every price is fixed,
+with no VAT, and the exact figure for a session or review is confirmed in writing after the
+free intake call. [Full pricing](https://keycompass.co.uk/pricing.md).
 
 ### How a session runs
 
@@ -84,6 +84,8 @@ usually looking in the wrong place. See
 unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation starts with you
 booking it. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
 
+**How much does it cost?** A free 30-minute intake call, then fixed prices: a drop-in hour for a short list of questions is £95, a private onboarding session starts at £195, and a security review starts at £295. There is no VAT and no percentage of what you hold. The exact figure for a session or review is confirmed in writing after the intake call, before you commit to anything.
+
 **Is any of this financial advice?** No. KeyCompass is not authorised or regulated by the
 Financial Conduct Authority and does not give investment, legal, or tax advice.
 
@@ -121,6 +123,101 @@ provide investment, legal, or tax advice, and never takes custody of client asse
 or recovery phrases. Cryptoassets are unregulated and high risk. You could lose all the
 money you invest. Take independent professional advice before making investment, legal, or
 tax decisions.
+
+
+---
+
+## Pricing
+
+> Fixed prices, published up front. No VAT, no percentage of what you hold, no subscription,
+> and nothing to buy from us beyond the time itself.
+
+| Service | Price | Length |
+| --- | --- | --- |
+| Intake call | Free | 30 minutes |
+| Drop-in hour | £95 | 60 minutes |
+| Private onboarding session | From £195 | 90 minutes to a day |
+| Threat and security review | From £295 | Review plus written report |
+
+KeyCompass is not registered for VAT, so the price shown is the price you pay. Fees are
+never a percentage of your holdings, and nobody at KeyCompass ever needs to know how much
+you hold to quote you.
+
+### Free intake call
+
+**Free · 30 minutes · video call**
+
+The place to start if you are not sure what you need. We work out which service fits, what
+it will involve, and what it will cost. If the honest answer is that you do not need any of
+it yet, you will be told so.
+
+The intake call is for working out the right next step, not for hands-on help. If you
+already know what you want to ask, the drop-in hour is the better fit.
+
+[Book the free intake call](https://cal.com/simongeils/30min)
+
+### Drop-in hour
+
+**£95 · 60 minutes · video call · paid when you book**
+
+For a short list of questions, answered properly. Bring whatever is on your mind:
+
+- Checking a step in a setup you are about to do, before you do it
+- Working out what a warning, prompt or firmware update in your wallet means
+- Deciding whether a message, email or "support" contact is genuine
+- Talking through how and where to store a backup
+- A second opinion on something you have already set up
+
+The same rules apply as every other session: you never show a recovery phrase, a private
+key or an unlocked wallet, and nothing said is investment, legal or tax advice. A drop-in
+hour does not include a written report. If it turns out you need a structured review, you
+will be told so.
+
+[Book a drop-in hour](https://cal.com/simongeils/60min)
+
+### Private onboarding session
+
+**From £195 · 90 minutes to a day · live, one-to-one**
+
+For people new to self-custody, or whose crypto is still on an exchange. Choosing and
+checking a hardware wallet, setting it up from scratch, generating and backing up the
+recovery phrase, sending a test amount, confirming it landed, then moving the rest. You
+leave with a working wallet you set up yourself, a verified backup, and a written record of
+your setup.
+
+£195 covers a single wallet with a single backup in one 90-minute session, including the
+written summary afterwards. More devices, more networks, or a setup that needs a longer
+session moves the price up. You will have the exact figure in writing after the intake call,
+before you commit to anything.
+
+### Threat and security review
+
+**From £295 · structured review plus written report**
+
+For people who already self-custody and have not reviewed the setup. A walk through what you
+already have across four failure channels — phishing, device, backup loss and succession —
+followed by a written, prioritised list of what to fix worst-first and an explicit list of
+what is already fine.
+
+£295 covers a single wallet with a single backup. Multiple devices, multisig, or a business
+setup sits higher. The exact figure is confirmed in writing after the intake call.
+
+### How paying works
+
+- **Drop-in hour:** paid by card when you book.
+- **Onboarding sessions and reviews:** you receive a written scope and quotation after the
+  intake call, then an invoice to pay by bank transfer. Your time is confirmed once payment
+  has been received.
+- **Rescheduling:** once, free of charge, with at least 48 hours' notice.
+
+### What no price includes
+
+KeyCompass never holds your keys, your recovery phrase or your funds, and never asks for
+them — not the words, not a photo, not part of it. No session includes advice on what to
+buy, when, or how much. KeyCompass is not authorised or regulated by the Financial Conduct
+Authority. The work is technical and operational: how to hold safely what you already own.
+
+[Book the free intake call](https://cal.com/simongeils/30min)
 
 
 ---
@@ -232,9 +329,9 @@ claiming to come from KeyCompass.
 Every engagement begins with a free thirty-minute intake call. There is no obligation and
 no pitch. If KeyCompass is not what you need, you will be told so on the call.
 
-Prices are per engagement and confirmed in writing before anything is booked. Reviews are
-scoped on that intake call: a single wallet with a single backup sits at the bottom of the
-range; multiple devices, multisig, or a business setup sits at the top.
+Prices are fixed and published on the [pricing page](https://keycompass.co.uk/pricing.md):
+a £95 drop-in hour, onboarding sessions from £195, and security reviews from £295. The exact
+figure for a session or review is confirmed in writing after the intake call.
 
 ### Related pages
 
@@ -602,10 +699,10 @@ and your funds.
 4. You accept it in writing and book a time. At that point these terms apply and the
    engagement is agreed.
 
-We do not publish prices, because both services are scoped to the setup in front of us. A
-single wallet with a single backup sits at the bottom of the range; multiple devices,
-multisig, or a business setup sits at the top. You will always have the price in writing
-before you commit to anything.
+Starting prices are published at https://keycompass.co.uk/pricing. Both services are
+scoped to the setup in front of us: a single wallet with a single backup is the starting
+price; multiple devices, multisig, or a business setup costs more. You will always have the
+exact price in writing before you commit to anything.
 
 We may decline an engagement, or stop one, where we judge we cannot carry it out safely,
 competently or lawfully. If we do that before the work starts, you pay nothing.
@@ -1019,8 +1116,10 @@ A one-person advisory practice, run by Simon Geils, offering two services:
    prioritised list of what to fix worst-first, plain-English reasoning for each item, and
    an explicit list of what is already fine. Nothing is changed during a review.
 
-Both are priced per engagement and confirmed in writing before booking. Pricing is not
-published: it is scoped on the free intake call.
+Prices are published at https://keycompass.co.uk/pricing: onboarding sessions from £195,
+security reviews from £295 (exact figure confirmed in writing after the free intake call),
+and a £95 drop-in hour — 60 minutes for a short list of questions, paid when booked at
+https://cal.com/simongeils/60min. No VAT; never a percentage of holdings.
 
 ### When to use
 

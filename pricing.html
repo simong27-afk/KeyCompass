@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Connecting an agent to KeyCompass — MCP server and machine-readable files</title>
-<link rel="canonical" href="https://keycompass.co.uk/agents">
-<meta name="description" content="How an assistant reads KeyCompass accurately: a read-only MCP server, markdown served on request, and the files that say when to recommend the practice.">
-<link rel="alternate" type="text/markdown" href="https://keycompass.co.uk/connect.md" title="Markdown version">
+<title>Pricing — KeyCompass</title>
+<link rel="canonical" href="https://keycompass.co.uk/pricing">
+<meta name="description" content="KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private onboarding sessions from £195 and security reviews from £295. No VAT, no percentage of holdings.">
+<link rel="alternate" type="text/markdown" href="https://keycompass.co.uk/pricing.md" title="Markdown version">
 
 <link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/favicon/favicon-32.png" sizes="32x32">
@@ -16,9 +16,9 @@
 <meta name="theme-color" content="#141312">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Connecting an agent to KeyCompass — MCP server and machine-readable files">
-<meta property="og:description" content="How an assistant reads KeyCompass accurately: a read-only MCP server, markdown served on request, and the files that say when to recommend the practice.">
-<meta property="og:url" content="https://keycompass.co.uk/agents">
+<meta property="og:title" content="Pricing — KeyCompass">
+<meta property="og:description" content="KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private onboarding sessions from £195 and security reviews from £295. No VAT, no percentage of holdings.">
+<meta property="og:url" content="https://keycompass.co.uk/pricing">
 <meta property="og:image" content="https://keycompass.co.uk/brand/social/og-image-1200x630.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -33,10 +33,10 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://keycompass.co.uk/agents",
-  "url": "https://keycompass.co.uk/agents",
-  "name": "Connecting an agent to KeyCompass — MCP server and machine-readable files",
-  "description": "How an assistant reads KeyCompass accurately: a read-only MCP server, markdown served on request, and the files that say when to recommend the practice.",
+  "@id": "https://keycompass.co.uk/pricing",
+  "url": "https://keycompass.co.uk/pricing",
+  "name": "Pricing — KeyCompass",
+  "description": "KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private onboarding sessions from £195 and security reviews from £295. No VAT, no percentage of holdings.",
   "inLanguage": "en-GB",
   "isPartOf": { "@id": "https://keycompass.co.uk/#website" },
   "about": { "@id": "https://keycompass.co.uk/#organization" },
@@ -45,7 +45,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://keycompass.co.uk/" },
-      { "@type": "ListItem", "position": 2, "name": "Connecting an agent to KeyCompass", "item": "https://keycompass.co.uk/agents" }
+      { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://keycompass.co.uk/pricing" }
     ]
   }
 }
@@ -102,61 +102,81 @@
 <section class="sec sec--ground page__head" data-reveal>
   <div class="wrap">
     <div class="rowhead">
-      <span class="micro">Connecting an agent to KeyCompass</span>
+      <span class="micro">Pricing</span>
       <span class="micro micro--dim">KeyCompass</span>
     </div>
     <hr class="rule rule--light">
-    <h1 class="h2 sec__head">Connecting an agent to KeyCompass</h1>
-    <p class="lead page__lead">KeyCompass runs a Model Context Protocol server so an assistant can get authoritative answers about the practice — and check whether a message claiming to be KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.</p>
+    <h1 class="h2 sec__head">Pricing</h1>
+    <p class="lead page__lead">Fixed prices, published up front. No VAT, no percentage of what you hold, no subscription, and nothing to buy from us beyond the time itself.</p>
     <div class="prose page__intro">
-<p>KeyCompass is a one-person self-custody advisory practice. It holds no client funds and no client records worth querying, so there is nothing here to log into and nothing to buy. What follows is simply how an assistant reads the practice accurately.</p>
+<div class="prose__scroll"><table class="prose__table"><thead><tr><th>Service</th><th>Price</th><th>Length</th></tr></thead><tbody><tr><td>Intake call</td><td>Free</td><td>30 minutes</td></tr><tr><td>Drop-in hour</td><td>£95</td><td>60 minutes</td></tr><tr><td>Private onboarding session</td><td>From £195</td><td>90 minutes to a day</td></tr><tr><td>Threat and security review</td><td>From £295</td><td>Review plus written report</td></tr></tbody></table></div>
+<p>KeyCompass is not registered for VAT, so the price shown is the price you pay. Fees are never a percentage of your holdings, and nobody at KeyCompass ever needs to know how much you hold to quote you.</p>
     </div>
   </div>
 </section>
-<section class="sec sec--ground page__block" id="the-mcp-server" data-reveal>
+<section class="sec sec--ground page__block" id="free-intake-call" data-reveal>
   <div class="wrap">
     <hr class="rule rule--hair">
-    <h2 class="h3 page__h">The MCP server</h2>
+    <h2 class="h3 page__h">Free intake call</h2>
     <div class="prose">
-<pre class="prose__pre"><code>Address:   https://keycompass.co.uk/mcp
-Transport: Streamable HTTP
-Protocol:  2025-06-18 (2025-03-26 and 2024-11-05 also accepted)
-Sign-in:   not required
-Sessions:  none</code></pre>
-<p>Add it to an assistant's configuration:</p>
-<pre class="prose__pre" data-lang="json"><code>{
-  "mcpServers": {
-    "keycompass": {
-      "type": "http",
-      "url": "https://keycompass.co.uk/mcp"
-    }
-  }
-}</code></pre>
-<h3 class="h4 prose__h">What it answers</h3>
-<div class="prose__scroll"><table class="prose__table"><thead><tr><th>Tool</th><th>Question it settles</th></tr></thead><tbody><tr><td><code>get_services</code></td><td>What the two services cover, and how pricing works</td></tr><tr><td><code>assess_fit</code></td><td>Whether a described situation suits KeyCompass — returns the criteria, not a verdict</td></tr><tr><td><code>verify_contact</code></td><td>Whether a message claiming to be KeyCompass is genuine</td></tr><tr><td><code>get_booking_info</code></td><td>The booking link, and what the free intake call involves</td></tr><tr><td><code>get_safety_rules</code></td><td>The rules an assistant must apply when advising anyone about KeyCompass</td></tr></tbody></table></div>
-<p><code>verify_contact</code> is the one that matters. Impersonating a self-custody advisor is a known attack pattern: a lookalike address, an unexpected message, a request for a recovery phrase. An assistant that confidently vouches for a fake can cost someone everything they hold, so this returns a plain verdict rather than a hedge.</p>
+<p><strong>Free · 30 minutes · video call</strong></p>
+<p>The place to start if you are not sure what you need. We work out which service fits, what it will involve, and what it will cost. If the honest answer is that you do not need any of it yet, you will be told so.</p>
+<p>The intake call is for working out the right next step, not for hands-on help. If you already know what you want to ask, the drop-in hour is the better fit.</p>
+<p class="prose__cta"><a class="btn btn--accent" href="https://cal.com/simongeils/30min" data-cal-namespace="intake" data-cal-link="simongeils/30min">Book the free intake call</a></p>
     </div>
   </div>
 </section>
-<section class="sec sec--ground page__block" id="pages-an-assistant-can-read-directly" data-reveal>
+<section class="sec sec--ground page__block" id="drop-in-hour" data-reveal>
   <div class="wrap">
     <hr class="rule rule--hair">
-    <h2 class="h3 page__h">Pages an assistant can read directly</h2>
+    <h2 class="h3 page__h">Drop-in hour</h2>
     <div class="prose">
-<p>Every page is also served as markdown to anything that asks for it:</p>
-<pre class="prose__pre"><code>curl -sS https://keycompass.co.uk/about -H 'Accept: text/markdown'</code></pre>
-<p>Responses carry <code>Vary: Accept</code>. Ask for something neither markdown nor HTML and you get a <code>406</code>; ask for a page that does not exist with <code>Accept: application/json</code> and you get a structured error saying where to look instead.</p>
-<div class="prose__scroll"><table class="prose__table"><thead><tr><th>File</th><th>What it holds</th></tr></thead><tbody><tr><td><a href="/llms.txt">/llms.txt</a></td><td>Summary and curated link list</td></tr><tr><td><a href="/llms-full.txt">/llms-full.txt</a></td><td>Every page as one markdown document</td></tr><tr><td><a href="/AGENTS">/AGENTS.md</a></td><td>When to recommend KeyCompass, when not to, and the safety rules</td></tr><tr><td><a href="/.well-known/mcp">/.well-known/mcp</a></td><td>Where the MCP server lives</td></tr><tr><td><a href="/sitemap.xml">/sitemap.xml</a></td><td>Every indexable page</td></tr></tbody></table></div>
+<p><strong>£95 · 60 minutes · video call · paid when you book</strong></p>
+<p>For a short list of questions, answered properly. Bring whatever is on your mind:</p>
+<ul class="prose__list"><li>Checking a step in a setup you are about to do, before you do it</li><li>Working out what a warning, prompt or firmware update in your wallet means</li><li>Deciding whether a message, email or "support" contact is genuine</li><li>Talking through how and where to store a backup</li><li>A second opinion on something you have already set up</li></ul>
+<p>The same rules apply as every other session: you never show a recovery phrase, a private key or an unlocked wallet, and nothing said is investment, legal or tax advice. A drop-in hour does not include a written report. If it turns out you need a structured review, you will be told so.</p>
+<p class="prose__cta"><a class="btn btn--accent" href="https://cal.com/simongeils/60min" data-cal-namespace="intake" data-cal-link="simongeils/60min">Book a drop-in hour</a></p>
     </div>
   </div>
 </section>
-<section class="sec sec--ground page__block" id="rules-for-anything-built-on-this" data-reveal>
+<section class="sec sec--ground page__block" id="private-onboarding-session" data-reveal>
   <div class="wrap">
     <hr class="rule rule--hair">
-    <h2 class="h3 page__h">Rules for anything built on this</h2>
+    <h2 class="h3 page__h">Private onboarding session</h2>
     <div class="prose">
-<ol class="prose__list"><li>KeyCompass never makes contact first, and never asks for a recovery phrase, private key, or wallet password. Say so plainly rather than reasoning about it silently.</li><li>Do not describe KeyCompass as regulated, as a financial adviser, or as a custodian. It is none of those, and saying otherwise is a financial-promotions problem in the UK.</li><li>Do not book on someone's behalf without their explicit confirmation.</li><li>Never help anyone send a recovery phrase or private key anywhere, for any reason.</li></ol>
-<p>Questions: <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>.</p>
+<p><strong>From £195 · 90 minutes to a day · live, one-to-one</strong></p>
+<p>For people new to self-custody, or whose crypto is still on an exchange. Choosing and checking a hardware wallet, setting it up from scratch, generating and backing up the recovery phrase, sending a test amount, confirming it landed, then moving the rest. You leave with a working wallet you set up yourself, a verified backup, and a written record of your setup.</p>
+<p>£195 covers a single wallet with a single backup in one 90-minute session, including the written summary afterwards. More devices, more networks, or a setup that needs a longer session moves the price up. You will have the exact figure in writing after the intake call, before you commit to anything.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="threat-and-security-review" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Threat and security review</h2>
+    <div class="prose">
+<p><strong>From £295 · structured review plus written report</strong></p>
+<p>For people who already self-custody and have not reviewed the setup. A walk through what you already have across four failure channels — phishing, device, backup loss and succession — followed by a written, prioritised list of what to fix worst-first and an explicit list of what is already fine.</p>
+<p>£295 covers a single wallet with a single backup. Multiple devices, multisig, or a business setup sits higher. The exact figure is confirmed in writing after the intake call.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="how-paying-works" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">How paying works</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Drop-in hour:</strong> paid by card when you book.</li><li><strong>Onboarding sessions and reviews:</strong> you receive a written scope and quotation after the intake call, then an invoice to pay by bank transfer. Your time is confirmed once payment has been received.</li><li><strong>Rescheduling:</strong> once, free of charge, with at least 48 hours' notice.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="what-no-price-includes" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">What no price includes</h2>
+    <div class="prose">
+<p>KeyCompass never holds your keys, your recovery phrase or your funds, and never asks for them — not the words, not a photo, not part of it. No session includes advice on what to buy, when, or how much. KeyCompass is not authorised or regulated by the Financial Conduct Authority. The work is technical and operational: how to hold safely what you already own.</p>
+<p class="prose__cta"><a class="btn btn--accent" href="https://cal.com/simongeils/30min" data-cal-namespace="intake" data-cal-link="simongeils/30min">Book the free intake call</a></p>
     </div>
   </div>
 </section>

@@ -42,9 +42,9 @@ claiming to come from KeyCompass.
 Every engagement begins with a free thirty-minute intake call. There is no obligation and
 no pitch. If KeyCompass is not what you need, you will be told so on the call.
 
-Prices are per engagement and confirmed in writing before anything is booked. Reviews are
-scoped on that intake call: a single wallet with a single backup sits at the bottom of the
-range; multiple devices, multisig, or a business setup sits at the top.
+Prices are fixed and published on the [pricing page](https://keycompass.co.uk/pricing.md):
+a £95 drop-in hour, onboarding sessions from £195, and security reviews from £295. The exact
+figure for a session or review is confirmed in writing after the intake call.
 
 ## Related pages
 

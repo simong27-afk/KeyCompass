@@ -526,10 +526,10 @@ body{
   .step+.step{padding-left:clamp(1rem,1.6vw,1.75rem)}
   .profiles{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
-/* 940px, not 820: with five links (Guides added) the nav wraps onto two lines
-   below ~910px, so the menu takes over a little earlier. Keep in step with the
+/* 1040px, not 820: with six links (Guides and Pricing added) the nav wraps onto
+   two lines below ~1010px, so the menu takes over earlier. Keep in step with the
    innerWidth check in site.js. */
-@media (max-width:939px){
+@media (max-width:1039px){
   .hdr__nav{display:none}
   /* The nav is hidden but still in the DOM, so .hdr__nav+.btn kept matching and
      cancelled the auto-margin — leaving the CTA stranded beside the logo. */
@@ -541,7 +541,7 @@ body{
   .hdr .btn{min-height:44px}
   .social__link{min-height:44px}
 }
-@media (min-width:940px){
+@media (min-width:1040px){
   .menu{display:none!important}
 }
 

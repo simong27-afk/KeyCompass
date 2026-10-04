@@ -24,6 +24,7 @@ const VARIANTS: Record<string, string> = {
   "/contact": "/contact.md",
   "/privacy": "/privacy.md",
   "/terms": "/terms.md",
+  "/pricing": "/pricing.md",
   "/lost-recovery-phrase": "/lost-recovery-phrase.md",
   "/agents": "/connect.md",
 };
@@ -148,6 +149,7 @@ function jsonError(status: number, code: string, message: string, hint: string):
             about: "https://keycompass.co.uk/about",
             contact: "https://keycompass.co.uk/contact",
             privacy: "https://keycompass.co.uk/privacy",
+            pricing: "https://keycompass.co.uk/pricing",
             agentInstructions: "https://keycompass.co.uk/AGENTS.md",
             connectingAnAgent: "https://keycompass.co.uk/agents",
             mcpEndpoint: "https://keycompass.co.uk/mcp",
