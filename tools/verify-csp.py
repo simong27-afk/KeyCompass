@@ -12,6 +12,7 @@ Exit status: 0 in sync, 1 out of sync (prints the values to paste).
 """
 
 import base64
+import glob
 import hashlib
 import io
 import os
@@ -19,9 +20,9 @@ import re
 import sys
 
 TOML = "netlify.toml"
-HTML_PAGES = ("index.html", "about.html", "contact.html", "privacy.html",
-              "terms.html", "lost-recovery-phrase.html",
-              "agents.html", "404.html")
+# Every published HTML page: the root pages plus every generated guide. Globbed
+# rather than listed so a new guide is checked without anyone remembering to.
+HTML_PAGES = tuple(sorted(glob.glob("*.html")) + sorted(glob.glob("guides/*.html")))
 INLINE = re.compile(r"<script(?![^>]*\bsrc=)([^>]*)>(.*?)</script>", re.DOTALL | re.I)
 TYPE_ATTR = re.compile(r'\btype\s*=\s*["\']([^"\']+)["\']', re.I)
 

@@ -1,3 +1,11 @@
+---
+title: I've lost my recovery phrase. What now? — KeyCompass
+description: What can still be recovered when a crypto recovery phrase is lost, what genuinely cannot, how to tell which situation you are in, and why recovery services are a scam.
+category: Recovery
+published: 2026-09-22
+checked: 2026-09-22
+featured: yes
+---
 # I've lost my recovery phrase. What now?
 
 > What can still be recovered, what genuinely cannot, and how to tell which situation

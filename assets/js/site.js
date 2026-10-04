@@ -79,7 +79,7 @@
     });
     /* Rotating the phone to landscape can cross the breakpoint mid-menu. */
     window.addEventListener('resize', function () {
-      if (!menu.hidden && window.innerWidth > 820) setMenu(false);
+      if (!menu.hidden && window.innerWidth >= 940) setMenu(false);
     });
   }
 

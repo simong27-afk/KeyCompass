@@ -114,6 +114,13 @@
   [headers.values]
     Vary = "Accept, Accept-Encoding"
 
+# Every guide and the guides index negotiate too (variantFor in the edge
+# function matches them by path), so one rule covers guides not yet written.
+[[headers]]
+  for = "/guides/*"
+  [headers.values]
+    Vary = "Accept, Accept-Encoding"
+
 # --- paths agents guess ----------------------------------------------------
 # The Is Agentic scan's own agent probed /docs, /faq, /services and /pricing and
 # hit 404s on all four. The site is one page with anchors, so those are real
