@@ -151,8 +151,7 @@ worked out, step by step, what happened.
 
 ### The boundary
 
-This is the part worth reading twice, because it is what makes the work safe to do with
-someone you have just met.
+This is the part worth reading twice, because it is what makes the work safe to do.
 
 - **Not a custodian.** KeyCompass never holds your keys, your recovery phrase, or your
   funds — not for a minute, not to help, not to check something. You keep sole control of
