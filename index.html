@@ -98,11 +98,12 @@
           {
             "@type": "Offer",
             "availability": "https://schema.org/InStock",
-            "url": "https://keycompass.co.uk/#services",
+            "url": "https://keycompass.co.uk/pricing",
             "priceSpecification": {
               "@type": "PriceSpecification",
               "priceCurrency": "GBP",
-              "description": "Price on application, scoped and confirmed in writing on the free intake call before anything is booked."
+              "minPrice": 195,
+              "description": "From £195 for a single wallet and backup in one 90-minute session, confirmed in writing after the free intake call. No VAT."
             },
             "itemOffered": {
               "@type": "Service",
@@ -122,11 +123,12 @@
           {
             "@type": "Offer",
             "availability": "https://schema.org/InStock",
-            "url": "https://keycompass.co.uk/#services",
+            "url": "https://keycompass.co.uk/pricing",
             "priceSpecification": {
               "@type": "PriceSpecification",
               "priceCurrency": "GBP",
-              "description": "Price on application, scoped on the free intake call. A single wallet and a single backup sits at the bottom of the range; multiple devices, multisig, or a business setup sits at the top."
+              "minPrice": 295,
+              "description": "From £295 for a single wallet and backup. Multiple devices, multisig, or a business setup sits higher; confirmed in writing after the free intake call. No VAT."
             },
             "itemOffered": {
               "@type": "Service",
@@ -140,6 +142,23 @@
               "audience": {
                 "@type": "Audience",
                 "audienceType": "Existing self-custody users, couples, and small businesses"
+              }
+            }
+          },
+          {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "url": "https://keycompass.co.uk/pricing#drop-in-hour",
+            "price": 95,
+            "priceCurrency": "GBP",
+            "itemOffered": {
+              "@type": "Service",
+              "@id": "https://keycompass.co.uk/#service-drop-in",
+              "name": "Drop-in hour",
+              "serviceType": "Self-custody questions answered",
+              "description": "A 60-minute video call for a short list of self-custody questions, paid when you book. No written report, and no investment, legal, or tax advice.",
+              "provider": {
+                "@id": "https://keycompass.co.uk/#organization"
               }
             }
           }
@@ -218,6 +237,14 @@
         },
         {
           "@type": "Question",
+          "name": "How much does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A free 30-minute intake call, then fixed prices: a drop-in hour for a short list of questions is £95, a private onboarding session starts at £195, and a security review starts at £295. There is no VAT and no percentage of what you hold. The exact figure for a session or review is confirmed in writing after the intake call, before you commit to anything."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Is any of this financial advice?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -282,6 +309,7 @@
       <a href="#method">How it works</a>
       <a href="#who">Who it's for</a>
       <a href="#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
       <a href="/guides/">Guides</a>
     </nav>
     <a class="btn btn--accent btn--sm" href="https://cal.com/simongeils/30min"
@@ -304,6 +332,7 @@
       <a href="#method">How it works</a>
       <a href="#who">Who it's for</a>
       <a href="#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
       <a href="/guides/">Guides</a>
     </nav>
     <a class="btn btn--accent menu__cta" href="https://cal.com/simongeils/30min"
@@ -443,7 +472,7 @@
       <article class="card">
         <div class="card__spec">
           <span class="micro">Live · 90 min - DAY · One-to-one</span>
-          <span class="card__price">£POA</span>
+          <span class="card__price">From £195</span>
         </div>
         <h3 class="h3">Private onboarding session</h3>
         <p class="card__for">For: you're new to this, or your crypto is still sitting on an exchange.</p>
@@ -453,14 +482,14 @@
           <li>A working wallet you set up yourself, start to finish</li>
           <li>A backup you have verified, stored the way you decided</li>
           <li>A written record of your setup, so you can repeat it</li>
-          <li>The habits that prevent the common losses: verify on the device, test small, never type the phrase and intimitely understand the risks and common scams affecting the community currently.</li>
+          <li>The habits that prevent the common losses: verify on the device, test small, never type the phrase and intimately understand the risks and common scams affecting the community currently.</li>
         </ul>
       </article>
 
       <article class="card">
         <div class="card__spec">
           <span class="micro">LIVE Audit · Written report</span>
-          <span class="card__price">£POA</span>
+          <span class="card__price">From £295</span>
         </div>
         <h3 class="h3">Threat and security review</h3>
         <p class="card__for">For: you already self-custody, and haven't reviewed your setup.</p>
@@ -475,7 +504,7 @@
       </article>
     </div>
 
-    <p class="note">Prices are per engagement and confirmed in writing before anything is booked. Reviews are scoped on the free intake call — a single wallet and a single backup sits at the bottom of the range; multiple devices, multisig, or a business setup sits at the top.</p>
+    <p class="note">Only have a few questions? A <a href="/pricing#drop-in-hour">drop-in hour</a> is £95, paid when you book. Every price is fixed, with no VAT, and the exact figure for a session or review is confirmed in writing after the free intake call. <a href="/pricing">See full pricing</a>.</p>
   </div>
 </section>
 
@@ -607,6 +636,10 @@
         </div>
       </details>
       <details class="qa">
+        <summary><span>How much does it cost?</span></summary>
+        <div class="qa__body"><p>The intake call is free and lasts 30 minutes. After that, prices are fixed: a <a href="/pricing#drop-in-hour">drop-in hour</a> for a short list of questions is &pound;95, a private onboarding session starts at &pound;195, and a security review starts at &pound;295. There is no VAT and no percentage of what you hold. The exact figure for a session or review is confirmed in writing after the intake call, before you commit to anything. <a href="/pricing">Full pricing</a>.</p></div>
+      </details>
+      <details class="qa">
         <summary><span>Is any of this financial advice?</span></summary>
         <div class="qa__body"><p>No. KeyCompass is not authorised or regulated by the Financial Conduct Authority and does not give investment, legal, or tax advice. I will not tell you what to hold, when to buy, or how much. Every session is about the technical and operational side of holding what you already own. For investment, legal, and tax decisions, use your own licensed professionals.</p></div>
       </details>
@@ -681,6 +714,7 @@
         <a href="#who">Who it's for</a>
         <a href="#faq">Questions</a>
         <a href="#book">Book a session</a>
+        <a href="/pricing">Pricing</a>
         <a href="/guides/">Guides</a>
         <a href="/about">About</a>
       </nav>

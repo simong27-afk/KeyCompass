@@ -105,7 +105,8 @@ def local_checks():
         check("%s opens with a page head section" % page,
               'class="sec sec--ground page__head" data-reveal' in markup)
         check("%s gives every H2 its own revealed section" % page,
-              markup.count('class="sec sec--ground page__block" data-reveal')
+              len(re.findall(r'class="sec sec--ground page__block"(?: id="[a-z0-9-]+")? data-reveal',
+                             markup))
               == markup.count('class="h3 page__h"'),
               "%d block(s), %d heading(s)"
               % (markup.count('page__block" data-reveal'),
@@ -231,7 +232,7 @@ def local_checks():
 
     # 6. sitemap covers the new pages
     sm = read("sitemap.xml")
-    for slug in ("about", "contact", "privacy", "agents"):
+    for slug in ("about", "contact", "privacy", "agents", "pricing"):
         check("sitemap.xml lists /%s" % slug, "/%s<" % slug in sm)
 
     # 7. the edge function is wired up
@@ -244,7 +245,7 @@ def local_checks():
         check("edge function fails open on error", "catch" in src and "context.next()" in src)
 
     toml = read("netlify.toml")
-    for path in ("/faq", "/services", "/pricing", "/how-it-works", "/book"):
+    for path in ("/faq", "/services", "/how-it-works", "/book"):
         check("netlify.toml redirects %s" % path, 'from = "%s"' % path in toml)
     check("edge function returns structured JSON errors",
           "prefersJson" in read("netlify/edge-functions/content-negotiation.ts"))
@@ -275,7 +276,8 @@ def live_checks(base):
     # /docs, /api and /mcp-server were deliberately NOT reinstated: a
     # developer-documentation path is what opened the API surface in the scan,
     # and this is the configuration that measured 100/100.
-    for path, target in (("/services", "/#services"), ("/pricing", "/#services"),
+    # /pricing is a real page now, so it is checked as one rather than as an alias.
+    for path, target in (("/services", "/#services"), ("/pricing", "/pricing"),
                          ("/faq", "/#faq"), ("/how-it-works", "/#method"),
                          ("/book", "/#book")):
         status, headers, _ = request(base + path)

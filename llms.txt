@@ -56,6 +56,8 @@ addresses are used: hello@keycompass.co.uk and simon@keycompass.co.uk.
   explicit boundary — not a custodian, not a broker, not an adviser.
 - [Contact](https://keycompass.co.uk/contact.md): How to reach KeyCompass, and how to verify
   that a message claiming to be from KeyCompass is genuine.
+- [Pricing](https://keycompass.co.uk/pricing.md): Free 30-minute intake call, £95 drop-in
+  hour, onboarding sessions from £195, security reviews from £295. No VAT.
 - [Privacy](https://keycompass.co.uk/privacy.md): What data is collected, why, who processes
   it, and how long it is kept.
 

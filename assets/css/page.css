@@ -24,7 +24,7 @@
 .page__lead{margin-top:clamp(1rem,2.2vw,1.5rem);max-width:56ch;color:var(--dim-2)}
 .page__intro{margin-top:clamp(1.5rem,3vw,2.25rem)}
 
-.page__block{padding-block:clamp(3rem,6vw,4.75rem) 0}
+.page__block{padding-block:clamp(3rem,6vw,4.75rem) 0;scroll-margin-top:70px}
 .page__block:last-of-type{padding-bottom:clamp(4rem,8vw,7rem)}
 .page__h{margin-top:clamp(2rem,4vw,3.25rem);max-width:26ch}
 .page__block .prose{margin-top:clamp(1.5rem,3vw,2.25rem)}
@@ -42,6 +42,11 @@
 .prose__h{margin-top:clamp(1.9rem,3.5vw,2.6rem);max-width:30ch}
 
 .prose p{margin-block:0}
+/* .prose p above outranks ".prose > * + *", which silently removed the gap
+   between consecutive paragraphs and lists on every prose page. Restated at a
+   specificity that wins. */
+.prose > p + p,.prose > p + ul,.prose > p + ol,.prose > ul + p,.prose > ol + p,
+.prose > p + .prose__scroll,.prose > .prose__scroll + p{margin-top:1.15rem}
 .prose strong{font-weight:600}
 .prose code{
   font-family:var(--mono);font-size:.875em;
@@ -191,3 +196,10 @@ ol.prose__list li::before{
 
 /* The index has no prose blocks below its head, so it needs its own bottom air. */
 .page__head:last-child{padding-bottom:clamp(4rem,8vw,7rem)}
+
+/* A booking link on its own line in the markdown renders as a button (see
+   BOOKING_LINK in tools/build-pages.py). .prose a would otherwise restyle it as
+   an underlined text link. */
+.prose .prose__cta{margin-top:1.6rem}
+.prose .prose__cta a.btn{color:var(--white);box-shadow:none}
+.prose .prose__cta a.btn:hover,.prose .prose__cta a.btn:focus-visible{color:var(--accent-deep);border-color:var(--accent)}

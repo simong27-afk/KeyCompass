@@ -19,8 +19,7 @@ work is technical and operational: how to hold safely what you already own.
 
 ## Services
 
-**Private onboarding session** — 90 minutes to a day, one-to-one, live. Price on
-application.
+**Private onboarding session** — 90 minutes to a day, one-to-one, live. From £195.
 
 For people new to this, or whose crypto is still sitting on an exchange. Choosing and
 checking a hardware wallet, setting it up from scratch, generating and backing up the
@@ -29,7 +28,7 @@ drive; each step is explained as you go. You leave with a working wallet you set
 yourself, a backup you have verified, a written record of your setup, and the habits that
 prevent the common losses.
 
-**Threat and security review** — audit plus written report. Price on application.
+**Threat and security review** — audit plus written report. From £295.
 
 For people who already self-custody and have not reviewed the setup. A structured walk
 through what you already have across four failure channels: phishing, device, backup loss,
@@ -37,8 +36,9 @@ and succession. Nothing is changed during a review. You leave with a prioritised
 what to fix worst-first, plain-English reasoning for every item, an explicit list of what
 is already fine, and a re-assessment once you have made the changes.
 
-Reviews are scoped on the free intake call. A single wallet with a single backup sits at
-the bottom of the range; multiple devices, multisig, or a business setup sits at the top.
+Only have a few questions? A drop-in hour is £95, paid when you book. Every price is fixed,
+with no VAT, and the exact figure for a session or review is confirmed in writing after the
+free intake call. [Full pricing](https://keycompass.co.uk/pricing.md).
 
 ## How a session runs
 
@@ -76,6 +76,8 @@ usually looking in the wrong place. See
 **How do I know it is really you?** KeyCompass never makes contact first. No cold call, no
 unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation starts with you
 booking it. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
+
+**How much does it cost?** A free 30-minute intake call, then fixed prices: a drop-in hour for a short list of questions is £95, a private onboarding session starts at £195, and a security review starts at £295. There is no VAT and no percentage of what you hold. The exact figure for a session or review is confirmed in writing after the intake call, before you commit to anything.
 
 **Is any of this financial advice?** No. KeyCompass is not authorised or regulated by the
 Financial Conduct Authority and does not give investment, legal, or tax advice.

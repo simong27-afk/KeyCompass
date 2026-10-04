@@ -44,12 +44,22 @@ const GENUINE_EMAILS = ["hello@keycompass.co.uk", "simon@keycompass.co.uk"];
 const BOOKING_URL = "https://cal.com/simongeils/30min";
 const SITE = "https://keycompass.co.uk";
 
+// Not a third service: a paid hour of questions, for people who do not need a
+// full session. Kept separate so get_services still lists exactly the two services.
+const DROP_IN = {
+  name: "Drop-in hour",
+  price: "£95, paid when you book",
+  format: "60-minute video call",
+  for: "A short list of self-custody questions. No written report; no investment, legal, or tax advice.",
+  bookingUrl: "https://cal.com/simongeils/drop-in-hour",
+};
+
 const SERVICES = [
   {
     id: "onboarding",
     name: "Private onboarding session",
     format: "Live one-to-one video call, 90 minutes to a day",
-    price: "Price on application, scoped and confirmed in writing before booking",
+    price: "From £195 for a single wallet and backup in one 90-minute session; exact figure confirmed in writing after the free intake call. No VAT",
     for: "You are new to self-custody, or your crypto is still on an exchange.",
     covers: [
       "Choosing and checking a hardware wallet",
@@ -69,7 +79,7 @@ const SERVICES = [
     id: "review",
     name: "Threat and security review",
     format: "Structured review plus a written report",
-    price: "Price on application. A single wallet and backup sits at the bottom of the range; multiple devices, multisig, or a business setup sits at the top",
+    price: "From £295 for a single wallet and backup; multiple devices, multisig, or a business setup sits higher. Exact figure confirmed in writing after the free intake call. No VAT",
     for: "You already self-custody and have not reviewed the setup.",
     covers: [
       "Phishing — signing what you did not mean to sign",
@@ -128,7 +138,7 @@ const TOOLS: ToolDef[] = [
       "The two services KeyCompass offers, what each covers, what the client leaves with, " +
       "and how pricing works. Use this before describing KeyCompass to someone.",
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
-    run: () => ({ services: SERVICES, bookingUrl: BOOKING_URL }),
+    run: () => ({ services: SERVICES, dropInHour: DROP_IN, pricingUrl: `${SITE}/pricing`, bookingUrl: BOOKING_URL }),
   },
   {
     name: "assess_fit",

@@ -64,6 +64,10 @@ PAGES = [
     ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
      "The terms on which KeyCompass provides onboarding sessions and security reviews: the "
      "custody boundary, cancellation rights, fees, and liability."),
+    ("pricing.md", "pricing.html", "Pricing — KeyCompass",
+     "KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private "
+     "onboarding sessions from £195 and security reviews from £295. No VAT, no percentage "
+     "of holdings."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",
@@ -78,7 +82,8 @@ ALIASES = [("agent-instructions.md", "AGENTS.md")]
 # The order llms-full.txt stitches the site together in. Guides are inserted
 # after the core pages, newest first, by main().
 FULL_TEXT_SOURCES = [
-    "index.md", "about.md", "contact.md", "connect.md", "privacy.md", "terms.md",
+    "index.md", "pricing.md", "about.md", "contact.md", "connect.md", "privacy.md",
+    "terms.md",
 ]
 FULL_TEXT_TAIL = ["agent-instructions.md"]
 
@@ -96,6 +101,7 @@ SITEMAP_PAGES = [
     ("/", "monthly", "1.0"),
     ("/about", "yearly", "0.8"),
     ("/contact", "yearly", "0.8"),
+    ("/pricing", "monthly", "0.9"),
     ("/guides/", "weekly", "0.9"),
     ("/agents", "monthly", "0.6"),
     ("/privacy", "yearly", "0.3"),
@@ -103,6 +109,8 @@ SITEMAP_PAGES = [
 
 
 # --- a deliberately small markdown subset ---------------------------------------
+
+BOOKING_LINK = re.compile(r'^\[([^\]]+)\]\((https://cal\.com/simongeils/([a-z0-9-]+))\)$')
 
 def inline(t):
     t = html.escape(t, quote=False)
@@ -243,7 +251,15 @@ def render(md):
                 if n:
                     para += "<br>" if buf[n - 1][1] else " "
                 para += inline(text.strip())
-            out.append('<p>%s</p>' % para)
+            # A paragraph that is nothing but a booking link becomes a button that
+            # opens the Cal.com pop-up, the same way every Book button on the site does.
+            cta = BOOKING_LINK.match(" ".join(t for t, _ in buf).strip())
+            if cta:
+                out.append('<p class="prose__cta"><a class="btn btn--accent" href="%s" '
+                           'data-cal-namespace="intake" data-cal-link="simongeils/%s">%s</a></p>'
+                           % (cta.group(2), cta.group(3), html.escape(cta.group(1), quote=False)))
+            else:
+                out.append('<p>%s</p>' % para)
             continue
 
         i += 1
@@ -336,7 +352,12 @@ TEMPLATE = '''<!doctype html>
 </html>
 '''
 
-BLOCK = '''<section class="sec sec--ground page__block" data-reveal>
+def anchor(heading):
+    """'Drop-in hour' -> 'drop-in-hour', so a section can be linked to directly."""
+    return re.sub(r'[^a-z0-9]+', '-', re.sub(r'<[^>]+>', '', heading).lower()).strip('-')
+
+
+BLOCK = '''<section class="sec sec--ground page__block" id="{anchor}" data-reveal>
   <div class="wrap">
     <hr class="rule rule--hair">
     <h2 class="h3 page__h">{heading}</h2>
@@ -528,7 +549,7 @@ def render_guide(g, others, chrome_parts):
     if g["intro"]:
         head_extra += '    <div class="prose page__intro">\n%s\n    </div>\n' % g["intro"]
 
-    blocks = "".join(BLOCK.format(heading=inline(h), body=b) for h, b in g["blocks"])
+    blocks = "".join(BLOCK.format(heading=inline(h), anchor=anchor(h), body=b) for h, b in g["blocks"])
     # Up to three other guides, same category first. Internal links are how Google
     # finds and weighs new guides, so every guide links to its neighbours.
     if others:
@@ -682,7 +703,7 @@ def main():
             head_extra += '    <div class="prose page__intro">\n%s\n    </div>\n' % intro
 
         rendered_blocks = "".join(
-            BLOCK.format(heading=inline(h), body=b) for h, b in blocks)
+            BLOCK.format(heading=inline(h), anchor=anchor(h), body=b) for h, b in blocks)
 
         page = TEMPLATE.format(
             h1=html.escape(h1, quote=False),
