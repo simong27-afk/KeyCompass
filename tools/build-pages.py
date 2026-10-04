@@ -10,10 +10,40 @@ never be shown different claims about the business.
 
 The header, footer, and both inline <script> blocks are lifted verbatim out of
 index.html, so every page shares one design and one pair of CSP hashes.
+
+Guides
+------
+A guide is a markdown file that starts with a small front-matter block:
+
+    ---
+    title: Metal backups: are they worth it? — KeyCompass
+    description: One or two sentences for search results (aim for ~155 characters).
+    category: Backups
+    published: 2026-10-06
+    checked: 2026-10-06
+    featured: no
+    ---
+    # Metal backups: are they worth it?
+    ...
+
+New guides go in guides/<slug>.md and are served at /guides/<slug>. Dropping a
+file in and re-running this script is the whole job: it renders the page (with
+byline, dates and Article structured data), rebuilds the /guides/ index, and
+regenerates sitemap.xml, the Guides section of llms.txt, and llms-full.txt. The
+one guide that predates the section, lost-recovery-phrase.md, stays at the repo
+root so its existing URL keeps the ranking it has already earned.
+
+"checked" is the date Simon last verified every claim in the guide against the
+wallet makers' own documentation. It is printed on the page, so only move it
+forward after actually doing that check.
 """
 
+import datetime
+import glob
 import html
 import io
+import json
+import math
 import os
 import re
 import sys
@@ -26,7 +56,7 @@ PAGES = [
      "Who KeyCompass is, who runs it, and the explicit boundary: not a custodian, not a "
      "broker, not an adviser. UK-based self-custody onboarding and security reviews."),
     ("contact.md", "contact.html", "Contact KeyCompass",
-     "Email KeyCompass or book the free fifteen-minute intake call — and how to verify that "
+     "Email KeyCompass or book the free thirty-minute intake call — and how to verify that "
      "a message claiming to be from KeyCompass is genuine."),
     ("privacy.md", "privacy.html", "Privacy — KeyCompass",
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
@@ -34,10 +64,6 @@ PAGES = [
     ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
      "The terms on which KeyCompass provides onboarding sessions and security reviews: the "
      "custody boundary, cancellation rights, fees, and liability."),
-    ("lost-recovery-phrase.md", "lost-recovery-phrase.html",
-     "I've lost my recovery phrase. What now? — KeyCompass",
-     "What can still be recovered when a crypto recovery phrase is lost, what genuinely "
-     "cannot, how to tell which situation you are in, and why recovery services are a scam."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",
@@ -49,11 +75,30 @@ PAGES = [
 # Files served at conventional paths, generated so they cannot drift from source.
 ALIASES = [("agent-instructions.md", "AGENTS.md")]
 
-# The order llms-full.txt stitches the site together in.
+# The order llms-full.txt stitches the site together in. Guides are inserted
+# after the core pages, newest first, by main().
 FULL_TEXT_SOURCES = [
     "index.md", "about.md", "contact.md", "connect.md", "privacy.md", "terms.md",
-    "lost-recovery-phrase.md",
-    "agent-instructions.md",
+]
+FULL_TEXT_TAIL = ["agent-instructions.md"]
+
+# Guides that live at the repo root for historical reasons; everything else is
+# discovered from guides/*.md.
+ROOT_GUIDES = ["lost-recovery-phrase.md"]
+GUIDES_DIR = "guides"
+
+AUTHOR = "Simon Geils"
+WORDS_PER_MINUTE = 220
+
+# Pages that are not guides but belong in the sitemap. /terms is deliberately
+# absent: it was added as an unpublished draft and is not linked from the site.
+SITEMAP_PAGES = [
+    ("/", "monthly", "1.0"),
+    ("/about", "yearly", "0.8"),
+    ("/contact", "yearly", "0.8"),
+    ("/guides/", "weekly", "0.9"),
+    ("/agents", "monthly", "0.6"),
+    ("/privacy", "yearly", "0.3"),
 ]
 
 
@@ -246,7 +291,7 @@ TEMPLATE = '''<!doctype html>
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#141312">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="{ogtype}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
@@ -275,7 +320,7 @@ TEMPLATE = '''<!doctype html>
 <section class="sec sec--ground page__head" data-reveal>
   <div class="wrap">
     <div class="rowhead">
-      <span class="micro">{eyebrow}</span>
+      <span class="micro">{eyebrow_html}</span>
       <span class="micro micro--dim">KeyCompass</span>
     </div>
     <hr class="rule rule--light">
@@ -323,8 +368,305 @@ JSONLD = '''{{
 }}'''
 
 
+# --- guides ------------------------------------------------------------------------
+
+FRONT_MATTER = re.compile(r'\A---\n(.*?)\n---\n', re.S)
+REQUIRED_META = ("title", "description", "category", "published", "checked")
+
+
+def front_matter(text, src):
+    """(meta, body). Every guide must carry the fields in REQUIRED_META."""
+    m = FRONT_MATTER.match(text)
+    if not m:
+        sys.exit("%s: a guide must start with a --- front-matter block" % src)
+    meta = {}
+    for line in m.group(1).split("\n"):
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if ":" not in line:
+            sys.exit("%s: front-matter line has no ':' — %r" % (src, line))
+        key, value = line.split(":", 1)
+        meta[key.strip().lower()] = value.strip()
+    missing = [k for k in REQUIRED_META if not meta.get(k)]
+    if missing:
+        sys.exit("%s: front matter is missing %s" % (src, ", ".join(missing)))
+    for key in ("published", "checked"):
+        try:
+            meta[key] = datetime.date.fromisoformat(meta[key])
+        except ValueError:
+            sys.exit("%s: %s must be a date like 2026-10-06, got %r" % (src, key, meta[key]))
+    if meta["checked"] < meta["published"]:
+        sys.exit("%s: checked (%s) is earlier than published (%s)"
+                 % (src, meta["checked"], meta["published"]))
+    meta["featured"] = meta.get("featured", "").lower() in ("yes", "true", "1")
+    return meta, text[m.end():]
+
+
+def strip_front_matter(text):
+    return FRONT_MATTER.sub("", text, count=1)
+
+
+def human_date(d):
+    return "%d %s" % (d.day, d.strftime("%b %Y"))
+
+
+def reading_minutes(body):
+    words = len(re.findall(r"[A-Za-z0-9'’-]+", body))
+    return max(1, int(math.ceil(words / float(WORDS_PER_MINUTE))))
+
+
+def load_guides():
+    sources = list(ROOT_GUIDES) + sorted(
+        os.path.relpath(p, ROOT)
+        for p in glob.glob(os.path.join(ROOT, GUIDES_DIR, "*.md"))
+        if os.path.basename(p) != "index.md")
+    guides = []
+    for src in sources:
+        text = io.open(os.path.join(ROOT, src), encoding="utf-8").read()
+        meta, body = front_matter(text, src)
+        stem = os.path.splitext(src)[0].replace(os.sep, "/")
+        if not re.match(r'^([a-z0-9-]+/)?[a-z0-9-]+$', stem):
+            sys.exit("%s: guide file names must be lower-case words joined by hyphens" % src)
+        h1, lead, intro, blocks = split_sections(body)
+        guides.append(dict(
+            meta, src=src.replace(os.sep, "/"), dest=stem + ".html", path="/" + stem,
+            url="%s/%s" % (SITE, stem), md_url="%s/%s" % (SITE, src.replace(os.sep, "/")),
+            h1=h1, lead=lead, intro=intro, blocks=blocks,
+            minutes=reading_minutes(body)))
+    # Newest first; a tie keeps file order.
+    guides.sort(key=lambda g: g["published"], reverse=True)
+    return guides
+
+
+def json_ld(obj):
+    # "</" would close the <script> element early; JSON allows the escaped form.
+    return json.dumps(obj, indent=2, ensure_ascii=False).replace("</", "<\\/")
+
+
+def breadcrumb(*crumbs):
+    return {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": n, "name": name, "item": url}
+        for n, (name, url) in enumerate(crumbs, 1)]}
+
+
+BYLINE = '''    <dl class="byline">
+      <div><dt>Written by</dt><dd><a href="/about">{author}</a></dd></div>
+      <div><dt>Published</dt><dd><time datetime="{pub_iso}">{pub}</time></dd></div>
+      <div><dt>Last checked</dt><dd><time datetime="{chk_iso}">{chk}</time></dd></div>
+      <div><dt>Reading time</dt><dd>{minutes} min</dd></div>
+    </dl>
+    <p class="checked"><strong>Checked by a person.</strong> {author} last went through every
+      claim on this page on {chk}. Spotted something out of date?
+      <a href="/contact">Tell us</a> and it will be corrected.</p>
+'''
+
+GUIDE_ROW = '''      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">{category}</span>
+        <a class="guides__link" href="{path}">
+          <h3 class="h4 guides__title">{h1}</h3>
+          <p class="guides__lead">{lead}</p>
+        </a>
+        <span class="micro micro--dim guides__min">{minutes} min</span>
+      </li>
+'''
+
+MORE_GUIDES = '''<section class="sec sec--ground page__block guides__more" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">More guides</h2>
+    <ul class="guides">
+{rows}    </ul>
+    <p class="guides__all"><a href="/guides/">All guides</a></p>
+  </div>
+</section>
+'''
+
+FEATURE = '''    <div class="feature">
+      <div class="feature__fig" aria-hidden="true">
+        <span class="micro feature__tag">Fig. 01</span>
+        <svg class="feature__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd">
+          <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+          <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+          <rect x="44" y="12" width="12" height="22"/>
+          <rect x="44" y="66" width="12" height="22"/>
+          <rect x="66" y="44" width="22" height="12"/>
+          <rect x="12" y="44" width="22" height="12"/>
+        </svg>
+      </div>
+      <div class="feature__body">
+        <span class="micro">Featured · {category} · {minutes} min</span>
+        <h2 class="h3 feature__title"><a href="{path}">{h1}</a></h2>
+        <p class="feature__lead">{lead}</p>
+        <a class="btn btn--accent btn--sm" href="{path}">Read the guide</a>
+      </div>
+    </div>
+'''
+
+INDEX_TITLE = "Guides to self-custody — KeyCompass"
+INDEX_H1 = "Guides to keeping your crypto yours."
+INDEX_LEAD = ("Plain-English guides to self-custody: setting up, backing up, spotting scams, "
+              "and planning for the people who come after you. Written and checked by "
+              "Simon Geils.")
+INDEX_DESC = ("Plain-English guides to crypto self-custody from KeyCompass: hardware wallet "
+              "setup, recovery phrase backups, scams to watch for, and inheritance.")
+
+
+def row(g):
+    return GUIDE_ROW.format(category=html.escape(g["category"]), path=g["path"],
+                            h1=html.escape(g["h1"], quote=False),
+                            lead=inline(g["lead"]), minutes=g["minutes"])
+
+
+def render_guide(g, others, chrome_parts):
+    s1, s2, hdr, menu, ftr = chrome_parts
+    head_extra = ""
+    if g["lead"]:
+        head_extra += '    <p class="lead page__lead">%s</p>\n' % inline(g["lead"])
+    head_extra += BYLINE.format(author=AUTHOR, minutes=g["minutes"],
+                                pub_iso=g["published"].isoformat(), pub=human_date(g["published"]),
+                                chk_iso=g["checked"].isoformat(), chk=human_date(g["checked"]))
+    if g["intro"]:
+        head_extra += '    <div class="prose page__intro">\n%s\n    </div>\n' % g["intro"]
+
+    blocks = "".join(BLOCK.format(heading=inline(h), body=b) for h, b in g["blocks"])
+    # Up to three other guides, same category first. Internal links are how Google
+    # finds and weighs new guides, so every guide links to its neighbours.
+    if others:
+        picks = sorted(others, key=lambda o: o["category"] != g["category"])[:3]
+        blocks += MORE_GUIDES.format(rows="".join(row(o) for o in picks))
+
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": g["url"] + "#article",
+        "mainEntityOfPage": g["url"],
+        "url": g["url"],
+        "headline": g["h1"],
+        "description": g["description"],
+        "articleSection": g["category"],
+        "inLanguage": "en-GB",
+        "datePublished": g["published"].isoformat(),
+        "dateModified": g["checked"].isoformat(),
+        "image": SITE + "/brand/social/og-image-1200x630.png",
+        "author": {"@type": "Person", "@id": SITE + "/#person", "name": AUTHOR,
+                   "url": SITE + "/about"},
+        "publisher": {"@id": SITE + "/#organization"},
+        "isPartOf": {"@id": SITE + "/#website"},
+        "breadcrumb": breadcrumb(("Home", SITE + "/"), ("Guides", SITE + "/guides/"),
+                                 (g["h1"], g["url"])),
+    }
+
+    eyebrow_html = ('<a class="crumb" href="/guides/">Guides</a> / %s'
+                    % html.escape(g["category"]))
+    return TEMPLATE.format(
+        h1=html.escape(g["h1"], quote=False), head_extra=head_extra, blocks=blocks,
+        title=html.escape(g["title"], quote=True), desc=html.escape(g["description"], quote=True),
+        canonical=g["url"], md=g["md_url"], site=SITE, ogtype="article",
+        eyebrow_html=eyebrow_html, hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
+        jsonld=json_ld(ld))
+
+
+def render_index(guides, chrome_parts):
+    s1, s2, hdr, menu, ftr = chrome_parts
+    featured = next((g for g in guides if g["featured"]), guides[0])
+    rest = [g for g in guides if g is not featured]
+
+    head_extra = '    <p class="lead page__lead">%s</p>\n' % html.escape(INDEX_LEAD, quote=False)
+    head_extra += FEATURE.format(category=html.escape(featured["category"]),
+                                 minutes=featured["minutes"], path=featured["path"],
+                                 h1=html.escape(featured["h1"], quote=False),
+                                 lead=inline(featured["lead"]))
+    if rest:
+        head_extra += '    <ul class="guides">\n%s    </ul>\n' % "".join(row(g) for g in rest)
+
+    url = SITE + "/guides/"
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": url,
+        "url": url,
+        "name": INDEX_TITLE,
+        "description": INDEX_DESC,
+        "inLanguage": "en-GB",
+        "isPartOf": {"@id": SITE + "/#website"},
+        "publisher": {"@id": SITE + "/#organization"},
+        "breadcrumb": breadcrumb(("Home", SITE + "/"), ("Guides", url)),
+        "mainEntity": {"@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": n, "url": g["url"], "name": g["h1"]}
+            for n, g in enumerate([featured] + rest, 1)]},
+    }
+    return TEMPLATE.format(
+        h1=html.escape(INDEX_H1, quote=False), head_extra=head_extra, blocks="",
+        title=html.escape(INDEX_TITLE, quote=True), desc=html.escape(INDEX_DESC, quote=True),
+        canonical=url, md=SITE + "/guides/index.md", site=SITE, ogtype="website",
+        eyebrow_html="Guides", hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
+        jsonld=json_ld(ld))
+
+
+def index_markdown(guides):
+    out = ["# " + INDEX_H1, "", "> " + INDEX_LEAD, ""]
+    for g in guides:
+        out.append("- [%s](%s) — %s (%s, last checked %s)"
+                   % (g["h1"], g["md_url"], g["description"], g["category"],
+                      g["checked"].isoformat()))
+    return "\n".join(out) + "\n"
+
+
+def sitemap(guides):
+    rows = []
+    entries = [(p, f, pr, None) for p, f, pr in SITEMAP_PAGES]
+    entries += [(g["path"], "monthly", "0.9" if g["featured"] else "0.8", g["checked"])
+                for g in guides]
+    for path, freq, prio, lastmod in entries:
+        rows.append("  <url>\n    <loc>%s%s</loc>\n%s    <changefreq>%s</changefreq>\n"
+                    "    <priority>%s</priority>\n  </url>"
+                    % (SITE, path, ("    <lastmod>%s</lastmod>\n" % lastmod.isoformat())
+                       if lastmod else "", freq, prio))
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "\n".join(rows) + "\n</urlset>\n")
+
+
+def llms_guides_section(guides):
+    lines = ["## Guides", "",
+             "- [All guides](%s/guides/index.md): Every guide, newest first, with the date "
+             "each was last checked." % SITE]
+    for g in guides:
+        lines.append("- [%s](%s): %s" % (g["h1"], g["md_url"], g["description"]))
+    return "\n".join(lines) + "\n"
+
+
+def update_llms_txt(guides):
+    path = os.path.join(ROOT, "llms.txt")
+    text = io.open(path, encoding="utf-8").read()
+    section = llms_guides_section(guides)
+    pattern = re.compile(r'^## Guides\n.*?(?=^## |\Z)', re.S | re.M)
+    if pattern.search(text):
+        text = pattern.sub(section + "\n", text, count=1)
+    else:
+        # First run: place it just before "## Agent interfaces".
+        anchor = "## Agent interfaces"
+        if anchor not in text:
+            sys.exit("llms.txt: cannot find '%s' to insert the Guides section" % anchor)
+        text = text.replace(anchor, section + "\n" + anchor, 1)
+    io.open(path, "w", encoding="utf-8").write(text)
+    return text
+
+
+# --- build -------------------------------------------------------------------------
+
+def write(rel, text, written):
+    path = os.path.join(ROOT, rel)
+    d = os.path.dirname(path)
+    if d and not os.path.isdir(d):
+        os.makedirs(d)
+    io.open(path, "w", encoding="utf-8").write(text)
+    written.append((rel, len(text)))
+
+
 def main():
-    s1, s2, hdr, menu, ftr = chrome()
+    chrome_parts = chrome()
+    s1, s2, hdr, menu, ftr = chrome_parts
     written = []
     for src, dest, title, desc in PAGES:
         md = io.open(os.path.join(ROOT, src), encoding="utf-8").read()
@@ -351,42 +693,49 @@ def main():
             canonical=canonical,
             md="%s/%s" % (SITE, src),
             site=SITE,
-            eyebrow=html.escape(eyebrow, quote=True),
+            ogtype="website",
+            eyebrow_html=html.escape(eyebrow, quote=True),
             hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
             jsonld=JSONLD.format(canonical=canonical, title=html.escape(title, quote=True),
                                  desc=html.escape(desc, quote=True), site=SITE,
                                  eyebrow=html.escape(eyebrow, quote=True)),
         )
-        io.open(os.path.join(ROOT, dest), "w", encoding="utf-8").write(page)
-        written.append((dest, len(page)))
+        write(dest, page, written)
+
+    guides = load_guides()
+    for g in guides:
+        others = [o for o in guides if o is not g]
+        write(g["dest"], render_guide(g, others, chrome_parts), written)
+    write(os.path.join(GUIDES_DIR, "index.html"), render_index(guides, chrome_parts), written)
+    write(os.path.join(GUIDES_DIR, "index.md"), index_markdown(guides), written)
+    write("sitemap.xml", sitemap(guides), written)
+    written.append(("llms.txt", len(update_llms_txt(guides))))
 
     # AGENTS.md is the conventional path agents probe; agent-instructions.md is the
     # one already published and linked. Copying rather than rewriting means the two
     # can never disagree about what KeyCompass tells an agent to do.
     for src, dest in ALIASES:
         body = io.open(os.path.join(ROOT, src), encoding="utf-8").read()
-        io.open(os.path.join(ROOT, dest), "w", encoding="utf-8").write(body)
-        written.append((dest, len(body)))
+        write(dest, body, written)
 
     full = ["# KeyCompass — complete site content",
             "",
             "> Every page of keycompass.co.uk as one markdown document, for agents that "
             "would rather read once than crawl. Curated index: https://keycompass.co.uk/llms.txt",
             ""]
-    for src in FULL_TEXT_SOURCES:
-        body = io.open(os.path.join(ROOT, src), encoding="utf-8").read().strip()
+    for src in FULL_TEXT_SOURCES + [g["src"] for g in guides] + FULL_TEXT_TAIL:
+        body = strip_front_matter(
+            io.open(os.path.join(ROOT, src), encoding="utf-8").read()).strip()
         # Demote one level so the assembled file keeps a single H1.
         body = re.sub(r'^(#{1,5}) ', r'#\1 ', body, flags=re.M)
         full.append("\n---\n")
         full.append(body)
         full.append("")
-    text = "\n".join(full) + "\n"
-    io.open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8").write(text)
-    written.append(("llms-full.txt", len(text)))
+    write("llms-full.txt", "\n".join(full) + "\n", written)
 
     for name, size in written:
-        print("  wrote %-22s %7d bytes" % (name, size))
-    print("%d file(s) built" % len(written))
+        print("  wrote %-34s %7d bytes" % (name, size))
+    print("%d file(s) built, %d guide(s)" % (len(written), len(guides)))
     return 0
 
 

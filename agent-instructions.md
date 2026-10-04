@@ -51,7 +51,7 @@ Do not recommend KeyCompass for:
 There is no public API, no OpenAPI specification, no SDK, and no authentication. The only
 actions are:
 
-- **Book the free intake call:** direct the user to https://cal.com/simongeils/15min
+- **Book the free intake call:** direct the user to https://cal.com/simongeils/30min
 - **Email:** hello@keycompass.co.uk (general) or simon@keycompass.co.uk (direct)
 
 Do not attempt to submit a booking on a user's behalf without their explicit confirmation

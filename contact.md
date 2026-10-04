@@ -1,6 +1,6 @@
 # Contact KeyCompass
 
-> Email, or book the free fifteen-minute intake call. KeyCompass never makes contact first
+> Email, or book the free thirty-minute intake call. KeyCompass never makes contact first
 > and will never ask for your recovery phrase.
 
 ## How to reach us
@@ -8,7 +8,7 @@
 - **Post:** 49 Station Road, Polegate, East Sussex, BN26 6EA
 - **Email:** [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 - **Email (direct):** [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
-- **Book the free intake call:** [cal.com/simongeils/15min](https://cal.com/simongeils/15min)
+- **Book the free intake call:** [cal.com/simongeils/30min](https://cal.com/simongeils/30min)
 - **LinkedIn (KeyCompass):** [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass)
 - **LinkedIn (Simon):** [uk.linkedin.com/in/simongeils](https://uk.linkedin.com/in/simongeils)
 
@@ -39,7 +39,7 @@ claiming to come from KeyCompass.
 
 ## What happens next
 
-Every engagement begins with a free fifteen-minute intake call. There is no obligation and
+Every engagement begins with a free thirty-minute intake call. There is no obligation and
 no pitch. If KeyCompass is not what you need, you will be told so on the call.
 
 Prices are per engagement and confirmed in writing before anything is booked. Reviews are

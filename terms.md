@@ -70,7 +70,7 @@ failure channels: phishing, device, backup loss, and succession. Nothing is chan
 review. You receive a written, prioritised list of what to fix worst-first, plain-English
 reasoning for each item, and an explicit list of what is already sound.
 
-Both begin with a free fifteen-minute intake call, at no charge and no obligation. If you do
+Both begin with a free thirty-minute intake call, at no charge and no obligation. If you do
 not need the service yet, we will tell you so.
 
 After a session or review you receive a written summary within 48 hours covering what was
@@ -105,7 +105,7 @@ and your funds.
 
 ## How an engagement is agreed
 
-1. You complete a short intake form and book the free fifteen-minute call.
+1. You complete a short intake form and book the free thirty-minute call.
 2. On that call we establish which service fits and what it will involve.
 3. We send you a written scope and quotation.
 4. You accept it in writing and book a time. At that point these terms apply and the

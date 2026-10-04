@@ -71,7 +71,7 @@ def local_checks():
         check("server knows %s" % email, email in ts)
         check("site publishes %s" % email, email in contact)
 
-    booking = "https://cal.com/simongeils/15min"
+    booking = "https://cal.com/simongeils/30min"
     check("server booking URL matches the site", booking in ts and booking in index, booking)
 
     for service in ("Private onboarding session", "Threat and security review"):

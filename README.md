@@ -32,6 +32,7 @@ way.
     brand/                logo marks, lockups, favicons, social, tokens
     docs/design-notes.md  design direction, tokens, and the rules the site follows
     netlify/edge-functions/  Accept-based markdown content negotiation
+    guides/               guide sources (.md) and the generated /guides/ pages
 
 ## Editing the sub-pages
 
@@ -40,6 +41,21 @@ served directly to agents *and* rendered into the HTML people see. Edit the mark
 then regenerate:
 
     python3 tools/build-pages.py
+
+## Publishing a guide
+
+Write `guides/<slug>.md`, starting with the front-matter block described at the top of
+`tools/build-pages.py` (title, description, category, published, checked), then run
+`python3 tools/build-pages.py`. That one command renders the guide, adds it to the
+/guides/ index and the "More guides" lists, and regenerates `sitemap.xml`, the Guides
+section of `llms.txt`, and `llms-full.txt`. Nothing else needs editing — the edge
+function and headers already cover every `/guides/*` path.
+
+Only move `checked` forward after re-verifying every claim in the guide: the date is
+printed on the page as a promise to the reader.
+
+Batch guides and push them together: every push to `main` is a Netlify production
+deploy and costs credits, however many commits it contains.
 
 ## Checks
 
@@ -65,7 +81,7 @@ Nothing to compile.
 
 ## Before publishing
 
-- Booking runs through Cal.com (`simongeils/15min`, opened as a pop-up from every
+- Booking runs through Cal.com (`simongeils/30min`, opened as a pop-up from every
   "Book" button). Confirm the calendar's look in Cal.com → Settings → Appearance.
 - `hello@keycompass.co.uk` is live and receives mail. It is no longer only in the
   closing panel and the footer — changing it now means changing the contact page,

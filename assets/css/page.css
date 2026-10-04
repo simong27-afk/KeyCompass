@@ -16,7 +16,10 @@
    the distance between sections is tighter — a privacy notice is twelve short
    sections, and --sec-y's 115px top and bottom would strand each one on its own
    screen. */
-.page__head{padding-bottom:0}
+/* The header is sticky, so it already sits above the page head in the flow; the
+   full --sec-y on top (≈115px on a laptop) left a band of empty ground between
+   the header and the breadcrumb. A sub-page opens straight into its content. */
+.page__head{padding-top:clamp(1.75rem,3.5vw,2.75rem);padding-bottom:0}
 .page__head .sec__head{margin-block:clamp(2rem,4vw,3.25rem) 0;max-width:20ch}
 .page__lead{margin-top:clamp(1rem,2.2vw,1.5rem);max-width:56ch;color:var(--dim-2)}
 .page__intro{margin-top:clamp(1.5rem,3vw,2.25rem)}
@@ -110,3 +113,81 @@ ol.prose__list li::before{
   font-size:.625rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;
   color:var(--dim);
 }
+
+/* --- Guides --------------------------------------------------------------------
+   The index (guides/index.html) and the byline + "More guides" list on each
+   guide. Same tokens, same 2px rules and zero radius; the only new shapes are a
+   list of hairline rows and a bordered figure panel. */
+
+/* Breadcrumb in the rowhead: "Guides / Recovery". */
+.crumb{color:inherit;text-decoration:none;box-shadow:inset 0 -1px 0 currentColor}
+.crumb:hover,.crumb:focus-visible{color:var(--accent-deep)}
+
+/* Byline: four facts in the mono notation face, between hairlines. */
+.byline{
+  display:flex;flex-wrap:wrap;gap:.9rem clamp(1.5rem,3vw,2.5rem);
+  margin:clamp(1.5rem,3vw,2rem) 0 0;padding-block:1rem;
+  border-block:1px solid var(--line-l);
+}
+.byline dt,.byline dd{
+  margin:0;font-family:var(--mono);font-size:.6875rem;
+  letter-spacing:.07em;text-transform:uppercase;line-height:1.5;
+}
+.byline dt{color:var(--dim-2)}
+.byline dd{font-weight:600;color:var(--ink)}
+.byline a{color:inherit;text-decoration:none;box-shadow:inset 0 -1px 0 currentColor}
+.byline a:hover,.byline a:focus-visible{color:var(--accent-deep)}
+
+/* The "checked by a person" note: accent rule on the left, white panel. */
+.checked{
+  max-width:68ch;margin:1.25rem 0 0;padding:.9rem 1.1rem;
+  background:var(--white);border-left:4px solid var(--accent);
+  font-size:.9375rem;line-height:1.55;
+}
+.checked strong{font-weight:600}
+.checked a{color:var(--accent-deep);text-decoration:none;box-shadow:inset 0 -1px 0 currentColor}
+.checked a:hover,.checked a:focus-visible{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+
+/* Featured guide on the index: figure panel + summary. */
+.feature{
+  display:grid;gap:clamp(1.5rem,3vw,2.5rem);
+  margin-top:clamp(2rem,4vw,3rem);
+}
+.feature__fig{
+  position:relative;display:grid;place-items:center;aspect-ratio:16/10;
+  border:var(--rule) solid var(--ink);color:var(--ink);
+}
+.feature__tag{position:absolute;left:.8rem;top:.7rem}
+.feature__mark{width:clamp(64px,9vw,104px);height:auto}
+.feature__body{display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+.feature__title{margin:0;max-width:22ch}
+.feature__title a{color:inherit;text-decoration:none}
+.feature__title a:hover,.feature__title a:focus-visible{color:var(--accent-deep)}
+.feature__lead{margin:0;max-width:52ch;color:var(--dim-2);line-height:1.6}
+@media (min-width:800px){
+  .feature{grid-template-columns:1.15fr 1fr;align-items:center}
+}
+
+/* The list of guides: one hairline row each — category, title + summary, time. */
+.guides{list-style:none;margin:clamp(2.5rem,5vw,3.5rem) 0 0;padding:0}
+.guides__more .guides{margin-top:clamp(1.5rem,3vw,2.25rem)}
+.guides__row{
+  display:grid;grid-template-columns:1fr;gap:.45rem;
+  padding-block:1.4rem;border-top:1px solid var(--line-l);
+}
+.guides__row:last-child{border-bottom:1px solid var(--line-l)}
+.guides__link{color:inherit;text-decoration:none;display:block}
+.guides__title{margin:0 0 .4rem;max-width:40ch}
+.guides__lead{margin:0;max-width:62ch;color:var(--dim-2);line-height:1.55}
+.guides__link:hover .guides__title,.guides__link:focus-visible .guides__title{color:var(--accent-deep)}
+.guides__cat,.guides__min{white-space:nowrap}
+@media (min-width:720px){
+  .guides__row{grid-template-columns:9rem 1fr auto;gap:1.5rem;align-items:baseline}
+}
+.guides__all{margin:1.5rem 0 0;font-family:var(--mono);font-size:.75rem;
+  letter-spacing:.07em;text-transform:uppercase}
+.guides__all a{color:var(--accent-deep);text-decoration:none;box-shadow:inset 0 -1px 0 currentColor}
+.guides__all a::after{content:" →"}
+
+/* The index has no prose blocks below its head, so it needs its own bottom air. */
+.page__head:last-child{padding-bottom:clamp(4rem,8vw,7rem)}

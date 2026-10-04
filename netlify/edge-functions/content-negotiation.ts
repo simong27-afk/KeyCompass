@@ -28,6 +28,21 @@ const VARIANTS: Record<string, string> = {
   "/agents": "/connect.md",
 };
 
+/**
+ * Guides are discovered by path rather than listed, so publishing one never
+ * means editing this file: /guides/ maps to the generated index, and
+ * /guides/<slug> to its own source. If the .md does not exist, the fetch in
+ * markdownResponse fails and the request falls back to the normal response.
+ */
+const GUIDE_PATH = /^\/guides\/([a-z0-9-]+)$/;
+
+export function variantFor(pathname: string): string | undefined {
+  if (Object.prototype.hasOwnProperty.call(VARIANTS, pathname)) return VARIANTS[pathname];
+  if (pathname === "/guides" || pathname === "/guides/") return "/guides/index.md";
+  const m = GUIDE_PATH.exec(pathname);
+  return m ? `/guides/${m[1]}.md` : undefined;
+}
+
 const MARKDOWN = "text/markdown";
 const HTML = "text/html";
 const MD_CONTENT_TYPE = "text/markdown; charset=utf-8";
@@ -198,7 +213,7 @@ export default async function handler(request: Request, context: Context): Promi
     if (STATIC_EXTENSION.test(url.pathname)) return context.next();
 
     const accept = request.headers.get("accept");
-    const variant = VARIANTS[url.pathname];
+    const variant = variantFor(url.pathname);
 
     if (variant) {
       const choice = chooseVariant(accept);

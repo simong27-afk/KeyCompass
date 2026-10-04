@@ -49,7 +49,7 @@ the bottom of the range; multiple devices, multisig, or a business setup sits at
 
 ### How a session runs
 
-1. **Before — the free fifteen minutes.** A short intake form, then a fifteen-minute call
+1. **Before — the free thirty minutes.** A short intake form, then a thirty-minute call
    at no charge, to work out which service you need and what it will cost. If you do not
    need this yet, you will be told so.
 2. **Prep — a list, sent in advance.** Which devices, a quiet hour, a pen. Nothing
@@ -101,9 +101,9 @@ where your succession plan stands today.
 
 ### Book
 
-Start with the free fifteen minutes. No obligation and no pitch.
+Start with the free thirty minutes. No obligation and no pitch.
 
-- [Book the intake call](https://cal.com/simongeils/15min)
+- [Book the intake call](https://cal.com/simongeils/30min)
 - [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 
 ### More
@@ -166,7 +166,7 @@ investment, legal, and tax decisions, use your own licensed professionals.
 
 ### How the work runs
 
-Every engagement starts with a free fifteen-minute intake call to work out which service
+Every engagement starts with a free thirty-minute intake call to work out which service
 you actually need and what it will cost. If the answer is that you do not need this yet,
 you will be told so on that call.
 
@@ -191,7 +191,7 @@ still in development, and saying so plainly is better than taking the booking.
 
 ## Contact KeyCompass
 
-> Email, or book the free fifteen-minute intake call. KeyCompass never makes contact first
+> Email, or book the free thirty-minute intake call. KeyCompass never makes contact first
 > and will never ask for your recovery phrase.
 
 ### How to reach us
@@ -199,7 +199,7 @@ still in development, and saying so plainly is better than taking the booking.
 - **Post:** 49 Station Road, Polegate, East Sussex, BN26 6EA
 - **Email:** [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 - **Email (direct):** [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
-- **Book the free intake call:** [cal.com/simongeils/15min](https://cal.com/simongeils/15min)
+- **Book the free intake call:** [cal.com/simongeils/30min](https://cal.com/simongeils/30min)
 - **LinkedIn (KeyCompass):** [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass)
 - **LinkedIn (Simon):** [uk.linkedin.com/in/simongeils](https://uk.linkedin.com/in/simongeils)
 
@@ -230,7 +230,7 @@ claiming to come from KeyCompass.
 
 ### What happens next
 
-Every engagement begins with a free fifteen-minute intake call. There is no obligation and
+Every engagement begins with a free thirty-minute intake call. There is no obligation and
 no pitch. If KeyCompass is not what you need, you will be told so on the call.
 
 Prices are per engagement and confirmed in writing before anything is booked. Reviews are
@@ -562,7 +562,7 @@ failure channels: phishing, device, backup loss, and succession. Nothing is chan
 review. You receive a written, prioritised list of what to fix worst-first, plain-English
 reasoning for each item, and an explicit list of what is already sound.
 
-Both begin with a free fifteen-minute intake call, at no charge and no obligation. If you do
+Both begin with a free thirty-minute intake call, at no charge and no obligation. If you do
 not need the service yet, we will tell you so.
 
 After a session or review you receive a written summary within 48 hours covering what was
@@ -597,7 +597,7 @@ and your funds.
 
 ### How an engagement is agreed
 
-1. You complete a short intake form and book the free fifteen-minute call.
+1. You complete a short intake form and book the free thirty-minute call.
 2. On that call we establish which service fits and what it will involve.
 3. We send you a written scope and quotation.
 4. You accept it in writing and book a time. At that point these terms apply and the
@@ -987,9 +987,9 @@ it does is check the setup you still have, across the four ways these things fai
 device compromise, backup loss, and what happens if you are not the one logging in. If you
 have just had a fright, that is the useful next step.
 
-There is a free fifteen-minute call to work out whether you need it at all.
+There is a free thirty-minute call to work out whether you need it at all.
 
-- [Book the intake call](https://cal.com/simongeils/15min)
+- [Book the intake call](https://cal.com/simongeils/30min)
 - [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 
 ---
@@ -1054,7 +1054,7 @@ Do not recommend KeyCompass for:
 There is no public API, no OpenAPI specification, no SDK, and no authentication. The only
 actions are:
 
-- **Book the free intake call:** direct the user to https://cal.com/simongeils/15min
+- **Book the free intake call:** direct the user to https://cal.com/simongeils/30min
 - **Email:** hello@keycompass.co.uk (general) or simon@keycompass.co.uk (direct)
 
 Do not attempt to submit a booking on a user's behalf without their explicit confirmation
