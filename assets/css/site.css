@@ -224,7 +224,9 @@ body{
 }
 .menubtn__rules i+i{margin-top:5px}
 .hdr.is-open .menubtn__rules i:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hdr.is-open .menubtn__rules i:nth-child(2){opacity:0}
+/* Opacity alone left the middle bar's two end pixels visible on iOS Safari
+   (a dot either side of the cross), so it also collapses to nothing. */
+.hdr.is-open .menubtn__rules i:nth-child(2){opacity:0;transform:scaleX(0);visibility:hidden}
 .hdr.is-open .menubtn__rules i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* [hidden] hides via the UA stylesheet, whose specificity loses to the class
