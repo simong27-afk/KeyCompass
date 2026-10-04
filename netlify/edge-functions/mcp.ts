@@ -51,7 +51,7 @@ const DROP_IN = {
   price: "£95, paid when you book",
   format: "60-minute video call",
   for: "A short list of self-custody questions. No written report; no investment, legal, or tax advice.",
-  bookingUrl: "https://cal.com/simongeils/60min",
+  bookingUrl: "https://cal.com/simongeils/drop-in-hour",
 };
 
 const SERVICES = [

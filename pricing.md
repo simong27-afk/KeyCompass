@@ -44,7 +44,7 @@ key or an unlocked wallet, and nothing said is investment, legal or tax advice. 
 hour does not include a written report. If it turns out you need a structured review, you
 will be told so.
 
-[Book a drop-in hour](https://cal.com/simongeils/60min)
+[Book a drop-in hour](https://cal.com/simongeils/drop-in-hour)
 
 ## Private onboarding session
 
