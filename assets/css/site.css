@@ -365,6 +365,21 @@ body{
   content:"";position:absolute;left:0;top:.55em;
   width:8px;height:8px;border:var(--rule) solid var(--accent);
 }
+/* The drop-in hour: a smaller, quicker way in than the two services, so it sits
+   under them as a slim strip rather than as a third equal card. */
+.dropin{
+  display:grid;gap:1.25rem;align-items:center;
+  margin-top:clamp(2rem,4vw,3rem);padding:clamp(1.25rem,2.5vw,1.75rem);
+  border:1px solid var(--line-d);
+}
+.dropin__body{display:flex;flex-direction:column;gap:.6rem}
+.dropin__title{margin:0;color:var(--ground)}
+.dropin p{margin:0;max-width:62ch;color:#bdb7b5}
+.dropin__act{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+@media (min-width:760px){
+  .dropin{grid-template-columns:1fr auto;gap:2.5rem}
+  .dropin__act{flex-direction:column;align-items:flex-end;gap:.9rem}
+}
 .note{
   margin-top:clamp(1.75rem,3vw,2.5rem);padding-top:1.5rem;max-width:70ch;
   border-top:1px solid var(--line-d);
