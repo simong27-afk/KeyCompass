@@ -232,8 +232,10 @@ body{
 .menu[hidden]{display:none}
 .menu{
   position:fixed;inset:0;z-index:40;background:var(--pitch);
-  padding:6rem var(--gut) var(--gut);
-  display:flex;flex-direction:column;justify-content:center;gap:2.5rem;
+  /* Links start just under the header rather than centred: on a tall phone,
+     centring left them halfway down the screen under a band of empty black. */
+  padding:calc(70px + clamp(1.5rem,5vw,2.5rem)) var(--gut) var(--gut);
+  display:flex;flex-direction:column;justify-content:flex-start;gap:2.5rem;
   overflow-y:auto;
 }
 .menu__nav{display:flex;flex-direction:column;border-top:var(--rule) solid rgba(243,242,242,.9)}
