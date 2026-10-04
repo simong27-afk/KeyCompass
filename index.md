@@ -36,9 +36,14 @@ and succession. Nothing is changed during a review. You leave with a prioritised
 what to fix worst-first, plain-English reasoning for every item, an explicit list of what
 is already fine, and a re-assessment once you have made the changes.
 
-Only have a few questions? A drop-in hour is £95, paid when you book. Every price is fixed,
-with no VAT, and the exact figure for a session or review is confirmed in writing after the
-free intake call. [Full pricing](https://keycompass.co.uk/pricing.md).
+**Drop-in hour** — 60 minutes, video call. £95, paid when you book.
+
+Just have a few questions? Book an hour and bring your list: a step you are about to take, a
+warning you do not understand, a message you are not sure is genuine, or a second opinion on
+a setup. [Book a drop-in hour](https://cal.com/simongeils/drop-in-hour).
+
+Every price is fixed, with no VAT. The exact figure for a session or review is confirmed in
+writing after the free intake call. [Full pricing](https://keycompass.co.uk/pricing.md).
 
 ## How a session runs
 
