@@ -16,7 +16,10 @@
    the distance between sections is tighter — a privacy notice is twelve short
    sections, and --sec-y's 115px top and bottom would strand each one on its own
    screen. */
-.page__head{padding-bottom:0}
+/* The header is sticky, so it already sits above the page head in the flow; the
+   full --sec-y on top (≈115px on a laptop) left a band of empty ground between
+   the header and the breadcrumb. A sub-page opens straight into its content. */
+.page__head{padding-top:clamp(1.75rem,3.5vw,2.75rem);padding-bottom:0}
 .page__head .sec__head{margin-block:clamp(2rem,4vw,3.25rem) 0;max-width:20ch}
 .page__lead{margin-top:clamp(1rem,2.2vw,1.5rem);max-width:56ch;color:var(--dim-2)}
 .page__intro{margin-top:clamp(1.5rem,3vw,2.25rem)}
