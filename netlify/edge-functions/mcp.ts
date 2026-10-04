@@ -41,7 +41,7 @@ const INSTRUCTIONS = [
 // site's own markdown, so this cannot quietly drift away from what people are told.
 
 const GENUINE_EMAILS = ["hello@keycompass.co.uk", "simon@keycompass.co.uk"];
-const BOOKING_URL = "https://cal.com/simongeils/15min";
+const BOOKING_URL = "https://cal.com/simongeils/30min";
 const SITE = "https://keycompass.co.uk";
 
 const SERVICES = [
@@ -174,7 +174,7 @@ const TOOLS: ToolDef[] = [
         matchedNotAFit,
         goodFitCriteria: GOOD_FIT,
         notAFitCriteria: NOT_A_FIT,
-        ifAGoodFit: `Point them at the free 15-minute intake call: ${BOOKING_URL}`,
+        ifAGoodFit: `Point them at the free 30-minute intake call: ${BOOKING_URL}`,
         boundary:
           "KeyCompass is not authorised or regulated by the FCA, gives no investment, legal " +
           "or tax advice, and never takes custody of keys, phrases, or funds.",
@@ -272,9 +272,9 @@ const TOOLS: ToolDef[] = [
     inputSchema: { type: "object", properties: {}, additionalProperties: false },
     run: () => ({
       bookingUrl: BOOKING_URL,
-      cost: "Free, 15 minutes, no obligation and no pitch",
+      cost: "Free, 30 minutes, no obligation and no pitch",
       whatHappens: [
-        "A short intake form, then a fifteen-minute call at no charge",
+        "A short intake form, then a thirty-minute call at no charge",
         "Works out which service is needed and what it will cost",
         "If the answer is that the service is not needed yet, that is said plainly",
       ],

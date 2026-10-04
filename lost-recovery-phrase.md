@@ -198,9 +198,9 @@ it does is check the setup you still have, across the four ways these things fai
 device compromise, backup loss, and what happens if you are not the one logging in. If you
 have just had a fright, that is the useful next step.
 
-There is a free fifteen-minute call to work out whether you need it at all.
+There is a free thirty-minute call to work out whether you need it at all.
 
-- [Book the intake call](https://cal.com/simongeils/15min)
+- [Book the intake call](https://cal.com/simongeils/30min)
 - [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 
 ---

@@ -39,7 +39,7 @@ investment, legal, and tax decisions, use your own licensed professionals.
 
 ## How the work runs
 
-Every engagement starts with a free fifteen-minute intake call to work out which service
+Every engagement starts with a free thirty-minute intake call to work out which service
 you actually need and what it will cost. If the answer is that you do not need this yet,
 you will be told so on that call.
 

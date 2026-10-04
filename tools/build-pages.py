@@ -56,7 +56,7 @@ PAGES = [
      "Who KeyCompass is, who runs it, and the explicit boundary: not a custodian, not a "
      "broker, not an adviser. UK-based self-custody onboarding and security reviews."),
     ("contact.md", "contact.html", "Contact KeyCompass",
-     "Email KeyCompass or book the free fifteen-minute intake call — and how to verify that "
+     "Email KeyCompass or book the free thirty-minute intake call — and how to verify that "
      "a message claiming to be from KeyCompass is genuine."),
     ("privacy.md", "privacy.html", "Privacy — KeyCompass",
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "

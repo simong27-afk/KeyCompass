@@ -81,7 +81,7 @@ Nothing to compile.
 
 ## Before publishing
 
-- Booking runs through Cal.com (`simongeils/15min`, opened as a pop-up from every
+- Booking runs through Cal.com (`simongeils/30min`, opened as a pop-up from every
   "Book" button). Confirm the calendar's look in Cal.com → Settings → Appearance.
 - `hello@keycompass.co.uk` is live and receives mail. It is no longer only in the
   closing panel and the footer — changing it now means changing the contact page,

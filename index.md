@@ -42,7 +42,7 @@ the bottom of the range; multiple devices, multisig, or a business setup sits at
 
 ## How a session runs
 
-1. **Before — the free fifteen minutes.** A short intake form, then a fifteen-minute call
+1. **Before — the free thirty minutes.** A short intake form, then a thirty-minute call
    at no charge, to work out which service you need and what it will cost. If you do not
    need this yet, you will be told so.
 2. **Prep — a list, sent in advance.** Which devices, a quiet hour, a pen. Nothing
@@ -94,9 +94,9 @@ where your succession plan stands today.
 
 ## Book
 
-Start with the free fifteen minutes. No obligation and no pitch.
+Start with the free thirty minutes. No obligation and no pitch.
 
-- [Book the intake call](https://cal.com/simongeils/15min)
+- [Book the intake call](https://cal.com/simongeils/30min)
 - [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 
 ## More
