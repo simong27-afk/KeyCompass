@@ -64,7 +64,7 @@ addresses are used: hello@keycompass.co.uk and simon@keycompass.co.uk.
 ## Guides
 
 - [All guides](https://keycompass.co.uk/guides/index.md): Every guide, newest first, with the date each was last checked.
-- [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase.md): What can still be recovered when a crypto recovery phrase is lost, what genuinely cannot, how to tell which situation you are in, and why recovery services are a scam.
+- [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase.md): Lost your crypto recovery phrase (seed phrase)? What can still be recovered, what cannot, how to tell which case you're in, and why recovery services are scams.
 
 ## Agent interfaces
 

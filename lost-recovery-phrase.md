@@ -1,6 +1,6 @@
 ---
-title: I've lost my recovery phrase. What now? — KeyCompass
-description: What can still be recovered when a crypto recovery phrase is lost, what genuinely cannot, how to tell which situation you are in, and why recovery services are a scam.
+title: Lost your seed phrase? What can still be recovered — KeyCompass
+description: Lost your crypto recovery phrase (seed phrase)? What can still be recovered, what cannot, how to tell which case you're in, and why recovery services are scams.
 category: Recovery
 published: 2026-09-22
 checked: 2026-09-22
@@ -17,6 +17,10 @@ appeal; it is how the cryptography works. Nobody — not the wallet maker, not a
 a recovery service — holds a copy. But a great many people who believe their phrase is lost
 are actually in a different situation, and several of those situations are fixable. Work
 through the checks below before you conclude anything.
+
+The recovery phrase goes by several names: seed phrase, mnemonic, 12 or 24 words, or secret
+recovery phrase in MetaMask. They are all the same thing, and everything below applies to
+each of them.
 
 - Stop and do not wipe anything
 - First: is it actually lost?
@@ -198,7 +202,10 @@ it does is check the setup you still have, across the four ways these things fai
 device compromise, backup loss, and what happens if you are not the one logging in. If you
 have just had a fright, that is the useful next step.
 
-There is a free thirty-minute call to work out whether you need it at all.
+There is a free thirty-minute call to work out whether you need it at all. If you only have
+a few questions, a [drop-in hour](https://keycompass.co.uk/pricing#drop-in-hour) covers them
+for a fixed £95, and the [pricing page](https://keycompass.co.uk/pricing) sets out everything
+else.
 
 - [Book the intake call](https://cal.com/simongeils/30min)
 - [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)

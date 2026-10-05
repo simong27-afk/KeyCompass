@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pricing — KeyCompass</title>
+<title>Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass</title>
 <link rel="canonical" href="https://keycompass.co.uk/pricing">
-<meta name="description" content="KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private onboarding sessions from £195 and security reviews from £295. No VAT, no percentage of holdings.">
+<meta name="description" content="Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews from £295. Fixed prices, no VAT, never a percentage of what you hold.">
 <link rel="alternate" type="text/markdown" href="https://keycompass.co.uk/pricing.md" title="Markdown version">
 
 <link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
@@ -16,10 +16,12 @@
 <meta name="theme-color" content="#141312">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pricing — KeyCompass">
-<meta property="og:description" content="KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private onboarding sessions from £195 and security reviews from £295. No VAT, no percentage of holdings.">
+<meta property="og:title" content="Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass">
+<meta property="og:description" content="Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews from £295. Fixed prices, no VAT, never a percentage of what you hold.">
 <meta property="og:url" content="https://keycompass.co.uk/pricing">
 <meta property="og:image" content="https://keycompass.co.uk/brand/social/og-image-1200x630.png">
+<meta property="og:site_name" content="KeyCompass">
+<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -35,17 +37,115 @@
   "@type": "WebPage",
   "@id": "https://keycompass.co.uk/pricing",
   "url": "https://keycompass.co.uk/pricing",
-  "name": "Pricing — KeyCompass",
-  "description": "KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private onboarding sessions from £195 and security reviews from £295. No VAT, no percentage of holdings.",
+  "name": "Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass",
+  "description": "Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews from £295. Fixed prices, no VAT, never a percentage of what you hold.",
   "inLanguage": "en-GB",
-  "isPartOf": { "@id": "https://keycompass.co.uk/#website" },
-  "about": { "@id": "https://keycompass.co.uk/#organization" },
-  "publisher": { "@id": "https://keycompass.co.uk/#organization" },
+  "isPartOf": {
+    "@id": "https://keycompass.co.uk/#website"
+  },
+  "about": {
+    "@id": "https://keycompass.co.uk/#organization"
+  },
+  "publisher": {
+    "@id": "https://keycompass.co.uk/#organization"
+  },
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://keycompass.co.uk/" },
-      { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://keycompass.co.uk/pricing" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://keycompass.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pricing",
+        "item": "https://keycompass.co.uk/pricing"
+      }
+    ]
+  },
+  "mainEntity": {
+    "@type": "OfferCatalog",
+    "name": "KeyCompass services and prices",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "url": "https://keycompass.co.uk/pricing#free-intake-call",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://keycompass.co.uk/#service-intake",
+          "name": "Free intake call",
+          "description": "A free 30-minute video call to work out which service fits, what it involves and what it costs.",
+          "provider": {
+            "@id": "https://keycompass.co.uk/#organization"
+          },
+          "areaServed": "Worldwide (remote)"
+        },
+        "price": 0
+      },
+      {
+        "@type": "Offer",
+        "url": "https://keycompass.co.uk/pricing#drop-in-hour",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://keycompass.co.uk/#service-drop-in",
+          "name": "Drop-in hour",
+          "description": "A 60-minute video call for a short list of self-custody questions, paid when you book. No investment, legal or tax advice.",
+          "provider": {
+            "@id": "https://keycompass.co.uk/#organization"
+          },
+          "areaServed": "Worldwide (remote)"
+        },
+        "price": 95
+      },
+      {
+        "@type": "Offer",
+        "url": "https://keycompass.co.uk/pricing#private-onboarding-session",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://keycompass.co.uk/#service-onboarding",
+          "name": "Private onboarding session",
+          "description": "One-to-one session to move crypto from an exchange to a hardware wallet: choosing and checking the device, setup, backing up the recovery phrase, a test transaction, then the balance. KeyCompass never sees keys or funds.",
+          "provider": {
+            "@id": "https://keycompass.co.uk/#organization"
+          },
+          "areaServed": "Worldwide (remote)"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "GBP",
+          "minPrice": 195
+        }
+      },
+      {
+        "@type": "Offer",
+        "url": "https://keycompass.co.uk/pricing#threat-and-security-review",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "itemOffered": {
+          "@type": "Service",
+          "@id": "https://keycompass.co.uk/#service-review",
+          "name": "Threat and security review",
+          "description": "A structured review of an existing self-custody setup across phishing, device, backup loss and succession, with a written prioritised report.",
+          "provider": {
+            "@id": "https://keycompass.co.uk/#organization"
+          },
+          "areaServed": "Worldwide (remote)"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "GBP",
+          "minPrice": 295
+        }
+      }
     ]
   }
 }

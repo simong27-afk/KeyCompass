@@ -52,10 +52,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://keycompass.co.uk"
 
 PAGES = [
-    ("about.md", "about.html", "About KeyCompass — independent self-custody advisory",
-     "Who KeyCompass is, who runs it, and the explicit boundary: not a custodian, not a "
-     "broker, not an adviser. UK-based self-custody onboarding and security reviews."),
-    ("contact.md", "contact.html", "Contact KeyCompass",
+    ("about.md", "about.html",
+     "About KeyCompass — Simon Geils, independent self-custody consultant",
+     "KeyCompass is run by Simon Geils, a decade in technical support at Apple and Ledger. "
+     "Independent self-custody help: never a custodian, broker or adviser."),
+    ("contact.md", "contact.html", "Contact KeyCompass — book a free self-custody intake call",
      "Email KeyCompass or book the free thirty-minute intake call — and how to verify that "
      "a message claiming to be from KeyCompass is genuine."),
     ("privacy.md", "privacy.html", "Privacy — KeyCompass",
@@ -64,10 +65,10 @@ PAGES = [
     ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
      "The terms on which KeyCompass provides onboarding sessions and security reviews: the "
      "custody boundary, cancellation rights, fees, and liability."),
-    ("pricing.md", "pricing.html", "Pricing — KeyCompass",
-     "KeyCompass prices: a free 30-minute intake call, a £95 drop-in hour, private "
-     "onboarding sessions from £195 and security reviews from £295. No VAT, no percentage "
-     "of holdings."),
+    ("pricing.md", "pricing.html",
+     "Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass",
+     "Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews "
+     "from £295. Fixed prices, no VAT, never a percentage of what you hold."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",
@@ -75,6 +76,50 @@ PAGES = [
      "How an assistant reads KeyCompass accurately: a read-only MCP server, markdown "
      "served on request, and the files that say when to recommend the practice."),
 ]
+
+# Pages built and deployed but kept out of search results. /terms is an unpublished
+# draft until it has been reviewed; remove it from here when it goes live.
+NOINDEX = {"terms.html"}
+
+# Structured data added to a page's WebPage node, so search engines can read the
+# services and prices directly. Keep in step with pricing.md and the homepage.
+def _offer(service_id, name, url, desc, price=None, min_price=None):
+    offer = {"@type": "Offer", "url": url, "priceCurrency": "GBP",
+             "availability": "https://schema.org/InStock",
+             "itemOffered": {"@type": "Service", "@id": "%s/#%s" % (SITE, service_id),
+                             "name": name, "description": desc,
+                             "provider": {"@id": SITE + "/#organization"},
+                             "areaServed": "Worldwide (remote)"}}
+    if price is not None:
+        offer["price"] = price
+    else:
+        offer["priceSpecification"] = {"@type": "PriceSpecification",
+                                       "priceCurrency": "GBP", "minPrice": min_price}
+    return offer
+
+PAGE_SCHEMA = {
+    "pricing.html": {"mainEntity": {
+        "@type": "OfferCatalog", "name": "KeyCompass services and prices",
+        "itemListElement": [
+            _offer("service-intake", "Free intake call", SITE + "/pricing#free-intake-call",
+                   "A free 30-minute video call to work out which service fits, what it "
+                   "involves and what it costs.", price=0),
+            _offer("service-drop-in", "Drop-in hour", SITE + "/pricing#drop-in-hour",
+                   "A 60-minute video call for a short list of self-custody questions, "
+                   "paid when you book. No investment, legal or tax advice.", price=95),
+            _offer("service-onboarding", "Private onboarding session",
+                   SITE + "/pricing#private-onboarding-session",
+                   "One-to-one session to move crypto from an exchange to a hardware wallet: "
+                   "choosing and checking the device, setup, backing up the recovery phrase, "
+                   "a test transaction, then the balance. KeyCompass never sees keys or funds.",
+                   min_price=195),
+            _offer("service-review", "Threat and security review",
+                   SITE + "/pricing#threat-and-security-review",
+                   "A structured review of an existing self-custody setup across phishing, "
+                   "device, backup loss and succession, with a written prioritised report.",
+                   min_price=295),
+        ]}},
+}
 
 # Files served at conventional paths, generated so they cannot drift from source.
 ALIASES = [("agent-instructions.md", "AGENTS.md")]
@@ -298,7 +343,7 @@ TEMPLATE = '''<!doctype html>
 <title>{title}</title>
 <link rel="canonical" href="{canonical}">
 <meta name="description" content="{desc}">
-<link rel="alternate" type="text/markdown" href="{md}" title="Markdown version">
+{robots}<link rel="alternate" type="text/markdown" href="{md}" title="Markdown version">
 
 <link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
 <link rel="icon" href="/brand/favicon/favicon-32.png" sizes="32x32">
@@ -312,6 +357,8 @@ TEMPLATE = '''<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{site}/brand/social/og-image-1200x630.png">
+<meta property="og:site_name" content="KeyCompass">
+<meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -523,7 +570,7 @@ FEATURE = '''    <div class="feature">
     </div>
 '''
 
-INDEX_TITLE = "Guides to self-custody — KeyCompass"
+INDEX_TITLE = "Crypto self-custody guides: wallets, seed phrases, scams — KeyCompass"
 INDEX_H1 = "Guides to keeping your crypto yours."
 INDEX_LEAD = ("Plain-English guides to self-custody: setting up, backing up, spotting scams, "
               "and planning for the people who come after you. Written and checked by "
@@ -584,7 +631,7 @@ def render_guide(g, others, chrome_parts):
         title=html.escape(g["title"], quote=True), desc=html.escape(g["description"], quote=True),
         canonical=g["url"], md=g["md_url"], site=SITE, ogtype="article",
         eyebrow_html=eyebrow_html, hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
-        jsonld=json_ld(ld))
+        robots="", jsonld=json_ld(ld))
 
 
 def render_index(guides, chrome_parts):
@@ -621,7 +668,7 @@ def render_index(guides, chrome_parts):
         title=html.escape(INDEX_TITLE, quote=True), desc=html.escape(INDEX_DESC, quote=True),
         canonical=url, md=SITE + "/guides/index.md", site=SITE, ogtype="website",
         eyebrow_html="Guides", hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
-        jsonld=json_ld(ld))
+        robots="", jsonld=json_ld(ld))
 
 
 def index_markdown(guides):
@@ -705,6 +752,16 @@ def main():
         rendered_blocks = "".join(
             BLOCK.format(heading=inline(h), anchor=anchor(h), body=b) for h, b in blocks)
 
+        jsonld = JSONLD.format(canonical=canonical, title=html.escape(title, quote=True),
+                               desc=html.escape(desc, quote=True), site=SITE,
+                               eyebrow=html.escape(eyebrow, quote=True))
+        if dest in PAGE_SCHEMA:
+            node = json.loads(jsonld)
+            node.update(PAGE_SCHEMA[dest])
+            jsonld = json_ld(node)
+        robots = ('<meta name="robots" content="noindex, follow">\n'
+                  if dest in NOINDEX else "")
+
         page = TEMPLATE.format(
             h1=html.escape(h1, quote=False),
             head_extra=head_extra,
@@ -716,10 +773,7 @@ def main():
             site=SITE,
             ogtype="website",
             eyebrow_html=html.escape(eyebrow, quote=True),
-            hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2,
-            jsonld=JSONLD.format(canonical=canonical, title=html.escape(title, quote=True),
-                                 desc=html.escape(desc, quote=True), site=SITE,
-                                 eyebrow=html.escape(eyebrow, quote=True)),
+            hdr=hdr, menu=menu, ftr=ftr, s1=s1, s2=s2, robots=robots, jsonld=jsonld,
         )
         write(dest, page, written)
 
