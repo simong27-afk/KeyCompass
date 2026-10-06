@@ -561,12 +561,18 @@ behalf:
 - **Cal.com** — booking and scheduling
 - **Google Workspace** — email, and video calls via Google Meet
 - **Netlify** — website hosting
+- **Stripe** — card payments for bookings. You enter card details directly with Stripe;
+  KeyCompass never sees or stores your full card number. Stripe also uses payment
+  information for its own fraud prevention, under [its privacy policy](https://stripe.com/gb/privacy).
 
 Information may also be disclosed where the law requires it.
 
+We don't share your details with review sites. After a session we may include a link to leave
+a review if you'd like to; it's entirely optional.
+
 ### Transfers outside the UK
 
-Cal.com, Google, and Netlify are US-headquartered, so personal information handled by them
+Cal.com, Google, Netlify, and Stripe are US-headquartered, so personal information handled by them
 may be transferred outside the United Kingdom. Those transfers rely on the safeguards in
 each provider's data processing terms — the UK Addendum to the EU Standard Contractual
 Clauses, or the UK Extension to the EU–US Data Privacy Framework where the provider is
