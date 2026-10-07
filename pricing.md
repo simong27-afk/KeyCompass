@@ -1,6 +1,6 @@
-# Pricing
+# Pricing for crypto self-custody help
 
-> Fixed prices, published up front. No VAT, no percentage of what you hold, no subscription,
+> Fixed prices for one-to-one crypto self-custody help, published up front. No VAT, no percentage of what you hold, no subscription,
 > and nothing to buy from us beyond the time itself.
 
 | Service | Price | Length |
@@ -48,7 +48,7 @@ will be told so.
 
 ## Private onboarding session
 
-**From £195 · 90 minutes to a day · live, one-to-one**
+**From £195 · 90 minutes to a day · live, one-to-one on a video call**
 
 For people new to self-custody, or whose crypto is still on an exchange. Choosing and
 checking a hardware wallet, setting it up from scratch, generating and backing up the

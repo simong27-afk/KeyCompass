@@ -572,7 +572,8 @@ FEATURE = '''    <div class="feature">
 
 INDEX_TITLE = "Crypto self-custody guides: wallets, seed phrases, scams — KeyCompass"
 INDEX_H1 = "Guides to keeping your crypto yours."
-INDEX_LEAD = ("Plain-English guides to self-custody: setting up, backing up, spotting scams, "
+INDEX_LEAD = ("Plain-English guides to crypto self-custody: moving off an exchange, backing "
+              "up your seed phrase, spotting scams, "
               "and planning for the people who come after you. Written and checked by "
               "Simon Geils.")
 INDEX_DESC = ("Plain-English guides to crypto self-custody from KeyCompass: hardware wallet "

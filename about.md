@@ -1,7 +1,7 @@
 # About KeyCompass
 
-> Independent self-custody onboarding and cryptoasset security reviews. UK-based, working
-> remotely with clients anywhere. KeyCompass never holds your keys, your recovery phrase,
+> Independent crypto self-custody consultant: hardware wallet onboarding and security
+> reviews. UK-based, working remotely with clients anywhere. KeyCompass never holds your keys, your recovery phrase,
 > or your funds.
 
 KeyCompass is a solo practice run by Simon Geils. It does one thing: it helps people hold

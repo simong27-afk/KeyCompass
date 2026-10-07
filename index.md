@@ -3,10 +3,11 @@
 > One-to-one self-custody onboarding sessions and independent security reviews. UK-based,
 > remote. KeyCompass never holds your keys, your recovery phrase, or your funds.
 
-Get self-custody right the first time — or find out where you can do better. Onboarding
-sessions for beginners, independent security reviews for intermediate holders and crypto
-natives. No product to sell you and no opinion on what you should buy: just the technical
-work, done alongside you.
+Get self-custody right the first time — or find out where you can do better. One-to-one
+help moving your crypto off an exchange and onto a hardware wallet, from an independent UK
+self-custody consultant. Onboarding sessions if you're starting out, security reviews if you
+already hold your own keys. No product to sell you and no opinion on what you should buy:
+just the technical work, done alongside you on a video call.
 
 ## The boundary
 
