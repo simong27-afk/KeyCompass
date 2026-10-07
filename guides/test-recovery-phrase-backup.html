@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to test your recovery phrase backup safely — KeyCompass</title>
+<link rel="canonical" href="https://keycompass.co.uk/guides/test-recovery-phrase-backup">
+<meta name="description" content="How to check your seed phrase backup works without exposing it: the built-in checks on Ledger and Trezor, passphrases, multisig, and what to do if it fails.">
+<link rel="alternate" type="text/markdown" href="https://keycompass.co.uk/guides/test-recovery-phrase-backup.md" title="Markdown version">
+
+<link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/brand/favicon/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/brand/app-icons/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#141312">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to test your recovery phrase backup safely — KeyCompass">
+<meta property="og:description" content="How to check your seed phrase backup works without exposing it: the built-in checks on Ledger and Trezor, passphrases, multisig, and what to do if it fails.">
+<meta property="og:url" content="https://keycompass.co.uk/guides/test-recovery-phrase-backup">
+<meta property="og:image" content="https://keycompass.co.uk/brand/social/og-image-1200x630.png">
+<meta property="og:site_name" content="KeyCompass">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="dns-prefetch" href="//app.cal.com">
+<script>document.documentElement.className+=" js";</script>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://keycompass.co.uk/guides/test-recovery-phrase-backup#article",
+  "mainEntityOfPage": "https://keycompass.co.uk/guides/test-recovery-phrase-backup",
+  "url": "https://keycompass.co.uk/guides/test-recovery-phrase-backup",
+  "headline": "How do I test my recovery phrase backup?",
+  "description": "How to check your seed phrase backup works without exposing it: the built-in checks on Ledger and Trezor, passphrases, multisig, and what to do if it fails.",
+  "articleSection": "Backups",
+  "inLanguage": "en-GB",
+  "datePublished": "2026-10-07",
+  "dateModified": "2026-10-07",
+  "image": "https://keycompass.co.uk/brand/social/og-image-1200x630.png",
+  "author": {
+    "@type": "Person",
+    "@id": "https://keycompass.co.uk/#person",
+    "name": "Simon Geils",
+    "url": "https://keycompass.co.uk/about"
+  },
+  "publisher": {
+    "@id": "https://keycompass.co.uk/#organization"
+  },
+  "isPartOf": {
+    "@id": "https://keycompass.co.uk/#website"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://keycompass.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guides",
+        "item": "https://keycompass.co.uk/guides/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "How do I test my recovery phrase backup?",
+        "item": "https://keycompass.co.uk/guides/test-recovery-phrase-backup"
+      }
+    ]
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="hdr__in wrap">
+    <a class="lockup" href="/#top" aria-label="KeyCompass, home">
+      <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+        <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+        <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+        <rect x="44" y="12" width="12" height="22"/>
+        <rect x="44" y="66" width="12" height="22"/>
+        <rect x="66" y="44" width="22" height="12"/>
+        <rect x="12" y="44" width="22" height="12"/>
+      </svg><span class="lockup__word">KeyCompass</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#method">How it works</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+    <a class="btn btn--accent btn--sm" href="https://cal.com/simongeils/30min"
+       data-cal-namespace="intake" data-cal-link="simongeils/30min"><span class="wide-only">Book a session</span><span class="narrow-only">Book</span></a>
+    <button class="menubtn" id="menubtn" type="button"
+            aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span class="menubtn__rules" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+
+
+</header>
+
+<div class="menu" id="menu" tabindex="-1" hidden>
+    <nav class="menu__nav" aria-label="Sections">
+      <a href="/#services">Services</a>
+      <a href="/#method">How it works</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+    <a class="btn btn--accent menu__cta" href="https://cal.com/simongeils/30min"
+       data-cal-namespace="intake" data-cal-link="simongeils/30min">Book a session</a>
+  </div>
+
+<main id="main">
+<section class="sec sec--ground page__head" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro"><a class="crumb" href="/guides/">Guides</a> / Backups</span>
+      <span class="micro micro--dim">KeyCompass</span>
+    </div>
+    <hr class="rule rule--light">
+    <h1 class="h2 sec__head">How do I test my recovery phrase backup?</h1>
+    <p class="lead page__lead">The only way to know a backup works is to check it, on the hardware wallet itself and never on a phone or computer. Here is how to do that safely, and what to do if it fails.</p>
+    <dl class="byline">
+      <div><dt>Written by</dt><dd><a href="/about">Simon Geils</a></dd></div>
+      <div><dt>Published</dt><dd><time datetime="2026-10-07">7 Oct 2026</time></dd></div>
+      <div><dt>Last checked</dt><dd><time datetime="2026-10-07">7 Oct 2026</time></dd></div>
+      <div><dt>Reading time</dt><dd>8 min</dd></div>
+    </dl>
+    <p class="checked"><strong>Checked by a person.</strong> Simon Geils last went through every
+      claim on this page on 7 Oct 2026. Spotted something out of date?
+      <a href="/contact">Tell us</a> and it will be corrected.</p>
+    <div class="prose page__intro">
+<p><strong>The short answer.</strong> Most hardware wallets can check your written recovery phrase against the one stored on the device, without wiping anything. You type the words in on the device's own screen and it tells you whether they match. On Ledger that is the Recovery Check app; on Trezor it is Check backup in Trezor Suite. It takes about ten minutes, and it is the single most useful thing you can do for a wallet you already own. If the check fails, your funds are still safe for now, but you need to move them to a new wallet with a backup you have tested.</p>
+<p>The recovery phrase is also called a seed phrase, mnemonic, or 12 or 24 words. Everything below applies whichever name your wallet uses.</p>
+<ul class="prose__list"><li>Why test a backup at all</li><li>The one rule: never type it into anything connected</li><li>Before you start</li><li>The built-in check on Ledger and Trezor</li><li>Restoring on a second device</li><li>If you use a passphrase</li><li>If you use multisig</li><li>Check the backup itself, not just the words</li><li>When to test</li><li>If the check fails</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="why-test-a-backup-at-all" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Why test a backup at all</h2>
+    <div class="prose">
+<p>A backup you have never tested is a hope, not a backup. The mistakes are small and ordinary: a word misspelt, two words swapped, a word missed while copying, ink that has faded, or handwriting that made sense on the day and does not now. None of them show up until the day you need the backup, which is usually the day the device has been lost, broken or stolen.</p>
+<p>There is a second reason to test while everything still works. Hardware wallets such as Ledger and Trezor do not show you the recovery phrase again after setup. If your written copy is wrong, there is no way to read the correct words off the device and fix it. Finding the problem while the device still works turns a potential total loss into an afternoon's inconvenience.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="the-one-rule-never-type-it-into-anything-connected" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">The one rule: never type it into anything connected</h2>
+    <div class="prose">
+<p>Your recovery phrase should only ever be entered on the hardware wallet itself. Never type it into a phone, a computer, a website, a wallet app, a password manager or a notes app, and never photograph it.</p>
+<p>Any website, app or person offering to "validate", "verify" or "check" your recovery phrase is a scam, whatever it looks like and whoever it claims to be. A legitimate check never needs your words to leave the device.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="before-you-start" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Before you start</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Choose somewhere private.</strong> Away from other people, and away from cameras: laptop webcams, video doorbells and phones propped up nearby all count.</li><li><strong>Have everything to hand:</strong> the hardware wallet, its PIN, and every part of your backup.</li><li><strong>Write down your first receiving address.</strong> Open the account in Ledger Wallet or Trezor Suite and note the first receiving address, or just its first and last six characters. It is not secret, and it gives you something to compare against if you ever restore the wallet.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="the-built-in-check-on-ledger-and-trezor" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">The built-in check on Ledger and Trezor</h2>
+    <div class="prose">
+<p>This is the method to use if your wallet offers it. Nothing is wiped, and your words are entered on the device, never on the computer.</p>
+<h3 class="h4 prose__h">Ledger: the Recovery Check app</h3>
+<ol class="prose__list"><li>Connect your Ledger and open Ledger Wallet.</li><li>Go to the section that manages apps on your device (My Ledger) and install <strong>Recovery Check</strong>, Ledger's own app.</li><li>Open Recovery Check on the device and choose how many words your phrase has: 12, 18 or 24.</li><li>Enter each word, in order, using the device's buttons or touchscreen.</li><li>The device tells you whether the phrase matches the one it holds.</li></ol>
+<p>You can uninstall the app afterwards. It does not change anything stored on the device.</p>
+<h3 class="h4 prose__h">Trezor: Check backup</h3>
+<ol class="prose__list"><li>Connect your Trezor and open Trezor Suite.</li><li>Open the device settings (the gear icon) and select <strong>Check backup</strong> in the wallet backup section.</li><li>Enter each word, in order, on the device's own screen.</li><li>The device confirms when the backup matches.</li></ol>
+<p>The device is not wiped. It compares the words you enter with the backup it already holds.</p>
+<h3 class="h4 prose__h">Other hardware wallets</h3>
+<p>Most others have an equivalent, often called "verify seed", "check backup" or "dry run recovery", in the device settings. Follow the maker's own instructions, from their official website, and never from a link in an email, an advert or a search result you have not checked.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="restoring-on-a-second-device" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Restoring on a second device</h2>
+    <div class="prose">
+<p>If you have a spare hardware wallet, you can go one step further: restore your backup onto it and confirm the first receiving address matches the one you wrote down. This proves the backup would rebuild your wallet on a device that has never seen it, which is exactly what happens in a real recovery. Wipe the spare device afterwards.</p>
+<p>Two warnings. Never restore your phrase into a phone or desktop wallet app to test it, because that puts your words on an internet-connected device. And never wipe your only device to test the backup: if the backup turns out to be wrong, you will have destroyed the only working copy of your wallet.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="if-you-use-a-passphrase" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">If you use a passphrase</h2>
+    <div class="prose">
+<p>Some people add a passphrase, sometimes called a 25th word, on top of the recovery phrase. The built-in checks above only confirm the 12 or 24 words. They say nothing about the passphrase.</p>
+<p>To test it, unlock the passphrase wallet on your device and confirm you see the account you expect, ideally by checking its first receiving address. A passphrase that is wrong by a single character does not produce an error. It opens a different, empty wallet, which is why this step matters and why it is easy to get wrong without noticing.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="if-you-use-multisig" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">If you use multisig</h2>
+    <div class="prose">
+<p>In a multisig wallet, testing each key's recovery phrase is necessary but not enough. Recovering the wallet also needs its configuration, often called a wallet descriptor or configuration file, which records the public keys involved and how many signatures are required. Without it, recovery can become very difficult or impossible even with every phrase in hand.</p>
+<p>Check each key's backup with the method for that device, then confirm a copy of the configuration exists and that the people who would need it know where it is.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="check-the-backup-itself-not-just-the-words" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Check the backup itself, not just the words</h2>
+    <div class="prose">
+<p>A backup can contain the right words and still let you down. While you have it out:</p>
+<ul class="prose__list"><li><strong>Could someone else read it?</strong> Your family may be the ones using it. Every word should be clear to a stranger, not just to you.</li><li><strong>Are the words numbered?</strong> Order matters as much as the words do.</li><li><strong>Check the spelling against the official list.</strong> Recovery phrases use a fixed list of 2,048 English words, and the first four letters of each word are unique. That helps when handwriting is ambiguous, and it means a word that is not on the list is certainly a mistake.</li><li><strong>Is it holding up?</strong> Paper fades, gets damp and tears. Stamped metal survives far more, but check every letter was stamped clearly.</li><li><strong>Is it where you think it is,</strong> and protected against fire, flood and the people who share your home?</li><li><strong>Would anyone know it exists?</strong> If you died tomorrow, could the right person find it and know what it is for, without the wrong person being able to?</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="when-to-test" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">When to test</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Straight after setting up a wallet,</strong> before moving more than a small amount into it.</li><li><strong>Once a year.</strong> Pick a date you will remember, such as the start of the tax year.</li><li><strong>After anything that might have changed it:</strong> moving house, a leak or fire, a new or replacement device, or moving the backup somewhere new.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="if-the-check-fails" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">If the check fails</h2>
+    <div class="prose">
+<p>First, do not panic. Your device still works, so your funds are safe for now. But until they are moved, that device is the only working key to your wallet, so treat it carefully: do not reset it, lend it or update it until you have finished.</p>
+<p>Do not try to fix the backup by guessing or rearranging words. The device cannot show you the correct phrase, and a wrong backup that looks fixed is worse than one you know is wrong.</p>
+<p>Instead, move your funds to a new wallet with a backup you know works:</p>
+<ol class="prose__list"><li><strong>Set up a new wallet</strong> on a second hardware wallet, creating a new recovery phrase.</li><li><strong>Write the new phrase down carefully, then test it</strong> with the built-in check before you go any further.</li><li><strong>Send a small test amount</strong> from the old wallet to the new one and confirm it arrives.</li><li><strong>Move the rest,</strong> then check every account and network you hold has been moved.</li><li><strong>Only then reset the old device</strong> and destroy the faulty backup securely.</li></ol>
+<p>If you have more than one account or network, or use a passphrase or multisig, take this slowly and check each step before the next.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="getting-help" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Getting help</h2>
+    <div class="prose">
+<p>KeyCompass checks backups as part of every security review, without ever seeing your words. You enter them on your own device; we walk you through the check and the rest of your setup, and give you a written list of anything that needs fixing. If you just want to ask a few questions, a drop-in hour covers that.</p>
+<p>KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does, whatever they claim to be, is attempting to steal from you.</p>
+<p><a href="/pricing">See pricing for security reviews and drop-in hours</a></p>
+<p>If you think your phrase is already lost, read <a href="/lost-recovery-phrase">I've lost my recovery phrase. What now?</a></p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block guides__more" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">More guides</h2>
+    <ul class="guides">
+      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">Recovery</span>
+        <a class="guides__link" href="/lost-recovery-phrase">
+          <h3 class="h4 guides__title">I've lost my recovery phrase. What now?</h3>
+          <p class="guides__lead">What can still be recovered, what genuinely cannot, and how to tell which situation you are in — without handing your money to someone promising a miracle.</p>
+        </a>
+        <span class="micro micro--dim guides__min">10 min</span>
+      </li>
+    </ul>
+    <p class="guides__all"><a href="/guides/">All guides</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="ftr sec--pitch">
+  <div class="wrap">
+    <hr class="rule rule--accent">
+    <div class="ftr__grid">
+      <div>
+        <a class="lockup lockup--lg" href="/#top" aria-label="KeyCompass, home">
+          <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+            <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+            <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+            <rect x="44" y="12" width="12" height="22"/>
+            <rect x="44" y="66" width="12" height="22"/>
+            <rect x="66" y="44" width="22" height="12"/>
+            <rect x="12" y="44" width="22" height="12"/>
+          </svg><span class="lockup__word">KeyCompass</span>
+        </a>
+        <p class="ftr__tag">Self-custody onboarding and security reviews. United Kingdom, remote.</p>
+      </div>
+      <nav class="ftr__nav" aria-label="Footer">
+        <span class="micro micro--dim">Site</span>
+        <a href="/#services">Services</a>
+        <a href="/#method">How it works</a>
+        <a href="/#who">Who it's for</a>
+        <a href="/#faq">Questions</a>
+        <a href="/#book">Book a session</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about">About</a>
+      </nav>
+      <nav class="ftr__nav" aria-label="Contact">
+        <span class="micro micro--dim">Contact</span>
+        <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
+        <a href="/contact">Contact and verification</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+    <hr class="rule rule--dark rule--hair">
+    <p class="ftr__legal">KeyCompass provides educational and operational support only. It is not a financial adviser, is not authorised or regulated by the Financial Conduct Authority, does not provide investment, legal, or tax advice, and never takes custody of client assets, keys, or recovery phrases. Cryptoassets are unregulated and high risk. You could lose all the money you invest. Take independent professional advice before making investment, legal, or tax decisions.</p>
+    <p class="ftr__meta micro micro--dim"><span>&copy; <span id="yr">2026</span> KeyCompass</span><span>Sheet 01 · Rev A</span></p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script>
+(function(){
+  var booted = false;
+  function boot(){
+    if (booted) return; booted = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "intake", { origin: "https://cal.com" });
+    Cal.ns.intake("ui", {
+      theme: "dark",
+      cssVarsPerTheme: { dark: { "cal-brand": "#ec3013" }, light: { "cal-brand": "#b3210e" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  }
+  var btns = document.querySelectorAll('[data-cal-link]');
+  ['pointerenter','focus','touchstart'].forEach(function(ev){
+    Array.prototype.forEach.call(btns, function(el){
+      el.addEventListener(ev, boot, { once: true, passive: true });
+    });
+  });
+}());
+</script>
+</body>
+</html>
