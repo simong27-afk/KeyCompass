@@ -941,7 +941,7 @@ uninstalling it or resetting the device ends that permanently.
 With a hardware wallet it is the opposite. The keys are generated on the device and never
 leave it, so what matters is whether you still have the device and still know its PIN. The
 companion software holds public keys only — enough to read your balance from the blockchain,
-never enough to sign a transaction or show you a phrase. Seeing a balance in Ledger Live or
+never enough to sign a transaction or show you a phrase. Seeing a balance in Ledger Wallet or
 Trezor Suite is not access, and anything presenting itself as that software while asking for
 your recovery phrase is stealing from you.
 
