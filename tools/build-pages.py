@@ -614,12 +614,15 @@ def render_guide(g, others, chrome_parts):
         "description": g["description"],
         "articleSection": g["category"],
         "inLanguage": "en-GB",
-        "datePublished": g["published"].isoformat(),
-        "dateModified": g["checked"].isoformat(),
+        # Google wants full datetimes with a time zone; midday UTC keeps the
+        # calendar date the same in every time zone a reader might be in.
+        "datePublished": g["published"].isoformat() + "T12:00:00+00:00",
+        "dateModified": g["checked"].isoformat() + "T12:00:00+00:00",
         "image": SITE + "/brand/social/og-image-1200x630.png",
         "author": {"@type": "Person", "@id": SITE + "/#person", "name": AUTHOR,
                    "url": SITE + "/about"},
-        "publisher": {"@id": SITE + "/#organization"},
+        "publisher": {"@type": "Organization", "@id": SITE + "/#organization",
+                      "name": "KeyCompass", "url": SITE + "/"},
     }
     ld = {
         "@context": "https://schema.org",

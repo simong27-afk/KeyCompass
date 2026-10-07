@@ -3,7 +3,7 @@ title: Lost your seed phrase? What can still be recovered — KeyCompass
 description: Lost your crypto recovery phrase (seed phrase)? What can still be recovered, what cannot, how to tell which case you're in, and why recovery services are scams.
 category: Recovery
 published: 2026-09-22
-checked: 2026-09-22
+checked: 2026-10-07
 featured: yes
 ---
 # I've lost my recovery phrase. What now?
