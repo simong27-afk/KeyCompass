@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to move crypto from an exchange to a hardware wallet safely — KeyCompass</title>
+<link rel="canonical" href="https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet">
+<meta name="description" content="A step-by-step guide to withdrawing crypto from an exchange to your own hardware wallet: choosing the right network, checking the address, sending a test amount first, and what to do if it doesn&#x27;t arrive.">
+<link rel="alternate" type="text/markdown" href="https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet.md" title="Markdown version">
+
+<link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/brand/favicon/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/brand/app-icons/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#141312">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to move crypto from an exchange to a hardware wallet safely — KeyCompass">
+<meta property="og:description" content="A step-by-step guide to withdrawing crypto from an exchange to your own hardware wallet: choosing the right network, checking the address, sending a test amount first, and what to do if it doesn&#x27;t arrive.">
+<meta property="og:url" content="https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet">
+<meta property="og:image" content="https://keycompass.co.uk/brand/social/og-image-1200x630.png">
+<meta property="og:site_name" content="KeyCompass">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="dns-prefetch" href="//app.cal.com">
+<script>document.documentElement.className+=" js";</script>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet",
+      "url": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet",
+      "name": "How do I move crypto from an exchange to a hardware wallet?",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://keycompass.co.uk/#website"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://keycompass.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": "https://keycompass.co.uk/guides/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How do I move crypto from an exchange to a hardware wallet?",
+            "item": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet#article",
+      "mainEntityOfPage": {
+        "@id": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet"
+      },
+      "url": "https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet",
+      "headline": "How do I move crypto from an exchange to a hardware wallet?",
+      "description": "A step-by-step guide to withdrawing crypto from an exchange to your own hardware wallet: choosing the right network, checking the address, sending a test amount first, and what to do if it doesn't arrive.",
+      "articleSection": "Getting started",
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-07T12:00:00+00:00",
+      "dateModified": "2026-10-07T12:00:00+00:00",
+      "image": "https://keycompass.co.uk/brand/social/og-image-1200x630.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://keycompass.co.uk/#person",
+        "name": "Simon Geils",
+        "url": "https://keycompass.co.uk/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://keycompass.co.uk/#organization",
+        "name": "KeyCompass",
+        "url": "https://keycompass.co.uk/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="hdr__in wrap">
+    <a class="lockup" href="/#top" aria-label="KeyCompass, home">
+      <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+        <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+        <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+        <rect x="44" y="12" width="12" height="22"/>
+        <rect x="44" y="66" width="12" height="22"/>
+        <rect x="66" y="44" width="22" height="12"/>
+        <rect x="12" y="44" width="22" height="12"/>
+      </svg><span class="lockup__word">KeyCompass</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#method">How it works</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+    <a class="btn btn--accent btn--sm" href="https://cal.com/simongeils/30min"
+       data-cal-namespace="intake" data-cal-link="simongeils/30min"><span class="wide-only">Book a session</span><span class="narrow-only">Book</span></a>
+    <button class="menubtn" id="menubtn" type="button"
+            aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span class="menubtn__rules" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+
+
+</header>
+
+<div class="menu" id="menu" tabindex="-1" hidden>
+    <nav class="menu__nav" aria-label="Sections">
+      <a href="/#services">Services</a>
+      <a href="/#method">How it works</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+    <a class="btn btn--accent menu__cta" href="https://cal.com/simongeils/30min"
+       data-cal-namespace="intake" data-cal-link="simongeils/30min">Book a session</a>
+  </div>
+
+<main id="main">
+<section class="sec sec--ground page__head" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro"><a class="crumb" href="/guides/">Guides</a> / Getting started</span>
+      <span class="micro micro--dim">KeyCompass</span>
+    </div>
+    <hr class="rule rule--light">
+    <h1 class="h2 sec__head">How do I move crypto from an exchange to a hardware wallet?</h1>
+    <p class="lead page__lead">Moving your crypto off an exchange is one of the most important steps in self-custody, and one of the easiest to get wrong. Here is how to do it carefully, one step at a time.</p>
+    <dl class="byline">
+      <div><dt>Written by</dt><dd><a href="/about">Simon Geils</a></dd></div>
+      <div><dt>Published</dt><dd><time datetime="2026-10-07">7 Oct 2026</time></dd></div>
+      <div><dt>Last checked</dt><dd><time datetime="2026-10-07">7 Oct 2026</time></dd></div>
+      <div><dt>Reading time</dt><dd>10 min</dd></div>
+    </dl>
+    <p class="checked"><strong>Checked by a person.</strong> Simon Geils last went through every
+      claim on this page on 7 Oct 2026. Spotted something out of date?
+      <a href="/contact">Tell us</a> and it will be corrected.</p>
+    <div class="prose page__intro">
+<p><strong>The short answer.</strong> Set up your hardware wallet and test your backup first. Then, in the wallet's own app, get a receiving address for the right coin and network, and check it on the hardware wallet's screen. On the exchange, withdraw a small test amount to that address, on the same network, and wait until it arrives. Only then send the rest. Never type your recovery phrase into the exchange, a website or an app: no exchange ever needs it to send you your own coins.</p>
+<p>People describe this in different ways: withdrawing to a cold wallet, moving to cold storage, transferring from Coinbase or Kraken to Ledger or Trezor, or simply taking self-custody. Everything below applies whichever exchange and hardware wallet you use.</p>
+<ul class="prose__list"><li>Before you start</li><li>Step 1: Set up the hardware wallet and test the backup</li><li>Step 2: Prepare your exchange account</li><li>Step 3: Get a receiving address and check it on the device</li><li>Step 4: Choose the right network</li><li>Step 5: Send a small test amount</li><li>Step 6: Send the rest</li><li>Step 7: Afterwards</li><li>If your crypto hasn't arrived</li><li>Mistakes that cost people money</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="before-you-start" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Before you start</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Buy the hardware wallet from the maker or an authorised reseller,</strong> not from a marketplace seller. If a device arrives with a recovery phrase already printed or written on a card, do not use it: a genuine hardware wallet always creates the phrase itself, on its own screen.</li><li><strong>Download the wallet's app only from the maker's own website.</strong> That means Ledger Wallet from ledger.com and Trezor Suite from trezor.io. Fake versions of both are advertised in search results and on lookalike sites, and they exist to steal recovery phrases. Type the address yourself rather than clicking a search ad.</li><li><strong>Give yourself time.</strong> Allow an hour or two for a first transfer, at a moment when you are not rushed or distracted. Some exchanges hold a new withdrawal address for a day or more before you can use it, so you may need to come back to finish.</li><li><strong>Work somewhere private,</strong> with no one looking over your shoulder and no cameras pointing at your screen or your backup.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-1-set-up-the-hardware-wallet-and-test-the-backup" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 1: Set up the hardware wallet and test the backup</h2>
+    <div class="prose">
+<p>Set up the device by following the maker's instructions, write down the recovery phrase it shows you, and choose a PIN. Then, before any money goes near it, check that the backup you wrote down is correct. Ledger and Trezor both have a built-in check that does this without wiping the device: see <a href="/guides/test-recovery-phrase-backup">How to test your recovery phrase backup safely</a>.</p>
+<p>It is tempting to skip this step and come back to it later. Don't. Once your savings are on the device, a backup with a single wrong word is the difference between losing a device and losing everything on it.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-2-prepare-your-exchange-account" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 2: Prepare your exchange account</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Secure the account.</strong> Use an authenticator app or a security key for two-factor authentication, not text messages, if your exchange allows it.</li><li><strong>Unstake or unlock anything that is earning.</strong> Coins in staking, savings or "earn" products usually have to be moved back to your ordinary balance before you can withdraw them, and some take days to unlock.</li><li><strong>Check the withdrawal fee and minimum.</strong> Exchanges charge a fee for each withdrawal and often have a minimum amount. This matters for how large your test amount needs to be.</li><li><strong>Expect a few questions.</strong> Since September 2023, UK exchanges have had to follow the Travel Rule, which means they may ask where a withdrawal is going. When asked, say it is a wallet you own and control yourself, sometimes called a self-hosted or unhosted wallet. Some exchanges ask you to confirm this with a simple declaration; some ask for a small test transaction. Neither involves your recovery phrase.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-3-get-a-receiving-address-and-check-it-on-the-device" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 3: Get a receiving address and check it on the device</h2>
+    <div class="prose">
+<p>A receiving address is the public address your crypto is sent to. It is safe to share; it is not the same as your recovery phrase.</p>
+<ol class="prose__list"><li><strong>Open the wallet's app and add an account for the coin you are moving.</strong> In Ledger Wallet you add an account for that coin (installing the coin's app on the device if asked). In Trezor Suite you turn on the coin in the settings if it isn't already showing.</li><li><strong>Choose Receive</strong> for that account.</li><li><strong>Check the address on the hardware wallet's screen.</strong> The app will show an address and ask you to confirm it on the device. Compare the two carefully, the whole address, not just the first and last few characters. The device's screen is the one you can trust: if malware on your computer has swapped the address, the device will show a different one.</li><li><strong>Copy the address from the app</strong> once the device has confirmed it.</li></ol>
+<p>Get a fresh address from your wallet each time you receive. Never copy an address out of an old transaction or your exchange's history, which is how address poisoning scams catch people (more on that below).</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-4-choose-the-right-network" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 4: Choose the right network</h2>
+    <div class="prose">
+<p>This is where most expensive mistakes happen. Many coins and tokens can be sent on more than one network. USDT, for example, may be offered on Ethereum, Tron, Solana and others. When you withdraw, the exchange asks you to pick one.</p>
+<ul class="prose__list"><li><strong>Pick the network that matches the account you created in your wallet.</strong> If you added a Bitcoin account, withdraw on the Bitcoin network. If you added an Ethereum account to receive a token, withdraw on Ethereum.</li><li><strong>The cheapest network is not always the right one.</strong> An exchange may list a network your hardware wallet does not support, or one you have not added. Crypto sent that way may not show up in your wallet, and getting it back can be difficult or impossible.</li><li><strong>Ignore the memo or tag field</strong> unless your wallet's app asks for one. Exchanges use memos and tags (common with XRP, XLM and some others) to tell customers apart. When sending to your own hardware wallet, you normally leave it blank. If the exchange won't let you continue without one, stop and check the maker's guidance for that coin before going on.</li><li><strong>Tokens need a little of the network's own coin to move later.</strong> You don't need any to *receive* tokens on Ethereum, but when you eventually want to send them on you'll need a small amount of ETH in the same account to pay the network fee. The same applies on other networks.</li></ul>
+<p>If you are unsure which network to use, stop. Check the maker's list of supported coins and networks, or ask someone who knows, before sending anything.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-5-send-a-small-test-amount" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 5: Send a small test amount</h2>
+    <div class="prose">
+<ol class="prose__list"><li><strong>Paste the address into the exchange's withdrawal form</strong> and compare it against your hardware wallet's screen one more time.</li><li><strong>Choose the network</strong> from Step 4.</li><li><strong>Send a small amount,</strong> enough to clear the exchange's minimum and fee, but an amount you could afford to lose if something were wrong.</li><li><strong>Approve the withdrawal</strong> with your exchange's two-factor confirmation.</li><li><strong>Wait for it to arrive</strong> in your wallet's app. It can take from a minute to an hour or more, depending on the network and the exchange.</li></ol>
+<p>When it arrives, check the amount in your wallet's app against what you sent, less the fee. That one small transaction proves the address, the network and the account are all right.</p>
+<p>If the exchange asked you to add the address to an address book or allowlist, this is a good time to do it, so later withdrawals can only go to addresses you have approved.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-6-send-the-rest" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 6: Send the rest</h2>
+    <div class="prose">
+<p>Withdraw the remaining balance to the same address, on the same network, checking the address again before you confirm. If the amount is large, there is nothing wrong with sending it in two or three parts. It costs a little more in fees but limits the damage of any mistake.</p>
+<p>Remember the fee: the exchange usually takes it from the amount you are withdrawing, so a "withdraw all" is the easiest way to leave nothing behind.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="step-7-afterwards" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Step 7: Afterwards</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Check everything has arrived,</strong> for every coin and network you moved.</li><li><strong>Keep a record</strong> of each withdrawal: the date, amount, coin, network and the transaction ID the exchange shows you. For UK tax, moving crypto between wallets you own is generally not a disposal, but a withdrawal fee paid in crypto may be. Your records make this easy for you or your accountant to work out later. (This is not tax advice.)</li><li><strong>Decide what to do with the exchange account.</strong> Many people keep it open for buying and selling, with only what they need on it. If you keep it, keep its security up to date.</li><li><strong>Store the hardware wallet and the backup separately.</strong> Someone who finds both together has everything they need.</li><li><strong>Be careful who you tell.</strong> The fewer people who know you hold crypto, and how much, the better.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="if-your-crypto-hasn-t-arrived" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">If your crypto hasn't arrived</h2>
+    <div class="prose">
+<ol class="prose__list"><li><strong>Don't panic and don't send more.</strong> Most delays are just a busy network or an exchange processing withdrawals in batches.</li><li><strong>Find the transaction ID</strong> in the exchange's withdrawal history. If there isn't one yet, the exchange hasn't sent it.</li><li><strong>Check the transaction on a block explorer</strong> for that network, using the transaction ID. It will show whether the transaction has been confirmed and which address it went to.</li><li><strong>Check you're looking at the right account</strong> in your wallet's app, on the right network. Tokens sometimes need to be added to the app before they show, even though they arrived.</li><li><strong>If it went on the wrong network or to the wrong address,</strong> contact the exchange through its own website or app, never through a phone number or account you found on social media. Some network mistakes can be fixed; some cannot.</li></ol>
+<p>Be wary of anyone who contacts you offering to recover lost crypto, especially after you have posted about a problem online. "Recovery services" that reach out to you, or ask for a fee up front or your recovery phrase, are scams.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="mistakes-that-cost-people-money" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Mistakes that cost people money</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Typing the recovery phrase into anything other than the hardware wallet.</strong> No exchange, wallet maker or support team ever needs it. Anyone who asks for it is trying to steal from you.</li><li><strong>Skipping the test amount.</strong> It costs one extra fee and takes a few minutes. It is the cheapest insurance there is.</li><li><strong>Choosing the wrong network</strong> because it was cheapest, or listed first.</li><li><strong>Copying an address from transaction history.</strong> In an address poisoning scam, someone sends you a tiny amount from an address made to look almost identical to yours, hoping you'll copy it next time. Always get the address fresh from your wallet and check it on the device.</li><li><strong>Not checking the address on the device's screen.</strong> Malware can change an address on your computer between copying and pasting. The device's screen is the only place you can trust.</li><li><strong>Downloading a fake wallet app.</strong> Get Ledger Wallet and Trezor Suite only from ledger.com and trezor.io.</li><li><strong>Rushing.</strong> Scammers and mistakes both thrive on urgency. If something feels wrong, stop.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="getting-help" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Getting help</h2>
+    <div class="prose">
+<p>If you would rather not do your first transfer alone, a KeyCompass onboarding session covers everything on this page, live on a video call. You do every step yourself, on your own device, while we go through it with you: setting up the hardware wallet, checking the backup, picking the right network, sending the test amount and confirming it has landed, then moving the rest. You finish with a written record of your setup.</p>
+<p>KeyCompass never asks for your recovery phrase, a photo of it or any part of it, and never holds your crypto. Anyone who does ask, whatever they claim to be, is attempting to steal from you.</p>
+<p><a href="/pricing#private-onboarding-session">See pricing for onboarding sessions</a></p>
+<p>If you already have crypto on a hardware wallet, read <a href="/guides/test-recovery-phrase-backup">How to test your recovery phrase backup safely</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block guides__more" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">More guides</h2>
+    <ul class="guides">
+      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">Backups</span>
+        <a class="guides__link" href="/guides/test-recovery-phrase-backup">
+          <h3 class="h4 guides__title">How do I test my recovery phrase backup?</h3>
+          <p class="guides__lead">The only way to know a backup works is to check it, on the hardware wallet itself and never on a phone or computer. Here is how to do that safely, and what to do if it fails.</p>
+        </a>
+        <span class="micro micro--dim guides__min">8 min</span>
+      </li>
+      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">Recovery</span>
+        <a class="guides__link" href="/lost-recovery-phrase">
+          <h3 class="h4 guides__title">I've lost my recovery phrase. What now?</h3>
+          <p class="guides__lead">What can still be recovered, what genuinely cannot, and how to tell which situation you are in — without handing your money to someone promising a miracle.</p>
+        </a>
+        <span class="micro micro--dim guides__min">10 min</span>
+      </li>
+    </ul>
+    <p class="guides__all"><a href="/guides/">All guides</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="ftr sec--pitch">
+  <div class="wrap">
+    <hr class="rule rule--accent">
+    <div class="ftr__grid">
+      <div>
+        <a class="lockup lockup--lg" href="/#top" aria-label="KeyCompass, home">
+          <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+            <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+            <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+            <rect x="44" y="12" width="12" height="22"/>
+            <rect x="44" y="66" width="12" height="22"/>
+            <rect x="66" y="44" width="22" height="12"/>
+            <rect x="12" y="44" width="22" height="12"/>
+          </svg><span class="lockup__word">KeyCompass</span>
+        </a>
+        <p class="ftr__tag">Self-custody onboarding and security reviews. United Kingdom, remote.</p>
+      </div>
+      <nav class="ftr__nav" aria-label="Footer">
+        <span class="micro micro--dim">Site</span>
+        <a href="/#services">Services</a>
+        <a href="/#method">How it works</a>
+        <a href="/#who">Who it's for</a>
+        <a href="/#faq">Questions</a>
+        <a href="/#book">Book a session</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about">About</a>
+      </nav>
+      <nav class="ftr__nav" aria-label="Contact">
+        <span class="micro micro--dim">Contact</span>
+        <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
+        <a href="/contact">Contact and verification</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+    <hr class="rule rule--dark rule--hair">
+    <p class="ftr__legal">KeyCompass provides educational and operational support only. It is not a financial adviser, is not authorised or regulated by the Financial Conduct Authority, does not provide investment, legal, or tax advice, and never takes custody of client assets, keys, or recovery phrases. Cryptoassets are unregulated and high risk. You could lose all the money you invest. Take independent professional advice before making investment, legal, or tax decisions.</p>
+    <p class="ftr__meta micro micro--dim"><span>&copy; <span id="yr">2026</span> KeyCompass</span><span>Sheet 01 · Rev A</span></p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script>
+(function(){
+  var booted = false;
+  function boot(){
+    if (booted) return; booted = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "intake", { origin: "https://cal.com" });
+    Cal.ns.intake("ui", {
+      theme: "dark",
+      cssVarsPerTheme: { dark: { "cal-brand": "#ec3013" }, light: { "cal-brand": "#b3210e" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  }
+  var btns = document.querySelectorAll('[data-cal-link]');
+  ['pointerenter','focus','touchstart'].forEach(function(ev){
+    Array.prototype.forEach.call(btns, function(el){
+      el.addEventListener(ev, boot, { once: true, passive: true });
+    });
+  });
+}());
+</script>
+</body>
+</html>
