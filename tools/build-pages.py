@@ -603,11 +603,12 @@ def render_guide(g, others, chrome_parts):
         picks = sorted(others, key=lambda o: o["category"] != g["category"])[:3]
         blocks += MORE_GUIDES.format(rows="".join(row(o) for o in picks))
 
-    ld = {
-        "@context": "https://schema.org",
+    # Article and WebPage are separate nodes: "breadcrumb" belongs to WebPage, and
+    # putting it on the Article is what Semrush flagged as a markup error.
+    article = {
         "@type": "Article",
         "@id": g["url"] + "#article",
-        "mainEntityOfPage": g["url"],
+        "mainEntityOfPage": {"@id": g["url"]},
         "url": g["url"],
         "headline": g["h1"],
         "description": g["description"],
@@ -619,9 +620,23 @@ def render_guide(g, others, chrome_parts):
         "author": {"@type": "Person", "@id": SITE + "/#person", "name": AUTHOR,
                    "url": SITE + "/about"},
         "publisher": {"@id": SITE + "/#organization"},
-        "isPartOf": {"@id": SITE + "/#website"},
-        "breadcrumb": breadcrumb(("Home", SITE + "/"), ("Guides", SITE + "/guides/"),
-                                 (g["h1"], g["url"])),
+    }
+    ld = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": g["url"],
+                "url": g["url"],
+                "name": g["h1"],
+                "inLanguage": "en-GB",
+                "isPartOf": {"@id": SITE + "/#website"},
+                "breadcrumb": breadcrumb(("Home", SITE + "/"), ("Guides", SITE + "/guides/"),
+                                         (g["h1"], g["url"])),
+                "mainEntity": {"@id": g["url"] + "#article"},
+            },
+            article,
+        ],
     }
 
     eyebrow_html = ('<a class="crumb" href="/guides/">Guides</a> / %s'
