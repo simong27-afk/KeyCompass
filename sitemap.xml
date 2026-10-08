@@ -36,6 +36,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://keycompass.co.uk/guides/what-is-a-seed-phrase</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>

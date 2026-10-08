@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is a seed phrase? A plain-English guide — KeyCompass</title>
+<link rel="canonical" href="https://keycompass.co.uk/guides/what-is-a-seed-phrase">
+<meta name="description" content="What a seed phrase (recovery phrase) is, how it works, 12 vs 24 words, how it differs from a private key, and the scams that target it.">
+<link rel="alternate" type="text/markdown" href="https://keycompass.co.uk/guides/what-is-a-seed-phrase.md" title="Markdown version">
+
+<link rel="icon" href="/brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/favicon/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/brand/favicon/favicon-16.png" sizes="16x16">
+<link rel="apple-touch-icon" href="/brand/app-icons/apple-touch-icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#141312">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is a seed phrase? A plain-English guide — KeyCompass">
+<meta property="og:description" content="What a seed phrase (recovery phrase) is, how it works, 12 vs 24 words, how it differs from a private key, and the scams that target it.">
+<meta property="og:url" content="https://keycompass.co.uk/guides/what-is-a-seed-phrase">
+<meta property="og:image" content="https://keycompass.co.uk/brand/social/og-image-1200x630.png">
+<meta property="og:site_name" content="KeyCompass">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="dns-prefetch" href="//app.cal.com">
+<script>document.documentElement.className+=" js";</script>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://keycompass.co.uk/guides/what-is-a-seed-phrase",
+      "url": "https://keycompass.co.uk/guides/what-is-a-seed-phrase",
+      "name": "What is a seed phrase?",
+      "inLanguage": "en-GB",
+      "isPartOf": {
+        "@id": "https://keycompass.co.uk/#website"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://keycompass.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Guides",
+            "item": "https://keycompass.co.uk/guides/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What is a seed phrase?",
+            "item": "https://keycompass.co.uk/guides/what-is-a-seed-phrase"
+          }
+        ]
+      },
+      "mainEntity": {
+        "@id": "https://keycompass.co.uk/guides/what-is-a-seed-phrase#article"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://keycompass.co.uk/guides/what-is-a-seed-phrase#article",
+      "mainEntityOfPage": {
+        "@id": "https://keycompass.co.uk/guides/what-is-a-seed-phrase"
+      },
+      "url": "https://keycompass.co.uk/guides/what-is-a-seed-phrase",
+      "headline": "What is a seed phrase?",
+      "description": "What a seed phrase (recovery phrase) is, how it works, 12 vs 24 words, how it differs from a private key, and the scams that target it.",
+      "articleSection": "Getting started",
+      "inLanguage": "en-GB",
+      "datePublished": "2026-10-08T12:00:00+00:00",
+      "dateModified": "2026-10-08T12:00:00+00:00",
+      "image": "https://keycompass.co.uk/brand/social/og-image-1200x630.png",
+      "author": {
+        "@type": "Person",
+        "@id": "https://keycompass.co.uk/#person",
+        "name": "Simon Geils",
+        "url": "https://keycompass.co.uk/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://keycompass.co.uk/#organization",
+        "name": "KeyCompass",
+        "url": "https://keycompass.co.uk/"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="hdr__in wrap">
+    <a class="lockup" href="/#top" aria-label="KeyCompass, home">
+      <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+        <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+        <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+        <rect x="44" y="12" width="12" height="22"/>
+        <rect x="44" y="66" width="12" height="22"/>
+        <rect x="66" y="44" width="22" height="12"/>
+        <rect x="12" y="44" width="22" height="12"/>
+      </svg><span class="lockup__word">KeyCompass</span>
+    </a>
+    <nav class="hdr__nav" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#method">How it works</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+    </nav>
+    <a class="btn btn--accent btn--sm" href="https://cal.com/simongeils/30min"
+       data-cal-namespace="intake" data-cal-link="simongeils/30min"><span class="wide-only">Book a session</span><span class="narrow-only">Book</span></a>
+    <button class="menubtn" id="menubtn" type="button"
+            aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span class="menubtn__rules" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+
+
+</header>
+
+<div class="menu" id="menu" tabindex="-1" hidden>
+    <nav class="menu__nav" aria-label="Sections">
+      <a href="/#services">Services</a>
+      <a href="/#method">How it works</a>
+      <a href="/#who">Who it's for</a>
+      <a href="/#faq">Questions</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about">About</a>
+    </nav>
+    <a class="btn btn--accent menu__cta" href="https://cal.com/simongeils/30min"
+       data-cal-namespace="intake" data-cal-link="simongeils/30min">Book a session</a>
+  </div>
+
+<main id="main">
+<section class="sec sec--ground page__head" data-reveal>
+  <div class="wrap">
+    <div class="rowhead">
+      <span class="micro"><a class="crumb" href="/guides/">Guides</a> / Getting started</span>
+      <span class="micro micro--dim">KeyCompass</span>
+    </div>
+    <hr class="rule rule--light">
+    <h1 class="h2 sec__head">What is a seed phrase?</h1>
+    <p class="lead page__lead">A seed phrase is the master key to a crypto wallet. Whoever has the words has the money. Here is what it is, how it works, and how to keep it out of the wrong hands.</p>
+    <dl class="byline">
+      <div><dt>Written by</dt><dd><a href="/about">Simon Geils</a></dd></div>
+      <div><dt>Published</dt><dd><time datetime="2026-10-08">8 Oct 2026</time></dd></div>
+      <div><dt>Last checked</dt><dd><time datetime="2026-10-08">8 Oct 2026</time></dd></div>
+      <div><dt>Reading time</dt><dd>9 min</dd></div>
+    </dl>
+    <p class="checked"><strong>Checked by a person.</strong> Simon Geils last went through every
+      claim on this page on 8 Oct 2026. Spotted something out of date?
+      <a href="/contact">Tell us</a> and it will be corrected.</p>
+    <div class="prose page__intro">
+<p><strong>The short answer.</strong> A seed phrase is a list of 12 or 24 ordinary words, created when you first set up your wallet, that can rebuild the whole wallet on any compatible device. Every private key and every address in the wallet comes from those words. If your hardware wallet (the physical device that keeps your keys offline) is lost, broken or stolen, the seed phrase is how you get your crypto back. And if anyone else sees it, they can take everything, from anywhere in the world, without needing your device or your PIN.</p>
+<p>It goes by several names: seed phrase, recovery phrase, recovery seed, mnemonic or mnemonic phrase, backup phrase, wallet backup, or Secret Recovery Phrase in MetaMask. They all mean the same thing.</p>
+<ul class="prose__list"><li>What a seed phrase looks like</li><li>How a seed phrase works</li><li>Seed phrase, private key, password and PIN: the differences</li><li>12, 18, 20 or 24 words</li><li>Where your seed phrase comes from</li><li>If your crypto is on an exchange</li><li>Storing your seed phrase safely: the rules</li><li>The optional passphrase</li><li>Scams that target seed phrases</li><li>Common questions</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="what-a-seed-phrase-looks-like" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">What a seed phrase looks like</h2>
+    <div class="prose">
+<p>A seed phrase is a numbered list of short, common English words, such as *ocean*, *ladder*, *cabin*, *rescue*. Your device shows them to you once, during setup, and asks you to write them down in order.</p>
+<p>The words come from a fixed list of 2,048, published as part of a standard called BIP39 that almost every wallet uses. Each word on the list can be identified by its first four letters, which is why some metal backup plates only have room for four letters per word. The final word also works as a checksum: it lets a wallet spot most typing mistakes rather than silently opening the wrong wallet.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="how-a-seed-phrase-works" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">How a seed phrase works</h2>
+    <div class="prose">
+<p>Behind the words is a very large random number, generated by your device. The words are simply a human-readable way of writing that number down, so a person can read and copy it without mistakes.</p>
+<p>From that one number, the device works out a master key, and from the master key it works out every private key and address your wallet will ever use, for every coin and account. The same words always produce the same keys, on any device or wallet app that follows the same standard. That is what makes recovery possible.</p>
+<p>Two things follow from this:</p>
+<ul class="prose__list"><li><strong>Your crypto is not stored on your device.</strong> It is recorded on the blockchain. The device holds the keys that let you move it, and the seed phrase can recreate those keys. Lose the device and keep the phrase, and you have lost nothing but the device.</li><li><strong>One seed phrase covers everything in that wallet.</strong> You do not get a separate phrase for each coin or each account. Bitcoin, Ethereum and the rest on one device all come from the same words.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="seed-phrase-private-key-password-and-pin-the-differences" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Seed phrase, private key, password and PIN: the differences</h2>
+    <div class="prose">
+<div class="prose__scroll"><table class="prose__table"><thead><tr><th></th><th>What it is</th><th>What it can do</th></tr></thead><tbody><tr><td><strong>Seed phrase</strong></td><td>12 to 24 words, created once at setup</td><td>Rebuilds the entire wallet, every coin and account, on any compatible device</td></tr><tr><td><strong>Private key</strong></td><td>A long code derived from the seed phrase</td><td>Controls one address. Your device and wallet app handle these for you; you rarely see them</td></tr><tr><td><strong>Device PIN</strong></td><td>A number you choose</td><td>Unlocks your hardware device. Useless without the device itself</td></tr><tr><td><strong>App or exchange password</strong></td><td>A password you choose</td><td>Opens an app or an exchange account. Does not control crypto secured by a hardware device</td></tr></tbody></table></div>
+<p>The PIN protects the device. The seed phrase *is* the wallet. That is why someone who steals your device usually cannot get in, but someone who sees your seed phrase can.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="12-18-20-or-24-words" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">12, 18, 20 or 24 words</h2>
+    <div class="prose">
+<p>Most devices and wallet apps use 12 or 24 words, and a few offer 18. Both 12 and 24 are far beyond what anyone could guess: a 12-word phrase is one of roughly 340 trillion trillion trillion possibilities. A longer phrase adds a safety margin, not a practical difference for most people. What matters far more is how the phrase is stored.</p>
+<p>Newer Trezor devices create a 20-word backup by default. It uses a different standard, called SLIP39, from a different word list. It does the same job, and several other wallet apps support it, but it is not interchangeable with a 12 or 24-word phrase. If yours has 20 words, that is expected.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="where-your-seed-phrase-comes-from" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Where your seed phrase comes from</h2>
+    <div class="prose">
+<p>Your device generates the seed phrase itself when you set it up. That is the only safe way to get one.</p>
+<ul class="prose__list"><li><strong>Never accept a seed phrase you did not watch your own device create.</strong> A device that arrives with words already printed on a card, or "pre-set up" by a seller, is a scam: whoever wrote those words can empty the wallet whenever they like.</li><li><strong>Never use an online seed phrase generator</strong> for a wallet that will hold real money. Any words that have appeared on a website or a computer screen could have been recorded.</li><li><strong>Never make up your own words.</strong> People are poor at choosing randomly, and phrases chosen by people can be guessed.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="if-your-crypto-is-on-an-exchange" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">If your crypto is on an exchange</h2>
+    <div class="prose">
+<p>If you hold crypto on an exchange such as Coinbase or Kraken, you do not have a seed phrase. The exchange holds the keys and you have an account, protected by a password and two-factor authentication. That is what "not your keys, not your coins" refers to.</p>
+<p>You get a seed phrase when you move your crypto into a wallet you control. See <a href="/guides/move-crypto-from-exchange-to-hardware-wallet">How to move crypto from an exchange to a hardware wallet</a>.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="storing-your-seed-phrase-safely-the-rules" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Storing your seed phrase safely: the rules</h2>
+    <div class="prose">
+<ul class="prose__list"><li><strong>Only ever enter it on the device itself,</strong> and only to recover or check the wallet. Never type it into a phone, a computer, a website, an app, a password manager or an email.</li><li><strong>Never photograph it, scan it or store it in the cloud.</strong> Photos sync to the cloud automatically, and cloud accounts get hacked.</li><li><strong>Nobody legitimate will ever ask for it.</strong> Not Ledger, not Trezor, not your exchange, not "support", and not KeyCompass. Anyone who asks for it is trying to steal from you.</li><li><strong>Write it down clearly and in order,</strong> and keep the copy away from the device. Someone who finds both together has everything.</li><li><strong>Protect it from fire, flood and the people who share your home.</strong> Paper is fine to start with; stamped or engraved metal survives far more.</li><li><strong>Make sure the right person could find it,</strong> and know what it is for, if something happened to you.</li><li><strong>Check it.</strong> A backup with one wrong word can fail when you need it. See <a href="/guides/test-recovery-phrase-backup">How to test your recovery phrase backup safely</a>.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="the-optional-passphrase" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">The optional passphrase</h2>
+    <div class="prose">
+<p>Some devices and wallet apps let you add a passphrase on top of the seed phrase, sometimes called a 25th word. The same seed phrase with a different passphrase opens a completely separate wallet. This protects you if someone finds your seed phrase: on its own, it opens only the wallet without the passphrase, which can be left empty or hold a small amount.</p>
+<p>The catch is that the passphrase becomes a second thing you cannot lose. Forget it, or record it wrongly by a single character, and the wallet behind it is gone, even with the seed phrase in hand. It suits some people well, but it is worth understanding fully before you add one.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="scams-that-target-seed-phrases" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Scams that target seed phrases</h2>
+    <div class="prose">
+<p>Almost every seed phrase scam tries to get you to type your words somewhere other than your device.</p>
+<ul class="prose__list"><li><strong>Fake support.</strong> Someone replies to a post or messages you, claiming to be from a wallet maker or an exchange, and asks you to "verify", "sync" or "validate" your wallet. Real support never asks for your words and never contacts you first on social media.</li><li><strong>Fake apps and websites.</strong> Lookalike versions of wallet apps appear in search ads and app stores, and ask for your seed phrase to "restore" your wallet. Download wallet software only from the maker's own website, typed in yourself.</li><li><strong>Letters and emails claiming a security problem.</strong> Some are well printed and carry the right logo. Any message that ends with entering your words online is a scam.</li><li><strong>The "free seed phrase".</strong> Scammers post a seed phrase in public comments, posing as a beginner who cannot work out how to withdraw. The wallet holds money but cannot be emptied without a small fee, and anything you send to cover the fee is taken straight away. And a wallet that is not yours is not yours to empty, whatever the comment says.</li><li><strong>"Recovery services".</strong> Anyone offering to recover lost crypto in exchange for a fee up front, or for your seed phrase, is a scam.</li></ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="common-questions" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Common questions</h2>
+    <div class="prose">
+<p><strong>Can someone guess my seed phrase?</strong> No. The number of possible phrases is so large that guessing one is not realistic with any computer that exists. Seed phrases are stolen, not guessed: through scams, photos, cloud backups and careless storage.</p>
+<p><strong>Does the order of the words matter?</strong> Yes. The same words in a different order make a different phrase, which is why your backup should be numbered.</p>
+<p><strong>Can I change my seed phrase?</strong> Not on an existing wallet. If you think your phrase has been seen by anyone, set up a new wallet with a new phrase, test the backup, and move your crypto across. Then treat the old phrase as compromised.</p>
+<p><strong>I've lost my seed phrase but still have the device. What now?</strong> Your crypto is safe for now, but the device is your only way in. Do not reset it. Set up a new wallet with a new phrase and move your funds across while the old device still works. See <a href="/lost-recovery-phrase">I've lost my recovery phrase. What now?</a></p>
+<p><strong>Can I use my seed phrase with a different device or app?</strong> Usually, yes, as long as both follow the same standard. Some wallet apps organise accounts slightly differently, so balances do not always appear straight away after a restore. Recover onto another hardware device, never into a phone or desktop app just to see if it works.</p>
+<p><strong>Is it safe to keep it in a password manager?</strong> It moves your seed phrase onto internet-connected devices, which is exactly what a hardware device exists to avoid. Keep it offline.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block" id="getting-help" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">Getting help</h2>
+    <div class="prose">
+<p>If you are about to create your first seed phrase, or want someone to check how you have stored an existing one, KeyCompass can go through it with you on a video call. You never show your words: everything stays on your own device and your own paper, and you finish with a clear, written plan.</p>
+<p>KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does, whatever they claim to be, is attempting to steal from you.</p>
+<p><a href="/pricing">See pricing for onboarding sessions and security reviews</a></p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--ground page__block guides__more" data-reveal>
+  <div class="wrap">
+    <hr class="rule rule--hair">
+    <h2 class="h3 page__h">More guides</h2>
+    <ul class="guides">
+      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">Getting started</span>
+        <a class="guides__link" href="/guides/move-crypto-from-exchange-to-hardware-wallet">
+          <h3 class="h4 guides__title">How do I move crypto from an exchange to a hardware wallet?</h3>
+          <p class="guides__lead">Moving your crypto off an exchange is one of the most important steps in self-custody, and one of the easiest to get wrong. Here is how to do it carefully, one step at a time.</p>
+        </a>
+        <span class="micro micro--dim guides__min">10 min</span>
+      </li>
+      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">Backups</span>
+        <a class="guides__link" href="/guides/test-recovery-phrase-backup">
+          <h3 class="h4 guides__title">How do I test my recovery phrase backup?</h3>
+          <p class="guides__lead">The only way to know a backup works is to check it, on the hardware wallet itself and never on a phone or computer. Here is how to do that safely, and what to do if it fails.</p>
+        </a>
+        <span class="micro micro--dim guides__min">8 min</span>
+      </li>
+      <li class="guides__row">
+        <span class="micro micro--dim guides__cat">Recovery</span>
+        <a class="guides__link" href="/lost-recovery-phrase">
+          <h3 class="h4 guides__title">I've lost my recovery phrase. What now?</h3>
+          <p class="guides__lead">What can still be recovered, what genuinely cannot, and how to tell which situation you are in — without handing your money to someone promising a miracle.</p>
+        </a>
+        <span class="micro micro--dim guides__min">10 min</span>
+      </li>
+    </ul>
+    <p class="guides__all"><a href="/guides/">All guides</a></p>
+  </div>
+</section>
+</main>
+
+<footer class="ftr sec--pitch">
+  <div class="wrap">
+    <hr class="rule rule--accent">
+    <div class="ftr__grid">
+      <div>
+        <a class="lockup lockup--lg" href="/#top" aria-label="KeyCompass, home">
+          <svg class="lockup__mark" viewBox="0 0 100 100" fill="currentColor" fill-rule="evenodd" aria-hidden="true">
+            <path d="M4 4h92v92H4z M14 14v72h72V14z"/>
+            <path d="M32 32h36v36H32z M42 42v16h16V42z"/>
+            <rect x="44" y="12" width="12" height="22"/>
+            <rect x="44" y="66" width="12" height="22"/>
+            <rect x="66" y="44" width="22" height="12"/>
+            <rect x="12" y="44" width="22" height="12"/>
+          </svg><span class="lockup__word">KeyCompass</span>
+        </a>
+        <p class="ftr__tag">Self-custody onboarding and security reviews. United Kingdom, remote.</p>
+      </div>
+      <nav class="ftr__nav" aria-label="Footer">
+        <span class="micro micro--dim">Site</span>
+        <a href="/#services">Services</a>
+        <a href="/#method">How it works</a>
+        <a href="/#who">Who it's for</a>
+        <a href="/#faq">Questions</a>
+        <a href="/#book">Book a session</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/guides/">Guides</a>
+        <a href="/about">About</a>
+      </nav>
+      <nav class="ftr__nav" aria-label="Contact">
+        <span class="micro micro--dim">Contact</span>
+        <a href="mailto:hello@keycompass.co.uk">hello@keycompass.co.uk</a>
+        <a href="/contact">Contact and verification</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+    <hr class="rule rule--dark rule--hair">
+    <p class="ftr__legal">KeyCompass provides educational and operational support only. It is not a financial adviser, is not authorised or regulated by the Financial Conduct Authority, does not provide investment, legal, or tax advice, and never takes custody of client assets, keys, or recovery phrases. Cryptoassets are unregulated and high risk. You could lose all the money you invest. Take independent professional advice before making investment, legal, or tax decisions.</p>
+    <p class="ftr__meta micro micro--dim"><span>&copy; <span id="yr">2026</span> KeyCompass</span><span>Sheet 01 · Rev A</span></p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script>
+(function(){
+  var booted = false;
+  function boot(){
+    if (booted) return; booted = true;
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "intake", { origin: "https://cal.com" });
+    Cal.ns.intake("ui", {
+      theme: "dark",
+      cssVarsPerTheme: { dark: { "cal-brand": "#ec3013" }, light: { "cal-brand": "#b3210e" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  }
+  var btns = document.querySelectorAll('[data-cal-link]');
+  ['pointerenter','focus','touchstart'].forEach(function(ev){
+    Array.prototype.forEach.call(btns, function(el){
+      el.addEventListener(ev, boot, { once: true, passive: true });
+    });
+  });
+}());
+</script>
+</body>
+</html>
