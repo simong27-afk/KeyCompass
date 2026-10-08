@@ -196,6 +196,6 @@ finish with a written record of your setup.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it, and never holds
 your crypto. Anyone who does ask, whatever they claim to be, is attempting to steal from you.
 
-[See pricing for onboarding sessions](https://keycompass.co.uk/pricing#private-onboarding-session)
+[How an onboarding session works, and what it costs](https://keycompass.co.uk/onboarding)
 
 If you already use a hardware wallet, read [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup).

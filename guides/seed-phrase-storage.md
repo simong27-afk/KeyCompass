@@ -158,7 +158,8 @@ readable by anyone who looks.
 
 Your will, or a separate letter of wishes, can still say that you hold crypto and where your
 executor will find instructions. Just never put the words themselves in it. Speak to a
-solicitor about how to make sure your executors can find and use the backup.
+solicitor about how to make sure your executors can find and use the backup. For more on
+planning for your family, see [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
 
 ## Check it once a year
 
@@ -179,6 +180,6 @@ anything worth changing and a clear note of what is already fine.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does,
 whatever they claim to be, is attempting to steal from you.
 
-[See pricing for security reviews](https://keycompass.co.uk/pricing#threat-and-security-review)
+[How a security review works, and what it costs](https://keycompass.co.uk/security-review)
 
 If you think your phrase is already lost, read [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase)

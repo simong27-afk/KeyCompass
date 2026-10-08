@@ -187,6 +187,6 @@ questions, a drop-in hour covers that.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does,
 whatever they claim to be, is attempting to steal from you.
 
-[See pricing for security reviews and drop-in hours](https://keycompass.co.uk/pricing)
+[How a security review works, and what it costs](https://keycompass.co.uk/security-review)
 
 If you think your phrase is already lost, read [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase)

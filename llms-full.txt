@@ -34,7 +34,7 @@ checking a hardware wallet, setting it up from scratch, generating and backing u
 recovery phrase, sending a test amount, confirming it landed, then moving the rest. You
 drive; each step is explained as you go. You leave with a working wallet you set up
 yourself, a backup you have verified, a written record of your setup, and the habits that
-prevent the common losses.
+prevent the common losses. Details: https://keycompass.co.uk/onboarding
 
 **Threat and security review** — audit plus written report. From £295.
 
@@ -42,7 +42,8 @@ For people who already self-custody and have not reviewed the setup. A structure
 through what you already have across four failure channels: phishing, device, backup loss,
 and succession. Nothing is changed during a review. You leave with a prioritised list of
 what to fix worst-first, plain-English reasoning for every item, an explicit list of what
-is already fine, and a re-assessment once you have made the changes.
+is already fine, and a re-assessment once you have made the changes. Details:
+https://keycompass.co.uk/security-review
 
 **Drop-in hour** — 60 minutes, video call. £95, paid when you book.
 
@@ -196,6 +197,8 @@ written summary afterwards. More devices, more networks, or a setup that needs a
 session moves the price up. You will have the exact figure in writing after the intake call,
 before you commit to anything.
 
+[How an onboarding session works, step by step](https://keycompass.co.uk/onboarding)
+
 ### Threat and security review
 
 **From £295 · structured review plus written report**
@@ -207,6 +210,11 @@ what is already fine.
 
 £295 covers a single wallet with a single backup. Multiple devices, multisig, or a business
 setup sits higher. The exact figure is confirmed in writing after the intake call.
+
+Every review includes succession: whether your family could find and use your crypto if
+something happened to you. See [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
+
+[What a security review covers](https://keycompass.co.uk/security-review)
 
 ### How paying works
 
@@ -222,6 +230,384 @@ KeyCompass never holds your keys, your recovery phrase or your funds, and never 
 them — not the words, not a photo, not part of it. No session includes advice on what to
 buy, when, or how much. KeyCompass is not authorised or regulated by the Financial Conduct
 Authority. The work is technical and operational: how to hold safely what you already own.
+
+[Book the free intake call](https://cal.com/simongeils/30min)
+
+
+---
+
+## Hardware wallet setup and exchange migration, on a video call
+
+> One-to-one help moving your crypto off an exchange and onto a hardware wallet. You do every
+> step yourself, on your own device, with someone experienced talking you through it live.
+
+**In short.** A private onboarding session takes you from crypto on an exchange to crypto in a
+wallet only you control. We set up your hardware wallet (the physical device that keeps your keys
+offline) together, back it up and test the backup, then move your crypto across: a small test
+amount first, then the rest. You click every button. I explain what each step means, what to
+check, and what could go wrong. From £195, fixed price, agreed in writing before you commit.
+
+- Who it is for
+- Who it is not for
+- What happens in the session
+- How the video call works
+- What you leave with
+- What it costs
+- What KeyCompass never does
+- Common questions
+
+### Who it is for
+
+- You hold crypto on one or more exchanges and want to take control of it yourself.
+- You have bought a hardware wallet and it is still in the box, because you don't want to get it
+  wrong.
+- You have read the guides and watched the videos, and would still rather not do it alone the
+  first time.
+- You and a partner want to set it up together, so you both understand it.
+
+### Who it is not for
+
+- **If you want someone to hold or manage your crypto for you,** this is the opposite. You keep
+  sole control throughout, and afterwards.
+- **If you want advice on what to buy or sell,** KeyCompass does not give investment advice.
+- **If you only have a couple of questions,** a [drop-in hour](https://keycompass.co.uk/pricing#drop-in-hour)
+  is quicker and cheaper.
+- **If you already self-custody** and want your setup checked, see the
+  [security review](https://keycompass.co.uk/security-review).
+
+### What happens in the session
+
+It starts with a free thirty-minute intake call, where we work out what you hold, where, and what
+the session needs to cover. You then get a written scope and a fixed price. Nothing is booked
+until you have agreed it.
+
+On the day, typically:
+
+1. **Check the device is genuine** and unopened, and that it came from the maker or an authorised
+   reseller.
+2. **Install the wallet app** from the maker's own website, never a search result or an ad.
+3. **Set up the device from scratch:** choose a PIN, and let the device create your recovery
+   phrase on its own screen.
+4. **Write the recovery phrase down,** clearly and in order, and decide where it will live.
+5. **Test the backup** with the device's built-in check, before any money goes near it.
+6. **Get a receiving address** for each coin you are moving, and check it on the device's screen.
+7. **Choose the right network** on the exchange, and send a small test amount.
+8. **Confirm it has arrived,** then move the rest, coin by coin and network by network.
+9. **Go through what to watch for from now on:** fake support, fake apps, address poisoning and
+   the other scams that target new self-custody users.
+
+A single wallet with a single backup usually fits in ninety minutes. More exchanges, more coins
+or more devices take longer, and that is agreed up front.
+
+### How the video call works
+
+Sessions run on a normal video call. Screen sharing runs on my side only: I can show you what to
+look for, but you never share your screen, and you never show your recovery phrase, a private key
+or an unlocked wallet. If you start to, you will be stopped. I never take remote control of your
+computer.
+
+That is not a formality. It is what makes the session safe: at no point does anyone other than
+you see anything that could move your crypto.
+
+### What you leave with
+
+- A working wallet you set up yourself, start to finish
+- A backup you have tested, stored the way you decided
+- Your crypto moved off the exchange, checked and accounted for
+- A written record of your setup, so you can repeat it or explain it to someone else
+- The habits that prevent the common losses: check on the device, test small, never type the
+  phrase anywhere
+
+### What it costs
+
+**From £195.** That covers one wallet with one backup in a ninety-minute session, including the
+written summary afterwards. More devices, more exchanges or a longer session move the price up.
+You get the exact figure in writing after the intake call, before you commit to anything.
+
+Fees are fixed, never a percentage of what you hold, and nobody at KeyCompass needs to know how
+much you hold to quote you. KeyCompass is not registered for VAT, so the price shown is the price
+you pay. [See all prices](https://keycompass.co.uk/pricing)
+
+### What KeyCompass never does
+
+- Hold your keys, your recovery phrase or your crypto, even for a moment
+- Ask to see your recovery phrase, a photo of it or any part of it
+- Take remote control of your computer
+- Tell you what to buy, sell or hold
+- Take commission from wallet makers or exchanges
+
+### Common questions
+
+**Which hardware wallet should I buy?** KeyCompass doesn't sell devices or take commission on
+them, so there is no reason to steer you one way. I won't choose for you, but I will explain the
+differences that matter for your situation, so you can choose with confidence.
+
+**Is this a crypto concierge service?** If you mean someone who sits with you, on a video call,
+while you set up and move your own crypto, yes. If you mean someone who holds or manages it for
+you, no.
+
+**Can my partner join the call?** Yes, and it is often a good idea. Two people who both understand
+the setup is a far better position than one.
+
+**Do I need to know which networks my coins are on?** No. Working that out is part of the session.
+
+**What if I've already set up my device?** Then a [security review](https://keycompass.co.uk/security-review)
+is probably the better fit: it checks what you have done, rather than starting again.
+
+**Do you work with people outside the UK?** KeyCompass is UK-based and works remotely, so yes,
+wherever the time difference allows.
+
+### Before you book
+
+If you would like to read up first, these guides cover the same ground:
+
+- [How to move crypto from an exchange to a hardware wallet](https://keycompass.co.uk/guides/move-crypto-from-exchange-to-hardware-wallet)
+- [What is a seed phrase?](https://keycompass.co.uk/guides/what-is-a-seed-phrase)
+- [Seed phrase storage: where should I keep mine?](https://keycompass.co.uk/guides/seed-phrase-storage)
+
+[Book the free intake call](https://cal.com/simongeils/30min)
+
+
+---
+
+## Independent self-custody security review
+
+> Already hold your own crypto? A structured, independent check of the setup you have, without
+> anyone ever seeing your recovery phrase, and a written report of what to fix, worst first.
+
+**In short.** A security review looks at how you hold your crypto today: your backups, your
+devices, your exposure to phishing and scams, and whether the right person could recover
+everything if something happened to you. Nothing is changed during the review, and you never
+reveal anything secret. You get a written, prioritised list of what to fix, and an explicit list
+of what is already fine. From £295, fixed price, agreed in writing before you commit.
+
+- Who it is for
+- The four things a review looks at
+- How a review works without seeing your seed phrase
+- What happens, step by step
+- What you get
+- Right-sized, not paranoid
+- What it costs
+- What KeyCompass never does
+- Common questions
+
+### Who it is for
+
+- You set up a hardware wallet (the physical device that keeps your keys offline) yourself and
+  have never had it checked.
+- You set it up years ago, and your holdings, devices or household have changed since.
+- You use a passphrase, several devices or multisig, and want a second pair of eyes on it.
+- You have had a scare: a convincing phishing email, a lost device, a backup you can't find.
+- You are about to move a larger amount into self-custody and want the setup checked first.
+- You run a small business that holds crypto and want to know where the weak points are.
+
+If you are starting from scratch, an [onboarding session](https://keycompass.co.uk/onboarding)
+is the better fit.
+
+### The four things a review looks at
+
+Most self-custody losses come through one of four routes, and a review checks each of them.
+
+- **Phishing and scams.** How exposed you are to fake support, fake apps and lookalike sites,
+  which email and phone accounts an attacker could use against you, and whether you would
+  recognise the scams aimed at people like you.
+- **Your devices.** Whether your device is genuine and up to date, how it is protected and
+  where it is kept, and the state of the computer and phone you use with it.
+- **Backup loss.** Where your recovery phrase is stored, what it is written on, how many copies
+  exist, whether it has been tested, and how any passphrase is backed up.
+- **Succession.** Whether the right person could find your backup and use it if something
+  happened to you, and whether anyone could who shouldn't.
+
+### How a review works without seeing your seed phrase
+
+You never show your recovery phrase, a private key or an unlocked wallet, and you are never asked
+to. A review works through questions and through checks you run yourself: you describe your
+setup, I ask what to look at, and you carry out checks such as the device's built-in backup test
+on your own device. Screen sharing runs on my side only.
+
+Nothing is changed during the review. I look, I ask, and I write it up. You decide what to change,
+and when.
+
+### What happens, step by step
+
+1. **A free thirty-minute intake call** to understand roughly what you have and agree the scope.
+2. **A written scope and fixed price,** before anything is booked.
+3. **The review itself,** on a video call, working through the four areas above.
+4. **Your written report,** usually within a few days.
+5. **A follow-up check** once you have made the changes, to confirm they are done properly.
+
+### What you get
+
+- A prioritised list of what to fix, worst first
+- Plain-English reasoning for every item, not a score out of ten
+- An explicit list of what is already fine, so you can stop worrying about it
+- A follow-up check once you have made the changes
+
+### Right-sized, not paranoid
+
+A good review doesn't add complexity for its own sake. Sometimes the right recommendation is to
+simplify: fewer copies, fewer devices, a plan your family could actually follow. If your setup is
+already sound for what you hold and how you live, the report will say so.
+
+### What it costs
+
+**From £295.** That covers one wallet with one backup, including the written report. Several
+devices, multisig or a business setup sit higher. You get the exact figure in writing after the
+intake call, before you commit to anything.
+
+Fees are fixed, never a percentage of what you hold, and nobody at KeyCompass needs to know how
+much you hold to quote you. KeyCompass is not registered for VAT, so the price shown is the price
+you pay. [See all prices](https://keycompass.co.uk/pricing)
+
+### What KeyCompass never does
+
+- Hold your keys, your recovery phrase or your crypto, even for a moment
+- Ask to see your recovery phrase, a photo of it or any part of it
+- Take remote control of your computer
+- Tell you what to buy, sell or hold
+- Take commission from wallet makers or exchanges
+
+### Common questions
+
+**Do I have to tell you how much I hold?** No. The review is about how your crypto is held, not how
+much. Some recommendations depend on scale, and you can describe that as loosely as you like.
+
+**Can you review a multisig setup?** Yes. Multisig reviews also check the wallet configuration
+backup and whether a quorum of keys could still be gathered if one were lost.
+
+**Will you fix things during the review?** No. Nothing is changed during a review. If you would
+like help making the changes afterwards, that can be arranged separately.
+
+**How often should a setup be reviewed?** After any big change, such as a new device, a house move,
+a larger deposit or a change in your family, and otherwise every year or two.
+
+**Do you review business setups?** Yes. Business reviews also look at who has access, how
+approvals work, and what happens if a key person leaves.
+
+### Before you book
+
+These guides cover some of the same ground:
+
+- [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup)
+- [Seed phrase storage: where should I keep mine?](https://keycompass.co.uk/guides/seed-phrase-storage)
+
+[Book the free intake call](https://cal.com/simongeils/30min)
+
+
+---
+
+## Crypto inheritance and family access, UK
+
+> If something happened to you tomorrow, could your family find your crypto, and use it, without
+> anyone else being able to? Here is what a workable plan looks like, and how KeyCompass can help.
+
+**In short.** Crypto held in self-custody does not pass on by itself. There is no bank to
+contact and no password reset: if your family cannot find your recovery phrase and understand
+what to do with it, the crypto is lost. But writing everything down in one obvious place makes it
+easy to steal while you are alive. A good plan sits between the two. Today, KeyCompass covers
+this as part of every [security review](https://keycompass.co.uk/security-review). A dedicated
+inheritance planning service is in development.
+
+- Why crypto inheritance is different
+- What a workable plan includes
+- UK points to get right
+- Common approaches
+- How KeyCompass can help today
+- Common questions
+
+### Why crypto inheritance is different
+
+With a bank account, your executors can show a death certificate and the bank does the rest. With
+crypto you hold yourself, nobody can do that for them. Whoever has the recovery phrase has the
+crypto, and whoever doesn't, doesn't.
+
+That creates two risks that pull in opposite directions:
+
+- **Too hidden,** and your family may never find it, or may not know what it is when they do.
+- **Too obvious,** and someone else may find it first, while you are still alive.
+
+Most of the work in crypto inheritance is finding the right balance between the two, for your
+family and your circumstances.
+
+### What a workable plan includes
+
+- **A list of what you hold and where,** without any secrets in it: which devices, which wallet
+  apps, which exchanges, which coins.
+- **The location of each backup,** and of any passphrase, recorded somewhere your executor will
+  look.
+- **Plain-English instructions** that someone non-technical could follow, step by step, without
+  you there to explain.
+- **The right people knowing the right amount:** who knows the plan exists, who can get to the
+  backups, and who would need help to use them.
+- **A plan for getting help,** so your family knows who to trust, and who not to.
+- **A regular check,** because holdings, devices and families change.
+
+### UK points to get right
+
+- **Never put your recovery phrase in your will.** In England and Wales, a will becomes a public
+  document once probate is granted, and anyone can order a copy. Your will, or a separate letter
+  of wishes, can say that you hold crypto and where instructions are kept, without the words
+  themselves.
+- **Tell your solicitor you hold crypto.** Executors need to know it exists to include it in the
+  estate, and crypto can count towards inheritance tax like any other asset.
+- **Exchange accounts are different.** Crypto held on an exchange is handled through the
+  exchange's own process for bereaved families, more like a bank account. Your executor still
+  needs to know the account exists.
+
+KeyCompass does not give legal or tax advice. For wills, trusts and inheritance tax, use a
+solicitor or tax adviser; KeyCompass covers the technical side they usually can't.
+
+### Common approaches
+
+There is no single right answer, and the best setup depends on how much you hold and who you
+trust.
+
+- **Sealed instructions.** Your backup stays where it is, and a sealed letter tells your executor
+  where to find it and what to do. Simple, and fine for many people, but it relies on the letter
+  and the backup both staying safe.
+- **Separating the pieces.** If you use a passphrase, the recovery phrase and the passphrase are
+  kept in different places, or with different people, so no single discovery is enough.
+- **Multisig.** Several keys, held in different places or by different people, with a set number
+  needed to move funds. More resilient and harder to steal, but more complex to set up and to
+  pass on.
+
+Whichever you choose, test it: would the person you are relying on actually be able to follow
+your instructions?
+
+### How KeyCompass can help today
+
+Every [security review](https://keycompass.co.uk/security-review) includes succession as one of
+its four areas. It checks whether your family could find and use your backup if something
+happened to you, whether anyone could who shouldn't, and what to change. You get it in writing,
+prioritised, as part of the report.
+
+A dedicated inheritance planning service, including help writing family instructions and
+working alongside your solicitor, is in development. If that is what you need, mention it on the
+free intake call and you will hear when it is available.
+
+KeyCompass never asks for your recovery phrase, a photo of it or any part of it, and never holds
+your crypto.
+
+### Common questions
+
+**Can my solicitor hold my recovery phrase?** Some people leave sealed instructions with a
+solicitor. Leaving the recovery phrase itself with anyone puts your crypto in their hands, so
+think carefully, and never leave it with someone who doesn't understand what it is.
+
+**Should I tell my family now?** Usually someone needs to know the plan exists. They don't
+necessarily need to know where the backups are, or how to use them, until they need to.
+
+**What if I use a passphrase?** Then your family needs both the recovery phrase and the
+passphrase. Without the passphrase, the recovery phrase alone opens a different wallet, not the one your crypto is in.
+
+**What happens to crypto on an exchange when someone dies?** The executor contacts the exchange,
+which has its own process, usually asking for a death certificate and grant of probate. It is
+slower than a bank, but possible, as long as someone knows the account exists.
+
+### Further reading
+
+- [Seed phrase storage: where should I keep mine?](https://keycompass.co.uk/guides/seed-phrase-storage)
+- [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup)
 
 [Book the free intake call](https://cal.com/simongeils/30min)
 
@@ -280,11 +666,14 @@ stopped if you start to. Everything sensitive stays on your side of the call.
 
 Inheritance planning and full business treasury setup are not offered yet. A security
 review can tell you today where your succession plan stands, but the complete service is
-still in development, and saying so plainly is better than taking the booking.
+still in development, and saying so plainly is better than taking the booking. What a review
+covers today is set out on [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
 
 ### Related pages
 
 - [Services and booking](https://keycompass.co.uk/)
+- [Onboarding sessions](https://keycompass.co.uk/onboarding)
+- [Security reviews](https://keycompass.co.uk/security-review)
 - [Contact](https://keycompass.co.uk/contact)
 - [Privacy](https://keycompass.co.uk/privacy)
 
@@ -1055,7 +1444,8 @@ readable by anyone who looks.
 
 Your will, or a separate letter of wishes, can still say that you hold crypto and where your
 executor will find instructions. Just never put the words themselves in it. Speak to a
-solicitor about how to make sure your executors can find and use the backup.
+solicitor about how to make sure your executors can find and use the backup. For more on
+planning for your family, see [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
 
 ### Check it once a year
 
@@ -1076,7 +1466,7 @@ anything worth changing and a clear note of what is already fine.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does,
 whatever they claim to be, is attempting to steal from you.
 
-[See pricing for security reviews](https://keycompass.co.uk/pricing#threat-and-security-review)
+[How a security review works, and what it costs](https://keycompass.co.uk/security-review)
 
 If you think your phrase is already lost, read [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase)
 
@@ -1265,7 +1655,9 @@ written plan.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does,
 whatever they claim to be, is attempting to steal from you.
 
-[See pricing for onboarding sessions and security reviews](https://keycompass.co.uk/pricing)
+[How an onboarding session works](https://keycompass.co.uk/onboarding)
+
+[How a security review works](https://keycompass.co.uk/security-review)
 
 
 ---
@@ -1460,7 +1852,7 @@ finish with a written record of your setup.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it, and never holds
 your crypto. Anyone who does ask, whatever they claim to be, is attempting to steal from you.
 
-[See pricing for onboarding sessions](https://keycompass.co.uk/pricing#private-onboarding-session)
+[How an onboarding session works, and what it costs](https://keycompass.co.uk/onboarding)
 
 If you already use a hardware wallet, read [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup).
 
@@ -1648,7 +2040,7 @@ questions, a drop-in hour covers that.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does,
 whatever they claim to be, is attempting to steal from you.
 
-[See pricing for security reviews and drop-in hours](https://keycompass.co.uk/pricing)
+[How a security review works, and what it costs](https://keycompass.co.uk/security-review)
 
 If you think your phrase is already lost, read [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase)
 
@@ -1884,6 +2276,11 @@ A one-person advisory practice, run by Simon Geils, offering two services:
    failure channels (phishing, device, backup loss, succession), producing a written,
    prioritised list of what to fix worst-first, plain-English reasoning for each item, and
    an explicit list of what is already fine. Nothing is changed during a review.
+
+Each service has its own page: https://keycompass.co.uk/onboarding and
+https://keycompass.co.uk/security-review. Succession and family access are covered within
+the review; see https://keycompass.co.uk/inheritance (a dedicated inheritance service is in
+development).
 
 Prices are published at https://keycompass.co.uk/pricing: onboarding sessions from £195,
 security reviews from £295 (exact figure confirmed in writing after the free intake call),

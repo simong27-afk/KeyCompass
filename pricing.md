@@ -61,6 +61,8 @@ written summary afterwards. More devices, more networks, or a setup that needs a
 session moves the price up. You will have the exact figure in writing after the intake call,
 before you commit to anything.
 
+[How an onboarding session works, step by step](https://keycompass.co.uk/onboarding)
+
 ## Threat and security review
 
 **From £295 · structured review plus written report**
@@ -72,6 +74,11 @@ what is already fine.
 
 £295 covers a single wallet with a single backup. Multiple devices, multisig, or a business
 setup sits higher. The exact figure is confirmed in writing after the intake call.
+
+Every review includes succession: whether your family could find and use your crypto if
+something happened to you. See [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
+
+[What a security review covers](https://keycompass.co.uk/security-review)
 
 ## How paying works
 

@@ -17,6 +17,11 @@ A one-person advisory practice, run by Simon Geils, offering two services:
    prioritised list of what to fix worst-first, plain-English reasoning for each item, and
    an explicit list of what is already fine. Nothing is changed during a review.
 
+Each service has its own page: https://keycompass.co.uk/onboarding and
+https://keycompass.co.uk/security-review. Succession and family access are covered within
+the review; see https://keycompass.co.uk/inheritance (a dedicated inheritance service is in
+development).
+
 Prices are published at https://keycompass.co.uk/pricing: onboarding sessions from £195,
 security reviews from £295 (exact figure confirmed in writing after the free intake call),
 and a £95 drop-in hour — 60 minutes for a short list of questions, paid when booked at

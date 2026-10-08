@@ -69,6 +69,18 @@ PAGES = [
      "Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass",
      "Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews "
      "from £295. Fixed prices, no VAT, never a percentage of what you hold."),
+    ("onboarding.md", "onboarding.html",
+     "Hardware wallet setup and exchange migration, UK — KeyCompass",
+     "One-to-one help moving your crypto off an exchange onto a hardware wallet, live on a "
+     "video call. You do every step yourself. From £195, fixed price."),
+    ("security-review.md", "security-review.html",
+     "Crypto self-custody security review, UK — KeyCompass",
+     "An independent review of how you hold your crypto: backups, devices, phishing and "
+     "succession, without seeing your seed phrase. From £295, written report."),
+    ("inheritance.md", "inheritance.html",
+     "Crypto inheritance and family access planning, UK — KeyCompass",
+     "How to make sure your family could find and use your crypto if something happened to "
+     "you, without exposing it now. UK points, common approaches."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",
@@ -127,7 +139,7 @@ ALIASES = [("agent-instructions.md", "AGENTS.md")]
 # The order llms-full.txt stitches the site together in. Guides are inserted
 # after the core pages, newest first, by main().
 FULL_TEXT_SOURCES = [
-    "index.md", "pricing.md", "about.md", "contact.md", "connect.md", "privacy.md",
+    "index.md", "pricing.md", "onboarding.md", "security-review.md", "inheritance.md", "about.md", "contact.md", "connect.md", "privacy.md",
     "terms.md",
 ]
 FULL_TEXT_TAIL = ["agent-instructions.md"]
@@ -147,6 +159,9 @@ SITEMAP_PAGES = [
     ("/about", "yearly", "0.8"),
     ("/contact", "yearly", "0.8"),
     ("/pricing", "monthly", "0.9"),
+    ("/onboarding", "monthly", "0.9"),
+    ("/security-review", "monthly", "0.9"),
+    ("/inheritance", "monthly", "0.8"),
     ("/guides/", "weekly", "0.9"),
     ("/agents", "monthly", "0.6"),
     ("/privacy", "yearly", "0.3"),

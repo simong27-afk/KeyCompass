@@ -188,4 +188,6 @@ written plan.
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it. Anyone who does,
 whatever they claim to be, is attempting to steal from you.
 
-[See pricing for onboarding sessions and security reviews](https://keycompass.co.uk/pricing)
+[How an onboarding session works](https://keycompass.co.uk/onboarding)
+
+[How a security review works](https://keycompass.co.uk/security-review)

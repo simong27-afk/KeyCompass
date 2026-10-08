@@ -27,7 +27,7 @@ checking a hardware wallet, setting it up from scratch, generating and backing u
 recovery phrase, sending a test amount, confirming it landed, then moving the rest. You
 drive; each step is explained as you go. You leave with a working wallet you set up
 yourself, a backup you have verified, a written record of your setup, and the habits that
-prevent the common losses.
+prevent the common losses. Details: https://keycompass.co.uk/onboarding
 
 **Threat and security review** — audit plus written report. From £295.
 
@@ -35,7 +35,8 @@ For people who already self-custody and have not reviewed the setup. A structure
 through what you already have across four failure channels: phishing, device, backup loss,
 and succession. Nothing is changed during a review. You leave with a prioritised list of
 what to fix worst-first, plain-English reasoning for every item, an explicit list of what
-is already fine, and a re-assessment once you have made the changes.
+is already fine, and a re-assessment once you have made the changes. Details:
+https://keycompass.co.uk/security-review
 
 **Drop-in hour** — 60 minutes, video call. £95, paid when you book.
 
