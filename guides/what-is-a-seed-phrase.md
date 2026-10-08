@@ -104,6 +104,9 @@ You get a seed phrase when you move your crypto into a wallet you control. See
 
 ## Storing your seed phrase safely: the rules
 
+The short version is below. For paper versus metal, where to keep it and how many copies to make, see
+[Seed phrase storage: where should I keep mine?](https://keycompass.co.uk/guides/seed-phrase-storage)
+
 - **Only ever enter it on the device itself,** and only to recover or check the wallet.
   Never type it into a phone, a computer, a website, an app, a password manager or an email.
 - **Never photograph it, scan it or store it in the cloud.** Photos sync to the cloud
