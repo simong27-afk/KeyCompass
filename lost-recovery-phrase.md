@@ -3,7 +3,7 @@ title: Lost your seed phrase? What can still be recovered — KeyCompass
 description: Lost your crypto recovery phrase (seed phrase)? What can still be recovered, what cannot, how to tell which case you're in, and why recovery services are scams.
 category: Recovery
 published: 2026-09-22
-checked: 2026-10-07
+checked: 2026-10-08
 featured: yes
 ---
 # I've lost my recovery phrase. What now?
@@ -31,8 +31,7 @@ each of them.
 
 ## Stop and do not wipe anything
 
-Before anything else: do not factory reset, wipe, update or sell any phone, laptop or
-hardware wallet that has ever held this wallet. Do not uninstall the app. Do not "start
+Before anything else: do not factory reset, wipe, update or sell any phone, laptop or hardware device that has ever held this wallet. Do not uninstall the app. Do not "start
 fresh" to try again.
 
 People in a panic very often destroy the one remaining copy of their keys while trying to fix
@@ -59,7 +58,7 @@ people arrive here having decided too quickly that it is gone. Before accepting 
 properly and methodically rather than from memory.
 
 Recovery phrases are usually written at the moment a wallet is set up, often on whatever was
-to hand. Look for a single sheet of paper, a card that came in the box with a hardware wallet,
+to hand. Look for a single sheet of paper, a card that came in the box with your device,
 a page torn from a notebook, or a metal plate. Check anywhere you keep documents you rarely
 touch: a passport folder, a filing box, a safe, a book on a shelf, the back of a picture
 frame, a drawer in a house you have since moved out of. Ask whether you gave a copy to a
@@ -94,7 +93,7 @@ to a new wallet whose recovery phrase you have written down and checked first.
 If you still have the device and you still know the PIN, you still have your funds. The keys
 live on the device, not on the paper. The paper is only the spare.
 
-Modern hardware wallets will generally not re-display a recovery phrase once it has been set
+Modern hardware devices will generally not re-display a recovery phrase once it has been set
 up, for good security reasons — so do not expect to read it back off the device. What you can
 do is set up a second wallet, back that one up properly and verify it, then transfer
 everything across. Do that before the device is lost, broken or wiped by failed PIN attempts.
@@ -177,8 +176,7 @@ process done offline on your own equipment, not a service you hand your phrase t
 ## What to do once you know where you stand
 
 If you have recovered access, treat it as a warning rather than a near miss. Write the phrase
-down again, on paper or steel, and then actually test it: restore it onto a second device, or
-wipe and restore the hardware wallet, and confirm the same wallet comes back. A backup you
+down again, on paper or steel, and then actually test it: restore it onto a second device, or use your device's built-in backup check, and confirm the same wallet comes back. Never wipe your only device to test a backup. A backup you
 have never tested is an assumption, not a backup — and untested backups are the single most
 common way people end up reading pages like this one.
 

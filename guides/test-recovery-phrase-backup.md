@@ -3,7 +3,7 @@ title: How to test your recovery phrase backup safely — KeyCompass
 description: How to check your seed phrase backup works without exposing it: the built-in checks on Ledger and Trezor, passphrases, multisig, and what to do if it fails.
 category: Backups
 published: 2026-10-07
-checked: 2026-10-07
+checked: 2026-10-08
 featured: no
 ---
 # How do I test my recovery phrase backup?
@@ -39,14 +39,13 @@ a word misspelt, two words swapped, a word missed while copying, ink that has fa
 handwriting that made sense on the day and does not now. None of them show up until the day
 you need the backup, which is usually the day the device has been lost, broken or stolen.
 
-There is a second reason to test while everything still works. Hardware wallets such as Ledger
-and Trezor do not show you the recovery phrase again after setup. If your written copy is wrong,
+There is a second reason to test while everything still works. Hardware devices such as Ledger and Trezor do not show you the recovery phrase again after setup. If your written copy is wrong,
 there is no way to read the correct words off the device and fix it. Finding the problem while
 the device still works turns a potential total loss into an afternoon's inconvenience.
 
 ## The one rule: never type it into anything connected
 
-Your recovery phrase should only ever be entered on the hardware wallet itself. Never type it
+Your recovery phrase should only ever be entered on the device itself. Never type it
 into a phone, a computer, a website, a wallet app, a password manager or a notes app, and never
 photograph it.
 
@@ -58,14 +57,14 @@ to leave the device.
 
 - **Choose somewhere private.** Away from other people, and away from cameras: laptop webcams,
   video doorbells and phones propped up nearby all count.
-- **Have everything to hand:** the hardware wallet, its PIN, and every part of your backup.
+- **Have everything to hand:** the device, its PIN, and every part of your backup.
 - **Write down your first receiving address.** Open the account in Ledger Wallet or Trezor Suite and
   note the first receiving address, or just its first and last six characters. It is not secret,
   and it gives you something to compare against if you ever restore the wallet.
 
 ## The built-in check on Ledger and Trezor
 
-This is the method to use if your wallet offers it. Nothing is wiped, and your words are entered
+This is the method to use if your device offers it. Nothing is wiped, and your words are entered
 on the device, never on the computer.
 
 ### Ledger: the Recovery Check app
@@ -89,6 +88,12 @@ You can uninstall the app afterwards. It does not change anything stored on the 
 
 The device is not wiped. It compares the words you enter with the backup it already holds.
 
+**On a Trezor Model One,** choose **Advanced recovery** when Suite asks how to enter your words.
+The Model One cannot take words on the device itself, so the standard method has you type them
+into the computer. With Advanced recovery the letters appear only on the Trezor's screen and you
+click matching positions on a scrambled grid in Suite, so your words never reach the computer.
+It is slower, but it keeps to the one rule above.
+
 ### Other hardware wallets
 
 Most others have an equivalent, often called "verify seed", "check backup" or "dry run recovery",
@@ -97,7 +102,7 @@ never from a link in an email, an advert or a search result you have not checked
 
 ## Restoring on a second device
 
-If you have a spare hardware wallet, you can go one step further: restore your backup onto it and
+If you have a spare device, you can go one step further: restore your backup onto it and
 confirm the first receiving address matches the one you wrote down. This proves the backup would
 rebuild your wallet on a device that has never seen it, which is exactly what happens in a real
 recovery. Wipe the spare device afterwards.
@@ -162,7 +167,7 @@ correct phrase, and a wrong backup that looks fixed is worse than one you know i
 
 Instead, move your funds to a new wallet with a backup you know works:
 
-1. **Set up a new wallet** on a second hardware wallet, creating a new recovery phrase.
+1. **Set up a new wallet** on a second device, creating a new recovery phrase.
 2. **Write the new phrase down carefully, then test it** with the built-in check before you go
    any further.
 3. **Send a small test amount** from the old wallet to the new one and confirm it arrives.

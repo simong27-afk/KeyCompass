@@ -11,9 +11,8 @@ featured: no
 > Moving your crypto off an exchange is one of the most important steps in self-custody, and
 > one of the easiest to get wrong. Here is how to do it carefully, one step at a time.
 
-**The short answer.** Set up your hardware wallet and test your backup first. Then, in the
-wallet's own app, get a receiving address for the right coin and network, and check it on the
-hardware wallet's screen. On the exchange, withdraw a small test amount to that address, on the
+**The short answer.** Set up your hardware wallet (the physical device that keeps your keys offline) and test your backup first. Then, in the
+wallet's own app, get a receiving address for the right coin and network, and check it on the device's screen. On the exchange, withdraw a small test amount to that address, on the
 same network, and wait until it arrives. Only then send the rest. Never type your recovery
 phrase into the exchange, a website or an app: no exchange ever needs it to send you your own
 coins.
@@ -35,10 +34,10 @@ Everything below applies whichever exchange and hardware wallet you use.
 
 ## Before you start
 
-- **Buy the hardware wallet from the maker or an authorised reseller,** not from a marketplace
+- **Buy the device from the maker or an authorised reseller,** not from a marketplace
   seller. If a device arrives with a recovery phrase already printed or written on a card,
-  do not use it: a genuine hardware wallet always creates the phrase itself, on its own screen.
-- **Download the wallet's app only from the maker's own website.** That means Ledger Wallet from
+  do not use it: a genuine device always creates the phrase itself, on its own screen.
+- **Download the wallet app only from the maker's own website.** That means Ledger Wallet from
   ledger.com and Trezor Suite from trezor.io. Fake versions of both are advertised in search
   results and on lookalike sites, and they exist to steal recovery phrases. Type the address
   yourself rather than clicking a search ad.
@@ -79,17 +78,17 @@ everything on it.
 A receiving address is the public address your crypto is sent to. It is safe to share; it is
 not the same as your recovery phrase.
 
-1. **Open the wallet's app and add an account for the coin you are moving.** In Ledger Wallet
+1. **Open the wallet app and add an account for the coin you are moving.** In Ledger Wallet
    you add an account for that coin (installing the coin's app on the device if asked). In Trezor
    Suite you turn on the coin in the settings if it isn't already showing.
 2. **Choose Receive** for that account.
-3. **Check the address on the hardware wallet's screen.** The app will show an address and ask
+3. **Check the address on the device's screen.** The app will show an address and ask
    you to confirm it on the device. Compare the two carefully, the whole address, not just the
    first and last few characters. The device's screen is the one you can trust: if malware on
    your computer has swapped the address, the device will show a different one.
 4. **Copy the address from the app** once the device has confirmed it.
 
-Get a fresh address from your wallet each time you receive. Never copy an address out of an
+Get a fresh address from your wallet app each time you receive. Never copy an address out of an
 old transaction or your exchange's history, which is how address poisoning scams catch people
 (more on that below).
 
@@ -102,12 +101,10 @@ the exchange asks you to pick one.
 - **Pick the network that matches the account you created in your wallet.** If you added a
   Bitcoin account, withdraw on the Bitcoin network. If you added an Ethereum account to receive
   a token, withdraw on Ethereum.
-- **The cheapest network is not always the right one.** An exchange may list a network your
-  hardware wallet does not support, or one you have not added. Crypto sent that way may not show
+- **The cheapest network is not always the right one.** An exchange may list a network your device does not support, or one you have not added. Crypto sent that way may not show
   up in your wallet, and getting it back can be difficult or impossible.
-- **Ignore the memo or tag field** unless your wallet's app asks for one. Exchanges use memos and
-  tags (common with XRP, XLM and some others) to tell customers apart. When sending to your own
-  hardware wallet, you normally leave it blank. If the exchange won't let you continue without one,
+- **Ignore the memo or tag field** unless your wallet app asks for one. Exchanges use memos and
+  tags (common with XRP, XLM and some others) to tell customers apart. When sending to your own wallet, you normally leave it blank. If the exchange won't let you continue without one,
   stop and check the maker's guidance for that coin before going on.
 - **Tokens need a little of the network's own coin to move later.** You don't need any to
   *receive* tokens on Ethereum, but when you eventually want to send them on you'll need a small
@@ -118,16 +115,15 @@ networks, or ask someone who knows, before sending anything.
 
 ## Step 5: Send a small test amount
 
-1. **Paste the address into the exchange's withdrawal form** and compare it against your
-   hardware wallet's screen one more time.
+1. **Paste the address into the exchange's withdrawal form** and compare it against your device's screen one more time.
 2. **Choose the network** from Step 4.
 3. **Send a small amount,** enough to clear the exchange's minimum and fee, but an amount you
    could afford to lose if something were wrong.
 4. **Approve the withdrawal** with your exchange's two-factor confirmation.
-5. **Wait for it to arrive** in your wallet's app. It can take from a minute to an hour or more,
+5. **Wait for it to arrive** in your wallet app. It can take from a minute to an hour or more,
    depending on the network and the exchange.
 
-When it arrives, check the amount in your wallet's app against what you sent, less the fee.
+When it arrives, check the amount in your wallet app against what you sent, less the fee.
 That one small transaction proves the address, the network and the account are all right.
 
 If the exchange asked you to add the address to an address book or allowlist, this is a good time
@@ -151,7 +147,7 @@ Remember the fee: the exchange usually takes it from the amount you are withdraw
   your accountant to work out later. (This is not tax advice.)
 - **Decide what to do with the exchange account.** Many people keep it open for buying and selling,
   with only what they need on it. If you keep it, keep its security up to date.
-- **Store the hardware wallet and the backup separately.** Someone who finds both together has
+- **Store the device and the backup separately.** Someone who finds both together has
   everything they need.
 - **Be careful who you tell.** The fewer people who know you hold crypto, and how much, the better.
 
@@ -163,7 +159,7 @@ Remember the fee: the exchange usually takes it from the amount you are withdraw
    exchange hasn't sent it.
 3. **Check the transaction on a block explorer** for that network, using the transaction ID. It
    will show whether the transaction has been confirmed and which address it went to.
-4. **Check you're looking at the right account** in your wallet's app, on the right network.
+4. **Check you're looking at the right account** in your wallet app, on the right network.
    Tokens sometimes need to be added to the app before they show, even though they arrived.
 5. **If it went on the wrong network or to the wrong address,** contact the exchange through its
    own website or app, never through a phone number or account you found on social media. Some
@@ -175,7 +171,7 @@ front or your recovery phrase, are scams.
 
 ## Mistakes that cost people money
 
-- **Typing the recovery phrase into anything other than the hardware wallet.** No exchange,
+- **Typing the recovery phrase into anything other than the device itself.** No exchange,
   wallet maker or support team ever needs it. Anyone who asks for it is trying to steal from you.
 - **Skipping the test amount.** It costs one extra fee and takes a few minutes. It is the cheapest
   insurance there is.
@@ -193,7 +189,7 @@ front or your recovery phrase, are scams.
 
 If you would rather not do your first transfer alone, a KeyCompass onboarding session covers
 everything on this page, live on a video call. You do every step yourself, on your own device,
-while we go through it with you: setting up the hardware wallet, checking the backup, picking the
+while we go through it with you: setting up the device, checking the backup, picking the
 right network, sending the test amount and confirming it has landed, then moving the rest. You
 finish with a written record of your setup.
 
@@ -202,4 +198,4 @@ your crypto. Anyone who does ask, whatever they claim to be, is attempting to st
 
 [See pricing for onboarding sessions](https://keycompass.co.uk/pricing#private-onboarding-session)
 
-If you already have crypto on a hardware wallet, read [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup).
+If you already use a hardware wallet, read [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup).

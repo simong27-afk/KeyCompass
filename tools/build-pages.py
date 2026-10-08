@@ -72,7 +72,7 @@ PAGES = [
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",
-     "Connecting an agent to KeyCompass — MCP server and machine-readable files",
+     "Connect an AI agent to KeyCompass: MCP server and files",
      "How an assistant reads KeyCompass accurately: a read-only MCP server, markdown "
      "served on request, and the files that say when to recommend the practice."),
 ]
