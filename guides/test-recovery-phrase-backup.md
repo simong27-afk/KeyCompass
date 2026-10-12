@@ -122,6 +122,9 @@ expect, ideally by checking its first receiving address. A passphrase that is wr
 character does not produce an error. It opens a different, empty wallet, which is why this step
 matters and why it is easy to get wrong without noticing.
 
+For more on whether to use one and how to set it up, see
+[What is a BIP39 passphrase, and should I use one?](https://keycompass.co.uk/guides/bip39-passphrase).
+
 ## If you use multisig
 
 In a multisig wallet, testing each key's recovery phrase is necessary but not enough. Recovering

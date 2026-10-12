@@ -137,6 +137,9 @@ backup must never be stored with the seed phrase. The whole point of a passphras
 someone who finds your seed phrase still cannot get in. Keep them in separate places, and make
 sure the right person can find both.
 
+For more on whether to use one and how to set it up, see
+[What is a BIP39 passphrase, and should I use one?](https://keycompass.co.uk/guides/bip39-passphrase).
+
 ## What not to do
 
 - **Don't store it digitally.** No photos, scans, screenshots, notes apps, password managers,

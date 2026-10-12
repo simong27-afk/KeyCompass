@@ -131,7 +131,8 @@ passphrase, which can be left empty or hold a small amount.
 
 The catch is that the passphrase becomes a second thing you cannot lose. Forget it, or record it
 wrongly by a single character, and the wallet behind it is gone, even with the seed phrase in
-hand. It suits some people well, but it is worth understanding fully before you add one.
+hand. It suits some people well, but it is worth understanding fully before you add one. See
+[What is a BIP39 passphrase, and should I use one?](https://keycompass.co.uk/guides/bip39-passphrase)
 
 ## Scams that target seed phrases
 
