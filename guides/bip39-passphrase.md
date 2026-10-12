@@ -11,7 +11,8 @@ featured: no
 > A passphrase adds a second secret on top of your seed phrase. It can make a found backup
 > useless to a thief. It can also lock you, or your family, out for good.
 
-**The short answer.** A BIP39 passphrase is an extra word or phrase you choose yourself and add
+:::answer
+A BIP39 passphrase is an extra word or phrase you choose yourself and add
 to your seed phrase. Together they open a separate "hidden wallet" that the seed phrase alone
 cannot reach. Its strength is that someone who finds your seed phrase still can't take the crypto
 behind the passphrase. Its weakness is that if you forget the passphrase, or write it down wrongly
@@ -19,6 +20,7 @@ by a single character, that crypto is gone, even with the seed phrase in your ha
 people the better first step is storing and testing the seed phrase properly. A passphrase is worth
 adding only once you are confident you can back it up and pass it on as carefully as the words
 themselves.
+:::
 
 It goes by several names: passphrase, BIP39 passphrase, 25th word (or 13th word, with a 12-word
 phrase), hidden wallet or passphrase wallet. It is not the same as your device PIN or a password
@@ -29,8 +31,7 @@ for a wallet app.
 - The risks
 - Should you use one?
 - How to set one up safely
-- On Ledger
-- On Trezor
+- On Ledger and Trezor
 - Test it before you fund it
 - How to back up a passphrase
 - Mistakes to avoid
@@ -41,10 +42,12 @@ Your seed phrase on its own opens your normal wallet, sometimes called the stand
 a passphrase and you get a completely different wallet, with different addresses and its own
 balance. Change the passphrase by one letter and you get yet another wallet.
 
-The important part: **there is no such thing as a wrong passphrase.** Every passphrase opens a
+:::rule The key point
+**There is no such thing as a wrong passphrase.** Every passphrase opens a
 valid wallet. Type yours slightly wrong and you won't see an error, just an empty wallet. That is
 deliberate, because it stops anyone telling whether a wallet with a passphrase exists, but it
 also means a typo looks exactly like "nothing here".
+:::
 
 Your passphrase is never stored on the device or in the wallet app. You enter it each time you
 want the hidden wallet, or on some devices you link it to a second PIN.
@@ -116,8 +119,10 @@ hidden wallet, and you move funds into it once it is tested.
 5. **Test it before you send anything** (see below).
 6. **Store the passphrase backup somewhere different from the seed phrase.**
 
-## On Ledger
+## On Ledger and Trezor
 
+:::tabs Choose your device
+::tab Ledger | Temporary, or linked to a second PIN
 Ledger devices offer two ways to use a passphrase, both set up on the device itself:
 
 - **Temporary passphrase.** You enter it on the device whenever you want the hidden accounts. It
@@ -128,19 +133,22 @@ Ledger devices offer two ways to use a passphrase, both set up on the device its
 The passphrase can be up to 100 characters, and is case-sensitive. As with your main PIN, three
 wrong PIN attempts reset the device, so you'll need your seed phrase backup and your passphrase to
 get back in. Hidden accounts then appear in Ledger Wallet as a separate set of accounts.
-
-## On Trezor
-
+::tab Trezor | Passphrase wallets in Trezor Suite
 In Trezor Suite, passphrase wallets are switched on under **Settings → Device → Use passphrase
 wallets**. When you open the wallet, you choose the standard wallet or enter a passphrase to open
 a passphrase wallet (Trezor calls these hidden wallets).
 
 - **Enter it on the device where you can.** Trezor Safe 3, Safe 5, Safe 7 and Model T let you type
-  the passphrase on the device itself. **The Model One can't,** so the passphrase is typed on the
-  computer, which is a real weakness if the computer is ever compromised.
+  the passphrase on the device itself.
 - Trezor Suite accepts passphrases of up to 50 characters, and they are case-sensitive.
 - Trezor points out that an empty wallet does not prove you typed the passphrase correctly. It may
   just be a different, empty wallet.
+
+:::warn On a Trezor Model One
+The Model One can't take a passphrase on the device, so it is typed on the computer. That is a real
+weakness if the computer is ever compromised.
+:::
+:::
 
 ## Test it before you fund it
 

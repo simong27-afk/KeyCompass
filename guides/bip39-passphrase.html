@@ -170,9 +170,9 @@
       claim on this page on 12 Oct 2026. Spotted something out of date?
       <a href="/contact">Tell us</a> and it will be corrected.</p>
     <div class="prose page__intro">
-<p><strong>The short answer.</strong> A BIP39 passphrase is an extra word or phrase you choose yourself and add to your seed phrase. Together they open a separate "hidden wallet" that the seed phrase alone cannot reach. Its strength is that someone who finds your seed phrase still can't take the crypto behind the passphrase. Its weakness is that if you forget the passphrase, or write it down wrongly by a single character, that crypto is gone, even with the seed phrase in your hand. For most people the better first step is storing and testing the seed phrase properly. A passphrase is worth adding only once you are confident you can back it up and pass it on as carefully as the words themselves.</p>
+<aside class="callout callout--answer"><span class="callout__tag">Short answer</span><p>A BIP39 passphrase is an extra word or phrase you choose yourself and add to your seed phrase. Together they open a separate "hidden wallet" that the seed phrase alone cannot reach. Its strength is that someone who finds your seed phrase still can't take the crypto behind the passphrase. Its weakness is that if you forget the passphrase, or write it down wrongly by a single character, that crypto is gone, even with the seed phrase in your hand. For most people the better first step is storing and testing the seed phrase properly. A passphrase is worth adding only once you are confident you can back it up and pass it on as carefully as the words themselves.</p></aside>
 <p>It goes by several names: passphrase, BIP39 passphrase, 25th word (or 13th word, with a 12-word phrase), hidden wallet or passphrase wallet. It is not the same as your device PIN or a password for a wallet app.</p>
-<ul class="prose__list"><li>How a passphrase works</li><li>What it protects against, and what it doesn't</li><li>The risks</li><li>Should you use one?</li><li>How to set one up safely</li><li>On Ledger</li><li>On Trezor</li><li>Test it before you fund it</li><li>How to back up a passphrase</li><li>Mistakes to avoid</li></ul>
+<ul class="prose__list"><li>How a passphrase works</li><li>What it protects against, and what it doesn't</li><li>The risks</li><li>Should you use one?</li><li>How to set one up safely</li><li>On Ledger and Trezor</li><li>Test it before you fund it</li><li>How to back up a passphrase</li><li>Mistakes to avoid</li></ul>
     </div>
   </div>
 </section>
@@ -182,7 +182,7 @@
     <h2 class="h3 page__h">How a passphrase works</h2>
     <div class="prose">
 <p>Your seed phrase on its own opens your normal wallet, sometimes called the standard wallet. Add a passphrase and you get a completely different wallet, with different addresses and its own balance. Change the passphrase by one letter and you get yet another wallet.</p>
-<p>The important part: <strong>there is no such thing as a wrong passphrase.</strong> Every passphrase opens a valid wallet. Type yours slightly wrong and you won't see an error, just an empty wallet. That is deliberate, because it stops anyone telling whether a wallet with a passphrase exists, but it also means a typo looks exactly like "nothing here".</p>
+<aside class="callout callout--rule"><span class="callout__tag">The key point</span><p><strong>There is no such thing as a wrong passphrase.</strong> Every passphrase opens a valid wallet. Type yours slightly wrong and you won't see an error, just an empty wallet. That is deliberate, because it stops anyone telling whether a wallet with a passphrase exists, but it also means a typo looks exactly like "nothing here".</p></aside>
 <p>Your passphrase is never stored on the device or in the wallet app. You enter it each time you want the hidden wallet, or on some devices you link it to a second PIN.</p>
     </div>
   </div>
@@ -232,24 +232,16 @@
     </div>
   </div>
 </section>
-<section class="sec sec--ground page__block" id="on-ledger" data-reveal>
+<section class="sec sec--ground page__block" id="on-ledger-and-trezor" data-reveal>
   <div class="wrap">
     <hr class="rule rule--hair">
-    <h2 class="h3 page__h">On Ledger</h2>
+    <h2 class="h3 page__h">On Ledger and Trezor</h2>
     <div class="prose">
-<p>Ledger devices offer two ways to use a passphrase, both set up on the device itself:</p>
+<div class="tabs" data-tabs aria-label="Choose your device"><details class="tabs__item" open><summary class="tabs__sum"><span class="tabs__num">01</span><span class="tabs__title">Ledger<span class="tabs__hint">Temporary, or linked to a second PIN</span></span></summary><div class="tabs__body"><h3 class="h4 tabs__h">Ledger</h3><div class="tabs__intro"><p>Ledger devices offer two ways to use a passphrase, both set up on the device itself:</p>
 <ul class="prose__list"><li><strong>Temporary passphrase.</strong> You enter it on the device whenever you want the hidden accounts. It stays active only until the device is switched off.</li><li><strong>Passphrase linked to a second PIN.</strong> You set the passphrase once and choose a second PIN. At start-up, your normal PIN opens your normal accounts and the second PIN opens the hidden ones.</li></ul>
-<p>The passphrase can be up to 100 characters, and is case-sensitive. As with your main PIN, three wrong PIN attempts reset the device, so you'll need your seed phrase backup and your passphrase to get back in. Hidden accounts then appear in Ledger Wallet as a separate set of accounts.</p>
-    </div>
-  </div>
-</section>
-<section class="sec sec--ground page__block" id="on-trezor" data-reveal>
-  <div class="wrap">
-    <hr class="rule rule--hair">
-    <h2 class="h3 page__h">On Trezor</h2>
-    <div class="prose">
-<p>In Trezor Suite, passphrase wallets are switched on under **Settings → Device → Use passphrase wallets**. When you open the wallet, you choose the standard wallet or enter a passphrase to open a passphrase wallet (Trezor calls these hidden wallets).</p>
-<ul class="prose__list"><li><strong>Enter it on the device where you can.</strong> Trezor Safe 3, Safe 5, Safe 7 and Model T let you type the passphrase on the device itself. <strong>The Model One can't,</strong> so the passphrase is typed on the computer, which is a real weakness if the computer is ever compromised.</li><li>Trezor Suite accepts passphrases of up to 50 characters, and they are case-sensitive.</li><li>Trezor points out that an empty wallet does not prove you typed the passphrase correctly. It may just be a different, empty wallet.</li></ul>
+<p>The passphrase can be up to 100 characters, and is case-sensitive. As with your main PIN, three wrong PIN attempts reset the device, so you'll need your seed phrase backup and your passphrase to get back in. Hidden accounts then appear in Ledger Wallet as a separate set of accounts.</p></div></div></details><details class="tabs__item"><summary class="tabs__sum"><span class="tabs__num">02</span><span class="tabs__title">Trezor<span class="tabs__hint">Passphrase wallets in Trezor Suite</span></span></summary><div class="tabs__body"><h3 class="h4 tabs__h">Trezor</h3><div class="tabs__intro"><p>In Trezor Suite, passphrase wallets are switched on under <strong>Settings → Device → Use passphrase wallets</strong>. When you open the wallet, you choose the standard wallet or enter a passphrase to open a passphrase wallet (Trezor calls these hidden wallets).</p>
+<ul class="prose__list"><li><strong>Enter it on the device where you can.</strong> Trezor Safe 3, Safe 5, Safe 7 and Model T let you type the passphrase on the device itself.</li><li>Trezor Suite accepts passphrases of up to 50 characters, and they are case-sensitive.</li><li>Trezor points out that an empty wallet does not prove you typed the passphrase correctly. It may just be a different, empty wallet.</li></ul>
+<aside class="callout callout--warn"><span class="callout__tag">On a Trezor Model One</span><p>The Model One can't take a passphrase on the device, so it is typed on the computer. That is a real weakness if the computer is ever compromised.</p></aside></div></div></details></div>
     </div>
   </div>
 </section>
@@ -322,7 +314,7 @@
           <h3 class="h4 guides__title">What is a seed phrase?</h3>
           <p class="guides__lead">A seed phrase is the master key to a crypto wallet. Whoever has the words has the money. Here is what it is, how it works, and how to keep it out of the wrong hands.</p>
         </a>
-        <span class="micro micro--dim guides__min">9 min</span>
+        <span class="micro micro--dim guides__min">10 min</span>
       </li>
     </ul>
     <p class="guides__all"><a href="/guides/">All guides</a></p>

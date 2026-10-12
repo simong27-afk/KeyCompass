@@ -11,9 +11,11 @@ featured: no
 > A seed phrase is the master key to a crypto wallet. Whoever has the words has the money.
 > Here is what it is, how it works, and how to keep it out of the wrong hands.
 
-**The short answer.** A seed phrase is a list of 12 or 24 ordinary words, created when you first set up your wallet, that can rebuild the whole wallet on any compatible device. Every
+:::answer
+A seed phrase is a list of 12 or 24 ordinary words, created when you first set up your wallet, that can rebuild the whole wallet on any compatible device. Every
 private key and every address in the wallet comes from those words. If your hardware wallet (the physical device that keeps your keys offline) is lost, broken or stolen, the seed phrase is how you get your crypto back. And if anyone else sees
 it, they can take everything, from anywhere in the world, without needing your device or your PIN.
+:::
 
 It goes by several names: seed phrase, recovery phrase, recovery seed, mnemonic or mnemonic phrase, backup phrase,
 wallet backup, or Secret Recovery Phrase in MetaMask. They all mean the same thing.
@@ -67,7 +69,9 @@ Two things follow from this:
 | **Device PIN** | A number you choose | Unlocks your hardware device. Useless without the device itself |
 | **App or exchange password** | A password you choose | Opens an app or an exchange account. Does not control crypto secured by a hardware device |
 
+:::tip Why this matters
 The PIN protects the device. The seed phrase *is* the wallet. That is why someone who steals your device usually cannot get in, but someone who sees your seed phrase can.
+:::
 
 ## 12, 18, 20 or 24 words
 
@@ -76,10 +80,12 @@ could guess: a 12-word phrase is one of roughly 340 trillion trillion trillion p
 longer phrase adds a safety margin, not a practical difference for most people. What matters far
 more is how the phrase is stored.
 
+:::tip Got 20 words?
 Newer Trezor devices create a 20-word backup by default. It uses a different standard, called
 SLIP39, from a different word list. It does the same job, and several other wallet apps support it,
 but it is not interchangeable with a 12 or 24-word phrase. If yours has 20 words, that is
 expected.
+:::
 
 ## Where your seed phrase comes from
 
@@ -129,14 +135,19 @@ The same seed phrase with a different passphrase opens a completely separate wal
 you if someone finds your seed phrase: on its own, it opens only the wallet without the
 passphrase, which can be left empty or hold a small amount.
 
+:::warn The catch
 The catch is that the passphrase becomes a second thing you cannot lose. Forget it, or record it
 wrongly by a single character, and the wallet behind it is gone, even with the seed phrase in
 hand. It suits some people well, but it is worth understanding fully before you add one. See
 [What is a BIP39 passphrase, and should I use one?](https://keycompass.co.uk/guides/bip39-passphrase)
+:::
 
 ## Scams that target seed phrases
 
-Almost every seed phrase scam tries to get you to type your words somewhere other than your device.
+:::rule
+**Almost every seed phrase scam ends the same way:** getting you to type your words somewhere
+other than your device. If anything asks for them, stop.
+:::
 
 - **Fake support.** Someone replies to a post or messages you, claiming to be from a wallet
   maker or an exchange, and asks you to "verify", "sync" or "validate" your wallet. Real support

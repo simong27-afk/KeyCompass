@@ -11,11 +11,13 @@ featured: no
 > Moving your crypto off an exchange is one of the most important steps in self-custody, and
 > one of the easiest to get wrong. Here is how to do it carefully, one step at a time.
 
-**The short answer.** Set up your hardware wallet (the physical device that keeps your keys offline) and test your backup first. Then, in the
+:::answer
+Set up your hardware wallet (the physical device that keeps your keys offline) and test your backup first. Then, in the
 wallet's own app, get a receiving address for the right coin and network, and check it on the device's screen. On the exchange, withdraw a small test amount to that address, on the
 same network, and wait until it arrives. Only then send the rest. Never type your recovery
 phrase into the exchange, a website or an app: no exchange ever needs it to send you your own
 coins.
+:::
 
 People describe this in different ways: withdrawing to a cold wallet, moving to cold storage,
 transferring from Coinbase or Kraken to Ledger or Trezor, or simply taking self-custody.
@@ -54,9 +56,11 @@ you, and choose a PIN. Then, before any money goes near it, check that the backu
 is correct. Ledger and Trezor both have a built-in check that does this without wiping the device:
 see [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup).
 
+:::warn Don't skip this
 It is tempting to skip this step and come back to it later. Don't. Once your savings are on the
 device, a backup with a single wrong word is the difference between losing a device and losing
 everything on it.
+:::
 
 ## Step 2: Prepare your exchange account
 
@@ -110,8 +114,10 @@ the exchange asks you to pick one.
   *receive* tokens on Ethereum, but when you eventually want to send them on you'll need a small
   amount of ETH in the same account to pay the network fee. The same applies on other networks.
 
+:::warn Not sure which network?
 If you are unsure which network to use, stop. Check the maker's list of supported coins and
 networks, or ask someone who knows, before sending anything.
+:::
 
 ## Step 5: Send a small test amount
 
@@ -124,7 +130,9 @@ networks, or ask someone who knows, before sending anything.
    depending on the network and the exchange.
 
 When it arrives, check the amount in your wallet app against what you sent, less the fee.
+:::tip Why the test amount matters
 That one small transaction proves the address, the network and the account are all right.
+:::
 
 If the exchange asked you to add the address to an address book or allowlist, this is a good time
 to do it, so later withdrawals can only go to addresses you have approved.
@@ -165,9 +173,11 @@ Remember the fee: the exchange usually takes it from the amount you are withdraw
    own website or app, never through a phone number or account you found on social media. Some
    network mistakes can be fixed; some cannot.
 
+:::warn Beware "recovery" offers
 Be wary of anyone who contacts you offering to recover lost crypto, especially after you have
 posted about a problem online. "Recovery services" that reach out to you, or ask for a fee up
 front or your recovery phrase, are scams.
+:::
 
 ## Mistakes that cost people money
 

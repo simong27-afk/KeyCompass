@@ -229,6 +229,56 @@ def split_sections(md):
             [(h, render("\n".join(b)).strip()) for h, b in blocks])
 
 
+CALLOUT_TAGS = {"answer": "Short answer", "rule": "The one rule",
+                "warn": "Warning", "tip": "Good to know"}
+
+
+def render_callout(kind, label, body_lines):
+    """A highlight box. Each kind has one job, so readers learn what the colour means."""
+    return ('<aside class="callout callout--%s"><span class="callout__tag">%s</span>%s</aside>'
+            % (kind, html.escape(label or CALLOUT_TAGS[kind], quote=False),
+               render("\n".join(body_lines))))
+
+
+def render_tabs(body_lines, label):
+    """A list of parallel items (scams, devices). Rendered as <details> so it is a
+    working accordion with no JavaScript and every word is in the HTML for search
+    engines; site.js turns it into tabs on wide screens."""
+    tabs, cur = [], None
+    for ln in body_lines:
+        t = re.match(r'^::tab\s+(.+)$', ln.strip())
+        p = re.match(r'^::part\s+(.+)$', ln.strip())
+        if t:
+            title, _, hint = t.group(1).partition("|")
+            cur = {"title": title.strip(), "hint": hint.strip(), "intro": [], "parts": []}
+            tabs.append(cur)
+        elif p and cur is not None:
+            cur["parts"].append((p.group(1).strip(), []))
+        elif cur is not None:
+            (cur["parts"][-1][1] if cur["parts"] else cur["intro"]).append(ln)
+    out = ['<div class="tabs" data-tabs aria-label="%s">'
+           % html.escape(label or "Options", quote=True)]
+    for n, tab in enumerate(tabs, 1):
+        hint = ('<span class="tabs__hint">%s</span>' % inline(tab["hint"])) if tab["hint"] else ""
+        out.append('<details class="tabs__item"%s><summary class="tabs__sum">'
+                   '<span class="tabs__num">%02d</span><span class="tabs__title">%s%s</span>'
+                   '</summary><div class="tabs__body"><h3 class="h4 tabs__h">%s</h3>'
+                   % (" open" if n == 1 else "", n, inline(tab["title"]), hint,
+                      inline(tab["title"])))
+        intro = render("\n".join(tab["intro"])).strip()
+        if intro:
+            out.append('<div class="tabs__intro">%s</div>' % intro)
+        if tab["parts"]:
+            out.append('<div class="trio">')
+            for head, body in tab["parts"]:
+                out.append('<div class="trio__item"><span class="trio__label">%s</span>%s</div>'
+                           % (inline(head), render("\n".join(body))))
+            out.append('</div>')
+        out.append('</div></details>')
+    out.append('</div>')
+    return "".join(out)
+
+
 def render(md):
     out, i = [], 0
     lines = md.split("\n")
@@ -237,6 +287,33 @@ def render(md):
 
         if not ln.strip():
             i += 1
+            continue
+
+        # Highlight boxes and tab groups. Written as fenced blocks so the .md
+        # source stays readable for people and agents:
+        #   :::warn Optional title          :::tabs Label for the tab list
+        #   Body in markdown.                ::tab Title | one-line hint
+        #   :::                              ::part How it works
+        #                                    Body...
+        #                                    :::
+        m = re.match(r'^:::(answer|rule|warn|tip|tabs)(?:\s+(.*))?$', ln.strip())
+        if m:
+            kind, label = m.group(1), (m.group(2) or "").strip()
+            i += 1
+            buf, depth = [], 1
+            while i < len(lines):
+                t = lines[i].strip()
+                if re.match(r'^:::(answer|rule|warn|tip|tabs)\b', t):
+                    depth += 1          # a box nested inside a tab
+                elif t == ":::":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                buf.append(lines[i])
+                i += 1
+            i += 1  # closing :::
+            out.append(render_tabs(buf, label) if kind == "tabs"
+                       else render_callout(kind, label, buf))
             continue
 
         # Fenced code must be handled before anything else, or its contents get
@@ -303,14 +380,17 @@ def render(md):
             # line structure rather than collapsing into one run of text.
             buf = []
             while i < len(lines) and lines[i].strip() and not re.match(
-                    r'^(#|>|-\s|\d+\.\s|\||---$)', lines[i]):
+                    r'^(#|>|-\s|\d+\.\s|\||---$|:::?)', lines[i]):
                 buf.append((lines[i].rstrip(), lines[i].endswith("  ")))
                 i += 1
-            para = ""
+            # Join first, then format, so bold or a link that wraps across two
+            # source lines still renders. Hard breaks survive as a placeholder.
+            raw = ""
             for n, (text, hard) in enumerate(buf):
                 if n:
-                    para += "<br>" if buf[n - 1][1] else " "
-                para += inline(text.strip())
+                    raw += "\x00BR\x00" if buf[n - 1][1] else " "
+                raw += text.strip()
+            para = inline(raw).replace("\x00BR\x00", "<br>")
             # A paragraph that is nothing but a booking link becomes a button that
             # opens the Cal.com pop-up, the same way every Book button on the site does.
             cta = BOOKING_LINK.match(" ".join(t for t, _ in buf).strip())

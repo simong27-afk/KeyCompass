@@ -170,7 +170,7 @@
       claim on this page on 8 Oct 2026. Spotted something out of date?
       <a href="/contact">Tell us</a> and it will be corrected.</p>
     <div class="prose page__intro">
-<p><strong>The short answer.</strong> If your recovery phrase is gone and you can no longer open the wallet on any device, the funds are almost certainly unrecoverable. That is not a policy anyone can appeal; it is how the cryptography works. Nobody — not the wallet maker, not an exchange, not a recovery service — holds a copy. But a great many people who believe their phrase is lost are actually in a different situation, and several of those situations are fixable. Work through the checks below before you conclude anything.</p>
+<aside class="callout callout--answer"><span class="callout__tag">Short answer</span><p>If your recovery phrase is gone and you can no longer open the wallet on any device, the funds are almost certainly unrecoverable. That is not a policy anyone can appeal; it is how the cryptography works. Nobody — not the wallet maker, not an exchange, not a recovery service — holds a copy. But a great many people who believe their phrase is lost are actually in a different situation, and several of those situations are fixable. Work through the checks below before you conclude anything.</p></aside>
 <p>The recovery phrase goes by several names: seed phrase, mnemonic, 12 or 24 words, or secret recovery phrase in MetaMask. They are all the same thing, and everything below applies to each of them.</p>
 <ul class="prose__list"><li>Stop and do not wipe anything</li><li>First: is it actually lost?</li><li>The situations that are usually recoverable</li><li>The situation that is not</li><li>Why "recovery services" are how people lose the rest</li><li>What to do once you know where you stand</li></ul>
     </div>
@@ -181,7 +181,7 @@
     <hr class="rule rule--hair">
     <h2 class="h3 page__h">Stop and do not wipe anything</h2>
     <div class="prose">
-<p>Before anything else: do not factory reset, wipe, update or sell any phone, laptop or hardware device that has ever held this wallet. Do not uninstall the app. Do not "start fresh" to try again.</p>
+<aside class="callout callout--rule"><span class="callout__tag">Stop first</span><p>Before anything else: do not factory reset, wipe, update or sell any phone, laptop or hardware device that has ever held this wallet. Do not uninstall the app. Do not "start fresh" to try again.</p></aside>
 <p>People in a panic very often destroy the one remaining copy of their keys while trying to fix the problem, and what counts as "the copy" depends on the kind of wallet.</p>
 <p>With a software wallet, the phrase is held encrypted inside the app itself and decrypted each time you unlock it. An app that still opens is therefore a recoverable position, and uninstalling it or resetting the device ends that permanently.</p>
 <p>With a hardware wallet it is the opposite. The keys are generated on the device and never leave it, so what matters is whether you still have the device and still know its PIN. The companion software holds public keys only — enough to read your balance from the blockchain, never enough to sign a transaction or show you a phrase. Seeing a balance in Ledger Wallet or Trezor Suite is not access, and anything presenting itself as that software while asking for your recovery phrase is stealing from you.</p>
@@ -245,7 +245,7 @@
     <div class="prose">
 <p>Every search like the one that brought you here is being watched by people who make their living from it. If you post about losing access on a forum, in a Telegram group or on social media, you should expect to be contacted within hours.</p>
 <p>The pattern is consistent. Someone presents themselves as a recovery specialist, a wallet support agent, or a blockchain forensics firm. They are confident. They may show you testimonials, a professional website, even a case number. What they want is one of two things: your recovery phrase or partial phrase "so we can run the recovery", or an upfront fee, often framed as a deposit against funds they will return.</p>
-<p>Three rules cover almost all of it. No legitimate party ever needs your recovery phrase, in whole or in part, for any reason. Anyone who contacts you first, having seen that you are in trouble, is not helping you. And a phrase that is genuinely lost cannot be brute-forced by anyone at any price — the search space is larger than the problem is solvable.</p>
+<aside class="callout callout--warn"><span class="callout__tag">Three rules</span><p>Three rules cover almost all of it. No legitimate party ever needs your recovery phrase, in whole or in part, for any reason. Anyone who contacts you first, having seen that you are in trouble, is not helping you. And a phrase that is genuinely lost cannot be brute-forced by anyone at any price — the search space is larger than the problem is solvable.</p></aside>
 <p>The one narrow exception is the partial-phrase case described above, which is a technical process done offline on your own equipment, not a service you hand your phrase to.</p>
     </div>
   </div>
@@ -302,7 +302,7 @@
           <h3 class="h4 guides__title">What is a seed phrase?</h3>
           <p class="guides__lead">A seed phrase is the master key to a crypto wallet. Whoever has the words has the money. Here is what it is, how it works, and how to keep it out of the wrong hands.</p>
         </a>
-        <span class="micro micro--dim guides__min">9 min</span>
+        <span class="micro micro--dim guides__min">10 min</span>
       </li>
     </ul>
     <p class="guides__all"><a href="/guides/">All guides</a></p>

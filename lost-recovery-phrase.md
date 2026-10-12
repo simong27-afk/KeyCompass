@@ -11,12 +11,14 @@ featured: yes
 > What can still be recovered, what genuinely cannot, and how to tell which situation
 > you are in — without handing your money to someone promising a miracle.
 
-**The short answer.** If your recovery phrase is gone and you can no longer open the wallet
+:::answer
+If your recovery phrase is gone and you can no longer open the wallet
 on any device, the funds are almost certainly unrecoverable. That is not a policy anyone can
 appeal; it is how the cryptography works. Nobody — not the wallet maker, not an exchange, not
 a recovery service — holds a copy. But a great many people who believe their phrase is lost
 are actually in a different situation, and several of those situations are fixable. Work
 through the checks below before you conclude anything.
+:::
 
 The recovery phrase goes by several names: seed phrase, mnemonic, 12 or 24 words, or secret
 recovery phrase in MetaMask. They are all the same thing, and everything below applies to
@@ -31,8 +33,10 @@ each of them.
 
 ## Stop and do not wipe anything
 
+:::rule Stop first
 Before anything else: do not factory reset, wipe, update or sell any phone, laptop or hardware device that has ever held this wallet. Do not uninstall the app. Do not "start
 fresh" to try again.
+:::
 
 People in a panic very often destroy the one remaining copy of their keys while trying to fix
 the problem, and what counts as "the copy" depends on the kind of wallet.
@@ -165,10 +169,12 @@ testimonials, a professional website, even a case number. What they want is one 
 your recovery phrase or partial phrase "so we can run the recovery", or an upfront fee, often
 framed as a deposit against funds they will return.
 
+:::warn Three rules
 Three rules cover almost all of it. No legitimate party ever needs your recovery phrase, in
 whole or in part, for any reason. Anyone who contacts you first, having seen that you are in
 trouble, is not helping you. And a phrase that is genuinely lost cannot be brute-forced by
 anyone at any price — the search space is larger than the problem is solvable.
+:::
 
 The one narrow exception is the partial-phrase case described above, which is a technical
 process done offline on your own equipment, not a service you hand your phrase to.

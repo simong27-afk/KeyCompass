@@ -11,12 +11,14 @@ featured: no
 > The only way to know a backup works is to check it, on the hardware wallet itself and
 > never on a phone or computer. Here is how to do that safely, and what to do if it fails.
 
-**The short answer.** Most hardware wallets can check your written recovery phrase against
+:::answer
+Most hardware wallets can check your written recovery phrase against
 the one stored on the device, without wiping anything. You type the words in on the device's
 own screen and it tells you whether they match. On Ledger that is the Recovery Check app; on
 Trezor it is Check backup in Trezor Suite. It takes about ten minutes, and it is the single
 most useful thing you can do for a wallet you already own. If the check fails, your funds are
 still safe for now, but you need to move them to a new wallet with a backup you have tested.
+:::
 
 The recovery phrase is also called a seed phrase, mnemonic, or 12 or 24 words. Everything
 below applies whichever name your wallet uses.
@@ -45,9 +47,10 @@ the device still works turns a potential total loss into an afternoon's inconven
 
 ## The one rule: never type it into anything connected
 
-Your recovery phrase should only ever be entered on the device itself. Never type it
-into a phone, a computer, a website, a wallet app, a password manager or a notes app, and never
-photograph it.
+:::rule
+**Only ever enter your recovery phrase on the device itself.** Never type it into a phone, a
+computer, a website, a wallet app, a password manager or a notes app, and never photograph it.
+:::
 
 Any website, app or person offering to "validate", "verify" or "check" your recovery phrase is a
 scam, whatever it looks like and whoever it claims to be. A legitimate check never needs your words
@@ -67,8 +70,8 @@ to leave the device.
 This is the method to use if your device offers it. Nothing is wiped, and your words are entered
 on the device, never on the computer.
 
-### Ledger: the Recovery Check app
-
+:::tabs Choose your device
+::tab Ledger | The Recovery Check app
 1. Connect your Ledger and open Ledger Wallet.
 2. Go to the section that manages apps on your device (My Ledger) and install **Recovery Check**,
    Ledger's own app.
@@ -77,9 +80,7 @@ on the device, never on the computer.
 5. The device tells you whether the phrase matches the one it holds.
 
 You can uninstall the app afterwards. It does not change anything stored on the device.
-
-### Trezor: Check backup
-
+::tab Trezor | Check backup in Trezor Suite
 1. Connect your Trezor and open Trezor Suite.
 2. Open the device settings (the gear icon) and select **Check backup** in the wallet backup
    section.
@@ -88,17 +89,18 @@ You can uninstall the app afterwards. It does not change anything stored on the 
 
 The device is not wiped. It compares the words you enter with the backup it already holds.
 
-**On a Trezor Model One,** choose **Advanced recovery** when Suite asks how to enter your words.
+:::tip On a Trezor Model One
+Choose **Advanced recovery** when Suite asks how to enter your words.
 The Model One cannot take words on the device itself, so the standard method has you type them
 into the computer. With Advanced recovery the letters appear only on the Trezor's screen and you
 click matching positions on a scrambled grid in Suite, so your words never reach the computer.
 It is slower, but it keeps to the one rule above.
-
-### Other hardware wallets
-
+:::
+::tab Other hardware wallets | Look for "check backup" or "dry run"
 Most others have an equivalent, often called "verify seed", "check backup" or "dry run recovery",
 in the device settings. Follow the maker's own instructions, from their official website, and
 never from a link in an email, an advert or a search result you have not checked.
+:::
 
 ## Restoring on a second device
 
@@ -107,10 +109,13 @@ confirm the first receiving address matches the one you wrote down. This proves 
 rebuild your wallet on a device that has never seen it, which is exactly what happens in a real
 recovery. Wipe the spare device afterwards.
 
-Two warnings. Never restore your phrase into a phone or desktop wallet app to test it, because
-that puts your words on an internet-connected device. And never wipe your only device to test the
-backup: if the backup turns out to be wrong, you will have destroyed the only working copy of
-your wallet.
+:::warn Two warnings
+**Never restore your phrase into a phone or desktop wallet app to test it.** That puts your words
+on an internet-connected device.
+
+**Never wipe your only device to test the backup.** If the backup turns out to be wrong, you will
+have destroyed the only working copy of your wallet.
+:::
 
 ## If you use a passphrase
 
@@ -165,8 +170,10 @@ First, do not panic. Your device still works, so your funds are safe for now. Bu
 moved, that device is the only working key to your wallet, so treat it carefully: do not reset it,
 lend it or update it until you have finished.
 
+:::warn Don't guess
 Do not try to fix the backup by guessing or rearranging words. The device cannot show you the
 correct phrase, and a wrong backup that looks fixed is worse than one you know is wrong.
+:::
 
 Instead, move your funds to a new wallet with a backup you know works:
 

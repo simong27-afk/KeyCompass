@@ -11,12 +11,14 @@ featured: no
 > A seed phrase backup has two jobs: survive anything that could destroy it, and stay hidden
 > from anyone who could steal it. Here is how to do both, without overcomplicating it.
 
-**The short answer.** Good seed phrase storage is simple: write your seed phrase down by hand, clearly and in order, and keep it
+:::answer
+Good seed phrase storage is simple: write your seed phrase down by hand, clearly and in order, and keep it
 offline: never as a photo, a file or a note on your phone. Paper is fine to start with; stamped
 stainless steel or titanium survives fire and flood far better. Keep the backup in a different
 place from your hardware wallet (the physical device that keeps your keys offline), somewhere
 private but findable by the right person if something happens to you. Then check the backup
 actually works.
+:::
 
 Everything here applies whatever you call it: seed phrase, recovery phrase, recovery seed,
 mnemonic or wallet backup. If you are not sure what a seed phrase is, start with
@@ -96,9 +98,11 @@ already on it, or that asks you to register, scan or photograph anything.
 
 ## Where to keep it
 
+:::rule
 **Keep the backup and the device apart.** Someone who finds both together has everything they
 need. A burglar who finds only the device still needs your PIN; one who finds only the backup
 still has to know what it is.
+:::
 
 At home:
 
@@ -155,9 +159,11 @@ For more on whether to use one and how to set it up, see
 
 ## Don't put it in your will
 
+:::warn UK: wills become public
 In England and Wales, a will becomes a public document once probate is granted. Anyone can
 order a copy online for a small fee. If your seed phrase is written in your will, it will be
 readable by anyone who looks.
+:::
 
 Your will, or a separate letter of wishes, can still say that you hold crypto and where your
 executor will find instructions. Just never put the words themselves in it. Speak to a

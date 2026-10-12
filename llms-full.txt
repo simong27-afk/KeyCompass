@@ -1297,7 +1297,8 @@ Version 1.0, published 14 September 2026.
 > A passphrase adds a second secret on top of your seed phrase. It can make a found backup
 > useless to a thief. It can also lock you, or your family, out for good.
 
-**The short answer.** A BIP39 passphrase is an extra word or phrase you choose yourself and add
+:::answer
+A BIP39 passphrase is an extra word or phrase you choose yourself and add
 to your seed phrase. Together they open a separate "hidden wallet" that the seed phrase alone
 cannot reach. Its strength is that someone who finds your seed phrase still can't take the crypto
 behind the passphrase. Its weakness is that if you forget the passphrase, or write it down wrongly
@@ -1305,6 +1306,7 @@ by a single character, that crypto is gone, even with the seed phrase in your ha
 people the better first step is storing and testing the seed phrase properly. A passphrase is worth
 adding only once you are confident you can back it up and pass it on as carefully as the words
 themselves.
+:::
 
 It goes by several names: passphrase, BIP39 passphrase, 25th word (or 13th word, with a 12-word
 phrase), hidden wallet or passphrase wallet. It is not the same as your device PIN or a password
@@ -1315,8 +1317,7 @@ for a wallet app.
 - The risks
 - Should you use one?
 - How to set one up safely
-- On Ledger
-- On Trezor
+- On Ledger and Trezor
 - Test it before you fund it
 - How to back up a passphrase
 - Mistakes to avoid
@@ -1327,10 +1328,12 @@ Your seed phrase on its own opens your normal wallet, sometimes called the stand
 a passphrase and you get a completely different wallet, with different addresses and its own
 balance. Change the passphrase by one letter and you get yet another wallet.
 
-The important part: **there is no such thing as a wrong passphrase.** Every passphrase opens a
+:::rule The key point
+**There is no such thing as a wrong passphrase.** Every passphrase opens a
 valid wallet. Type yours slightly wrong and you won't see an error, just an empty wallet. That is
 deliberate, because it stops anyone telling whether a wallet with a passphrase exists, but it
 also means a typo looks exactly like "nothing here".
+:::
 
 Your passphrase is never stored on the device or in the wallet app. You enter it each time you
 want the hidden wallet, or on some devices you link it to a second PIN.
@@ -1402,8 +1405,10 @@ hidden wallet, and you move funds into it once it is tested.
 5. **Test it before you send anything** (see below).
 6. **Store the passphrase backup somewhere different from the seed phrase.**
 
-### On Ledger
+### On Ledger and Trezor
 
+:::tabs Choose your device
+::tab Ledger | Temporary, or linked to a second PIN
 Ledger devices offer two ways to use a passphrase, both set up on the device itself:
 
 - **Temporary passphrase.** You enter it on the device whenever you want the hidden accounts. It
@@ -1414,19 +1419,22 @@ Ledger devices offer two ways to use a passphrase, both set up on the device its
 The passphrase can be up to 100 characters, and is case-sensitive. As with your main PIN, three
 wrong PIN attempts reset the device, so you'll need your seed phrase backup and your passphrase to
 get back in. Hidden accounts then appear in Ledger Wallet as a separate set of accounts.
-
-### On Trezor
-
+::tab Trezor | Passphrase wallets in Trezor Suite
 In Trezor Suite, passphrase wallets are switched on under **Settings → Device → Use passphrase
 wallets**. When you open the wallet, you choose the standard wallet or enter a passphrase to open
 a passphrase wallet (Trezor calls these hidden wallets).
 
 - **Enter it on the device where you can.** Trezor Safe 3, Safe 5, Safe 7 and Model T let you type
-  the passphrase on the device itself. **The Model One can't,** so the passphrase is typed on the
-  computer, which is a real weakness if the computer is ever compromised.
+  the passphrase on the device itself.
 - Trezor Suite accepts passphrases of up to 50 characters, and they are case-sensitive.
 - Trezor points out that an empty wallet does not prove you typed the passphrase correctly. It may
   just be a different, empty wallet.
+
+:::warn On a Trezor Model One
+The Model One can't take a passphrase on the device, so it is typed on the computer. That is a real
+weakness if the computer is ever compromised.
+:::
+:::
 
 ### Test it before you fund it
 
@@ -1484,12 +1492,14 @@ them. Anyone who does, whatever they claim to be, is attempting to steal from yo
 > A seed phrase backup has two jobs: survive anything that could destroy it, and stay hidden
 > from anyone who could steal it. Here is how to do both, without overcomplicating it.
 
-**The short answer.** Good seed phrase storage is simple: write your seed phrase down by hand, clearly and in order, and keep it
+:::answer
+Good seed phrase storage is simple: write your seed phrase down by hand, clearly and in order, and keep it
 offline: never as a photo, a file or a note on your phone. Paper is fine to start with; stamped
 stainless steel or titanium survives fire and flood far better. Keep the backup in a different
 place from your hardware wallet (the physical device that keeps your keys offline), somewhere
 private but findable by the right person if something happens to you. Then check the backup
 actually works.
+:::
 
 Everything here applies whatever you call it: seed phrase, recovery phrase, recovery seed,
 mnemonic or wallet backup. If you are not sure what a seed phrase is, start with
@@ -1569,9 +1579,11 @@ already on it, or that asks you to register, scan or photograph anything.
 
 ### Where to keep it
 
+:::rule
 **Keep the backup and the device apart.** Someone who finds both together has everything they
 need. A burglar who finds only the device still needs your PIN; one who finds only the backup
 still has to know what it is.
+:::
 
 At home:
 
@@ -1628,9 +1640,11 @@ For more on whether to use one and how to set it up, see
 
 ### Don't put it in your will
 
+:::warn UK: wills become public
 In England and Wales, a will becomes a public document once probate is granted. Anyone can
 order a copy online for a small fee. If your seed phrase is written in your will, it will be
 readable by anyone who looks.
+:::
 
 Your will, or a separate letter of wishes, can still say that you hold crypto and where your
 executor will find instructions. Just never put the words themselves in it. Speak to a
@@ -1668,9 +1682,11 @@ If you think your phrase is already lost, read [I've lost my recovery phrase. Wh
 > A seed phrase is the master key to a crypto wallet. Whoever has the words has the money.
 > Here is what it is, how it works, and how to keep it out of the wrong hands.
 
-**The short answer.** A seed phrase is a list of 12 or 24 ordinary words, created when you first set up your wallet, that can rebuild the whole wallet on any compatible device. Every
+:::answer
+A seed phrase is a list of 12 or 24 ordinary words, created when you first set up your wallet, that can rebuild the whole wallet on any compatible device. Every
 private key and every address in the wallet comes from those words. If your hardware wallet (the physical device that keeps your keys offline) is lost, broken or stolen, the seed phrase is how you get your crypto back. And if anyone else sees
 it, they can take everything, from anywhere in the world, without needing your device or your PIN.
+:::
 
 It goes by several names: seed phrase, recovery phrase, recovery seed, mnemonic or mnemonic phrase, backup phrase,
 wallet backup, or Secret Recovery Phrase in MetaMask. They all mean the same thing.
@@ -1724,7 +1740,9 @@ Two things follow from this:
 | **Device PIN** | A number you choose | Unlocks your hardware device. Useless without the device itself |
 | **App or exchange password** | A password you choose | Opens an app or an exchange account. Does not control crypto secured by a hardware device |
 
+:::tip Why this matters
 The PIN protects the device. The seed phrase *is* the wallet. That is why someone who steals your device usually cannot get in, but someone who sees your seed phrase can.
+:::
 
 ### 12, 18, 20 or 24 words
 
@@ -1733,10 +1751,12 @@ could guess: a 12-word phrase is one of roughly 340 trillion trillion trillion p
 longer phrase adds a safety margin, not a practical difference for most people. What matters far
 more is how the phrase is stored.
 
+:::tip Got 20 words?
 Newer Trezor devices create a 20-word backup by default. It uses a different standard, called
 SLIP39, from a different word list. It does the same job, and several other wallet apps support it,
 but it is not interchangeable with a 12 or 24-word phrase. If yours has 20 words, that is
 expected.
+:::
 
 ### Where your seed phrase comes from
 
@@ -1786,14 +1806,19 @@ The same seed phrase with a different passphrase opens a completely separate wal
 you if someone finds your seed phrase: on its own, it opens only the wallet without the
 passphrase, which can be left empty or hold a small amount.
 
+:::warn The catch
 The catch is that the passphrase becomes a second thing you cannot lose. Forget it, or record it
 wrongly by a single character, and the wallet behind it is gone, even with the seed phrase in
 hand. It suits some people well, but it is worth understanding fully before you add one. See
 [What is a BIP39 passphrase, and should I use one?](https://keycompass.co.uk/guides/bip39-passphrase)
+:::
 
 ### Scams that target seed phrases
 
-Almost every seed phrase scam tries to get you to type your words somewhere other than your device.
+:::rule
+**Almost every seed phrase scam ends the same way:** getting you to type your words somewhere
+other than your device. If anything asks for them, stop.
+:::
 
 - **Fake support.** Someone replies to a post or messages you, claiming to be from a wallet
   maker or an exchange, and asks you to "verify", "sync" or "validate" your wallet. Real support
@@ -1858,11 +1883,13 @@ whatever they claim to be, is attempting to steal from you.
 > Moving your crypto off an exchange is one of the most important steps in self-custody, and
 > one of the easiest to get wrong. Here is how to do it carefully, one step at a time.
 
-**The short answer.** Set up your hardware wallet (the physical device that keeps your keys offline) and test your backup first. Then, in the
+:::answer
+Set up your hardware wallet (the physical device that keeps your keys offline) and test your backup first. Then, in the
 wallet's own app, get a receiving address for the right coin and network, and check it on the device's screen. On the exchange, withdraw a small test amount to that address, on the
 same network, and wait until it arrives. Only then send the rest. Never type your recovery
 phrase into the exchange, a website or an app: no exchange ever needs it to send you your own
 coins.
+:::
 
 People describe this in different ways: withdrawing to a cold wallet, moving to cold storage,
 transferring from Coinbase or Kraken to Ledger or Trezor, or simply taking self-custody.
@@ -1901,9 +1928,11 @@ you, and choose a PIN. Then, before any money goes near it, check that the backu
 is correct. Ledger and Trezor both have a built-in check that does this without wiping the device:
 see [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup).
 
+:::warn Don't skip this
 It is tempting to skip this step and come back to it later. Don't. Once your savings are on the
 device, a backup with a single wrong word is the difference between losing a device and losing
 everything on it.
+:::
 
 ### Step 2: Prepare your exchange account
 
@@ -1957,8 +1986,10 @@ the exchange asks you to pick one.
   *receive* tokens on Ethereum, but when you eventually want to send them on you'll need a small
   amount of ETH in the same account to pay the network fee. The same applies on other networks.
 
+:::warn Not sure which network?
 If you are unsure which network to use, stop. Check the maker's list of supported coins and
 networks, or ask someone who knows, before sending anything.
+:::
 
 ### Step 5: Send a small test amount
 
@@ -1971,7 +2002,9 @@ networks, or ask someone who knows, before sending anything.
    depending on the network and the exchange.
 
 When it arrives, check the amount in your wallet app against what you sent, less the fee.
+:::tip Why the test amount matters
 That one small transaction proves the address, the network and the account are all right.
+:::
 
 If the exchange asked you to add the address to an address book or allowlist, this is a good time
 to do it, so later withdrawals can only go to addresses you have approved.
@@ -2012,9 +2045,11 @@ Remember the fee: the exchange usually takes it from the amount you are withdraw
    own website or app, never through a phone number or account you found on social media. Some
    network mistakes can be fixed; some cannot.
 
+:::warn Beware "recovery" offers
 Be wary of anyone who contacts you offering to recover lost crypto, especially after you have
 posted about a problem online. "Recovery services" that reach out to you, or ask for a fee up
 front or your recovery phrase, are scams.
+:::
 
 ### Mistakes that cost people money
 
@@ -2055,12 +2090,14 @@ If you already use a hardware wallet, read [How to test your recovery phrase bac
 > The only way to know a backup works is to check it, on the hardware wallet itself and
 > never on a phone or computer. Here is how to do that safely, and what to do if it fails.
 
-**The short answer.** Most hardware wallets can check your written recovery phrase against
+:::answer
+Most hardware wallets can check your written recovery phrase against
 the one stored on the device, without wiping anything. You type the words in on the device's
 own screen and it tells you whether they match. On Ledger that is the Recovery Check app; on
 Trezor it is Check backup in Trezor Suite. It takes about ten minutes, and it is the single
 most useful thing you can do for a wallet you already own. If the check fails, your funds are
 still safe for now, but you need to move them to a new wallet with a backup you have tested.
+:::
 
 The recovery phrase is also called a seed phrase, mnemonic, or 12 or 24 words. Everything
 below applies whichever name your wallet uses.
@@ -2089,9 +2126,10 @@ the device still works turns a potential total loss into an afternoon's inconven
 
 ### The one rule: never type it into anything connected
 
-Your recovery phrase should only ever be entered on the device itself. Never type it
-into a phone, a computer, a website, a wallet app, a password manager or a notes app, and never
-photograph it.
+:::rule
+**Only ever enter your recovery phrase on the device itself.** Never type it into a phone, a
+computer, a website, a wallet app, a password manager or a notes app, and never photograph it.
+:::
 
 Any website, app or person offering to "validate", "verify" or "check" your recovery phrase is a
 scam, whatever it looks like and whoever it claims to be. A legitimate check never needs your words
@@ -2111,8 +2149,8 @@ to leave the device.
 This is the method to use if your device offers it. Nothing is wiped, and your words are entered
 on the device, never on the computer.
 
-#### Ledger: the Recovery Check app
-
+:::tabs Choose your device
+::tab Ledger | The Recovery Check app
 1. Connect your Ledger and open Ledger Wallet.
 2. Go to the section that manages apps on your device (My Ledger) and install **Recovery Check**,
    Ledger's own app.
@@ -2121,9 +2159,7 @@ on the device, never on the computer.
 5. The device tells you whether the phrase matches the one it holds.
 
 You can uninstall the app afterwards. It does not change anything stored on the device.
-
-#### Trezor: Check backup
-
+::tab Trezor | Check backup in Trezor Suite
 1. Connect your Trezor and open Trezor Suite.
 2. Open the device settings (the gear icon) and select **Check backup** in the wallet backup
    section.
@@ -2132,17 +2168,18 @@ You can uninstall the app afterwards. It does not change anything stored on the 
 
 The device is not wiped. It compares the words you enter with the backup it already holds.
 
-**On a Trezor Model One,** choose **Advanced recovery** when Suite asks how to enter your words.
+:::tip On a Trezor Model One
+Choose **Advanced recovery** when Suite asks how to enter your words.
 The Model One cannot take words on the device itself, so the standard method has you type them
 into the computer. With Advanced recovery the letters appear only on the Trezor's screen and you
 click matching positions on a scrambled grid in Suite, so your words never reach the computer.
 It is slower, but it keeps to the one rule above.
-
-#### Other hardware wallets
-
+:::
+::tab Other hardware wallets | Look for "check backup" or "dry run"
 Most others have an equivalent, often called "verify seed", "check backup" or "dry run recovery",
 in the device settings. Follow the maker's own instructions, from their official website, and
 never from a link in an email, an advert or a search result you have not checked.
+:::
 
 ### Restoring on a second device
 
@@ -2151,10 +2188,13 @@ confirm the first receiving address matches the one you wrote down. This proves 
 rebuild your wallet on a device that has never seen it, which is exactly what happens in a real
 recovery. Wipe the spare device afterwards.
 
-Two warnings. Never restore your phrase into a phone or desktop wallet app to test it, because
-that puts your words on an internet-connected device. And never wipe your only device to test the
-backup: if the backup turns out to be wrong, you will have destroyed the only working copy of
-your wallet.
+:::warn Two warnings
+**Never restore your phrase into a phone or desktop wallet app to test it.** That puts your words
+on an internet-connected device.
+
+**Never wipe your only device to test the backup.** If the backup turns out to be wrong, you will
+have destroyed the only working copy of your wallet.
+:::
 
 ### If you use a passphrase
 
@@ -2209,8 +2249,10 @@ First, do not panic. Your device still works, so your funds are safe for now. Bu
 moved, that device is the only working key to your wallet, so treat it carefully: do not reset it,
 lend it or update it until you have finished.
 
+:::warn Don't guess
 Do not try to fix the backup by guessing or rearranging words. The device cannot show you the
 correct phrase, and a wrong backup that looks fixed is worse than one you know is wrong.
+:::
 
 Instead, move your funds to a new wallet with a backup you know works:
 
@@ -2246,12 +2288,14 @@ If you think your phrase is already lost, read [I've lost my recovery phrase. Wh
 > What can still be recovered, what genuinely cannot, and how to tell which situation
 > you are in — without handing your money to someone promising a miracle.
 
-**The short answer.** If your recovery phrase is gone and you can no longer open the wallet
+:::answer
+If your recovery phrase is gone and you can no longer open the wallet
 on any device, the funds are almost certainly unrecoverable. That is not a policy anyone can
 appeal; it is how the cryptography works. Nobody — not the wallet maker, not an exchange, not
 a recovery service — holds a copy. But a great many people who believe their phrase is lost
 are actually in a different situation, and several of those situations are fixable. Work
 through the checks below before you conclude anything.
+:::
 
 The recovery phrase goes by several names: seed phrase, mnemonic, 12 or 24 words, or secret
 recovery phrase in MetaMask. They are all the same thing, and everything below applies to
@@ -2266,8 +2310,10 @@ each of them.
 
 ### Stop and do not wipe anything
 
+:::rule Stop first
 Before anything else: do not factory reset, wipe, update or sell any phone, laptop or hardware device that has ever held this wallet. Do not uninstall the app. Do not "start
 fresh" to try again.
+:::
 
 People in a panic very often destroy the one remaining copy of their keys while trying to fix
 the problem, and what counts as "the copy" depends on the kind of wallet.
@@ -2400,10 +2446,12 @@ testimonials, a professional website, even a case number. What they want is one 
 your recovery phrase or partial phrase "so we can run the recovery", or an upfront fee, often
 framed as a deposit against funds they will return.
 
+:::warn Three rules
 Three rules cover almost all of it. No legitimate party ever needs your recovery phrase, in
 whole or in part, for any reason. Anyone who contacts you first, having seen that you are in
 trouble, is not helping you. And a phrase that is genuinely lost cannot be brute-forced by
 anyone at any price — the search space is larger than the problem is solvable.
+:::
 
 The one narrow exception is the partial-phrase case described above, which is a technical
 process done offline on your own equipment, not a service you hand your phrase to.

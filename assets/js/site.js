@@ -249,3 +249,82 @@
     });
   });
 }());
+
+/* --- guide tabs ----------------------------------------------------------
+   Guides mark up lists of parallel items (scams, devices) as <details>, which
+   is a working accordion with no JavaScript. On wide screens this adds a row
+   of tab buttons and shows one item at a time; on phones it stays an
+   accordion. Every word stays in the HTML either way. */
+(function () {
+  'use strict';
+  var groups = document.querySelectorAll('[data-tabs]');
+  if (!groups.length) return;
+  var wide = window.matchMedia('(min-width: 900px)');
+
+  function setup(root, gi) {
+    var items = [].slice.call(root.querySelectorAll(':scope > .tabs__item'));
+    var list = document.createElement('div');
+    list.className = 'tabs__list';
+    list.setAttribute('role', 'tablist');
+    list.setAttribute('aria-label', root.getAttribute('aria-label') || 'Options');
+    var tabs = items.map(function (item, i) {
+      var sum = item.querySelector('.tabs__sum');
+      var title = item.querySelector('.tabs__h').textContent;
+      var id = 'tg' + gi + '-' + i;
+      item.querySelector('.tabs__body').id = id + '-panel';
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tabs__tab';
+      b.id = id + '-tab';
+      b.setAttribute('role', 'tab');
+      b.setAttribute('aria-controls', id + '-panel');
+      b.innerHTML = '<span class="tabs__num">' + sum.querySelector('.tabs__num').textContent +
+                    '</span>';
+      b.appendChild(document.createTextNode(title));
+      list.appendChild(b);
+      return b;
+    });
+    root.insertBefore(list, root.firstChild);
+
+    function select(n, focus) {
+      items.forEach(function (item, i) {
+        var on = i === n;
+        item.classList.toggle('is-active', on);
+        if (on) item.open = true;
+        tabs[i].setAttribute('aria-selected', on ? 'true' : 'false');
+        tabs[i].tabIndex = on ? 0 : -1;
+      });
+      if (focus) tabs[n].focus();
+    }
+    tabs.forEach(function (b, i) {
+      b.addEventListener('click', function () { select(i); });
+      b.addEventListener('keydown', function (e) {
+        var n = null;
+        if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === 'Home') n = 0;
+        if (e.key === 'End') n = tabs.length - 1;
+        if (n !== null) { e.preventDefault(); select(n, true); }
+      });
+    });
+
+    function apply() {
+      var on = wide.matches;
+      root.classList.toggle('is-tabbed', on);
+      items.forEach(function (item) {
+        var body = item.querySelector('.tabs__body');
+        if (on) { body.setAttribute('role', 'tabpanel'); }
+        else { body.removeAttribute('role'); }
+      });
+      if (on) {
+        var cur = items.findIndex(function (it) { return it.classList.contains('is-active'); });
+        select(cur < 0 ? 0 : cur);
+      }
+    }
+    apply();
+    if (wide.addEventListener) wide.addEventListener('change', apply);
+    else if (wide.addListener) wide.addListener(apply);
+  }
+
+  [].forEach.call(groups, setup);
+})();
