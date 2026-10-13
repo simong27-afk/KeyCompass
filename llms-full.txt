@@ -989,8 +989,21 @@ practitioner's side only, so everything sensitive stays on your side of the call
 
 ## KeyCompass terms and conditions
 
-> The terms on which KeyCompass provides onboarding sessions and security reviews. Read
-> these before you book.
+> The terms on which KeyCompass provides drop-in hours, onboarding sessions and security
+> reviews. Read these before you book.
+
+:::rule The short version
+- KeyCompass never holds, sees or asks for your recovery phrase, private keys, passwords or
+  crypto. You keep sole control, and you make and carry out every decision yourself.
+- Nothing we provide is financial, investment, legal or tax advice.
+- **If something goes wrong, our total liability to you is limited to the fees you paid us
+  for that engagement.** This does not apply to the few things the law does not allow us to
+  limit, set out in "Our responsibility to you".
+- Consumers can cancel within 14 days. If you ask us to start sooner, you pay for what has
+  already been provided.
+
+This summary does not replace the full terms below.
+:::
 
 - Who we are
 - These terms
@@ -1012,11 +1025,8 @@ practitioner's side only, so everything sensitive stays on your side of the call
 
 ### Who we are
 
-**This document is a working draft and is not in force.** It is published here for review
-only and does not govern any engagement until it has been reviewed and this notice removed.
-
 KeyCompass is a one-person advisory practice operated by Simon Geils, providing self-custody
-onboarding sessions and security reviews from the United Kingdom, remotely.
+education, onboarding sessions and security reviews from the United Kingdom, remotely.
 
 KeyCompass is a trading name of Simon Geils, a sole trader established in the United Kingdom.
 
@@ -1035,8 +1045,9 @@ booking a session or a review.
 
 ### These terms
 
-These terms apply to every engagement between you and KeyCompass. By accepting a written
-scope and quotation from us and booking a time, you agree to them.
+These terms apply to every engagement between you and KeyCompass. You agree to them when you
+book and pay for a drop-in hour, or when you accept a written scope and quotation from us
+and book a time.
 
 Where you are a consumer — an individual booking for purposes outside your trade, business,
 craft or profession — you have statutory rights that these terms do not affect. Nothing here
@@ -1047,7 +1058,10 @@ published when you booked. The current version and its date are at the foot of t
 
 ### What we do
 
-We offer two services.
+We offer three services.
+
+**Drop-in hour.** Sixty minutes, live and one-to-one, to answer a short list of questions
+about self-custody. It does not include a written report.
 
 **Private onboarding session.** Ninety minutes to a day, live and one-to-one. Choosing and
 checking a hardware wallet, setting it up from scratch, generating and backing up a recovery
@@ -1059,11 +1073,13 @@ failure channels: phishing, device, backup loss, and succession. Nothing is chan
 review. You receive a written, prioritised list of what to fix worst-first, plain-English
 reasoning for each item, and an explicit list of what is already sound.
 
-Both begin with a free thirty-minute intake call, at no charge and no obligation. If you do
-not need the service yet, we will tell you so.
+Onboarding sessions and reviews begin with a free thirty-minute intake call, at no charge and
+no obligation. If you do not need the service yet, we will tell you so.
 
-After a session or review you receive a written summary within 48 hours covering what was
+After an onboarding session you receive a written summary within 48 hours covering what was
 done and what remains outstanding, and one follow-up thread by email for the first month.
+After a review you receive your written report, usually within a few days, and a follow-up
+check once you have made the changes.
 
 Sessions run over video call and are not recorded. Screen sharing runs on our side only.
 
@@ -1094,7 +1110,10 @@ and your funds.
 
 ### How an engagement is agreed
 
-1. You complete a short intake form and book the free thirty-minute call.
+For a drop-in hour, you book and pay online, and the engagement is agreed when payment is
+taken. For onboarding sessions and reviews:
+
+1. You book the free thirty-minute intake call.
 2. On that call we establish which service fits and what it will involve.
 3. We send you a written scope and quotation.
 4. You accept it in writing and book a time. At that point these terms apply and the
@@ -1135,8 +1154,9 @@ included.
 KeyCompass is not currently registered for VAT, so no VAT is charged on our fees. The price
 you are quoted is the price you pay.
 
-Payment is due in full before the session. When you accept the scope and quotation we send an
-invoice with bank transfer details, and your time is confirmed once payment has been received.
+Payment is due in full before the session. A drop-in hour is paid by card when you book. For
+onboarding sessions and reviews, when you accept the scope and quotation we send an invoice
+with bank transfer details, and your time is confirmed once payment has been received.
 
 Where you are a business client and payment is late, we may charge interest and recovery costs
 under the Late Payment of Commercial Debts (Interest) Act 1998. This does not apply to
@@ -1149,8 +1169,10 @@ distance, you may cancel within 14 days of the engagement being agreed, without 
 reason, and receive a refund.
 
 Sessions are often booked and delivered inside that 14-day window. If you want the work to
-start before the 14 days are up, you must ask us to begin — booking a time inside the window
-is that request. Two things follow, and by booking you acknowledge both:
+start before the 14 days are up, you must ask us to begin. We will ask you to confirm this
+in writing when you book (for a drop-in hour, by ticking a box on the booking form; for other
+services, when you accept the quotation). Two things follow, and when you confirm you
+acknowledge both:
 
 - once the service has been fully performed, your right to cancel is gone; and
 - if you cancel part-way through, you pay a proportionate amount for what has already been
@@ -1191,7 +1213,7 @@ side of the call is transmitted.
 ### Your personal information
 
 We handle your personal information as a data controller, as described in our
-[privacy notice](https://keycompass.co.uk/privacy.md). We never ask for, receive or store your
+[privacy notice](https://keycompass.co.uk/privacy). We never ask for, receive or store your
 recovery phrase, your private keys or your wallet passwords.
 
 ### Our responsibility to you
@@ -1207,6 +1229,8 @@ lawfully be limited or excluded.
 Subject to that, and because you keep sole control of your keys and funds at all times, we are
 not responsible for:
 
+- any decision to buy, sell, hold or move a cryptoasset;
+
 - losses arising from actions you take, or do not take, after our work is complete;
 - the loss, theft or inaccessibility of cryptoassets, including through a lost or destroyed
   backup, a forgotten passphrase, or an error made outside a session;
@@ -1218,18 +1242,27 @@ not responsible for:
   obtained; or
 - the acts of any person impersonating KeyCompass.
 
-**If you are a business client**, we are not liable for loss of profit, loss of business, loss
-of opportunity or loss of goodwill, or for any indirect or consequential loss, and our total
-liability in connection with an engagement is limited to the fees you paid for it.
+Our sessions and reviews reduce risk. They cannot remove it, and we do not guarantee that
+following our explanations or recommendations will prevent every loss.
+
+**Our total liability is limited to the fees you paid.** Our total liability to you for all
+claims arising out of or in connection with an engagement, whether in contract, negligence,
+breach of statutory duty or otherwise, is limited to the fees you paid us for that engagement.
+This limit does not apply to the liabilities in the second paragraph of this section.
 
 **If you are a consumer**, we are responsible for loss that is a foreseeable result of our
-breaking these terms or failing to use reasonable care and skill. We are not responsible for
-loss that is not foreseeable.
+breaking these terms or failing to use reasonable care and skill, up to that limit. We are not
+responsible for loss that is not foreseeable. If our service falls short, you are always
+entitled to at least a repeat performance or a refund of the price you paid.
+
+**If you are a business client**, we are also not liable for loss of profit, loss of business,
+loss of opportunity or loss of goodwill, or for any indirect or consequential loss.
 
 ### Impersonation and verification
 
 KeyCompass never makes contact first. No cold call, no unexpected email, no message on
-Telegram, WhatsApp or LinkedIn. Every conversation starts with you booking it.
+Telegram, WhatsApp or LinkedIn. We post publicly on LinkedIn, but we never message anyone
+first. Every conversation starts with you getting in touch.
 
 Only two email addresses are ours: hello@keycompass.co.uk and simon@keycompass.co.uk. Read the
 address character by character; lookalike domains are cheap.
@@ -1287,7 +1320,7 @@ place where you live.
 
 ---
 
-Version 1.0, published 14 September 2026.
+Version 1.1, published 13 October 2026.
 
 
 ---

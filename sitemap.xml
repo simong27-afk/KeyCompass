@@ -51,6 +51,11 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://keycompass.co.uk/terms</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://keycompass.co.uk/guides/bip39-passphrase</loc>
     <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>

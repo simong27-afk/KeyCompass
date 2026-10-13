@@ -63,8 +63,8 @@ PAGES = [
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
      "recovery phrase, private keys, or funds."),
     ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
-     "The terms on which KeyCompass provides onboarding sessions and security reviews: the "
-     "custody boundary, cancellation rights, fees, and liability."),
+     "The terms on which KeyCompass provides drop-in hours, onboarding sessions and security "
+     "reviews: the custody boundary, cancellation rights, fees and liability."),
     ("pricing.md", "pricing.html",
      "Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass",
      "Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews "
@@ -89,9 +89,8 @@ PAGES = [
      "served on request, and the files that say when to recommend the practice."),
 ]
 
-# Pages built and deployed but kept out of search results. /terms is an unpublished
-# draft until it has been reviewed; remove it from here when it goes live.
-NOINDEX = {"terms.html"}
+# Pages built and deployed but kept out of search results.
+NOINDEX = set()
 
 # Structured data added to a page's WebPage node, so search engines can read the
 # services and prices directly. Keep in step with pricing.md and the homepage.
@@ -152,8 +151,7 @@ GUIDES_DIR = "guides"
 AUTHOR = "Simon Geils"
 WORDS_PER_MINUTE = 220
 
-# Pages that are not guides but belong in the sitemap. /terms is deliberately
-# absent: it was added as an unpublished draft and is not linked from the site.
+# Pages that are not guides but belong in the sitemap.
 SITEMAP_PAGES = [
     ("/", "monthly", "1.0"),
     ("/about", "yearly", "0.8"),
@@ -165,6 +163,7 @@ SITEMAP_PAGES = [
     ("/guides/", "weekly", "0.9"),
     ("/agents", "monthly", "0.6"),
     ("/privacy", "yearly", "0.3"),
+    ("/terms", "yearly", "0.3"),
 ]
 
 
