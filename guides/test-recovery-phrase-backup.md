@@ -54,7 +54,7 @@ computer, a website, a wallet app, a password manager or a notes app, and never 
 
 Any website, app or person offering to "validate", "verify" or "check" your recovery phrase is a
 scam, whatever it looks like and whoever it claims to be. A legitimate check never needs your words
-to leave the device.
+to leave the device. See [how to spot the most common crypto scams](https://keycompass.co.uk/guides/crypto-scams-uk).
 
 ## Before you start
 

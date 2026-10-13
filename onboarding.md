@@ -56,7 +56,7 @@ On the day, typically:
 7. **Choose the right network** on the exchange, and send a small test amount.
 8. **Confirm it has arrived,** then move the rest, coin by coin and network by network.
 9. **Go through what to watch for from now on:** fake support, fake apps, address poisoning and
-   the other scams that target new self-custody users.
+   the [other scams that target new self-custody users](https://keycompass.co.uk/guides/crypto-scams-uk).
 
 A single wallet with a single backup usually fits in ninety minutes. More exchanges, more coins
 or more devices take longer, and that is agreed up front.

@@ -195,6 +195,9 @@ front or your recovery phrase, are scams.
   trezor.io.
 - **Rushing.** Scammers and mistakes both thrive on urgency. If something feels wrong, stop.
 
+Address poisoning, fake apps and fake support are three of the scams covered in
+[Crypto scams in the UK: how to spot them and what to do](https://keycompass.co.uk/guides/crypto-scams-uk).
+
 ## Getting help
 
 If you would rather not do your first transfer alone, a KeyCompass onboarding session covers

@@ -38,7 +38,7 @@ Most self-custody losses come through one of four routes, and a review checks ea
 
 - **Phishing and scams.** How exposed you are to fake support, fake apps and lookalike sites,
   which email and phone accounts an attacker could use against you, and whether you would
-  recognise the scams aimed at people like you.
+  recognise the [scams aimed at people like you](https://keycompass.co.uk/guides/crypto-scams-uk).
 - **Your devices.** Whether your device is genuine and up to date, how it is protected and
   where it is kept, and the state of the computer and phone you use with it.
 - **Backup loss.** Where your recovery phrase is stored, what it is written on, how many copies

@@ -181,7 +181,7 @@ For more on materials and locations, see
 - **Typing your real seed phrase or passphrase into a website,** including well-known BIP39 tools
   and "generators". Even a trusted page is still a connected computer.
 - **Falling for "seed phrase with balance" offers.** Lists and tools claiming to give you seed
-  phrases for funded wallets are scams.
+  phrases for funded wallets are scams. See [how to spot crypto scams](https://keycompass.co.uk/guides/crypto-scams-uk).
 - **Keeping the passphrase with the seed phrase,** which defeats the point.
 - **Forgetting which wallet holds the funds.** Note, somewhere safe, that a passphrase wallet exists.
 - **Adding a passphrase in a hurry,** for example after a scary headline. A rushed change with an

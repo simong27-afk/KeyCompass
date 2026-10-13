@@ -164,6 +164,10 @@ other than your device. If anything asks for them, stop.
 - **"Recovery services".** Anyone offering to recover lost crypto in exchange for a fee up front,
   or for your seed phrase, is a scam.
 
+For the other scams aimed at crypto holders, including address poisoning, wallet drainers and
+SIM swaps, and what to do if you are targeted, see
+[Crypto scams in the UK: how to spot them and what to do](https://keycompass.co.uk/guides/crypto-scams-uk).
+
 ## Common questions
 
 **Can someone guess my seed phrase?** No. The number of possible phrases is so large that guessing

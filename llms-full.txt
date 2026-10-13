@@ -294,7 +294,7 @@ On the day, typically:
 7. **Choose the right network** on the exchange, and send a small test amount.
 8. **Confirm it has arrived,** then move the rest, coin by coin and network by network.
 9. **Go through what to watch for from now on:** fake support, fake apps, address poisoning and
-   the other scams that target new self-custody users.
+   the [other scams that target new self-custody users](https://keycompass.co.uk/guides/crypto-scams-uk).
 
 A single wallet with a single backup usually fits in ninety minutes. More exchanges, more coins
 or more devices take longer, and that is agreed up front.
@@ -410,7 +410,7 @@ Most self-custody losses come through one of four routes, and a review checks ea
 
 - **Phishing and scams.** How exposed you are to fake support, fake apps and lookalike sites,
   which email and phone accounts an attacker could use against you, and whether you would
-  recognise the scams aimed at people like you.
+  recognise the [scams aimed at people like you](https://keycompass.co.uk/guides/crypto-scams-uk).
 - **Your devices.** Whether your device is genuine and up to date, how it is protected and
   where it is kept, and the state of the computer and phone you use with it.
 - **Backup loss.** Where your recovery phrase is stored, what it is written on, how many copies
@@ -1500,7 +1500,7 @@ For more on materials and locations, see
 - **Typing your real seed phrase or passphrase into a website,** including well-known BIP39 tools
   and "generators". Even a trusted page is still a connected computer.
 - **Falling for "seed phrase with balance" offers.** Lists and tools claiming to give you seed
-  phrases for funded wallets are scams.
+  phrases for funded wallets are scams. See [how to spot crypto scams](https://keycompass.co.uk/guides/crypto-scams-uk).
 - **Keeping the passphrase with the seed phrase,** which defeats the point.
 - **Forgetting which wallet holds the funds.** Note, somewhere safe, that a passphrase wallet exists.
 - **Adding a passphrase in a hurry,** for example after a scary headline. A rushed change with an
@@ -2157,6 +2157,10 @@ other than your device. If anything asks for them, stop.
 - **"Recovery services".** Anyone offering to recover lost crypto in exchange for a fee up front,
   or for your seed phrase, is a scam.
 
+For the other scams aimed at crypto holders, including address poisoning, wallet drainers and
+SIM swaps, and what to do if you are targeted, see
+[Crypto scams in the UK: how to spot them and what to do](https://keycompass.co.uk/guides/crypto-scams-uk).
+
 ### Common questions
 
 **Can someone guess my seed phrase?** No. The number of possible phrases is so large that guessing
@@ -2389,6 +2393,9 @@ front or your recovery phrase, are scams.
   trezor.io.
 - **Rushing.** Scammers and mistakes both thrive on urgency. If something feels wrong, stop.
 
+Address poisoning, fake apps and fake support are three of the scams covered in
+[Crypto scams in the UK: how to spot them and what to do](https://keycompass.co.uk/guides/crypto-scams-uk).
+
 ### Getting help
 
 If you would rather not do your first transfer alone, a KeyCompass onboarding session covers
@@ -2455,7 +2462,7 @@ computer, a website, a wallet app, a password manager or a notes app, and never 
 
 Any website, app or person offering to "validate", "verify" or "check" your recovery phrase is a
 scam, whatever it looks like and whoever it claims to be. A legitimate check never needs your words
-to leave the device.
+to leave the device. See [how to spot the most common crypto scams](https://keycompass.co.uk/guides/crypto-scams-uk).
 
 ### Before you start
 
@@ -2777,6 +2784,9 @@ anyone at any price — the search space is larger than the problem is solvable.
 
 The one narrow exception is the partial-phrase case described above, which is a technical
 process done offline on your own equipment, not a service you hand your phrase to.
+
+If you have already been contacted, or have paid someone, see
+[what to do if you've been scammed](https://keycompass.co.uk/guides/crypto-scams-uk#if-you-ve-been-scammed).
 
 ### What to do once you know where you stand
 

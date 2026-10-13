@@ -179,6 +179,9 @@ anyone at any price — the search space is larger than the problem is solvable.
 The one narrow exception is the partial-phrase case described above, which is a technical
 process done offline on your own equipment, not a service you hand your phrase to.
 
+If you have already been contacted, or have paid someone, see
+[what to do if you've been scammed](https://keycompass.co.uk/guides/crypto-scams-uk#if-you-ve-been-scammed).
+
 ## What to do once you know where you stand
 
 If you have recovered access, treat it as a warning rather than a near miss. Write the phrase
