@@ -108,6 +108,8 @@ later your executors or attorneys, do every step on your own devices.
   probate or power of attorney, and their ID, have been checked.
 - **The pack doesn't depend on KeyCompass.** It names "KeyCompass or another independent
   specialist", and it is written so that any competent person could follow it.
+- **Insured.** KeyCompass holds professional indemnity and public liability insurance, covering
+  estate, executor and attorney work for clients in the UK and abroad.
 
 ## UK points to get right
 

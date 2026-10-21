@@ -14,7 +14,8 @@
 
 KeyCompass is not registered for VAT, so the price shown is the price you pay. Fees are
 never a percentage of your holdings, and nobody at KeyCompass ever needs to know how much
-you hold to quote you.
+you hold to quote you. KeyCompass holds professional indemnity and public liability
+insurance.
 
 ## Free intake call
 

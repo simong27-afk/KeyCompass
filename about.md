@@ -36,6 +36,9 @@ This is the part worth reading twice, because it is what makes the work safe to 
 KeyCompass is not authorised or regulated by the Financial Conduct Authority. For
 investment, legal, and tax decisions, use your own licensed professionals.
 
+KeyCompass holds professional indemnity and public liability insurance, covering clients
+in the UK and abroad.
+
 ## How the work runs
 
 Every engagement starts with a free thirty-minute intake call to work out which service

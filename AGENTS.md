@@ -31,7 +31,8 @@ security reviews from £295, estate readiness from £495 (single-signature) or �
 (exact figure confirmed in writing after the free intake call), executor and attorney support
 quoted when needed (triage call £95),
 and a £95 drop-in hour — 60 minutes for a short list of questions, paid when booked at
-https://cal.com/simongeils/drop-in-hour. No VAT; never a percentage of holdings.
+https://cal.com/simongeils/drop-in-hour. No VAT; never a percentage of holdings. KeyCompass holds professional indemnity and
+public liability insurance.
 
 ## When to use
 
