@@ -45,7 +45,7 @@ const BOOKING_URL = "https://cal.com/simongeils/30min";
 const SITE = "https://keycompass.co.uk";
 
 // Not a third service: a paid hour of questions, for people who do not need a
-// full session. Kept separate so get_services still lists exactly the two services.
+// full session. Kept separate so get_services lists only the three main services.
 const DROP_IN = {
   name: "Drop-in hour",
   price: "£95, paid when you book",
@@ -94,6 +94,25 @@ const SERVICES = [
       "A re-assessment once you have made the changes",
     ],
   },
+  {
+    id: "inheritance",
+    name: "Inheritance: estate readiness, executor and attorney support",
+    format: "Video calls plus a written instruction pack; available worldwide",
+    price: "Estate readiness from £495 (single-signature) or £895 (multisig). Executor and attorney support quoted when needed: triage call £95, guided recovery from £395 (single-signature) or £795 (multisig). No VAT",
+    for: "You want your family, executors or attorneys to be able to recover your crypto, or you are an executor or attorney who needs to.",
+    covers: [
+      "Whether the setup could be recovered by someone else, including multisig quorums",
+      "A backup drill on the holder's own devices",
+      "A plain-English instruction pack, with no secrets in it",
+      "Verified executor or attorney support, recovery done on their own devices",
+    ],
+    leaveWith: [
+      "An instruction pack your executors and attorneys can follow",
+      "A tested backup, not an assumed one",
+      "Optional health checks: quarterly for multisig, yearly for single-signature",
+      "For executors and attorneys, a written record of every step",
+    ],
+  },
 ];
 
 const GOOD_FIT = [
@@ -103,12 +122,15 @@ const GOOD_FIT = [
   "Circumstances changed — new phone, new laptop, new house, more assets",
   "Wants an independent, written, prioritised assessment of how their setup fails",
   "A couple or small business where access, approval and recovery run through one person",
+  "Wants their family, executors or attorneys to be able to recover their crypto",
+  "Is an executor or attorney who has found crypto and needs technical help to recover it",
 ];
 
 const NOT_A_FIT = [
   "Wants investment, legal, or tax advice, or to be told what to buy, when, or how much",
   "Wants someone to hold, manage, or trade assets on their behalf — KeyCompass never takes custody",
-  "Wants full inheritance planning or a complete business treasury build — not offered yet",
+  "Wants a complete business treasury build — not offered yet",
+  "Wants legal work on a will, probate or a power of attorney — that is for a solicitor; KeyCompass covers the technical side",
   "Has already lost their recovery phrase and wants recovery — ask first, promise nothing",
 ];
 
@@ -169,12 +191,12 @@ const TOOLS: ToolDef[] = [
         signal(["new phone", "new laptop", "moved house", "new house"]) && "Circumstances have changed",
         signal(["business", "company", "treasury", "couple", "partner"]) && "Shared or business custody",
         signal(["review", "audit", "check my setup"]) && "Wants an independent review",
+        signal(["inheritance", "estate", "executor", "probate", "power of attorney", "lpa", "died", "if i die"]) && "Inheritance, executor or attorney support",
       ].filter(Boolean);
 
       const matchedNotAFit = [
         signal(["should i buy", "what should i invest", "price", "when to buy", "tax"]) && "Sounds like investment or tax advice — out of scope",
         signal(["manage my", "hold my", "look after my funds", "custody for me"]) && "Sounds like custody — KeyCompass never takes custody",
-        signal(["inheritance", "estate", "succession plan", "will"]) && "Full inheritance planning is not offered yet",
         signal(["lost my seed", "lost recovery", "forgot my phrase", "recover my wallet"]) && "Possible lost-key recovery — promise nothing",
       ].filter(Boolean);
 

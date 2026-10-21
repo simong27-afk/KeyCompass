@@ -63,8 +63,8 @@ PAGES = [
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
      "recovery phrase, private keys, or funds."),
     ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
-     "The terms on which KeyCompass provides drop-in hours, onboarding sessions and security "
-     "reviews: the custody boundary, cancellation rights, fees and liability."),
+     "Terms for KeyCompass drop-in hours, onboarding, security reviews and estate, executor "
+     "and attorney support: custody boundary, cancellation, fees and liability."),
     ("pricing.md", "pricing.html",
      "Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass",
      "Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews "
@@ -78,9 +78,9 @@ PAGES = [
      "An independent review of how you hold your crypto: backups, devices, phishing and "
      "succession, without seeing your seed phrase. From £295, written report."),
     ("inheritance.md", "inheritance.html",
-     "Crypto inheritance and family access planning, UK — KeyCompass",
-     "How to make sure your family could find and use your crypto if something happened to "
-     "you, without exposing it now. UK points, common approaches."),
+     "Crypto inheritance planning and executor support, UK — KeyCompass",
+     "Make sure your family, executors or attorneys could recover your crypto. Estate "
+     "readiness from £495, plus executor and attorney support. No custody, ever."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
     # agents.md IS AGENTS.md, and the alias step below would silently overwrite it.
     ("connect.md", "agents.html",

@@ -98,8 +98,12 @@ knowledge and no question is too basic.
 **Where are you?** UK-based, working remotely with clients anywhere, scheduled in your
 timezone where the hours allow.
 
-**Inheritance planning or a business treasury?** Not yet. A security review can tell you
-where your succession plan stands today.
+**Can you help with inheritance or powers of attorney?** Yes. Estate readiness makes sure
+your family could recover your crypto, and executor and attorney support guides them when the
+time comes. See [crypto inheritance planning](https://keycompass.co.uk/inheritance).
+
+**A business treasury?** Not yet. A security review can tell you where a business setup stands
+today.
 
 ## Book
 

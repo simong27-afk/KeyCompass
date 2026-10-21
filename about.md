@@ -48,10 +48,10 @@ stopped if you start to. Everything sensitive stays on your side of the call.
 
 ## What is not offered
 
-Inheritance planning and full business treasury setup are not offered yet. A security
-review can tell you today where your succession plan stands, but the complete service is
-still in development, and saying so plainly is better than taking the booking. What a review
-covers today is set out on [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
+Full business treasury setup is not offered yet. A security review can tell you today where
+a business setup stands, but the complete service is still in development, and saying so
+plainly is better than taking the booking. Inheritance planning, executor support and power of
+attorney support are offered: see [crypto inheritance planning](https://keycompass.co.uk/inheritance).
 
 ## Related pages
 

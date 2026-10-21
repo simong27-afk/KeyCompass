@@ -171,8 +171,8 @@ def live_checks(base):
           bool(res.get("content")) and res["content"][0].get("type") == "text")
     check("tools/call returns structuredContent",
           isinstance(res.get("structuredContent"), dict))
-    check("get_services returns both services",
-          len(res.get("structuredContent", {}).get("services", [])) == 2)
+    check("get_services returns all three services",
+          len(res.get("structuredContent", {}).get("services", [])) == 3)
 
     # verify_contact is the tool that matters; test the dangerous paths.
     _, _, body = rpc(endpoint, {

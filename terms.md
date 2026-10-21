@@ -1,7 +1,7 @@
 # KeyCompass terms and conditions
 
-> The terms on which KeyCompass provides drop-in hours, onboarding sessions and security
-> reviews. Read these before you book.
+> The terms on which KeyCompass provides drop-in hours, onboarding sessions, security reviews,
+> and estate, executor and attorney support. Read these before you book.
 
 :::rule The short version
 - KeyCompass never holds, sees or asks for your recovery phrase, private keys, passwords or
@@ -21,6 +21,7 @@ This summary does not replace the full terms below.
 - What we do
 - The boundary — what KeyCompass is not
 - How an engagement is agreed
+- Estate, attorney and executor work
 - What we need from you
 - Fees and payment
 - Cancelling, rescheduling and refunds
@@ -69,7 +70,7 @@ published when you booked. The current version and its date are at the foot of t
 
 ## What we do
 
-We offer three services.
+We offer four services.
 
 **Drop-in hour.** Sixty minutes, live and one-to-one, to answer a short list of questions
 about self-custody. It does not include a written report.
@@ -84,7 +85,11 @@ failure channels: phishing, device, backup loss, and succession. Nothing is chan
 review. You receive a written, prioritised list of what to fix worst-first, plain-English
 reasoning for each item, and an explicit list of what is already sound.
 
-Onboarding sessions and reviews begin with a free thirty-minute intake call, at no charge and
+**Estate readiness, and executor and attorney support.** Helping you prepare your crypto so
+the right people could recover it if you die or lose capacity, and technical guidance for your
+executors or attorneys when that time comes. See "Estate, attorney and executor work" below.
+
+Onboarding sessions, reviews and estate readiness begin with a free thirty-minute intake call, at no charge and
 no obligation. If you do not need the service yet, we will tell you so.
 
 After an onboarding session you receive a written summary within 48 hours covering what was
@@ -130,13 +135,59 @@ taken. For onboarding sessions and reviews:
 4. You accept it in writing and book a time. At that point these terms apply and the
    engagement is agreed.
 
-Starting prices are published at https://keycompass.co.uk/pricing. Both services are
+Starting prices are published at https://keycompass.co.uk/pricing. Each service is
 scoped to the setup in front of us: a single wallet with a single backup is the starting
 price; multiple devices, multisig, or a business setup costs more. You will always have the
 exact price in writing before you commit to anything.
 
 We may decline an engagement, or stop one, where we judge we cannot carry it out safely,
 competently or lawfully. If we do that before the work starts, you pay nothing.
+
+## Estate, attorney and executor work
+
+This section applies to estate readiness, health checks, attorney support and executor
+support. The rest of these terms apply as well.
+
+**Estate readiness is for you, now.** We review whether your setup could be recovered by
+someone else, watch you run a backup check on your own devices, and help you prepare a written
+instruction pack for the people who may one day need it. The pack never contains a recovery
+phrase, private key, passphrase or password. You keep it and decide who holds copies. We keep a
+record that the work was done, but no copy of where your backups are kept.
+
+**Health checks are optional.** For multisig setups we offer a check every quarter, and for
+single-signature setups every year. Each check is booked and paid for separately, and you can
+stop at any time.
+
+**Executor and attorney support is a separate engagement, agreed when it is needed.** Naming
+KeyCompass in an instruction pack, will or letter of wishes is not a booking and does not fix a
+price. When your executors or attorneys contact us, we will quote them in writing under the
+terms and prices in force at that time. We may not be available or trading by then, which is
+why the instruction pack is written so that another competent specialist could follow it.
+
+**We verify authority before we help.** We work with an executor or administrator only after
+seeing the grant of probate, letters of administration or the local equivalent, proof of
+identity, and where possible confirmation from the solicitor handling the estate. We work with
+an attorney only after checking the power of attorney through the Office of the Public
+Guardian's View an LPA service, or seeing the registered document for other countries, with
+proof of identity. If we cannot verify someone's authority, we will not help them.
+
+**Executors and attorneys act; we guide.** They access and move funds on their own devices,
+within the limits of their authority. We do not act as executor, administrator, trustee or
+attorney, never receive or hold funds, and do not advise on whether to sell, keep or distribute
+assets. Where we provide a written record of what was found, including addresses and balances
+at a given date, it is a factual record for the estate's or attorney's own advisers. It is not
+a valuation for tax purposes, and it is not tax advice.
+
+**Who the client is.** For executor support, the client is the estate, acting through its
+personal representatives. For attorney support, the client is the person who granted the
+power, acting through their attorney. The limit in "Our responsibility to you" applies to the
+fees paid for that engagement.
+
+**Clients outside the UK.** We work with clients, executors and attorneys in other countries by
+video. Wills, probate, inheritance tax and powers of attorney differ from country to country:
+your own local lawyer advises on those, and we cover only the technical side. We may decline
+work connected with a particular country, for example where our insurance does not extend to
+it. These terms remain governed by the law set out in "Law and jurisdiction".
 
 ## What we need from you
 
@@ -331,4 +382,4 @@ place where you live.
 
 ---
 
-Version 1.1, published 13 October 2026.
+Version 1.2, published 21 October 2026.

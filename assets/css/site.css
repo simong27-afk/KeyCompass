@@ -365,6 +365,7 @@ body{
   content:"";position:absolute;left:0;top:.55em;
   width:8px;height:8px;border:var(--rule) solid var(--accent);
 }
+.dropin + .dropin{margin-top:1rem}
 /* The drop-in hour: a smaller, quicker way in than the two services, so it sits
    under them as a slim strip rather than as a third equal card. */
 .dropin{

@@ -300,3 +300,6 @@ ol.prose__list li::before{left:-1.05rem;top:-.05rem;width:2.1rem;height:2.1rem;d
 /* rule box: bold text as a red highlight (overrides the list-lead ink colour) */
 .callout--rule strong,
 .callout--rule .prose__list li > strong:first-child{color:var(--white);background:var(--accent-press);padding:.08em .32em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* space between a tab box and the prose that follows it */
+.prose .tabs + *{margin-top:1.5rem}

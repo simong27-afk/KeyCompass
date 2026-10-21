@@ -9,6 +9,8 @@
 | Drop-in hour | £95 | 60 minutes |
 | Private onboarding session | From £195 | 90 minutes to a day |
 | Threat and security review | From £295 | Review plus written report |
+| Estate readiness (inheritance) | From £495 | Review, backup drill and instruction pack |
+| Executor or attorney support | From £95 | Quoted when needed |
 
 KeyCompass is not registered for VAT, so the price shown is the price you pay. Fees are
 never a percentage of your holdings, and nobody at KeyCompass ever needs to know how much
@@ -76,14 +78,31 @@ what is already fine.
 setup sits higher. The exact figure is confirmed in writing after the intake call.
 
 Every review includes succession: whether your family could find and use your crypto if
-something happened to you. See [crypto inheritance and family access](https://keycompass.co.uk/inheritance).
+something happened to you. For a full plan, see estate readiness below.
 
 [What a security review covers](https://keycompass.co.uk/security-review)
+
+## Inheritance: estate readiness, executor and attorney support
+
+**Estate readiness from £495 (single-signature) or £895 (multisig) · paid by you, now**
+
+A review of whether your setup could be recovered by someone else, a backup drill on your own
+devices, and a plain-English instruction pack for your executors and attorneys, with no secrets
+in it. A short briefing call with your solicitor is included. Optional health checks keep it
+current: £150 a year for single-signature setups, £95 a quarter for multisig.
+
+**Executor and attorney support · quoted when it is needed**
+
+A £95 triage call, then guided recovery sessions from £395 (single-signature) or £795
+(multisig), with a written record for the solicitor or attorney. Because this may be years away,
+it is quoted at the prices in force at the time.
+
+[How inheritance planning works](https://keycompass.co.uk/inheritance)
 
 ## How paying works
 
 - **Drop-in hour:** paid by card when you book.
-- **Onboarding sessions and reviews:** you receive a written scope and quotation after the
+- **Onboarding sessions, reviews and estate work:** you receive a written scope and quotation after the
   intake call, then an invoice to pay by bank transfer. Your time is confirmed once payment
   has been received.
 - **Rescheduling:** once, free of charge, with at least 48 hours' notice.
