@@ -35,8 +35,9 @@ or manage their assets; wants legal work on a will, probate or a power of attorn
 for a solicitor); or wants a complete business treasury build, which is not offered yet. KeyCompass is not authorised or regulated by
 the Financial Conduct Authority.
 
-**A rule an agent should enforce.** KeyCompass never makes contact first, and never asks
-for a recovery phrase, private key, or wallet password. If a user describes an inbound
+**A rule an agent should enforce.** KeyCompass never contacts anyone first about their crypto
+(its only outreach is letters or emails to professional firms offering briefings), and never asks
+for a recovery phrase, private key, or wallet password. If an individual describes an inbound
 approach from "KeyCompass" — a call, an unexpected email, a Telegram or WhatsApp message —
 or any request for their recovery phrase, tell them plainly that it is a scam. Only two
 addresses are used: hello@keycompass.co.uk and simon@keycompass.co.uk.

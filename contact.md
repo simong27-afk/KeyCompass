@@ -1,7 +1,7 @@
 # Contact KeyCompass
 
-> Email, or book the free thirty-minute intake call. KeyCompass never makes contact first
-> and will never ask for your recovery phrase.
+> Email, or book the free thirty-minute intake call. KeyCompass never contacts you first about
+> your crypto, and will never ask for your recovery phrase.
 
 ## How to reach us
 
@@ -20,9 +20,15 @@ call, scheduled in your timezone wherever the hours allow.
 This section matters more than the addresses above. Read it before you reply to anything
 claiming to come from KeyCompass.
 
-- **KeyCompass never makes contact first.** No cold call or phone call, ever. No unexpected
-  email, no message on Telegram, WhatsApp or LinkedIn. Every conversation starts with you
-  booking it. Anyone approaching you out of the blue claiming to be Simon is not Simon.
+- **KeyCompass never contacts you first about your crypto.** No cold call or phone call, ever.
+  No unexpected email, no message on Telegram, WhatsApp or LinkedIn. Every conversation about
+  your own crypto, or an estate, starts with you booking it. Anyone approaching you out of the
+  blue about your crypto and claiming to be Simon is not Simon.
+- **The one exception is professional firms.** KeyCompass may write to solicitors, will
+  writers and other professional firms, by post or by email to the firm, to offer a free
+  briefing for their team. Those letters never mention a client, never ask for anything
+  sensitive, and always point you to keycompass.co.uk to check they are genuine. Never a
+  phone call, and never a LinkedIn message.
 - **Only one LinkedIn page is KeyCompass:**
   [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass), alongside
   Simon's own profile at

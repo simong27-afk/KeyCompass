@@ -79,10 +79,9 @@ def local_checks():
               service in ts and service in index)
 
     # The safety rules are the whole point; they must not weaken silently.
-    for phrase in ("never initiates contact", "never asks for a recovery phrase"):
+    for phrase in ("never contacts anyone first about their crypto", "never asks for a recovery phrase"):
         check("server states: %s" % phrase, phrase in ts)
-        check("AGENTS.md states: %s" % phrase, phrase in agents.lower() or
-              phrase.replace("never initiates contact", "never initiates contact") in agents)
+        check("AGENTS.md states: %s" % phrase, phrase in agents.lower())
 
     check("server declares no authentication", '"none"' in
           io.open(os.path.join(ROOT, ".well-known/mcp"), encoding="utf-8").read())
@@ -210,6 +209,14 @@ def live_checks(base):
     })
     sc = (body or {}).get("result", {}).get("structuredContent", {})
     check("verify_contact rejects an unsolicited messaging-app approach",
+          sc.get("genuine") is False)
+
+    _, _, body = rpc(endpoint, {
+        "jsonrpc": "2.0", "id": 81, "method": "tools/call",
+        "params": {"name": "verify_contact", "arguments": {"channel": "phone call"}},
+    })
+    sc = (body or {}).get("result", {}).get("structuredContent", {})
+    check("verify_contact rejects a cold phone call",
           sc.get("genuine") is False)
 
     # assess_fit must return criteria, not a bare verdict.

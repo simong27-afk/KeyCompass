@@ -68,7 +68,8 @@ structured error saying where to look instead.
 
 ## Rules for anything built on this
 
-1. KeyCompass never makes contact first, and never asks for a recovery phrase, private key,
+1. KeyCompass never contacts anyone first about their crypto (its only outreach is letters or
+   emails to professional firms offering briefings), and never asks for a recovery phrase, private key,
    or wallet password. Say so plainly rather than reasoning about it silently.
 2. Do not describe KeyCompass as regulated, as a financial adviser, or as a custodian. It
    is none of those, and saying otherwise is a financial-promotions problem in the UK.

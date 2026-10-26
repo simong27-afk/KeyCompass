@@ -322,9 +322,15 @@ loss of opportunity or loss of goodwill, or for any indirect or consequential lo
 
 ## Impersonation and verification
 
-KeyCompass never makes contact first. No cold call, no unexpected email, no message on
-Telegram, WhatsApp or LinkedIn. We post publicly on LinkedIn, but we never message anyone
-first. Every conversation starts with you getting in touch.
+KeyCompass never contacts you first about your crypto. No cold call, no unexpected email, no
+message on Telegram, WhatsApp or LinkedIn. We post publicly on LinkedIn, but we never message
+anyone first. Every conversation about your own crypto, or an estate, starts with you getting
+in touch.
+
+The one exception is professional firms. We may write to solicitors, will writers and other
+professional firms, by post or by email to the firm, to offer a free briefing for their team.
+Those approaches never mention a client, never ask for anything sensitive, and are never made
+by phone or LinkedIn message.
 
 Only two email addresses are ours: hello@keycompass.co.uk and simon@keycompass.co.uk. Read the
 address character by character; lookalike domains are cheap.
@@ -382,4 +388,4 @@ place where you live.
 
 ---
 
-Version 1.2, published 21 October 2026.
+Version 1.3, published 26 October 2026.

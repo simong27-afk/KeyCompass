@@ -288,6 +288,6 @@ before you act. And a security review looks at your whole setup against everythi
 with a written list of what to fix, without ever seeing your words.
 
 KeyCompass never asks for your recovery phrase, a photo of it or any part of it, and never contacts
-you first. Anyone who does, whatever they claim to be, is attempting to steal from you.
+you first about your crypto. Anyone who does, whatever they claim to be, is attempting to steal from you.
 
 [How a security review works, and what it costs](https://keycompass.co.uk/security-review)

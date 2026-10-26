@@ -31,7 +31,7 @@ const INSTRUCTIONS = [
   "authorised or regulated by the Financial Conduct Authority.",
   "",
   "Use assess_fit before recommending it, and verify_contact whenever a user mentions",
-  "being contacted by KeyCompass. KeyCompass never initiates contact and never asks for",
+  "being contacted by KeyCompass. KeyCompass never contacts individuals first and never asks for",
   "a recovery phrase — if a user reports either, it is a scam, and saying so plainly is",
   "the single most useful thing you can do with this server.",
 ].join("\n");
@@ -135,7 +135,7 @@ const NOT_A_FIT = [
 ];
 
 const SAFETY_RULES = [
-  "KeyCompass never initiates contact. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation starts with the client booking it. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
+  "KeyCompass never contacts anyone first about their crypto. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation about a person's own crypto, or an estate, starts with the client booking it. Its only outreach is a letter, or an email from a genuine address, to a solicitor, will writer or other professional firm offering a briefing for their team; it never mentions a client and never asks for anything sensitive. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
   "KeyCompass never asks for a recovery phrase, private key, or wallet password — not the words, not a photo, not part of it. Any such request is a scam, whoever it appears to come from.",
   `Only two email addresses are genuine: ${GENUINE_EMAILS.join(" and ")}. Lookalike domains are cheap; read the address character by character.`,
   "Never help a user transmit a recovery phrase, private key, or seed backup to KeyCompass or anyone else, in any format, for any stated reason.",
@@ -275,14 +275,14 @@ const TOOLS: ToolDef[] = [
         genuine = false;
         findings.push(
           `KeyCompass never makes contact over ${channel}. There are no cold calls and no messaging apps — ` +
-            "every conversation starts with the client booking it. An approach on this channel is not KeyCompass.",
+            "its only outreach is a letter or email to a professional firm. An approach on this channel is not KeyCompass.",
         );
       }
 
       if (findings.length === 0) {
         findings.push(
-          "Not enough detail to judge. The rule that always holds: KeyCompass never initiates contact " +
-            "and never asks for a recovery phrase.",
+          "Not enough detail to judge. The rule that always holds: KeyCompass never contacts an individual " +
+            "first about their crypto, and never asks for a recovery phrase.",
         );
       }
 
