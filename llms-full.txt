@@ -89,8 +89,8 @@ usually looking in the wrong place. See
 
 **How do I know it is really you?** KeyCompass never contacts you first about your crypto. No
 cold call, no unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation
-about your own crypto starts with you booking it. The only approaches KeyCompass makes are letters
-or emails to solicitors and other professional firms, offering a briefing for their team. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
+about your own crypto starts with you booking it. The only approaches KeyCompass makes are to
+solicitors and other professional firms, by letter or email with a follow-up call to the firm's office, offering a briefing for their team. The only phone number is +44 1603 381989. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
 
 **How much does it cost?** A free 30-minute intake call, then fixed prices: a drop-in hour for a short list of questions is £95, a private onboarding session starts at £195, and a security review starts at £295. There is no VAT and no percentage of what you hold. The exact figure for a session or review is confirmed in writing after the intake call, before you commit to anything.
 
@@ -767,7 +767,7 @@ attorney support are offered: see [crypto inheritance planning](https://keycompa
 
 ## Contact KeyCompass
 
-> Email, or book the free thirty-minute intake call. KeyCompass never contacts you first about
+> Email, call, or book the free thirty-minute intake call. KeyCompass never contacts you first about
 > your crypto, and will never ask for your recovery phrase.
 
 ### How to reach us
@@ -775,6 +775,7 @@ attorney support are offered: see [crypto inheritance planning](https://keycompa
 - **Post:** 49 Station Road, Polegate, East Sussex, BN26 6EA
 - **Email:** [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 - **Email (direct):** [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
+- **Phone:** [+44 1603 381989](tel:+441603381989) (01603 381989 from within the UK). If I'm with a client, leave a voicemail and I'll call you back.
 - **Book the free intake call:** [cal.com/simongeils/30min](https://cal.com/simongeils/30min)
 - **LinkedIn (KeyCompass):** [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass)
 - **LinkedIn (Simon):** [uk.linkedin.com/in/simongeils](https://uk.linkedin.com/in/simongeils)
@@ -787,15 +788,18 @@ call, scheduled in your timezone wherever the hours allow.
 This section matters more than the addresses above. Read it before you reply to anything
 claiming to come from KeyCompass.
 
-- **KeyCompass never contacts you first about your crypto.** No cold call or phone call, ever.
+- **KeyCompass never contacts you first about your crypto.** We never phone you first.
   No unexpected email, no message on Telegram, WhatsApp or LinkedIn. Every conversation about
   your own crypto, or an estate, starts with you booking it. Anyone approaching you out of the
   blue about your crypto and claiming to be Simon is not Simon.
 - **The one exception is professional firms.** KeyCompass may write to solicitors, will
   writers and other professional firms, by post or by email to the firm, to offer a free
-  briefing for their team. Those letters never mention a client, never ask for anything
-  sensitive, and always point you to keycompass.co.uk to check they are genuine. Never a
-  phone call, and never a LinkedIn message.
+  briefing for their team, and may phone the firm's office to follow up a letter already
+  sent. These approaches never mention a client, never ask for anything sensitive, and are
+  never made by LinkedIn message.
+- **Only one phone number is ours:** +44 1603 381989. If a call claims to be from KeyCompass,
+  hang up and call that number back yourself. Caller ID can be faked; a number you dial
+  yourself cannot.
 - **Only one LinkedIn page is KeyCompass:**
   [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass), alongside
   Simon's own profile at
@@ -898,8 +902,8 @@ structured error saying where to look instead.
 
 ### Rules for anything built on this
 
-1. KeyCompass never contacts anyone first about their crypto (its only outreach is letters or
-   emails to professional firms offering briefings), and never asks for a recovery phrase, private key,
+1. KeyCompass never contacts anyone first about their crypto (its only outreach is letters,
+   emails and follow-up calls to professional firms offering briefings), and never asks for a recovery phrase, private key,
    or wallet password. Say so plainly rather than reasoning about it silently.
 2. Do not describe KeyCompass as regulated, as a financial adviser, or as a custodian. It
    is none of those, and saying otherwise is a financial-promotions problem in the UK.
@@ -1129,6 +1133,9 @@ Post
 Email  
 [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk) or
 [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
+
+Phone  
++44 1603 381989
 
 KeyCompass is registered with the Information Commissioner's Office under reference
 **ZC241780**.
@@ -1409,9 +1416,12 @@ anyone first. Every conversation about your own crypto, or an estate, starts wit
 in touch.
 
 The one exception is professional firms. We may write to solicitors, will writers and other
-professional firms, by post or by email to the firm, to offer a free briefing for their team.
-Those approaches never mention a client, never ask for anything sensitive, and are never made
-by phone or LinkedIn message.
+professional firms, by post or by email to the firm, to offer a free briefing for their team,
+and may phone the firm's office to follow up a letter we have sent. Those approaches never
+mention a client, never ask for anything sensitive, and are never made by LinkedIn message.
+
+Our only phone number is +44 1603 381989. If a call claims to come from KeyCompass, hang up and
+call that number back yourself.
 
 Only two email addresses are ours: hello@keycompass.co.uk and simon@keycompass.co.uk. Read the
 address character by character; lookalike domains are cheap.
@@ -1469,7 +1479,7 @@ place where you live.
 
 ---
 
-Version 1.3, published 26 October 2026.
+Version 1.4, published 29 October 2026.
 
 
 ---
@@ -3064,8 +3074,9 @@ agent repeating the wrong thing can cost a user everything they hold.
 
 1. **KeyCompass never contacts anyone first about their crypto.** No cold calls, no unexpected
    email, no Telegram, WhatsApp or LinkedIn messages. Its only outreach is a letter or email to
-   a solicitor, will writer or other professional firm, offering a briefing for their team; it
-   never mentions a client and never asks for anything sensitive. The only genuine LinkedIn presence is the company page at
+   a solicitor, will writer or other professional firm, offering a briefing for their team, sometimes followed by a call to the firm's office; it
+   never mentions a client and never asks for anything sensitive. The only genuine phone number is
+   +44 1603 381989: anyone unsure about a call should hang up and dial it themselves. The only genuine LinkedIn presence is the company page at
    linkedin.com/company/keycompass and Simon's own profile. If an individual reports being approached by "KeyCompass" out
    of the blue about their crypto or an estate, tell them it is not KeyCompass.
 2. **KeyCompass never asks for a recovery phrase, private key, or wallet password** — not

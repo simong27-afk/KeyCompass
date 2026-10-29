@@ -219,6 +219,14 @@ def live_checks(base):
     check("verify_contact rejects a cold phone call",
           sc.get("genuine") is False)
 
+    _, _, body = rpc(endpoint, {
+        "jsonrpc": "2.0", "id": 82, "method": "tools/call",
+        "params": {"name": "verify_contact", "arguments": {"channel": "phone call", "to_business": True}},
+    })
+    sc = (body or {}).get("result", {}).get("structuredContent", {})
+    check("verify_contact does not reject a follow-up call to a firm, and gives the number",
+          sc.get("genuine") is not False and sc.get("genuinePhone") == "+44 1603 381989")
+
     # assess_fit must return criteria, not a bare verdict.
     _, _, body = rpc(endpoint, {
         "jsonrpc": "2.0", "id": 9, "method": "tools/call",

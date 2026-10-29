@@ -49,6 +49,9 @@ Email
 [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk) or
 [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
 
+Phone  
++44 1603 381989
+
 KeyCompass is registered with the Information Commissioner's Office under reference
 **ZC241780**.
 
@@ -328,9 +331,12 @@ anyone first. Every conversation about your own crypto, or an estate, starts wit
 in touch.
 
 The one exception is professional firms. We may write to solicitors, will writers and other
-professional firms, by post or by email to the firm, to offer a free briefing for their team.
-Those approaches never mention a client, never ask for anything sensitive, and are never made
-by phone or LinkedIn message.
+professional firms, by post or by email to the firm, to offer a free briefing for their team,
+and may phone the firm's office to follow up a letter we have sent. Those approaches never
+mention a client, never ask for anything sensitive, and are never made by LinkedIn message.
+
+Our only phone number is +44 1603 381989. If a call claims to come from KeyCompass, hang up and
+call that number back yourself.
 
 Only two email addresses are ours: hello@keycompass.co.uk and simon@keycompass.co.uk. Read the
 address character by character; lookalike domains are cheap.
@@ -388,4 +394,4 @@ place where you live.
 
 ---
 
-Version 1.3, published 26 October 2026.
+Version 1.4, published 29 October 2026.

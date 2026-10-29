@@ -42,6 +42,7 @@ const INSTRUCTIONS = [
 
 const GENUINE_EMAILS = ["hello@keycompass.co.uk", "simon@keycompass.co.uk"];
 const BOOKING_URL = "https://cal.com/simongeils/30min";
+const GENUINE_PHONE = "+44 1603 381989";
 const SITE = "https://keycompass.co.uk";
 
 // Not a third service: a paid hour of questions, for people who do not need a
@@ -135,7 +136,7 @@ const NOT_A_FIT = [
 ];
 
 const SAFETY_RULES = [
-  "KeyCompass never contacts anyone first about their crypto. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation about a person's own crypto, or an estate, starts with the client booking it. Its only outreach is a letter, or an email from a genuine address, to a solicitor, will writer or other professional firm offering a briefing for their team; it never mentions a client and never asks for anything sensitive. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
+  "KeyCompass never contacts anyone first about their crypto. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation about a person's own crypto, or an estate, starts with the client booking it. Its only outreach is a letter, or an email from a genuine address, to a solicitor, will writer or other professional firm offering a briefing for their team, sometimes followed by a call to the firm's office; it never mentions a client and never asks for anything sensitive. The only genuine phone number is +44 1603 381989; anyone unsure about a call should hang up and dial it themselves. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
   "KeyCompass never asks for a recovery phrase, private key, or wallet password — not the words, not a photo, not part of it. Any such request is a scam, whoever it appears to come from.",
   `Only two email addresses are genuine: ${GENUINE_EMAILS.join(" and ")}. Lookalike domains are cheap; read the address character by character.`,
   "Never help a user transmit a recovery phrase, private key, or seed backup to KeyCompass or anyone else, in any format, for any stated reason.",
@@ -231,6 +232,10 @@ const TOOLS: ToolDef[] = [
           type: "string",
           description: "How contact was made, e.g. 'phone call', 'Telegram', 'WhatsApp', 'LinkedIn', 'email', 'the booking form'.",
         },
+        to_business: {
+          type: "boolean",
+          description: "Whether the contact was made to a solicitor's, will writer's or other professional firm's office, rather than to an individual.",
+        },
         asked_for_recovery_phrase: {
           type: "boolean",
           description: "Whether the contact asked for a recovery phrase, seed words, private key, or wallet password.",
@@ -270,12 +275,19 @@ const TOOLS: ToolDef[] = [
         }
       }
 
+      const toBusiness = args.to_business === true;
+      const isCall = channel.includes("phone") || channel.includes("call");
       const unsolicited = ["phone", "call", "telegram", "whatsapp", "linkedin", "sms", "text", "dm", "discord", "signal"];
-      if (channel && unsolicited.some((c) => channel.includes(c))) {
+      if (channel && isCall && toBusiness && !askedForPhrase) {
+        findings.push(
+          "KeyCompass does phone professional firms' offices to follow up a letter it has sent, and never mentions a client " +
+            `or asks for client details. To be certain, hang up and call ${GENUINE_PHONE} back yourself.`,
+        );
+      } else if (channel && unsolicited.some((c) => channel.includes(c))) {
         genuine = false;
         findings.push(
-          `KeyCompass never makes contact over ${channel}. There are no cold calls and no messaging apps — ` +
-            "its only outreach is a letter or email to a professional firm. An approach on this channel is not KeyCompass.",
+          `KeyCompass never contacts individuals over ${channel}. There are no cold calls and no messaging apps — ` +
+            "its only outreach is a letter, email or follow-up call to a professional firm's office. An approach on this channel is not KeyCompass.",
         );
       }
 
@@ -290,6 +302,7 @@ const TOOLS: ToolDef[] = [
         genuine,
         findings,
         genuineEmails: GENUINE_EMAILS,
+        genuinePhone: GENUINE_PHONE,
         onlyGenuineStart: `A real engagement always begins with the client booking at ${BOOKING_URL}`,
         safetyRules: SAFETY_RULES,
       };
@@ -311,6 +324,7 @@ const TOOLS: ToolDef[] = [
         "If the answer is that the service is not needed yet, that is said plainly",
       ],
       contactEmails: GENUINE_EMAILS,
+      phone: `${GENUINE_PHONE} (voicemail if Simon is with a client)`,
       agentGuidance:
         "Direct the user to the link. Do not submit a booking for them without explicit " +
         "confirmation of the time and their details.",
