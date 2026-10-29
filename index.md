@@ -83,7 +83,7 @@ usually looking in the wrong place. See
 **How do I know it is really you?** KeyCompass never contacts you first about your crypto. No
 cold call, no unexpected email, no Telegram, WhatsApp or LinkedIn message. Every conversation
 about your own crypto starts with you booking it. The only approaches KeyCompass makes are to
-solicitors and other professional firms, by letter or email with a follow-up call to the firm's office, offering a briefing for their team. The only phone number is +44 1603 381989. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
+solicitors and other professional firms, by letter or email with a follow-up call to the firm's office, offering a briefing for their team. The only phone number is +44 (0)1603 381989. Mail comes only from hello@keycompass.co.uk or simon@keycompass.co.uk.
 
 **How much does it cost?** A free 30-minute intake call, then fixed prices: a drop-in hour for a short list of questions is £95, a private onboarding session starts at £195, and a security review starts at £295. There is no VAT and no percentage of what you hold. The exact figure for a session or review is confirmed in writing after the intake call, before you commit to anything.
 

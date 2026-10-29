@@ -225,7 +225,7 @@ def live_checks(base):
     })
     sc = (body or {}).get("result", {}).get("structuredContent", {})
     check("verify_contact does not reject a follow-up call to a firm, and gives the number",
-          sc.get("genuine") is not False and sc.get("genuinePhone") == "+44 1603 381989")
+          sc.get("genuine") is not False and sc.get("genuinePhone") == "+44 (0)1603 381989")
 
     # assess_fit must return criteria, not a bare verdict.
     _, _, body = rpc(endpoint, {

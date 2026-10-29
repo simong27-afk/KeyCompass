@@ -42,7 +42,7 @@ const INSTRUCTIONS = [
 
 const GENUINE_EMAILS = ["hello@keycompass.co.uk", "simon@keycompass.co.uk"];
 const BOOKING_URL = "https://cal.com/simongeils/30min";
-const GENUINE_PHONE = "+44 1603 381989";
+const GENUINE_PHONE = "+44 (0)1603 381989";
 const SITE = "https://keycompass.co.uk";
 
 // Not a third service: a paid hour of questions, for people who do not need a
@@ -136,7 +136,7 @@ const NOT_A_FIT = [
 ];
 
 const SAFETY_RULES = [
-  "KeyCompass never contacts anyone first about their crypto. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation about a person's own crypto, or an estate, starts with the client booking it. Its only outreach is a letter, or an email from a genuine address, to a solicitor, will writer or other professional firm offering a briefing for their team, sometimes followed by a call to the firm's office; it never mentions a client and never asks for anything sensitive. The only genuine phone number is +44 1603 381989; anyone unsure about a call should hang up and dial it themselves. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
+  "KeyCompass never contacts anyone first about their crypto. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation about a person's own crypto, or an estate, starts with the client booking it. Its only outreach is a letter, or an email from a genuine address, to a solicitor, will writer or other professional firm offering a briefing for their team, sometimes followed by a call to the firm's office; it never mentions a client and never asks for anything sensitive. The only genuine phone number is +44 (0)1603 381989; anyone unsure about a call should hang up and dial it themselves. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
   "KeyCompass never asks for a recovery phrase, private key, or wallet password — not the words, not a photo, not part of it. Any such request is a scam, whoever it appears to come from.",
   `Only two email addresses are genuine: ${GENUINE_EMAILS.join(" and ")}. Lookalike domains are cheap; read the address character by character.`,
   "Never help a user transmit a recovery phrase, private key, or seed backup to KeyCompass or anyone else, in any format, for any stated reason.",

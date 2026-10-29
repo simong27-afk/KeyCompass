@@ -8,7 +8,7 @@
 - **Post:** 49 Station Road, Polegate, East Sussex, BN26 6EA
 - **Email:** [hello@keycompass.co.uk](mailto:hello@keycompass.co.uk)
 - **Email (direct):** [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
-- **Phone:** [+44 1603 381989](tel:+441603381989) (01603 381989 from within the UK). If I'm with a client, leave a voicemail and I'll call you back.
+- **Phone:** [+44 (0)1603 381989](tel:+441603381989). If I'm with a client, leave a voicemail and I'll call you back.
 - **Book the free intake call:** [cal.com/simongeils/30min](https://cal.com/simongeils/30min)
 - **LinkedIn (KeyCompass):** [linkedin.com/company/keycompass](https://www.linkedin.com/company/keycompass)
 - **LinkedIn (Simon):** [uk.linkedin.com/in/simongeils](https://uk.linkedin.com/in/simongeils)
@@ -30,7 +30,7 @@ claiming to come from KeyCompass.
   briefing for their team, and may phone the firm's office to follow up a letter already
   sent. These approaches never mention a client, never ask for anything sensitive, and are
   never made by LinkedIn message.
-- **Only one phone number is ours:** +44 1603 381989. If a call claims to be from KeyCompass,
+- **Only one phone number is ours:** +44 (0)1603 381989. If a call claims to be from KeyCompass,
   hang up and call that number back yourself. Caller ID can be faked; a number you dial
   yourself cannot.
 - **Only one LinkedIn page is KeyCompass:**

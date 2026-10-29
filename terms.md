@@ -50,7 +50,7 @@ Email
 [simon@keycompass.co.uk](mailto:simon@keycompass.co.uk)
 
 Phone  
-+44 1603 381989
++44 (0)1603 381989
 
 KeyCompass is registered with the Information Commissioner's Office under reference
 **ZC241780**.
@@ -335,7 +335,7 @@ professional firms, by post or by email to the firm, to offer a free briefing fo
 and may phone the firm's office to follow up a letter we have sent. Those approaches never
 mention a client, never ask for anything sensitive, and are never made by LinkedIn message.
 
-Our only phone number is +44 1603 381989. If a call claims to come from KeyCompass, hang up and
+Our only phone number is +44 (0)1603 381989. If a call claims to come from KeyCompass, hang up and
 call that number back yourself.
 
 Only two email addresses are ours: hello@keycompass.co.uk and simon@keycompass.co.uk. Read the
