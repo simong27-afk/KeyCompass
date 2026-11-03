@@ -13,3 +13,10 @@ Claude outputs/
 Business address invoice.pdf
 *.zip
 export/
+
+# Private: Google credentials and tokens, never commit
+.secrets/
+reports/
+
+# Python cache
+__pycache__/
