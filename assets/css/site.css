@@ -478,6 +478,7 @@ body{
 .book__grid{display:grid;gap:clamp(2.5rem,5vw,4rem);grid-template-columns:minmax(0,1fr);align-items:end}
 .book__mark{width:clamp(72px,11vw,140px);height:auto;color:var(--ink);justify-self:start}
 .book__head{margin:clamp(1.5rem,3vw,2.25rem) 0 clamp(1.25rem,2.4vw,1.75rem);max-width:16ch}
+.book__head:first-child{margin-top:0}
 .book__lead{
   font-size:clamp(1.25rem,1.05rem + .85vw,1.75rem);
   font-weight:700;line-height:1.28;letter-spacing:-.026em;max-width:26ch;
