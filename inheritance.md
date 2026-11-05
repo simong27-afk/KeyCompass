@@ -128,6 +128,9 @@ instructions are kept, without the words themselves.
   exchange's own process for bereaved families, more like a bank account, but your executor still
   needs to know the account exists.
 
+For the full step-by-step, for holders and for executors, read
+[crypto inheritance in the UK: what happens when you die](https://keycompass.co.uk/guides/crypto-inheritance-uk).
+
 ## Clients outside the UK
 
 The technology works the same everywhere, so KeyCompass works with clients, executors and
@@ -164,6 +167,7 @@ contacts you offering to recover the funds.
 
 ## Further reading
 
+- [Crypto inheritance in the UK: what happens when you die](https://keycompass.co.uk/guides/crypto-inheritance-uk)
 - [Seed phrase storage: where should I keep mine?](https://keycompass.co.uk/guides/seed-phrase-storage)
 - [How to test your recovery phrase backup safely](https://keycompass.co.uk/guides/test-recovery-phrase-backup)
 - [BIP39 passphrase: should you use one?](https://keycompass.co.uk/guides/bip39-passphrase)

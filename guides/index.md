@@ -2,6 +2,7 @@
 
 > Plain-English guides to crypto self-custody: moving off an exchange, backing up your seed phrase, spotting scams, and planning for the people who come after you. Written and checked by Simon Geils.
 
+- [Crypto inheritance in the UK: what happens to your crypto when you die](https://keycompass.co.uk/guides/crypto-inheritance-uk.md) — What happens to crypto when you die in the UK, how to plan so your family can recover it, and step-by-step help for executors on probate, tax and scams. (Inheritance, last checked 2026-11-05)
 - [What is a BIP39 passphrase, and should I use one?](https://keycompass.co.uk/guides/bip39-passphrase.md) — What a BIP39 passphrase is, how hidden wallets work on Ledger and Trezor, what it protects against, the risks, and how to set one up and test it safely. (Backups, last checked 2026-10-12)
 - [Crypto scams in the UK: how to spot them and what to do](https://keycompass.co.uk/guides/crypto-scams-uk.md) — The crypto scams targeting UK holders, from fake support and phishing letters to address poisoning, drainers and wrench attacks, and what to do if you're hit. (Scams, last checked 2026-10-12)
 - [Seed phrase storage: where should I keep mine?](https://keycompass.co.uk/guides/seed-phrase-storage.md) — How to store a seed phrase safely: paper versus metal, where to keep it, how many copies to make, and the mistakes that get backups lost or stolen. (Backups, last checked 2026-10-08)
