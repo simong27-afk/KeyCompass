@@ -387,6 +387,36 @@ body{
   font-size:.9375rem;line-height:1.6;color:var(--dim);
 }
 
+/* --- inheritance (lead service) ------------------------------------------ */
+/* Its own section ahead of Services: copy on the left, the price ladder on the
+   right (now, every year, when it's needed), and the custody rule underneath. */
+.estate__grid{display:grid;gap:clamp(2rem,4vw,3rem)}
+.estate__copy{display:flex;flex-direction:column;gap:1.25rem}
+.estate__lead{font-size:clamp(1.0625rem,1rem + .4vw,1.25rem);color:#cfc9c7;max-width:52ch}
+.estate__note{font-size:.9375rem;color:var(--dim);max-width:52ch}
+.estate__acts{display:flex;gap:1rem;flex-wrap:wrap;padding-top:.5rem}
+.estate__rule{
+  grid-column:1/-1;margin:0;padding:1rem 1.1rem;
+  border-left:var(--rule) solid var(--accent);background:rgba(243,242,242,.04);
+  color:var(--ground);font-weight:500;
+}
+.tiers{display:flex;flex-direction:column;align-self:start}
+.tiers li{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem 1.25rem;
+  padding:1.1rem 0;border-top:1px solid var(--line-d);
+}
+.tiers li:last-child{border-bottom:1px solid var(--line-d)}
+.tiers__when{grid-column:1/-1;color:var(--dim)}
+.tiers__what{font-weight:600;color:var(--ground);display:flex;flex-direction:column;gap:.2rem}
+.tiers__what small{font-weight:400;font-size:.875rem;color:var(--dim)}
+.tiers__price{
+  font-family:var(--mono);font-weight:600;font-size:1.0625rem;
+  color:var(--accent);align-self:start;
+}
+@media (min-width:900px){
+  .estate__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(3rem,6vw,6rem)}
+}
+
 /* --- steps --------------------------------------------------------------- */
 /* Dividers are borders on each step, not a parent background showing through
    the grid gap — that trick only works while the gap is hairline-thin, and

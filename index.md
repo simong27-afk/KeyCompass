@@ -18,6 +18,25 @@ help, not to check something. Nothing said in a session is investment, legal, or
 advice. KeyCompass is not authorised or regulated by the Financial Conduct Authority. The
 work is technical and operational: how to hold safely what you already own.
 
+## Crypto inheritance
+
+**Could your family recover your crypto? Make sure the answer is yes.**
+
+A self-custody setup is built to keep everyone else out, and that includes your family. There
+is no bank to call and no password reset. Estate readiness tests that your setup could be
+recovered by someone else, then gives your executors and attorneys plain-English instructions,
+with no secrets in them. When the time comes, I guide them through recovery on their own
+devices. Executor support is also available if the person who died never used KeyCompass.
+
+- **Now: estate readiness** (review, backup drill and executor pack). From £495.
+- **Every year: health check.** £150 a year, or £95 a quarter for multisig.
+- **When it's needed: executor and attorney support.** Executor triage call £95; guided
+  recovery or attorney support from £395.
+
+KeyCompass never holds a key, sees a recovery phrase or touches your funds. You, and later
+your executors, do every step on your own devices. Details:
+https://keycompass.co.uk/inheritance
+
 ## Services
 
 **Private onboarding session** — 90 minutes to a day, one-to-one, live. From £195.
