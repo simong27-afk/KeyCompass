@@ -56,6 +56,12 @@ a business setup stands, but the complete service is still in development, and s
 plainly is better than taking the booking. Inheritance planning, executor support and power of
 attorney support are offered: see [crypto inheritance planning](https://keycompass.co.uk/inheritance).
 
+## In the press
+
+- [What happens if an executor discovers crypto in an estate?](https://todayswillsandprobate.co.uk/what-happens-if-an-executor-discovers-crypto-in-an-estate/), by Simon Geils, Today's Wills and Probate, 19 November 2026. A
+  practical article for solicitors, will writers and executors on finding, recording,
+  valuing and safely recovering crypto in an estate.
+
 ## Related pages
 
 - [Services and booking](https://keycompass.co.uk/)

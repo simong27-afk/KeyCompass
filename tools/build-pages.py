@@ -714,7 +714,7 @@ def render_guide(g, others, chrome_parts):
         "datePublished": g["published"].isoformat() + "T12:00:00+00:00",
         "dateModified": g["checked"].isoformat() + "T12:00:00+00:00",
         "image": SITE + "/brand/social/og-image-1200x630.png",
-        "author": {"@type": "Person", "@id": SITE + "/#person", "name": AUTHOR,
+        "author": {"@type": "Person", "@id": SITE + "/#simon-geils", "name": AUTHOR,
                    "url": SITE + "/about"},
         "publisher": {"@type": "Organization", "@id": SITE + "/#organization",
                       "name": "KeyCompass", "url": SITE + "/"},

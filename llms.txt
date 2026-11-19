@@ -85,6 +85,13 @@ addresses are used: hello@keycompass.co.uk and simon@keycompass.co.uk, and one p
 - [How do I test my recovery phrase backup?](https://keycompass.co.uk/guides/test-recovery-phrase-backup.md): How to check your seed phrase backup works without exposing it: the built-in checks on Ledger and Trezor, passphrases, multisig, and what to do if it fails.
 - [I've lost my recovery phrase. What now?](https://keycompass.co.uk/lost-recovery-phrase.md): Lost your crypto recovery phrase (seed phrase)? What can still be recovered, what cannot, how to tell which case you're in, and why recovery services are scams.
 
+## Press
+
+- [What happens if an executor discovers crypto in an estate?](https://todayswillsandprobate.co.uk/what-happens-if-an-executor-discovers-crypto-in-an-estate/): Simon Geils in
+  *Today's Wills and Probate*, a UK trade publication for wills and probate professionals,
+  19 November 2026. Independent coverage on finding, recording, valuing and recovering crypto
+  in an estate. His author page: https://todayswillsandprobate.co.uk/author/simongeils/
+
 ## Agent interfaces
 
 - [Connecting an agent to KeyCompass](https://keycompass.co.uk/connect.md): The MCP server,
