@@ -1,5 +1,5 @@
 ---
-title: Crypto inheritance in the UK: what happens when you die — KeyCompass
+title: Crypto inheritance in the UK: what happens when you die | KeyCompass
 description: What happens to crypto when you die in the UK, how to plan so your family can recover it, and step-by-step help for executors on probate, tax and scams.
 category: Inheritance
 published: 2026-11-05

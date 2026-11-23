@@ -3,7 +3,7 @@
 
 IMPORTANT: `choose_variant` below is a line-for-line port of `chooseVariant` in
 netlify/edge-functions/content-negotiation.ts. There is no Deno or Node runtime
-in this repo, so the TypeScript cannot be executed here — this mirror is what
+in this repo, so the TypeScript cannot be executed here - this mirror is what
 proves the algorithm is right. If you change one, change both, and re-run this.
 
 The deployed behaviour is checked separately, against the live site, by

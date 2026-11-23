@@ -71,7 +71,7 @@ before you commit to anything.
 **From £295 · structured review plus written report**
 
 For people who already self-custody and have not reviewed the setup. A walk through what you
-already have across four failure channels — phishing, device, backup loss and succession —
+already have across four failure channels (phishing, device, backup loss and succession)
 followed by a written, prioritised list of what to fix worst-first and an explicit list of
 what is already fine.
 
@@ -111,7 +111,7 @@ it is quoted at the prices in force at the time.
 ## What no price includes
 
 KeyCompass never holds your keys, your recovery phrase or your funds, and never asks for
-them — not the words, not a photo, not part of it. No session includes advice on what to
+them: not the words, not a photo, not part of it. No session includes advice on what to
 buy, when, or how much. KeyCompass is not authorised or regulated by the Financial Conduct
 Authority. The work is technical and operational: how to hold safely what you already own.
 

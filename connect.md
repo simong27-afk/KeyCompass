@@ -1,7 +1,7 @@
 # Connecting an agent to KeyCompass
 
 > KeyCompass runs a Model Context Protocol server so an assistant can get
-> authoritative answers about the practice — and check whether a message claiming to be
+> authoritative answers about the practice, and check whether a message claiming to be
 > KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.
 
 KeyCompass is a one-person self-custody advisory practice. It holds no client funds and no
@@ -36,7 +36,7 @@ Add it to an assistant's configuration:
 | Tool | Question it settles |
 |---|---|
 | `get_services` | What the two services cover, and how pricing works |
-| `assess_fit` | Whether a described situation suits KeyCompass — returns the criteria, not a verdict |
+| `assess_fit` | Whether a described situation suits KeyCompass. Returns the criteria, not a verdict |
 | `verify_contact` | Whether a message claiming to be KeyCompass is genuine |
 | `get_booking_info` | The booking link, and what the free intake call involves |
 | `get_safety_rules` | The rules an assistant must apply when advising anyone about KeyCompass |

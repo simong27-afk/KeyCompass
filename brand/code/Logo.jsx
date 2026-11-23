@@ -1,4 +1,4 @@
-// KeyCompass logo — mark + wordmark. Ratio is the whole point:
+// KeyCompass logo - mark + wordmark. Ratio is the whole point:
 // mark height = cap height of the wordmark; gap = ~0.25 x mark.
 export function KeyCompassMark({ size = 32, className = "" }) {
   return (

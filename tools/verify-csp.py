@@ -2,7 +2,7 @@
 """Check that the CSP script hashes in netlify.toml still match index.html.
 
 The CSP names each inline <script> by its sha256. Edit one of those scripts and
-the hash no longer matches, so the browser silently refuses to run it — the page
+the hash no longer matches, so the browser silently refuses to run it - the page
 looks fine locally (no CSP on file://) and breaks in production. Run this after
 touching any inline script, and before deploying.
 
@@ -77,7 +77,7 @@ def main():
             print("    %-14s %d script(s)" % (page, len(found)))
         return 0
 
-    print("CSP OUT OF SYNC — the live site would break.\n")
+    print("CSP OUT OF SYNC - the live site would break.\n")
     if missing:
         print("  Inline scripts with no matching hash in %s:" % TOML)
         for page, found in per_page.items():

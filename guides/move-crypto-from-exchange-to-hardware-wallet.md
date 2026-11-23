@@ -1,5 +1,5 @@
 ---
-title: How to move crypto from exchange to hardware wallet — KeyCompass
+title: How to move crypto from exchange to hardware wallet | KeyCompass
 description: Step-by-step: withdraw crypto from an exchange to your own hardware wallet, pick the right network, check the address and send a test amount first.
 category: Getting started
 published: 2026-10-07

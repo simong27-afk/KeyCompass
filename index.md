@@ -1,9 +1,9 @@
-# KeyCompass — Self-custody onboarding and security reviews
+# KeyCompass: self-custody onboarding and security reviews
 
 > One-to-one self-custody onboarding sessions and independent security reviews. UK-based,
 > remote. KeyCompass never holds your keys, your recovery phrase, or your funds.
 
-Get self-custody right the first time — or find out where you can do better. One-to-one
+Get self-custody right the first time, or find out where you can do better. One-to-one
 help moving your crypto off an exchange and onto a hardware wallet, from an independent UK
 self-custody consultant. Onboarding sessions if you're starting out, security reviews if you
 already hold your own keys. No product to sell you and no opinion on what you should buy:
@@ -13,7 +13,7 @@ just the technical work, done alongside you on a video call.
 
 KeyCompass is **not a custodian, not a broker, and not an adviser.**
 
-Your keys, recovery phrase, and funds never leave your hands — not for a minute, not to
+Your keys, recovery phrase, and funds never leave your hands: not for a minute, not to
 help, not to check something. Nothing said in a session is investment, legal, or tax
 advice. KeyCompass is not authorised or regulated by the Financial Conduct Authority. The
 work is technical and operational: how to hold safely what you already own.
@@ -39,7 +39,7 @@ https://keycompass.co.uk/inheritance
 
 ## Services
 
-**Private onboarding session** — 90 minutes to a day, one-to-one, live. From £195.
+**Private onboarding session**: 90 minutes to a day, one-to-one, live. From £195.
 
 For people new to this, or whose crypto is still sitting on an exchange. Choosing and
 checking a hardware wallet, setting it up from scratch, generating and backing up the
@@ -48,7 +48,7 @@ drive; each step is explained as you go. You leave with a working wallet you set
 yourself, a backup you have verified, a written record of your setup, and the habits that
 prevent the common losses. Details: https://keycompass.co.uk/onboarding
 
-**Threat and security review** — audit plus written report. From £295.
+**Threat and security review**: audit plus written report. From £295.
 
 For people who already self-custody and have not reviewed the setup. A structured walk
 through what you already have across four failure channels: phishing, device, backup loss,
@@ -57,7 +57,7 @@ what to fix worst-first, plain-English reasoning for every item, an explicit lis
 is already fine, and a re-assessment once you have made the changes. Details:
 https://keycompass.co.uk/security-review
 
-**Drop-in hour** — 60 minutes, video call. £95, paid when you book.
+**Drop-in hour**: 60 minutes, video call. £95, paid when you book.
 
 Just have a few questions? Book an hour and bring your list: a step you are about to take, a
 warning you do not understand, a message you are not sure is genuine, or a second opinion on
@@ -68,20 +68,20 @@ writing after the free intake call. [Full pricing](https://keycompass.co.uk/pric
 
 ## How a session runs
 
-1. **Before — the free thirty minutes.** A short intake form, then a thirty-minute call
+1. **Before: the free thirty minutes.** A short intake form, then a thirty-minute call
    at no charge, to work out which service you need and what it will cost. If you do not
    need this yet, you will be told so.
-2. **Prep — a list, sent in advance.** Which devices, a quiet hour, a pen. Nothing
+2. **Prep: a list, sent in advance.** Which devices, a quiet hour, a pen. Nothing
    sensitive is written down or sent ahead of time.
-3. **The session — video call.** Screen sharing runs on the practitioner's side only. You
+3. **The session: video call.** Screen sharing runs on the practitioner's side only. You
    never show a recovery phrase, a private key, or an unlocked wallet.
-4. **After — in writing.** A written summary within 48 hours covering what you set up and
+4. **After: in writing.** A written summary within 48 hours covering what you set up and
    what is left to do, plus one follow-up thread for the first month.
 
 ## Who it is for
 
 Individuals, couples, and small businesses with meaningful holdings and no one
-plain-spoken to ask — people whose crypto is on an exchange and it has started to bother
+plain-spoken to ask: people whose crypto is on an exchange and it has started to bother
 them; people who set something up years ago and have not looked since; people whose
 circumstances have changed; and companies where access, approval, and recovery all run
 through a single person.
@@ -89,10 +89,10 @@ through a single person.
 ## Questions
 
 **Will you ever ask for my recovery phrase?** No. Not the words, not a photo, not "just
-the first four". If anyone ever asks you for it — including someone claiming to be Simon —
+the first four". If anyone ever asks you for it, including someone claiming to be Simon,
 that is the scam.
 
-**I think I've lost my recovery phrase. Can you help?** No — and nor can anyone else. If the
+**I think I've lost my recovery phrase. Can you help?** No, and nor can anyone else. If the
 phrase is genuinely gone and the wallet will not open on any device, the funds are unreachable.
 But a lot of what looks lost is not: the wallet may still be open on a device you have, a phrase
 missing a word or two can often be rebuilt, and a correct phrase showing an empty wallet is
@@ -109,7 +109,7 @@ solicitors and other professional firms, by letter or email with a follow-up cal
 **Is any of this financial advice?** No. KeyCompass is not authorised or regulated by the
 Financial Conduct Authority and does not give investment, legal, or tax advice.
 
-**Is this Bitcoin only?** No — most networks and the wallets that support them. Multi-asset
+**Is this Bitcoin only?** No: most networks and the wallets that support them. Multi-asset
 setups are squarely in scope.
 
 **I am not technical. Is that a problem?** Most clients are not. Nothing assumes prior

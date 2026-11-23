@@ -1,5 +1,5 @@
 ---
-title: What is a seed phrase? A plain-English guide — KeyCompass
+title: What is a seed phrase? A plain-English guide | KeyCompass
 description: What a seed phrase (recovery phrase) is, how it works, 12 vs 24 words, how it differs from a private key, and the scams that target it.
 category: Getting started
 published: 2026-10-08

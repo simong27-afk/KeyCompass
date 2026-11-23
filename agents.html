@@ -111,7 +111,7 @@
     </div>
     <hr class="rule rule--light">
     <h1 class="h2 sec__head">Connecting an agent to KeyCompass</h1>
-    <p class="lead page__lead">KeyCompass runs a Model Context Protocol server so an assistant can get authoritative answers about the practice — and check whether a message claiming to be KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.</p>
+    <p class="lead page__lead">KeyCompass runs a Model Context Protocol server so an assistant can get authoritative answers about the practice, and check whether a message claiming to be KeyCompass is genuine. Read-only, no sign-up, nothing to authenticate.</p>
     <div class="prose page__intro">
 <p>KeyCompass is a one-person self-custody advisory practice. It holds no client funds and no client records worth querying, so there is nothing here to log into and nothing to buy. What follows is simply how an assistant reads the practice accurately.</p>
     </div>
@@ -137,7 +137,7 @@ Sessions:  none</code></pre>
   }
 }</code></pre>
 <h3 class="h4 prose__h">What it answers</h3>
-<div class="prose__scroll"><table class="prose__table"><thead><tr><th>Tool</th><th>Question it settles</th></tr></thead><tbody><tr><td><code>get_services</code></td><td>What the two services cover, and how pricing works</td></tr><tr><td><code>assess_fit</code></td><td>Whether a described situation suits KeyCompass — returns the criteria, not a verdict</td></tr><tr><td><code>verify_contact</code></td><td>Whether a message claiming to be KeyCompass is genuine</td></tr><tr><td><code>get_booking_info</code></td><td>The booking link, and what the free intake call involves</td></tr><tr><td><code>get_safety_rules</code></td><td>The rules an assistant must apply when advising anyone about KeyCompass</td></tr></tbody></table></div>
+<div class="prose__scroll"><table class="prose__table"><thead><tr><th>Tool</th><th>Question it settles</th></tr></thead><tbody><tr><td><code>get_services</code></td><td>What the two services cover, and how pricing works</td></tr><tr><td><code>assess_fit</code></td><td>Whether a described situation suits KeyCompass. Returns the criteria, not a verdict</td></tr><tr><td><code>verify_contact</code></td><td>Whether a message claiming to be KeyCompass is genuine</td></tr><tr><td><code>get_booking_info</code></td><td>The booking link, and what the free intake call involves</td></tr><tr><td><code>get_safety_rules</code></td><td>The rules an assistant must apply when advising anyone about KeyCompass</td></tr></tbody></table></div>
 <p><code>verify_contact</code> is the one that matters. Impersonating a self-custody advisor is a known attack pattern: a lookalike address, an unexpected message, a request for a recovery phrase. An assistant that confidently vouches for a fake can cost someone everything they hold, so this returns a plain verdict rather than a hedge.</p>
     </div>
   </div>

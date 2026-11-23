@@ -1,11 +1,11 @@
 /* Prose pages (about, contact, privacy, agents).
-   Built from the same tokens as site.css — nothing new is introduced here, so
+   Built from the same tokens as site.css - nothing new is introduced here, so
    these pages read as part of the same drawing rather than a bolted-on section.
 
    Each H2 is its own <section data-reveal>, so the reveal rules already in
    site.css apply unchanged: the hairline rule wipes in, then the heading and
    body follow on the same stagger the homepage sections use. That is why the
-   markup nests .wrap > rule / heading / prose — the stagger is keyed to
+   markup nests .wrap > rule / heading / prose - the stagger is keyed to
    .wrap's children by nth-child, not to anything defined here. */
 
 /* A prose page is one continuous read, not a stack of full-height panels, so
@@ -13,7 +13,7 @@
 /* Spacing is taken from the homepage rather than invented: the gap from a rule
    to the heading under it is .sec__head's own clamp(2rem,4vw,3.25rem), so a
    prose section opens on exactly the same beat as #services or #method. Only
-   the distance between sections is tighter — a privacy notice is twelve short
+   the distance between sections is tighter - a privacy notice is twelve short
    sections, and --sec-y's 115px top and bottom would strand each one on its own
    screen. */
 /* The header is sticky, so it already sits above the page head in the flow; the
@@ -57,7 +57,7 @@
 .prose a:hover,.prose a:focus-visible{color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
 
 /* site.css strips markers globally (ul,ol{list-style:none}), so a ::marker
-   colour does nothing — there is no marker to colour. These draw the same 8px
+   colour does nothing - there is no marker to colour. These draw the same 8px
    accent square the homepage uses for .ticks, and hang it in the gutter so the
    bullet sits on the paragraphs' left edge rather than indenting the whole
    list away from them. */
@@ -173,7 +173,7 @@ ol.prose__list li::before{
   .feature{grid-template-columns:1.15fr 1fr;align-items:center}
 }
 
-/* The list of guides: one hairline row each — category, title + summary, time. */
+/* The list of guides: one hairline row each - category, title + summary, time. */
 .guides{list-style:none;margin:clamp(2.5rem,5vw,3.5rem) 0 0;padding:0}
 .guides__more .guides{margin-top:clamp(1.5rem,3vw,2.25rem)}
 .guides__row{
@@ -206,7 +206,7 @@ ol.prose__list li::before{
 
 /* --- Highlight boxes -------------------------------------------------------------
    Four kinds, each with one job, so readers learn what each colour means:
-   answer (the two-minute version), rule (the one thing that matters most —
+   answer (the two-minute version), rule (the one thing that matters most -
    once per page at most), warn (mistakes that lose money) and tip (asides and
    model-specific notes). Same tokens and square corners as everything else. */
 .callout{max-width:68ch;padding:1.1rem 1.25rem 1.2rem}

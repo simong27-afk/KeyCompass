@@ -1,7 +1,7 @@
 {
   "$schema": "https://modelcontextprotocol.io/schema/2025-06-18/discovery.json",
   "name": "keycompass",
-  "title": "KeyCompass — self-custody onboarding and security reviews",
+  "title": "KeyCompass: self-custody onboarding and security reviews",
   "description": "Read-only MCP server for KeyCompass, a UK self-custody advisory practice. Answers whether KeyCompass fits a person's situation, and verifies whether a contact claiming to be KeyCompass is genuine. KeyCompass has no API and holds no client data, so every tool is read-only and unauthenticated.",
   "version": "1.0.0",
   "servers": [

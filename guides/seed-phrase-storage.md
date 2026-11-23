@@ -1,5 +1,5 @@
 ---
-title: Seed phrase storage: paper, metal and where to keep it — KeyCompass
+title: Seed phrase storage: paper, metal and where to keep it | KeyCompass
 description: How to store a seed phrase safely: paper versus metal, where to keep it, how many copies to make, and the mistakes that get backups lost or stolen.
 category: Backups
 published: 2026-10-08

@@ -96,7 +96,7 @@ def local_checks():
     # with .wrap's children staggered as it scrolls in. The generated pages
     # originally shipped as one undecorated .prose div, so they arrived flat and
     # read as a different site. Each H2 is now its own revealed section, and the
-    # reveal is keyed to that structure — .wrap holding a rule and a heading.
+    # reveal is keyed to that structure - .wrap holding a rule and a heading.
     for page in ("about.html", "contact.html", "privacy.html", "agents.html"):
         markup = read(page)
         sections = markup.count('data-reveal')
@@ -126,7 +126,7 @@ def local_checks():
 
     # site.css resets ul,ol{list-style:none} globally, so prose lists must draw
     # their own markers. They did not, and the pages shipped with silently
-    # invisible bullets — a ::marker colour cannot colour a marker that is off.
+    # invisible bullets - a ::marker colour cannot colour a marker that is off.
     page_css = read("assets/css/page.css")
     site_css = read("assets/css/site.css")
     check("site.css still strips list markers globally (the reason page.css must draw its own)",
@@ -139,7 +139,7 @@ def local_checks():
 
     # No two published files may differ only by case. macOS and Windows treat
     # those as one file, so a generator writing AGENTS.md silently destroyed
-    # agents.md — the page and its own markdown alternate then disagreed, and
+    # agents.md - the page and its own markdown alternate then disagreed, and
     # nothing noticed until the rendered HTML was compared against its source.
     published = []
     for dirpath, dirnames, filenames in os.walk(ROOT):
@@ -201,7 +201,7 @@ def local_checks():
           "%d question(s)" % len(faq.get("mainEntity", [])))
 
     # 4. trust anchor pages, 500+ characters of real content
-    # connect.md renders to agents.html — the source name cannot match the URL,
+    # connect.md renders to agents.html - the source name cannot match the URL,
     # because agents.md collides with AGENTS.md on a case-insensitive filesystem.
     for slug, page in (("about", "about.html"), ("contact", "contact.html"),
                        ("privacy", "privacy.html"), ("connect", "agents.html")):
@@ -306,7 +306,7 @@ def live_checks(base):
           headers.get("Vary"))
 
     # A client offering only JSON accepts neither variant this URL has, so 406 is
-    # correct — and the 406 itself should be JSON. Note the Accept must exclude
+    # correct - and the 406 itself should be JSON. Note the Accept must exclude
     # text/html entirely: "application/json, text/html;q=0.1" still accepts HTML,
     # so serving HTML there is right and a 406 would be the bug.
     status, headers, body = request(base + "/about", accept="application/json")

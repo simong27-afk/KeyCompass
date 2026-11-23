@@ -1,5 +1,5 @@
 ---
-title: How to test your recovery phrase backup safely — KeyCompass
+title: How to test your recovery phrase backup safely | KeyCompass
 description: How to check your seed phrase backup works without exposing it: the built-in checks on Ledger and Trezor, passphrases, multisig, and what to do if it fails.
 category: Backups
 published: 2026-10-07

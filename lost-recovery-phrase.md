@@ -1,5 +1,5 @@
 ---
-title: Lost your seed phrase? What can still be recovered — KeyCompass
+title: Lost your seed phrase? What can still be recovered | KeyCompass
 description: Lost your crypto recovery phrase (seed phrase)? What can still be recovered, what cannot, how to tell which case you're in, and why recovery services are scams.
 category: Recovery
 published: 2026-09-22
@@ -9,13 +9,13 @@ featured: yes
 # I've lost my recovery phrase. What now?
 
 > What can still be recovered, what genuinely cannot, and how to tell which situation
-> you are in — without handing your money to someone promising a miracle.
+> you are in, without handing your money to someone promising a miracle.
 
 :::answer
 If your recovery phrase is gone and you can no longer open the wallet
 on any device, the funds are almost certainly unrecoverable. That is not a policy anyone can
-appeal; it is how the cryptography works. Nobody — not the wallet maker, not an exchange, not
-a recovery service — holds a copy. But a great many people who believe their phrase is lost
+appeal; it is how the cryptography works. Nobody (not the wallet maker, not an exchange, not
+a recovery service) holds a copy. But a great many people who believe their phrase is lost
 are actually in a different situation, and several of those situations are fixable. Work
 through the checks below before you conclude anything.
 :::
@@ -47,7 +47,7 @@ uninstalling it or resetting the device ends that permanently.
 
 With a hardware wallet it is the opposite. The keys are generated on the device and never
 leave it, so what matters is whether you still have the device and still know its PIN. The
-companion software holds public keys only — enough to read your balance from the blockchain,
+companion software holds public keys only: enough to read your balance from the blockchain,
 never enough to sign a transaction or show you a phrase. Seeing a balance in Ledger Wallet or
 Trezor Suite is not access, and anything presenting itself as that software while asking for
 your recovery phrase is stealing from you.
@@ -79,8 +79,8 @@ paying anybody for a miracle.
 
 ### A software wallet still installed on a device you can unlock
 
-This is the single most common case, and the most commonly missed. In a software wallet —
-MetaMask, Trust Wallet, Phantom, Exodus and the like — your recovery phrase is stored
+This is the single most common case, and the most commonly missed. In a software wallet
+(MetaMask, Trust Wallet, Phantom, Exodus and the like), your recovery phrase is stored
 encrypted inside the app, and your password is what decrypts it. If the app
 is still on your phone or computer and you can still unlock it with its PIN, password or
 biometrics, you have not lost access to anything.
@@ -98,14 +98,14 @@ If you still have the device and you still know the PIN, you still have your fun
 live on the device, not on the paper. The paper is only the spare.
 
 Modern hardware devices will generally not re-display a recovery phrase once it has been set
-up, for good security reasons — so do not expect to read it back off the device. What you can
+up, for good security reasons, so do not expect to read it back off the device. What you can
 do is set up a second wallet, back that one up properly and verify it, then transfer
 everything across. Do that before the device is lost, broken or wiped by failed PIN attempts.
 
 ### You have some of the words but not all of them
 
 A recovery phrase is not a random list. It is drawn from a fixed list of 2,048 words, and the
-phrase as a whole carries a checksum — a mathematical consistency check built into the
+phrase as a whole carries a checksum: a mathematical consistency check built into the
 standard. That means a phrase with one or two words missing can often be reconstructed,
 because only a small number of candidate words produce a valid phrase at all.
 
@@ -132,7 +132,7 @@ restore a phrase and the balance comes back as zero, the most likely explanation
 A passphrase was set and has been forgotten. Some wallets allow an extra word of your own
 choosing on top of the standard phrase, sometimes called a 25th word. The same phrase with and
 without it produces two entirely different wallets, both valid, and the one without shows
-empty. The phrase is not lost — the passphrase is, which is a different problem.
+empty. The phrase is not lost. The passphrase is, which is a different problem.
 
 The wallet was restored into different software that looks in a different place. Wallets can
 derive addresses in more than one way, and restoring a correct phrase into an app expecting a
@@ -173,7 +173,7 @@ framed as a deposit against funds they will return.
 Three rules cover almost all of it. No legitimate party ever needs your recovery phrase, in
 whole or in part, for any reason. Anyone who contacts you first, having seen that you are in
 trouble, is not helping you. And a phrase that is genuinely lost cannot be brute-forced by
-anyone at any price — the search space is larger than the problem is solvable.
+anyone at any price: the search space is larger than the problem is solvable.
 :::
 
 The one narrow exception is the partial-phrase case described above, which is a technical
@@ -186,7 +186,7 @@ If you have already been contacted, or have paid someone, see
 
 If you have recovered access, treat it as a warning rather than a near miss. Write the phrase
 down again, on paper or steel, and then actually test it: restore it onto a second device, or use your device's built-in backup check, and confirm the same wallet comes back. Never wipe your only device to test a backup. A backup you
-have never tested is an assumption, not a backup — and untested backups are the single most
+have never tested is an assumption, not a backup, and untested backups are the single most
 common way people end up reading pages like this one.
 
 Then store it somewhere that is not with the device, not photographed, not in a notes app, and
@@ -199,7 +199,7 @@ no plan for what happens if they are not the one logging in.
 
 ## Getting help
 
-KeyCompass is run by Simon Geils, who spent a decade in front-line technical support — first
+KeyCompass is run by Simon Geils, who spent a decade in front-line technical support, first
 at Apple, then at a hardware wallet manufacturer, where a great deal of the work was talking
 to people on the worst day of their crypto lives. Most of what is on this page comes from
 watching the same handful of mistakes repeat.

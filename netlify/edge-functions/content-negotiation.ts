@@ -105,8 +105,8 @@ export function chooseVariant(acceptHeader: string | null): Choice {
   const qHtml = qualityFor(entries, HTML);
   const namedMarkdown = entries.some((e) => e.media === MARKDOWN && e.q > 0);
 
-  // Only an explicit `text/markdown` flips the default. A bare `*​/*` — what
-  // curl and most crawlers send — must keep returning HTML.
+  // Only an explicit `text/markdown` flips the default. A bare `*​/*` - what
+  // curl and most crawlers send - must keep returning HTML.
   if (namedMarkdown && qMarkdown > 0 && qMarkdown >= qHtml) return "markdown";
   if (qHtml > 0) return "html";
   if (qMarkdown > 0) return "markdown";
@@ -131,7 +131,7 @@ export function prefersJson(acceptHeader: string | null): boolean {
 /**
  * A structured error an agent can act on: what went wrong, and where to look
  * next. An agent that guessed a URL cannot parse an HTML error page, and the
- * MCP endpoint already answers in structured JSON — this makes the rest of the
+ * MCP endpoint already answers in structured JSON - this makes the rest of the
  * site consistent with it.
  */
 function jsonError(status: number, code: string, message: string, hint: string): Response {
@@ -263,7 +263,7 @@ export default async function handler(request: Request, context: Context): Promi
           404,
           "not_found",
           `No resource exists at ${url.pathname}.`,
-          "KeyCompass is a small site — every published URL is listed in the links below and in sitemap.xml.",
+          "KeyCompass is a small site: every published URL is listed in the links below and in sitemap.xml.",
         );
       }
       if (chooseVariant(accept) === "markdown") {

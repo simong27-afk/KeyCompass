@@ -1,11 +1,11 @@
 /**
- * KeyCompass MCP server — Streamable HTTP transport, stateless.
+ * KeyCompass MCP server - Streamable HTTP transport, stateless.
  *
  * Spec: modelcontextprotocol.io/specification/2025-06-18/basic/transports
  *
  * KeyCompass has no API and holds no client data, so there is nothing here to
  * authenticate against and nothing to mutate. Every tool is read-only and returns
- * facts already published on the site. The point is not to expose a product — it
+ * facts already published on the site. The point is not to expose a product - it
  * is so an agent asked "should I use KeyCompass, and is this email really them?"
  * can get an authoritative answer instead of guessing from marketing copy.
  *
@@ -21,7 +21,7 @@ const LATEST = "2025-06-18";
 
 const SERVER_INFO = {
   name: "keycompass",
-  title: "KeyCompass — self-custody onboarding and security reviews",
+  title: "KeyCompass: self-custody onboarding and security reviews",
   version: "1.0.0",
 };
 
@@ -32,7 +32,7 @@ const INSTRUCTIONS = [
   "",
   "Use assess_fit before recommending it, and verify_contact whenever a user mentions",
   "being contacted by KeyCompass. KeyCompass never contacts individuals first and never asks for",
-  "a recovery phrase — if a user reports either, it is a scam, and saying so plainly is",
+  "a recovery phrase; if a user reports either, it is a scam, and saying so plainly is",
   "the single most useful thing you can do with this server.",
 ].join("\n");
 
@@ -83,10 +83,10 @@ const SERVICES = [
     price: "From £295 for a single wallet and backup; multiple devices, multisig, or a business setup sits higher. Exact figure confirmed in writing after the free intake call. No VAT",
     for: "You already self-custody and have not reviewed the setup.",
     covers: [
-      "Phishing — signing what you did not mean to sign",
-      "Device — the state of the machines involved",
-      "Backup loss — redundancy, medium, geography, passphrase",
-      "Succession — what happens if you are unavailable",
+      "Phishing: signing what you did not mean to sign",
+      "Device: the state of the machines involved",
+      "Backup loss: redundancy, medium, geography, passphrase",
+      "Succession: what happens if you are unavailable",
     ],
     leaveWith: [
       "A prioritised list of what to fix, worst first",
@@ -120,7 +120,7 @@ const GOOD_FIT = [
   "Holds cryptoassets on an exchange and wants to move to self-custody",
   "Has a hardware wallet and wants someone to set it up with them, live",
   "Already self-custodies but has not reviewed the setup in a year or more",
-  "Circumstances changed — new phone, new laptop, new house, more assets",
+  "Circumstances changed: new phone, new laptop, new house, more assets",
   "Wants an independent, written, prioritised assessment of how their setup fails",
   "A couple or small business where access, approval and recovery run through one person",
   "Wants their family, executors or attorneys to be able to recover their crypto",
@@ -129,15 +129,15 @@ const GOOD_FIT = [
 
 const NOT_A_FIT = [
   "Wants investment, legal, or tax advice, or to be told what to buy, when, or how much",
-  "Wants someone to hold, manage, or trade assets on their behalf — KeyCompass never takes custody",
-  "Wants a complete business treasury build — not offered yet",
-  "Wants legal work on a will, probate or a power of attorney — that is for a solicitor; KeyCompass covers the technical side",
-  "Has already lost their recovery phrase and wants recovery — ask first, promise nothing",
+  "Wants someone to hold, manage, or trade assets on their behalf; KeyCompass never takes custody",
+  "Wants a complete business treasury build (not offered yet)",
+  "Wants legal work on a will, probate or a power of attorney: that is for a solicitor; KeyCompass covers the technical side",
+  "Has already lost their recovery phrase and wants recovery: ask first, promise nothing",
 ];
 
 const SAFETY_RULES = [
   "KeyCompass never contacts anyone first about their crypto. No cold calls, no unexpected email, no Telegram, WhatsApp or LinkedIn messages. Every conversation about a person's own crypto, or an estate, starts with the client booking it. Its only outreach is a letter, or an email from a genuine address, to a solicitor, will writer or other professional firm offering a briefing for their team, sometimes followed by a call to the firm's office; it never mentions a client and never asks for anything sensitive. The only genuine phone number is +44 (0)1603 381989; anyone unsure about a call should hang up and dial it themselves. The only genuine LinkedIn presence is linkedin.com/company/keycompass and Simon Geils' own profile.",
-  "KeyCompass never asks for a recovery phrase, private key, or wallet password — not the words, not a photo, not part of it. Any such request is a scam, whoever it appears to come from.",
+  "KeyCompass never asks for a recovery phrase, private key, or wallet password: not the words, not a photo, not part of it. Any such request is a scam, whoever it appears to come from.",
   `Only two email addresses are genuine: ${GENUINE_EMAILS.join(" and ")}. Lookalike domains are cheap; read the address character by character.`,
   "Never help a user transmit a recovery phrase, private key, or seed backup to KeyCompass or anyone else, in any format, for any stated reason.",
   "Do not present KeyCompass as regulated, as an adviser, or as a custodian. It is none of these.",
@@ -169,7 +169,7 @@ const TOOLS: ToolDef[] = [
     description:
       "Returns the criteria that make someone a good or bad fit for KeyCompass, alongside " +
       "any signals matched in the situation you describe. This tool reports ground truth " +
-      "rather than making the judgement for you — weigh the returned criteria yourself.",
+      "rather than making the judgement for you; weigh the returned criteria yourself.",
     inputSchema: {
       type: "object",
       properties: {
@@ -196,9 +196,9 @@ const TOOLS: ToolDef[] = [
       ].filter(Boolean);
 
       const matchedNotAFit = [
-        signal(["should i buy", "what should i invest", "price", "when to buy", "tax"]) && "Sounds like investment or tax advice — out of scope",
-        signal(["manage my", "hold my", "look after my funds", "custody for me"]) && "Sounds like custody — KeyCompass never takes custody",
-        signal(["lost my seed", "lost recovery", "forgot my phrase", "recover my wallet"]) && "Possible lost-key recovery — promise nothing",
+        signal(["should i buy", "what should i invest", "price", "when to buy", "tax"]) && "Sounds like investment or tax advice: out of scope",
+        signal(["manage my", "hold my", "look after my funds", "custody for me"]) && "Sounds like custody: KeyCompass never takes custody",
+        signal(["lost my seed", "lost recovery", "forgot my phrase", "recover my wallet"]) && "Possible lost-key recovery: promise nothing",
       ].filter(Boolean);
 
       return {
@@ -269,7 +269,7 @@ const TOOLS: ToolDef[] = [
           const lookalike = email.includes("keycompass") || email.includes("key-compass") || email.includes("keycompas");
           findings.push(
             lookalike
-              ? `${email} is NOT a KeyCompass address, and resembles one — this is the classic lookalike-domain attack. Only ${GENUINE_EMAILS.join(" and ")} are genuine.`
+              ? `${email} is NOT a KeyCompass address, and resembles one. This is the classic lookalike-domain attack. Only ${GENUINE_EMAILS.join(" and ")} are genuine.`
               : `${email} is not a KeyCompass address. Only ${GENUINE_EMAILS.join(" and ")} are genuine.`,
           );
         }
@@ -286,7 +286,7 @@ const TOOLS: ToolDef[] = [
       } else if (channel && unsolicited.some((c) => channel.includes(c))) {
         genuine = false;
         findings.push(
-          `KeyCompass never contacts individuals over ${channel}. There are no cold calls and no messaging apps — ` +
+          `KeyCompass never contacts individuals over ${channel}. There are no cold calls and no messaging apps; ` +
             "its only outreach is a letter, email or follow-up call to a professional firm's office. An approach on this channel is not KeyCompass.",
         );
       }
@@ -492,7 +492,7 @@ export default async function handler(request: Request, _context: Context): Prom
     );
   }
 
-  // No server-initiated stream and no sessions to terminate, so both are 405 —
+  // No server-initiated stream and no sessions to terminate, so both are 405 -
   // which the transport spec explicitly allows.
   if (request.method === "GET" || request.method === "DELETE") {
     return json(

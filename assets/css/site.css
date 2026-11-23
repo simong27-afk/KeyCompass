@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KeyCompass — site styles
+   KeyCompass - site styles
    Brand: Vault Dial mark, Archivo, zero radius, 2px rules, ink/ground/accent.
    Utility face: Martian Mono, used only for annotation-scale text.
    ========================================================================== */
@@ -12,7 +12,7 @@
   --white:#ffffff;
 
   /* -- accent ------------------------------------------------------------ */
-  --accent:#ec3013;         /* brand accent — graphics, rules, floods */
+  --accent:#ec3013;         /* brand accent - graphics, rules, floods */
   --accent-deep:#b3210e;    /* small accent text on light (brand rule) */
   --accent-press:#c62710;
 
@@ -230,7 +230,7 @@ body{
 .hdr.is-open .menubtn__rules i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* [hidden] hides via the UA stylesheet, whose specificity loses to the class
-   rule below — so this has to be stated explicitly or the panel renders open. */
+   rule below - so this has to be stated explicitly or the panel renders open. */
 .menu[hidden]{display:none}
 .menu{
   position:fixed;inset:0;z-index:40;background:var(--pitch);
@@ -419,7 +419,7 @@ body{
 
 /* --- steps --------------------------------------------------------------- */
 /* Dividers are borders on each step, not a parent background showing through
-   the grid gap — that trick only works while the gap is hairline-thin, and
+   the grid gap - that trick only works while the gap is hairline-thin, and
    turned into a grey band once the columns spread apart. */
 .steps{display:grid;grid-template-columns:minmax(0,1fr);row-gap:0}
 .step{
@@ -472,7 +472,7 @@ body{
 .social__link svg{width:18px;height:18px;display:block;flex:none}
 .social__link:hover,.social__link:focus-visible{color:var(--ground)}
 
-/* The only photograph on the site. No frame, no filter, no radius — it is
+/* The only photograph on the site. No frame, no filter, no radius - it is
    already monochrome and sits in the palette unaided. */
 .portrait{width:100%;overflow:hidden}
 .portrait img{display:block;width:100%;height:auto}
@@ -579,7 +579,7 @@ body{
 @media (max-width:1039px){
   .hdr__nav{display:none}
   /* The nav is hidden but still in the DOM, so .hdr__nav+.btn kept matching and
-     cancelled the auto-margin — leaving the CTA stranded beside the logo. */
+     cancelled the auto-margin - leaving the CTA stranded beside the logo. */
   .hdr__nav+.btn{margin-left:auto}
   .menubtn{display:inline-flex}
   .wide-only{display:none}          /* the header CTA shortens to "Book" */
@@ -593,7 +593,7 @@ body{
 }
 
 /* ==========================================================================
-   Motion — orchestrated load, then quiet scroll reveals
+   Motion - orchestrated load, then quiet scroll reveals
    ========================================================================== */
 /* Initial states are scoped to .js so the page is fully visible without it. */
 .js .ln i{transform:translateY(45%);opacity:0}
@@ -671,7 +671,7 @@ body{
   [data-reveal] .rowhead,[data-reveal] .rule,[data-reveal] .wrap>*{
     opacity:1!important;transform:none!important;
   }
-  /* the drawing's rotated labels keep their transform — only the fade is dropped */
+  /* the drawing's rotated labels keep their transform - only the fade is dropped */
   .ch__edge,.ch__lbl,.plan__names text{opacity:1!important}
   .portrait img{transform:none!important}
   .plan__rings .ring,.ring--core{stroke-dashoffset:0!important}

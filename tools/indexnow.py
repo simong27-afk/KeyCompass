@@ -47,7 +47,7 @@ def main(argv):
     meaning = {200: "accepted", 202: "accepted, key still being checked",
                400: "bad request", 403: "key not found on the site yet (has the deploy finished?)",
                422: "URLs do not belong to this host", 429: "too many requests, try later"}
-    print("Submitted %d URL(s): HTTP %d — %s" % (len(urls), code, meaning.get(code, "unexpected")))
+    print("Submitted %d URL(s): HTTP %d - %s" % (len(urls), code, meaning.get(code, "unexpected")))
     for u in urls:
         print("  " + u)
     return 0 if code in (200, 202) else 1

@@ -1,5 +1,5 @@
 ---
-title: BIP39 passphrase (25th word): should you use one? — KeyCompass
+title: BIP39 passphrase (25th word): should you use one? | KeyCompass
 description: What a BIP39 passphrase is, how hidden wallets work on Ledger and Trezor, what it protects against, the risks, and how to set one up and test it safely.
 category: Backups
 published: 2026-10-12

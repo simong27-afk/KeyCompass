@@ -1,6 +1,6 @@
 # KeyCompass
 
-Marketing site and brand assets for KeyCompass — self-custody onboarding sessions and
+Marketing site and brand assets for KeyCompass - self-custody onboarding sessions and
 security reviews.
 
 ## About this project
@@ -48,7 +48,7 @@ Write `guides/<slug>.md`, starting with the front-matter block described at the 
 `tools/build-pages.py` (title, description, category, published, checked), then run
 `python3 tools/build-pages.py`. That one command renders the guide, adds it to the
 /guides/ index and the "More guides" lists, and regenerates `sitemap.xml`, the Guides
-section of `llms.txt`, and `llms-full.txt`. Nothing else needs editing — the edge
+section of `llms.txt`, and `llms-full.txt`. Nothing else needs editing - the edge
 function and headers already cover every `/guides/*` path.
 
 Only move `checked` forward after re-verifying every claim in the guide: the date is
@@ -76,7 +76,7 @@ Then open http://localhost:4321.
 
 ## Deploy
 
-Static — push the repo root to Netlify, Cloudflare Pages, GitHub Pages, or any static host.
+Static - push the repo root to Netlify, Cloudflare Pages, GitHub Pages, or any static host.
 Nothing to compile.
 
 ## Before publishing
@@ -84,7 +84,7 @@ Nothing to compile.
 - Booking runs through Cal.com (`simongeils/30min`, opened as a pop-up from every
   "Book" button). Confirm the calendar's look in Cal.com → Settings → Appearance.
 - `hello@keycompass.co.uk` is live and receives mail. It is no longer only in the
-  closing panel and the footer — changing it now means changing the contact page,
+  closing panel and the footer - changing it now means changing the contact page,
   the Organization contactPoint in index.html's JSON-LD, llms.txt, and
   agent-instructions.md as well. Grep for it before renaming anything.
 - Have a solicitor review the boundary section, the financial-advice answer, and the footer

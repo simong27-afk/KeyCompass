@@ -1,5 +1,5 @@
 ---
-title: Crypto scams in the UK: how to spot them and what to do — KeyCompass
+title: Crypto scams in the UK: how to spot them and what to do | KeyCompass
 description: The crypto scams targeting UK holders, from fake support and phishing letters to address poisoning, drainers and wrench attacks, and what to do if you're hit.
 category: Scams
 published: 2026-10-12

@@ -127,10 +127,10 @@ KeyCompass does not sell personal data and does not share it with third parties 
 own marketing. A small number of service providers process information on KeyCompass's
 behalf:
 
-- **Cal.com** — booking and scheduling
-- **Google Workspace** — email, and video calls via Google Meet
-- **Netlify** — website hosting
-- **Stripe** — card payments for bookings. You enter card details directly with Stripe;
+- **Cal.com**: booking and scheduling
+- **Google Workspace**: email, and video calls via Google Meet
+- **Netlify**: website hosting
+- **Stripe**: card payments for bookings. You enter card details directly with Stripe;
   KeyCompass never sees or stores your full card number. Stripe also uses payment
   information for its own fraud prevention, under [its privacy policy](https://stripe.com/gb/privacy).
 
@@ -143,7 +143,7 @@ a review if you'd like to; it's entirely optional.
 
 Cal.com, Google, Netlify, and Stripe are US-headquartered, so personal information handled by them
 may be transferred outside the United Kingdom. Those transfers rely on the safeguards in
-each provider's data processing terms — the UK Addendum to the EU Standard Contractual
+each provider's data processing terms: the UK Addendum to the EU Standard Contractual
 Clauses, or the UK Extension to the EU–US Data Privacy Framework where the provider is
 certified under it. No personal information is transferred anywhere else.
 
@@ -157,8 +157,8 @@ KeyCompass is registered with the Information Commissioner's Office under refere
 
 KeyCompass never asks for, receives, or stores your recovery phrase, your private keys, or
 your wallet passwords. Not the words, not a photo, not "just the first four". There is no
-situation in which KeyCompass would need this information, and anyone asking you for it —
-including someone claiming to be KeyCompass — is not acting for KeyCompass.
+situation in which KeyCompass would need this information, and anyone asking you for it,
+including someone claiming to be KeyCompass, is not acting for KeyCompass.
 
 Sessions run over video call and are **not recorded**. Screen sharing runs on the
 practitioner's side only, so everything sensitive stays on your side of the call.

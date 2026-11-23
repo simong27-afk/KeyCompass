@@ -16,7 +16,7 @@ Guides
 A guide is a markdown file that starts with a small front-matter block:
 
     ---
-    title: Metal backups: are they worth it? — KeyCompass
+    title: Metal backups: are they worth it? | KeyCompass
     description: One or two sentences for search results (aim for ~155 characters).
     category: Backups
     published: 2026-10-06
@@ -53,32 +53,32 @@ SITE = "https://keycompass.co.uk"
 
 PAGES = [
     ("about.md", "about.html",
-     "About KeyCompass — Simon Geils, independent self-custody consultant",
+     "About KeyCompass | Simon Geils, independent self-custody consultant",
      "KeyCompass is run by Simon Geils, a decade in technical support at Apple and Ledger. "
      "Independent self-custody help: never a custodian, broker or adviser."),
-    ("contact.md", "contact.html", "Contact KeyCompass — book a free self-custody intake call",
-     "Email KeyCompass or book the free thirty-minute intake call — and how to verify that "
+    ("contact.md", "contact.html", "Contact KeyCompass: book a free self-custody intake call",
+     "Email KeyCompass or book the free thirty-minute intake call, and how to verify that "
      "a message claiming to be from KeyCompass is genuine."),
-    ("privacy.md", "privacy.html", "Privacy — KeyCompass",
+    ("privacy.md", "privacy.html", "Privacy | KeyCompass",
      "What KeyCompass collects, why, who processes it, and how long it is kept. Never your "
      "recovery phrase, private keys, or funds."),
-    ("terms.md", "terms.html", "Terms and conditions — KeyCompass",
+    ("terms.md", "terms.html", "Terms and conditions | KeyCompass",
      "Terms for KeyCompass drop-in hours, onboarding, security reviews and estate, executor "
      "and attorney support: custody boundary, cancellation, fees and liability."),
     ("pricing.md", "pricing.html",
-     "Pricing: self-custody sessions from £95, fixed, no VAT — KeyCompass",
+     "Pricing: self-custody sessions from £95, fixed, no VAT | KeyCompass",
      "Free 30-minute intake call, £95 drop-in hour, onboarding from £195, security reviews "
      "from £295. Fixed prices, no VAT, never a percentage of what you hold."),
     ("onboarding.md", "onboarding.html",
-     "Hardware wallet setup and exchange migration, UK — KeyCompass",
+     "Hardware wallet setup and exchange migration, UK | KeyCompass",
      "One-to-one help moving your crypto off an exchange onto a hardware wallet, live on a "
      "video call. You do every step yourself. From £195, fixed price."),
     ("security-review.md", "security-review.html",
-     "Crypto self-custody security review, UK — KeyCompass",
+     "Crypto self-custody security review, UK | KeyCompass",
      "An independent review of how you hold your crypto: backups, devices, phishing and "
      "succession, without seeing your seed phrase. From £295, written report."),
     ("inheritance.md", "inheritance.html",
-     "Crypto inheritance planning and executor support, UK — KeyCompass",
+     "Crypto inheritance planning and executor support, UK | KeyCompass",
      "Make sure your family, executors or attorneys could recover your crypto. Estate "
      "readiness from £495, plus executor and attorney support. No custody, ever."),
     # Source is connect.md, not agents.md: on a case-insensitive filesystem
@@ -188,7 +188,7 @@ def inline(t):
 
 
 def split_sections(md):
-    """(title, lead, intro, [(h2, body), ...]) — H2 headings become sections.
+    """(title, lead, intro, [(h2, body), ...]) - H2 headings become sections.
 
     The homepage animates per section: [data-reveal] on the <section>, with the
     rowhead, rule and .wrap children staggered as they scroll in. One giant
@@ -546,7 +546,7 @@ def front_matter(text, src):
         if not line.strip() or line.lstrip().startswith("#"):
             continue
         if ":" not in line:
-            sys.exit("%s: front-matter line has no ':' — %r" % (src, line))
+            sys.exit("%s: front-matter line has no ':' - %r" % (src, line))
         key, value = line.split(":", 1)
         meta[key.strip().lower()] = value.strip()
     missing = [k for k in REQUIRED_META if not meta.get(k)]
@@ -664,7 +664,7 @@ FEATURE = '''    <div class="feature">
     </div>
 '''
 
-INDEX_TITLE = "Crypto self-custody guides: wallets, seed phrases, scams — KeyCompass"
+INDEX_TITLE = "Crypto self-custody guides: wallets, seed phrases, scams | KeyCompass"
 INDEX_H1 = "Guides to keeping your crypto yours."
 INDEX_LEAD = ("Plain-English guides to crypto self-custody: moving off an exchange, backing "
               "up your seed phrase, spotting scams, "
@@ -787,7 +787,7 @@ def render_index(guides, chrome_parts):
 def index_markdown(guides):
     out = ["# " + INDEX_H1, "", "> " + INDEX_LEAD, ""]
     for g in guides:
-        out.append("- [%s](%s) — %s (%s, last checked %s)"
+        out.append("- [%s](%s): %s (%s, last checked %s)"
                    % (g["h1"], g["md_url"], g["description"], g["category"],
                       g["checked"].isoformat()))
     return "\n".join(out) + "\n"
@@ -854,7 +854,7 @@ def main():
         slug = dest[:-5]
         canonical = "%s/%s" % (SITE, slug)
         h1, lead, intro, blocks = split_sections(md)
-        eyebrow = h1.split("—")[0].strip()
+        eyebrow = h1.split(" | ")[0].strip()
 
         head_extra = ""
         if lead:
@@ -906,7 +906,7 @@ def main():
         body = io.open(os.path.join(ROOT, src), encoding="utf-8").read()
         write(dest, body, written)
 
-    full = ["# KeyCompass — complete site content",
+    full = ["# KeyCompass: complete site content",
             "",
             "> Every page of keycompass.co.uk as one markdown document, for agents that "
             "would rather read once than crawl. Curated index: https://keycompass.co.uk/llms.txt",
@@ -924,6 +924,44 @@ def main():
     for name, size in written:
         print("  wrote %-34s %7d bytes" % (name, size))
     print("%d file(s) built, %d guide(s)" % (len(written), len(guides)))
+    return check_no_em_dashes()
+
+
+# --- house style: no em dashes --------------------------------------------------
+# Simon's rule (Nov 2026): the site never uses em dashes. Use a comma, colon,
+# full stop or brackets instead, and " | " between a page title and the brand.
+# The build fails if one appears in anything the site serves.
+EM_DASHES = ("\u2014", "&mdash;", "&#8212;", "&#x2014;")
+SERVED_EXTS = (".md", ".html", ".txt", ".xml", ".css", ".js", ".ts", ".json", ".toml")
+
+
+def check_no_em_dashes():
+    hits = []
+    for dirpath, dirnames, filenames in os.walk(ROOT):
+        rel_dir = os.path.relpath(dirpath, ROOT)
+        top = rel_dir.split(os.sep)[0]
+        # .git, private work, and the /tools/ folder (blocked from the live site).
+        if top in (".git", "Claude outputs", "tools", "node_modules", ".secrets", "reports", "export"):
+            dirnames[:] = []
+            continue
+        for name in filenames:
+            if not (name.endswith(SERVED_EXTS) or name == "mcp"):
+                continue
+            path = os.path.join(dirpath, name)
+            try:
+                text = io.open(path, encoding="utf-8").read()
+            except (UnicodeDecodeError, OSError):
+                continue
+            for n, line in enumerate(text.splitlines(), 1):
+                if any(d in line for d in EM_DASHES):
+                    hits.append("%s:%d" % (os.path.relpath(path, ROOT), n))
+    if hits:
+        print("\nEM DASH FOUND (house style: none on the site). Replace with a comma, "
+              "colon, full stop or brackets:")
+        for h in hits:
+            print("  " + h)
+        return 1
+    print("No em dashes found.")
     return 0
 
 

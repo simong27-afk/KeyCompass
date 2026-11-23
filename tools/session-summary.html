@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Session record — KeyCompass</title>
+<title>Session record - KeyCompass</title>
 <link rel="icon" href="../brand/svg/mark-favicon-simplified-ink.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/fonts.css">
 <style>
@@ -132,7 +132,7 @@ select{appearance:none;padding-right:2rem;
         <rect x="66" y="44" width="22" height="12"/><rect x="12" y="44" width="22" height="12"/>
       </svg>KeyCompass
     </a>
-    <span class="micro micro--dim">Sheet 02 — Session record</span>
+    <span class="micro micro--dim">Sheet 02 - Session record</span>
   </header>
   <hr class="rule">
   <p class="notice">Internal tool · <b>Nothing here is sent anywhere.</b> Everything stays in this browser until you clear it.</p>
@@ -141,7 +141,7 @@ select{appearance:none;padding-right:2rem;
   <section class="block">
     <div class="block__head">
       <span class="micro">Raw minutes</span>
-      <span class="micro micro--dim">Working notes — never sent to the client</span>
+      <span class="micro micro--dim">Working notes - never sent to the client</span>
     </div>
     <hr class="rule rule--hair">
     <div class="grid">
@@ -251,7 +251,7 @@ select{appearance:none;padding-right:2rem;
     <hr class="rule rule--hair">
     <div class="grid grid--2">
       <div class="field"><label class="micro" for="recheck">Re-check offered</label>
-        <select id="recheck"><option>Yes — once the actions are done</option><option>Not applicable</option></select></div>
+        <select id="recheck"><option>Yes - once the actions are done</option><option>Not applicable</option></select></div>
       <div class="field"><label class="micro" for="closes">Thread closes</label>
         <input type="text" id="closes" readonly placeholder="Set the session date"></div>
       <div class="field" style="grid-column:1/-1"><label class="micro" for="note">Anything else</label>
@@ -263,14 +263,14 @@ select{appearance:none;padding-right:2rem;
   <section class="out">
     <hr class="rule">
     <div class="out__bar" style="padding-top:.7rem">
-      <span class="micro">Summary — ready to send</span>
+      <span class="micro">Summary - ready to send</span>
       <div class="out__acts">
         <button type="button" class="btn btn--ghost" id="clear">Clear session</button>
         <button type="button" class="btn btn--accent" id="copy">Copy summary</button>
       </div>
     </div>
     <pre class="out__pre" id="preview"></pre>
-    <p class="foot micro micro--dim">Paste into your email client. Read it once before you send — it is a draft, not a document.</p>
+    <p class="foot micro micro--dim">Paste into your email client. Read it once before you send - it is a draft, not a document.</p>
   </section>
 </div>
 
@@ -304,7 +304,7 @@ select{appearance:none;padding-right:2rem;
     var row = document.createElement('div');
     row.className = 'action';
     row.innerHTML = '<select class="a-pri">' +
-        ['1 — Do first','2 — Soon','3 — When you can'].map(function(o){
+        ['1 - Do first','2 - Soon','3 - When you can'].map(function(o){
           return '<option' + (o===p?' selected':'') + '>' + o + '</option>'; }).join('') +
       '</select><input type="text" class="a-txt" placeholder="What to change, and why it matters">' +
       '<button type="button" class="btn btn--x" aria-label="Remove this action">Remove</button>';
@@ -331,7 +331,7 @@ select{appearance:none;padding-right:2rem;
     var isReview = $('service').value.indexOf('review') > -1;
     var name = $('client').value.trim();
     var L = [];
-    L.push('KEYCOMPASS — SESSION SUMMARY');
+    L.push('KEYCOMPASS - SESSION SUMMARY');
     L.push('');
     if(name) L.push('For:      ' + name);
     if($('date').value) L.push('Date:     ' + fmt($('date').value));
@@ -352,7 +352,7 @@ select{appearance:none;padding-right:2rem;
         SURFACES.forEach(function(s){
           var st = document.querySelector('input[name="'+s[0]+'"]:checked').value;
           var nt = $(s[0]+'-note').value.trim();
-          L.push('  ' + s[1] + ' — ' + st.toLowerCase());
+          L.push('  ' + s[1] + ' - ' + st.toLowerCase());
           if(nt) L.push('    ' + nt);
         });
         L.push('');
@@ -376,7 +376,7 @@ select{appearance:none;padding-right:2rem;
       .sort(function(a,b){ return a.p.localeCompare(b.p); });
     if(acts.length){
       L.push('WHAT TO FIX, WORST FIRST','');
-      acts.forEach(function(a,i){ L.push('  ' + (i+1) + '. ' + a.t + '   [' + a.p.split(' — ')[1] + ']'); });
+      acts.forEach(function(a,i){ L.push('  ' + (i+1) + '. ' + a.t + '   [' + a.p.split(' - ')[1] + ']'); });
       L.push('');
     }
 
@@ -410,7 +410,7 @@ select{appearance:none;padding-right:2rem;
     save();
   }
 
-  /* draft autosave — local to this browser, cleared by the Clear button */
+  /* draft autosave - local to this browser, cleared by the Clear button */
   function save(){
     try{
       var d = {};

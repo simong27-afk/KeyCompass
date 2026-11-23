@@ -2,7 +2,7 @@
 """Watch Certificate Transparency logs for certificates issued for keycompass.co.uk.
 
 Every certificate a public CA issues is published to CT logs. If someone hijacks
-the domain or the DNS and gets their own certificate, it shows up here — usually
+the domain or the DNS and gets their own certificate, it shows up here - usually
 within minutes, and before anyone would notice by other means.
 
     python3 tools/ct-monitor.py --init    establish the baseline (first run)
@@ -25,7 +25,7 @@ TIMEOUT = 45
 UA = "keycompass-ct-monitor"
 
 # Certificates we expect to exist. An issuer outside this set is not proof of
-# anything wrong — Netlify could change CA — but it deserves a look.
+# anything wrong - Netlify could change CA - but it deserves a look.
 EXPECTED_ISSUERS = ("Let's Encrypt", "DigiCert", "Google Trust Services")
 
 
@@ -104,7 +104,7 @@ def main():
 
     new = {k: v for k, v in certs.items() if k not in known}
 
-    print("%s — %d certificate(s) in CT logs (source: %s)" % (DOMAIN, len(certs), source))
+    print("%s - %d certificate(s) in CT logs (source: %s)" % (DOMAIN, len(certs), source))
 
     if init or not known:
         print("\nBaseline recorded. These are now treated as known-good:\n")

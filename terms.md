@@ -19,7 +19,7 @@ This summary does not replace the full terms below.
 - Who we are
 - These terms
 - What we do
-- The boundary — what KeyCompass is not
+- The boundary: what KeyCompass is not
 - How an engagement is agreed
 - Estate, attorney and executor work
 - What we need from you
@@ -64,8 +64,8 @@ These terms apply to every engagement between you and KeyCompass. You agree to t
 book and pay for a drop-in hour, or when you accept a written scope and quotation from us
 and book a time.
 
-Where you are a consumer — an individual booking for purposes outside your trade, business,
-craft or profession — you have statutory rights that these terms do not affect. Nothing here
+Where you are a consumer (an individual booking for purposes outside your trade, business,
+craft or profession), you have statutory rights that these terms do not affect. Nothing here
 reduces them. Where a term applies only to consumers, or only to business clients, it says so.
 
 We may change these terms. The version that applies to your engagement is the version
@@ -102,18 +102,18 @@ check once you have made the changes.
 
 Sessions run over video call and are not recorded. Screen sharing runs on our side only.
 
-## The boundary — what KeyCompass is not
+## The boundary: what KeyCompass is not
 
 This section is the most important part of these terms.
 
 **We are not a custodian.** We never take custody, control or possession of your cryptoassets,
-your private keys, your recovery phrase or your wallet passwords — not at any point, not
+your private keys, your recovery phrase or your wallet passwords: not at any point, not
 temporarily, and not to check or assist with something. Your assets stay in your sole control
 throughout.
 
 **We never ask for your recovery phrase, private keys or wallet passwords.** Not the words,
 not a photograph, not part of them. There is no circumstance in which we would need them.
-Anyone asking you for them — including someone presenting themselves as KeyCompass — is not
+Anyone asking you for them, including someone presenting themselves as KeyCompass, is not
 acting for us.
 
 **We are not a financial adviser and we are not regulated.** KeyCompass is not authorised or

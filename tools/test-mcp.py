@@ -89,7 +89,7 @@ def local_checks():
     # Discovery document must agree with the code about the tool list.
     disc = json.load(io.open(os.path.join(ROOT, ".well-known/mcp"), encoding="utf-8"))
     declared = set(disc["tools"])
-    # Scope to the TOOLS array — serverInfo also has a `name:` field, and matching
+    # Scope to the TOOLS array - serverInfo also has a `name:` field, and matching
     # that made this check fail against correct code the first time it ran.
     tools_block = ts[ts.index("const TOOLS: ToolDef[]"):ts.index("// --- JSON-RPC plumbing")]
     implemented = set(re.findall(r'^\s{4}name: "([a-z_]+)",', tools_block, re.M))

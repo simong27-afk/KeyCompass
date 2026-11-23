@@ -1,4 +1,4 @@
-/* KeyCompass — site behaviour.
+/* KeyCompass - site behaviour.
    Three jobs: the load sequence, the scroll reveals, and the custody plan. */
 (function () {
   'use strict';
@@ -19,7 +19,7 @@
   }
 
   /* Safari restores the previous scroll position on reload, and when a
-     backgrounded tab is reopened — which lands you mid-page on what feels like
+     backgrounded tab is reopened - which lands you mid-page on what feels like
      a fresh visit. Take that over: a bare URL starts at the top, and a URL
      carrying a hash goes to its section because that is what it asked for. */
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -61,7 +61,7 @@
       if (open) {
         lockedY = window.scrollY;
         document.body.style.overflow = 'hidden';
-        menu.focus();          /* the panel, not the first link — focusing a
+        menu.focus();          /* the panel, not the first link - focusing a
                                   link made it look already selected */
       } else {
         document.body.style.overflow = '';
@@ -85,7 +85,7 @@
 
   /* --- in-page navigation -------------------------------------------------- */
   /* Smooth scrolling travels through every section between here and the target,
-     and the observer reveals each one in flight — so the section you asked for
+     and the observer reveals each one in flight - so the section you asked for
      has finished animating before you arrive, while the one below it is caught
      half-drawn. Handle these jumps explicitly instead: show everything passed
      over without animating it, hold the target back, and reveal it on landing. */
@@ -177,7 +177,7 @@
   /* --- booking buttons ---------------------------------------------------- */
   /* Each booking button is a real link to the Cal.com page, so a blocked embed
      still gets the visitor to the calendar. Cal opens its own modal on click
-     but does not stop the link, so stop it here — only once Cal is loaded, and
+     but does not stop the link, so stop it here - only once Cal is loaded, and
      only for a plain left click, so cmd-click still opens a new tab. */
   Array.prototype.forEach.call(document.querySelectorAll('[data-cal-link]'), function (el) {
     el.addEventListener('click', function (e) {
@@ -192,19 +192,19 @@
 
   var CHANNELS = [
     {
-      ref: 'Ch. 01 — Phishing',
+      ref: 'Ch. 01 · Phishing',
       read: 'Signing what you did not mean to sign. Checks approvals, addresses, and on-device verification.'
     },
     {
-      ref: 'Ch. 02 — Device',
+      ref: 'Ch. 02 · Device',
       read: 'Where the wallet is sourced, updated and used. Checks firmware, authenticity, clean signing.'
     },
     {
-      ref: 'Ch. 03 — Backup loss',
+      ref: 'Ch. 03 · Backup loss',
       read: 'One copy, one location, one point of failure. Checks redundancy, medium, geography, passphrase.'
     },
     {
-      ref: 'Ch. 04 — Succession',
+      ref: 'Ch. 04 · Succession',
       read: 'Nobody else can get in, including those who should. Checks whether recovery is written and tested.'
     }
   ];
